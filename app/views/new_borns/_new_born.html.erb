@@ -1,0 +1,49 @@
+<li class="has-date">
+  <%= link_to new_born_path new_born do %>
+    <div class="item-container">
+      <h3>
+        <%= fa_icon 'child' %>
+        <%= t('ui.shared.childs_name') %>:
+        <span><%= new_born.c_name %></span>
+      </h3>
+      <p>
+        <%= fa_icon 'id-card' %>
+        <%= t("Child's' Code") %>:
+        <span class="certificate_numbe"><%= new_born.child_code.upcase %></span>
+      </p>
+      <p>
+        <%= fa_icon 'square' %>
+        <%= t('ui.shared.place_of_birth') %>:
+        <span><%= new_born.c_pb %></span>
+      </p>
+      <p>
+        <%= fa_icon 'male' %>
+        <%= fa_icon 'female' %>
+        <%= t('ui.shared.sex') %>:
+        <span><%= new_born.sex %></span>
+      </p>
+      <p>
+        <%= fa_icon 'male' %>
+        <%= t('ui.shared.fathers_name') %>:
+        <span><%= new_born.f_name %></span>
+      </p>
+      <p>
+        <%= fa_icon 'female' %>
+        <%= t('ui.shared.mothers_name') %>:
+        <span><%= new_born.m_name %></span>
+      </p>
+      <p>
+        <%= fa_icon 'home' %>
+        <%= t('Father and mothers residence') %>:
+        <span><%= new_born.f_res + ' and ' + new_born.m_res + ' respectively' %></span>
+      </p>
+      <p>
+        <%= fa_icon 'phone' %>
+        <%= t('Father and mothers phone number') %>:
+        <span><%= new_born.f_tel + ' and ' + new_born.m_tel + ' respectively' %></span>
+      </p>
+
+      <time class="item-date-ribbon good-news">Born: <%= formated_date new_born.c_db %></time>
+    </div>
+  <% end %>
+</li>

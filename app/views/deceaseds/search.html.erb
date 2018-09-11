@@ -1,0 +1,16 @@
+<h1>Search results</h1>
+<div class="find-dc">
+  <%= render 'search_form', { search_query: @search_query } %>
+</div>
+<ul class="children search-results">
+  <% if @deceaseds.empty? %>
+    <h3>No results match your search</h3>
+  <% else %>
+    <%== pagy_nav(@pagy) %>   
+    <% @deceaseds.each do |deceased| %>
+      <%= render "deceased", { deceased: deceased } %>
+    <% end %>
+  <% end %>
+</ul>
+
+

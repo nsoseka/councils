@@ -1,0 +1,115 @@
+<% choice_factor = '88888888' %>
+<h1>New Birth Certificate</h1>
+<div class="main register-citizen">
+  <%= my_form_for @birth, url: births_path(@birth), html: { id: "new-citizen", class: 'form'} do |f| %>
+    <h2>Birth Certificate Form</h2>
+    <%= f.label :administrative_region_id, 'Region' %>
+    <input type="text" value="<%= current_agent.administrative_region_name %>" name="administrative_region" disabled/>
+    <label><%= t('.division') %></label>
+    <input type="text" value="<%= current_agent.division_name %>" name="division" disabled/>
+    <label><%= t('.sub_division') %></label>
+    <input type="text" value="<%= current_agent.sub_division_name.capitalize %>" name="administrative_region" disabled/>
+    <label><%= t('.council') %></label>
+    <input type="text" value="<%= current_agent.council_name.capitalize + ' Council' %>" name="administrative_region" disabled/>
+    <%= f.hidden_field :council_id, value: current_agent.council.id, hidden: true %>
+    <%= f.label :certificate_number, 'Secondary Registration Centre' %>
+    <%= f.text_field :sub_center %>
+    <%= f.label :certificate_number, 'Certificate Number' %>
+    <%= f.text_field :certificate_number %>
+
+    <h3><%= t('.childs_details') %></h3>
+
+    <%= f.label :surname , "Surname of the child" %>
+    <%= f.text_field :surname %>
+    <%= f.label :given_name , "Given names(s) of the child" %>
+    <%= f.text_field :given_name %>
+     <%= f.label :date_born, "Date of birth" %>
+    <%= f.text_field :date_born, class: "datepicker" %>
+    <%= f.label :place_born, "Place of birth" %>
+    <%= f.text_field :place_born %>
+    <%= f.label :sex, 'Sex' %>
+    <%= f.select :sex, options_for_select([['Choose Sex', choice_factor], ['Male', 'male'], ['Female', 'female']], @birth.sex), {}, { class: 'sex chosen-select' } %>
+
+    <h3><%= t('.fathers_details') %></h3>
+
+    <%= f.label :father, "Fathers's name" %>
+    <%= f.text_field :father %>
+    <%= f.label :father_pb, "Father's place of birth" %>
+    <%= f.text_field :father_pb %>
+    <%= f.label :father_db, "Date of birth" %>
+    <%= f.text_field :father_db, class: 'datepicker' %>
+    <%= f.label :father_res, "Residence" %>
+    <%= f.text_field :father_res %>
+    <%= f.label :father_job, "Occupation" %>
+    <%= f.text_field :father_job %>
+    <%= f.label :father_n, "Nationality" %>
+    <%= f.text_field :father_n %>
+    <%= f.label :father_rf, "Reference Documents" %>
+    <%= f.select :father_rf, options_for_select([['Choose Reference Document', choice_factor], ['National Identity Card Number', 'id'], ['Reference of Birth Certificate', 'bc'], ['Reference of Document attesting nationality', 'dan']], @birth.father_rf), {}, { class: 'sex chosen-select' } %>
+
+    <h3><%= t('.mothers_details') %></h3>
+
+    <%= f.label :mother, "mothers's name" %>
+    <%= f.text_field :mother %>
+    <%= f.label :mother_pb, "mother's place of birth" %>
+    <%= f.text_field :mother_pb %>
+    <%= f.label :mother_db, "Date of birth" %>
+    <%= f.text_field :mother_db, class: 'datepicker' %>
+    <%= f.label :mother_res, "Residence" %>
+    <%= f.text_field :mother_res %>
+    <%= f.label :mother_job, "Occupation" %>
+    <%= f.text_field :mother_job %>
+    <%= f.label :mother_n, "Nationality" %>
+    <%= f.text_field :mother_n %>
+    <%= f.label :mother_rf, "Reference Documents" %>
+    <%= f.select :mother_rf, options_for_select([['Choose Reference Document', choice_factor], ['National Identity Card Number', 'id'], ['Reference of Birth Certificate', 'bc'], ['Reference of Document attesting nationality', 'dan']], @birth.mother_rf), {}, { class: 'sex chosen-select' } %>
+
+    <h3><%= t('.specific_details') %></h3>
+
+    <%= f.label :date_drawn, "Drawn up on the" %>
+    <%= f.text_field :date_drawn, class: 'datepicker' %>
+    <%= f.label :declaration, "Declaration" %>
+    <%= f.text_field :declaration %>
+    <%= f.label :registrar, "Registrar" %>
+    <%= f.text_field :registrar %>
+    <%= f.label :secretary, "Secretary" %>
+    <%= f.text_field :secretary %>
+    <%= f.label :date_done, "Done on the" %>
+    <%= f.text_field :date_done, class: "datepicker" %>
+
+    <div class="submit">
+      <button type="submit"><%= t('.register') %></button>
+    </div>
+  <% end %>
+  <% if I18n.locale == :en %>
+  <script>
+    $(function() {
+      $('.datepicker').pickadate({
+        selectYears: 120,
+        max: new Date(),
+        selectMonths: 12
+      });
+    });
+  </script>
+  <% else %>
+    <script>
+      $(function() {
+        $('.datepicker').pickadate({
+          monthsFull: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+           weekdaysShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
+           today: 'aujourd\'hui',
+           clear: 'effacer',
+           close: 'fermer',
+           formatSubmit: 'yyyy/mm/dd',
+          selectYears: 120,
+          max: new Date(),
+          selectMonths: 12
+        });
+      });
+    </script>
+  <% end %>
+  <script>
+    $(".chosen-select").chosen()
+  </script>
+</div>
+

@@ -1,0 +1,112 @@
+<h1><%= @marriage.husband + ' & ' + @marriage.wife %></h1>
+<div class="main register-citizen">
+  <div id="new-citizen">
+    <h2>
+      Marriage Certificate
+    </h2>
+    <label>Region</label>
+    <input type="text" value="<%= current_agent.administrative_region_name %>" name="administrative_region" disabled/>
+    <label><%= t('.division') %></label>
+    <input type="text" value="<%= current_agent.division_name %>" name="division" disabled/>
+    <label><%= t('.sub_division') %></label>
+    <input type="text" value="<%= current_agent.sub_division_name.capitalize %>" name="administrative_region" disabled/>
+    <label><%= t('.council') %></label>
+    <input type="text" value="<%= current_agent.council_name.capitalize + ' Council' %>" name="administrative_region" disabled/>
+    <label>Certificate Number</label>
+    <input type="text" value="<%= @marriage.certificate_number %>" disabled>
+
+    <h3><%= t('.owners_details') %></h3>
+
+    <label><%= t('.marriage_of') %></label>
+    <input type="text" value="<%= @marriage.husband %>" disabled>
+    <label><%= t('.and_of') %></label>
+    <input type="text" value="<%= @marriage.wife %>" disabled>
+    <label><%= t('.on_the') %></label>
+    <input type="text" value="<%= @marriage.appearance_date %>" disabled>
+    <p>Appeared before us publicly</p>
+    
+    <h3><%= t('.mans_details') %></h3>
+
+    <label><%= t('.mr') %></label>
+    <input type="text" value="<%= @marriage.husband %>" disabled>
+    <label><%= t('.born_on_the') %></label>
+    <input type="text" value="<%= @marriage.husband_db %>" disabled>
+    <label><%= t('.at') %></label>
+    <input type="text" value="<%= @marriage.husband_pb %>" disabled>
+    <label><%= t('.occupation') %></label>
+    <input type="text" value="<%= @marriage.husband_job %>" disabled>
+    <label><%= t('.nationality') %></label>
+    <input type="text" value="<%= @marriage.husband_n %>" disabled>
+    <label><%= t('.reference_document') %></label>
+    <input type="text" value="<%= @marriage.husband_rf %>" disabled>
+    <label><%= t('.resident_at') %></label>
+    <input type="text" value="<%= @marriage.husband_res %>" disabled>
+    <label><%= t('.son_of') %></label>
+    <input type="text" value="<%= @marriage.husband_f %>" disabled>
+    <label><%= t('.and_of') %></label>
+    <input type="text" value="<%= @marriage.husband_m %>" disabled>
+
+    <p>On the one hand</p>
+
+    <h3><%= t('.womans_details') %></h3>
+
+    <label><%= t('.miss') %></label>
+    <input type="text" value="<%= @marriage.wife %>" disabled>
+    <label><%= t('.born_on_the') %></label>
+    <input type="text" value="<%= @marriage.wife_db %>" disabled>
+    <label><%= t('.at') %></label>
+    <input type="text" value="<%= @marriage.wife_pb %>" disabled>
+    <label><%= t('.occupation') %></label>
+    <input type="text" value="<%= @marriage.wife_job %>" disabled>
+    <label><%= t('.nationality') %></label>
+    <input type="text" value="<%= @marriage.wife_n %>" disabled>
+    <label><%= t('.reference_document') %></label>
+    <input type="text" value="<%= @marriage.wife_rf %>" disabled>
+    <label><%= t('.resident_at') %></label>
+    <input type="text" value="<%= @marriage.wife_res %>" disabled>
+    <label><%= t('.daughter_of') %></label>
+    <input type="text" value="<%= @marriage.wife_f %>" disabled>
+    <label><%= t('.and_of') %></label>
+    <input type="text" value="<%= @marriage.wife_m %>" disabled>
+
+    <p>On the other hand</p>
+
+    <h3><%= t('.marriage_details') %></h3>
+
+    <label>The bride and the groom state that the matrimonial regimes is:</label>
+    <input type="text" value="<%= @marriage.marriage_ownership %>" disabled>
+    <label>Type of marriage</label>
+    <input type="text" value="<%= @marriage.marriage_type %>" disabled>
+    <label>No objections to the marriage have been recorded</label>
+    <input type="text" value="<%= @marriage.objections_raised %>" disabled>
+    <label><%= t('.mr') %></label>
+    <input type="text" value="<%= @marriage.husband %>" disabled>
+    <label><%= t('.and_miss') %></label>
+    <input type="text" value="<%= @marriage.wife %>" disabled>
+    <p>
+      Both declared they want to be husband and wife and, in accordance with the law, we pronounce that they are united by the marriage
+    </p>
+    <p>In the presence of</p>
+    <label>Mr - head of the family of the husband or his representative</label>
+    <input type="text" value="<%= @marriage.husband_fh %>" disabled>
+    <label>and of Mr - head of the family of the wife or his representative</label>
+    <input type="text" value="<%= @marriage.wife_fh %>" disabled>
+    <p>who agree to the marriage and of</p>
+    <label>Mr/Mrs - witness of the husband, and of</label>
+    <input type="text" value="<%= @marriage.husband_w %>" disabled>
+    <label>Mr/Mrs - witness of the wife</label>
+    <input type="text" value="<%= @marriage.wife_w %>" disabled>
+    
+    <p>The certificate has been drawn by us</p>
+
+    <label><%= t('.registrar') %></label>
+    <input type="text" value="<%= @marriage.registrar %>" disabled>
+    <label><%= t('.secretary') %></label>
+    <input type="text" value="<%= @marriage.secretary %>" disabled>
+    <label>At</label>
+    <input type="text" value="<%= @marriage.drawn_at %>" disabled>
+    <label>On the</label>
+    <input type="text" value="<%= @marriage.drawn_on %>" disabled>
+  </div>
+</div>
+

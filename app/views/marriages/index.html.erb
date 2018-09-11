@@ -1,0 +1,11 @@
+<h1>Recently Issued Certificates</h1>
+<ul class="items">
+  <% if @marriages.empty? %>
+    <h3>No marriage certificates have been issued so far today</h3>
+  <% else %>
+    <%== pagy_nav(@pagy) %>
+    <% @marriages.each do|marriage|%>
+      <%= render 'marriage', { marriage: marriage } %>
+    <% end %>
+  <% end %>
+</ul>

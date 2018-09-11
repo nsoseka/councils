@@ -1,0 +1,48 @@
+<h1><%= @new_born.c_name %></h1>
+<div class="main register-citizen">
+  <div id="new-citizen">
+    <h2>
+      Birth Registration Card
+    </h2>
+    <h3><%= t('.childs_details') %></h3>
+
+    <label><%= t('.childs_name') %></label>
+    <input type="text" value="<%= @new_born.c_name %>" disabled>
+    <label><%= t('.date_of_birth') %></label>
+    <input type="text" value="<%= formated_date @new_born.c_db %>" disabled>
+    <label><%= t('.place_of_birth') %></label>
+    <input type="text" value="<%= @new_born.c_pb %>" disabled>
+    <label><%= t('.childs code') %></label>
+    <input type="text" value="<%= @new_born.child_code.upcase %>" disabled>
+    <label><%= t('.sex') %></label>
+    <input type="text" value="<%= @new_born.sex %>" disabled>
+
+    <h3><%= t('.fathers_details') %></h3>
+
+    <label><%= t('.fathers_name') %></label>
+    <input type="text" value="<%= @new_born.f_name %>" disabled>
+    <label><%= t('.fathers_date_of_birth') %></label>
+    <input type="text" value="<%= formated_date @new_born.f_db %>" disabled>
+    <label><%= t('.fathers_place_of_birth') %></label>
+    <input type="text" value="<%= @new_born.f_pb %>" disabled>
+    <label><%= t('.fathers_residence') %></label>
+    <input type="text" value="<%= @new_born.f_res %>" disabled>
+    <label>Fathers Phone Number</label>
+    <input type="text" value="<%= @new_born.f_tel %>" disabled>
+
+    <h3><%= t('.mothers_details') %></h3>
+
+    <label><%= t('.mothers_name') %></label>
+    <input type="text" value="<%= @new_born.m_name %>" disabled>
+    <label><%= t('.mothers_place_of_birth') %></label>
+    <input type="text" value="<%= @new_born.m_pb %>" disabled>
+    <label><%= t('.mothers_year_of_birth') %></label>
+    <input type="text" value="<%= formated_date @new_born.m_db %>" disabled>
+    <label><%= t('.mothers_residence') %></label>
+    <input type="text" value="<%= @new_born.m_res %>" disabled>
+    <label>Mothers Phone Number</label>
+    <input type="text" value="<%= @new_born.m_tel %>" disabled>
+    <label><%= t('.did_mother_have_access_to_prebirth_health_services?') %></label>
+    <input type="text" value="<%= @new_born.attended_clinic ? "Yes" : "No" %>" disabled>
+  </div>
+</div>

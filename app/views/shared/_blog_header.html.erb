@@ -1,0 +1,43 @@
+<ul>
+  <li class="menu-item selected">
+    <span class="item" href="/ui/statistics"><%= fa_icon 'table' %> View Basic Statistics</span>
+    <div class="sub-menu show">
+      <ul>
+        <li class="<%= @menu == 'blog-home' ? 'sub-menu-selected' : '' %>">
+          <%= link_to blog_home_path do %>
+            <%= fa_icon "home" %> Home
+            <%= image_tag  "fs.gif", class:  'loader' %>
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'blog-deaths' ? 'sub-menu-selected' : '' %>">
+          <%= link_to todays_deaths_path do %>
+            <%= fa_icon "cut" %> Death Statistics
+            <%= image_tag  "fs.gif", class:  'loader' %>
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'blog-births' ? 'sub-menu-selected' : '' %>">
+          <%= link_to todays_births_path do %>
+            <%= fa_icon "child" %> Birth Statistics
+            <%= image_tag  "fs.gif", class:  'loader' %>
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'blog-marriages' ? 'sub-menu-selected' : '' %>">
+          <%= link_to todays_marriages_path do %>
+            <%= fa_icon "certificate" %> Marriage Statistics
+            <%= image_tag  "fs.gif", class:  'loader' %>
+          <% end %> 
+        </li>
+        <li class="<%= @menu == 'blog-search' ? 'sub-menu-selected' : '' %>">
+          <%= link_to blog_search_path do %>
+            <%= fa_icon "search" %> Find Statistics
+            <%= image_tag  "fs.gif", class:  'loader' %>
+          <% end %>      
+        </li>
+      </ul>
+    </div>
+  </li>
+
+  <p><span class="highlight-red">This section of the applicaiton is still in Beta Mode.</span> Please note that the statistics are provided by the local council and because not all Local councils are signed up to the service. We are waiting to hear from you on what your interest are when it comes to the data from your local council area or the national territory in general. Leave us a tweet telling us what it is you want and we will start working on it. Thanks. <span class="highlight-green">Team Agape <%= fa_icon 'heart' %></span></p>
+</ul>
+
+

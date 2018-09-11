@@ -1,0 +1,11 @@
+<h1>Today's New Borns</h1>
+<ul class="items">
+  <% if @new_borns.empty? %>
+    <h3>No births have been registered so far today</h3>
+  <% else %>
+    <%== pagy_nav(@pagy) %>
+    <% @new_borns.each do|new_born|%>
+      <%= render 'new_borns/new_born', { new_born: new_born } %>
+    <% end %>
+  <% end %>
+</ul>

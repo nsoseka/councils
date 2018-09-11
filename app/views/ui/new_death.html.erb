@@ -1,0 +1,148 @@
+<% divisions = [ 
+  "Bamboutos", "Haut-Nkam", "Hauts-Plateaux", "Koung-Khi", "Menoua", "Mifi", "Ndé", "Noun", "Fako", "Koupé-Manengouba", "Lebialem", "Manyu", "Meme", "Ndian", "Dja-et-Lobo", "Mvila", "Océan", "Vallée-du-Ntem", "Boyo", "Bui", "Donga-Mantung", "Menchum", "Mezam", "Momo", "Ngo-ketunjia", "Bénoué", "Faro", "Mayo-Louti", "Mayo-Rey", "Moungo", "Nkam", "Sanaga-Maritime", "Wouri", "Diamaré", "Logone-et-Chari", "Mayo-Danay", "Mayo-Kani", "Mayo-Sava", "Mayo-Tsanaga", "Boumba-et-Ngoko", "Haut-Nyong", "Kadey", "Lom-et-Djerem", "Haute-Sanaga", "Lekié", "Mbam-et-Inoubou", "Mbam-et-Kim", "Méfou-et-Afamba", "Méfou-et-Akono", "Mfoundi", "Nyong-et-Kéllé", "Nyong-et-Mfoumou", "Nyong-et-So'o", "Djérem", "Faro-et-Déo", "Mayo-Banyo", "Mbéré", "Vina" ]
+
+  sub_divisions =  [
+  "Abong-Mbang", "Afanloum", "Ako", "Akoeman", "Akom II", "Akono", "Akonolinga", "Akwaya", "Alou", "Ambam", "Andek", "Angossas", "Atok", "Awaé", "Ayos", "Babadjou", "Babessi", "Babouantou", "Bafang", "Bafia", "Bafou", "Bafoussam", "Bafut", "Baham", "Bali", "Balikumbat", "Bamenda", "Bamendjou", "Bamuso", "Bana", "Bandja", "Bandjoun", "Bangangté", "Bangem", "Banka", "Bangou", "Bangourain", "Bankim", "Banyo", "Baré", "Bashéo", "Bassamba", "Batcham", "Batchenga", "Batibo", "Batié", "Batoufam", "Batouri", "Bayangam", "Bazou", "Beka", "Bélabo", "Belel", "Belo", "Benakuma", "Bengbis", "Bertoua", "Bétaré-Oya", "Bibemi", "Bibey", "Bikok", "Bipindi", "Biwong-Bane", "Biwong-Bulu", "Biyouha", "Blangoua", "Bokito", "Bonaléa", "Bondjock", "Bot-Makak", "Bourrha", "Campo", "Dargala", "Darak", "Datcheka", "Dembo", "Demding", "Deuk", "Diang", "Dibamba", "Dibang", "Dibombari", "Dikome-Balue", "Dimako", "Dir", "Dizangué", "Djohong", "Djoum", "Douala", "Doumaintang", "Doumé", "Dschang", "Dzeng", "Dziguilao", "Ebebda", "Ebolowa", "Ebone", "Édéa", "Edzendouan", "Efoulan", "Ekondo-Titi", "Elak-Oku", "Elig-Mfomo", "Endom", "Éséka", "Esse", "Evodoula", "Eyumodjock", "Figuil", "Fokoué", "Fonfuka", "Fongo-Tongo", "Fotokol", "Foumban", "Foumbot", "Fundong", "Furu-Awa", "Galim", "Galim-Tignère", "Gari-Gombo", "Garoua", "Garoua-Boulaï", "Gashiga", "Gawaza", "Gobo", "Goulfey", "Gueme", "Guere", "Guider", "Guider", "Guidiguis", "Hile-Alifa", "Hina", "Idabato", "Idenau", "Isanguele", "Jakiri", "Kaélé", "Kai-Kai", "Kalfou", "Kay-Hay", "Kékem", "Kentzou", "Kette", "Kiiki", "Kobdombo", "Kolofata", "Kombo-Abedimo", "Kombo-Idinti", "Kon-Yambetta", "Kongso-Bamougoum", "Kontcha", "Konye", "Kouoptamo", "Kousséri", "Koutaba", "KozaKribi", "Kumba", "Kumbo", "Lafé-Baleng", "Lagdo", "Lembe-Yezoum", "Limbé", "Lobo", "Logone-Birni", "Lokoundje", "Lolodorf", "Lomié", "Loum", "Ma'an", "Mabanga", "Maga", "Magba", "Maikari", "Makak", "Makénéné", "Malentouen", "Mamfé", "Mandingring", "Mandjou", "Manjo", "Manoka", "Maroua", "Massangam", "Massock", "Matomb", "Mayo-Baléo", "Mayo-Darlé", "Mayo-Hourna", "Mayo-Oulo", "Mbalmayo", "Mbandjock", "Mbang", "Mbanga", "Mbangassina", "Mbankomo", "Mbe", "Mbengwi", "Mbiame", "Mboma", "Mbonge", "Mbouda", "Meiganga", "Melong", "Mengang", "Mengong", "Mengueme", "Menji", "Meri", "Messamena", "Messok", "Messondo", "Meyomessala", "Meyomessi", "Mfou", "Mindif", "Mindourou", "Minta", "Mintom", "Misaje", "Modzogo", "Mogode", "Mokolo", "Moloundou", "Mombo", "Monatélé", "Mora", "Mouanko", "Moulvoudaye", "Moutourwa", "Mudemba", "Muyuka", "Mvangane", "Mvengue", "Nanga-Eboko", "Ndelele", "Ndikiniméki", "Ndobian", "Ndom", "Ndop", "Ndoukoula", "Ndu", "Nganha", "Ngambè,Sanaga Maritime,Cameroun", "Ngambè-Tikar", "Ngaoui", "Ngaoundal", "Ngaoundéré", "Ngog-Mapubi", "Ngomedzap", "Ngong", "Ngoro", "Ngoulemakong", "Ngoumou", "Ngoura", "Ngoyla", "Nguelebok", "Nguelemendouka", "Ngui-Bassal", "Ngwei", "Niete", "Nitoukou", "Njikwa", "Njimom", "Njinikom", "Njombé", "Nkambé", "Nkolafamba", "Nkolmetet", "Nkondjock", "Nkongsamba", "Nkongsamba", "Nkong-Zem", "Nkor", "Nkoteng", "Nkum", "Nsem", "Ntui", "Nwa", "Nyambaka", "Nyanon", "Obala", "Okola", "Olamze", "Olanguina", "Ombessa", "Ouli", "Oveng", "Penja", "Penka-Michel", "Petté", "Pitoa", "Poli", "Pouma", "Roua", "Sa'a", "Salapoumbé", "Sangmélima", "Santa", "Santchou", "Soa", "Somalomo", "Tchati-Bali", "Tcholliré", "Tibati", "Tignère", "Tiko", "Tinto", "Toko", "Tokombéré", "Tombel", "Tonga", "Touboro", "Touloum", "Touroua", "Tubah", "Wabane", "Wasa", "Widikum-Boffe", "Wina", "Wum", "Yabassi", "Yagoua", "Yaoundé", "Yingui", "Yokadouma", "Yoko", "Zhoa", "Zina", "Zoétélé"
+  ]
+%>
+<h1>New Death Certificate</h1>
+<div class="main register-citizen">
+  <form id="new-citizen" runat="server">
+    <h2>
+      Death Certificate Form
+    </h2>
+    <label><%= t('.region') %></label>
+    <input type="text" list="regions">
+    <datalist id="regions">
+      <option value="Northwest - Nord-Ouest">
+      <option value="Southwest - Sud-Ouest">
+      <option value="Center - Centre">
+      <option value="North - Nord">
+      <option value="West - Ouest">
+      <option value="Adamawa - Adamawa">
+      <option value="Litoral - Litorale">
+      <option value="East - Est">
+      <option value="Far North - Extrême-Nord">
+      <option value="South - Sud">
+    </datalist>
+    <label><%= t('.division') %></label>
+    <input type="text" name="division" list="divisions">
+    <datalist id="divisions">
+      <% divisions.each do |d| %>
+        <option><%= d %></option>
+      <% end %>
+    </datalist>
+    <label><%= t('.sub_division') %></label>
+    <input type="text" name="sub_division" list="sub_divisions">
+    <datalist id="sub_divisions">
+      <% sub_divisions.each do |sub| %>
+        <option><%= sub %></option>
+      <% end %>
+    </datalist>
+    <label><%= t('.council') %></label>
+    <input type="text" name="council">
+    <label><%= t('.certificate_number') %></label>
+    <input type="text" name="certificate_number">
+
+    <h3><%= t('.owners_details') %></h3>
+
+    <label><%= t('.surname_of_deceased') %></label>
+    <input type="text" name="surname_of_deceased">
+    <label><%= t('.given_name(s)_of_deceased') %></label>
+    <input type="text" name="given_names_deceased">
+    <label><%= t('.died_on_the') %></label>
+    <input type="text" name="died_on_the" class="datepicker">
+    <label><%= t('.died_at') %></label>
+    <input type="text" name="died_at">
+    <label><%= t('.date_of_birth') %></label>
+    <input type="text" name="date_of_birth" class="datepicker">
+    <label><%= t('.place_of_birth') %></label>
+    <input type="text" name="place_of_birth">
+    <label><%= t('.sex') %></label>
+    <select name="sex" class="sex">
+      <option value="M">Male - l'homme</option>
+      <option value="F">Female - Femme</option>
+    </select>
+    <label><%= t('.marital_status') %></label>
+    <input type="text" name="marital status">
+    <label><%= t('.resident_at') %></label>
+    <input type="text" name="resident_at">
+    <label><%= t('.father') %></label>
+    <input type="text" name="father">
+    <label><%= t('.mother') %></label>
+    <input type="text" name="mother">
+
+    <h3>The Declarant</h3>
+    <label><%= t('.declarants_fullname') %></label>
+    <input type="text" name="declarants_fullname">
+    <label><%= t('.occupation') %></label>
+    <input type="text" name="occupation">
+    <label><%= t('.capacity') %></label>
+    <select name="capactiy" class="sex">
+      <option value="family_head">Head of the family</option>
+      <option value="relative">Relative of the diseased</option>
+      <option value="person_with_knowledge">Person who has full knowledge of the death</option>
+      <option value="medical_institution_head">Head of the medical institution</option>
+      <option value="prison_head">Head of the prison</option>
+    </select>
+
+    <h3>First Witness</h3>
+    <label><%= t('.first_witness_fullname') %></label>
+    <input type="text" name="first_witness_fullname">
+    <label><%= t('.first_witness_occupation') %></label>
+    <input type="text" name="first_witness_occupation">
+    <label><%= t('.first_witness_residence') %></label>
+    <input type="text" name="first_witness_residence">
+
+    <h3>Second Witness</h3>
+    <label><%= t('.second_witness_fullname') %></label>
+    <input type="text" name="second_witness_fullname">
+    <label><%= t('.second_witness_occupation') %></label>
+    <input type="text" name="second_witness_occupation">
+    <label><%= t('.second_witness_residence') %></label>
+    <input type="text" name="second_witness_residence">
+
+    <h3><%= t('.who_attested_to_the_truth_of_this_declaration') %></h3>
+
+    <label><%= t('.civil_status_registrar') %></label>
+    <input type="text" name="civil_status_registrar">
+    <label><%= t('.secretary') %></label>
+    <input type="text" name="secretary">
+    <label><%= t('.on_the') %></label>
+    <input type="text" name="on_the" class="datepicker">
+    
+    <div class="submit">
+      <button type="submit"><%= t('.register') %></button>
+    </div>
+  </form>
+  <% if I18n.locale == :en %>
+  <script>
+    $(function() {
+      $('.datepicker').pickadate({
+        selectYears: 120,
+        max: new Date(),
+        selectMonths: 12
+      });
+    });
+  </script>
+  <% else %>
+    <script>
+      $(function() {
+        $('.datepicker').pickadate({
+          monthsFull: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+           weekdaysShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
+           today: 'aujourd\'hui',
+           clear: 'effacer',
+           close: 'fermer',
+           formatSubmit: 'yyyy/mm/dd',
+          selectYears: 120,
+          max: new Date(),
+          selectMonths: 12
+        });
+      });
+    </script>
+  <% end %>
+</div>
+
+
+

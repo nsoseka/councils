@@ -1,0 +1,161 @@
+<% choice_factor = '88888888' %>
+<h1>New Marriage Certificate</h1>
+<div class="main register-citizen">
+  <%= my_form_for @marriage, url: marriages_path(@marriage), html: { id: "new-citizen", class: 'form'} do |f| %>
+    <h2>Marriage Certificate Form</h2>
+    <%= f.label :administrative_region_id, 'Region' %>
+    <input type="text" value="<%= current_agent.administrative_region_name %>" name="administrative_region" disabled/>
+    <label><%= t('.division') %></label>
+    <input type="text" value="<%= current_agent.division_name %>" name="division" disabled/>
+    <label><%= t('.sub_division') %></label>
+    <input type="text" value="<%= current_agent.sub_division_name.capitalize %>" name="administrative_region" disabled/>
+    <label><%= t('.council') %></label>
+    <input type="text" value="<%= current_agent.council_name.capitalize + ' Council' %>" name="administrative_region" disabled/>
+    <%= f.hidden_field :council_id, value: current_agent.council.id, hidden: true %>
+    <%= f.label :certificate_number, 'Certificate Number' %>
+    <%= f.text_field :certificate_number %>
+
+    <h3><%= t('.couples_details') %></h3>
+
+    <%= f.label :husband, 'Marriage of' %>
+    <%= f.text_field :husband, class: "husband" %>
+    <%= f.label :wife, 'And of' %>
+    <%= f.text_field :wife, class: "wife" %>
+    <%= f.label :appearance_date, 'On the' %>
+    <%= f.text_field :appearance_date, class: "datepicker" %>
+    <p>Appeared before us publicly</p>
+    
+    <h3><%= t('.husbands_details') %></h3>
+
+    <%= f.label :husband, 'Mr' %>
+    <%= f.text_field :husband, class: "husband" %>
+    <%= f.label :husband_db, 'Born on the' %>
+    <%= f.text_field :husband_db, class: "datepicker" %>
+    <%= f.label :husband_pb, 'Born At' %>
+    <%= f.text_field :husband_pb %>
+    <%= f.label :husband_job, 'Occupation' %>
+    <%= f.text_field :husband_job %>
+    <%= f.label :husband_n, 'Nationality' %>
+    <%= f.text_field :husband_n %>
+    <%= f.label :husband_rf, 'Reference Document'%>
+    <%= f.select :husband_rf, options_for_select([['Choose Reference Document', choice_factor], ['National Identity Card Number', 'id'], ['Reference of Birth Certificate', 'bc'], ['Reference of Document attesting nationality', 'dan']], @marriage.husband_rf), {}, { class: 'sex chosen-select' } %>
+    <%= f.label :husband_res, 'Resident at' %>
+    <%= f.text_field :husband_res %>
+    <%= f.label :husband_f, 'Son of' %>
+    <%= f.text_field :husband_f %>
+    <%= f.label :husband_m, 'And of' %>
+    <%= f.text_field :husband_m %>
+
+    <p>On the one hand</p>
+
+    <h3><%= t('.wifes_details') %></h3>
+
+    <%= f.label :wife, 'Miss' %>
+    <%= f.text_field :wife, class: "wife" %>
+    <%= f.label :wife_db, 'Born on the' %>
+    <%= f.text_field :wife_db, class: "datepicker" %>
+    <%= f.label :wife_pb, 'Born At' %>
+    <%= f.text_field :wife_pb %>
+    <%= f.label :wife_job, 'Occupation' %>
+    <%= f.text_field :wife_job %>
+    <%= f.label :wife_n, 'Nationality' %>
+    <%= f.text_field :wife_n %>
+    <%= f.label :wife_rf, 'Reference Document'%>
+    <%= f.select :wife_rf, options_for_select([['Choose Reference Document', choice_factor], ['National Identity Card Number', 'id'], ['Reference of Birth Certificate', 'bc'], ['Reference of Document attesting nationality', 'dan']], @marriage.wife_rf), {}, { class: 'sex chosen-select' } %>
+    <%= f.label :wife_res, 'Resident at' %>
+    <%= f.text_field :wife_res %>
+    <%= f.label :wife_f, 'Daughter of' %>
+    <%= f.text_field :wife_f %>
+    <%= f.label :wife_m, 'And of' %>
+    <%= f.text_field :wife_m %>
+
+    <p>On the other hand</p>
+
+    <h3><%= t('.marriage_details') %></h3>
+
+    <%= f.label :marriage_ownership, 'The bride and the groom state that the matrimonial regime is:'%>
+    <%= f.select :marriage_ownership, options_for_select([['Choose Regime', choice_factor], ['Seperate Ownership', 'seperate'], ['Joint Ownership', 'joint']], @marriage.marriage_ownership), {}, { class: 'sex chosen-select' } %>
+    <%= f.label :marriage_type, 'Type of marriage'%>
+    <%= f.select :marriage_type, options_for_select([['Choose Type', choice_factor], ['Monogamy', 'monogamy'], ['Polygamy', 'polygamy']], @marriage.marriage_type), {}, { class: 'sex chosen-select' } %>
+    <%= f.label :objections_raised, 'No objections to the marriage have been recorded' %>
+    <%= f.select :objections_raised, options_for_select([['Choose Objection Status', choice_factor], ['Yes', 'yes'], ['No', 'no']], @marriage.objections_raised), {}, { class: 'sex chosen-select' } %>
+    <%= f.label :husband, 'Mr' %>
+    <%= f.text_field :husband, class: "husband" %>
+    <%= f.label :wife, 'And miss' %>
+    <%= f.text_field :wife, class: "wife" %>
+
+    <p>
+      Both declared they want to be husband and wife and, in accordance with the law, we pronounce that they are united by the marriage
+    </p>
+
+    <p>In the presence of</p>
+    <%= f.label :husband_fh, 'Mr - head of the family of the husband or his representative' %>
+    <%= f.text_field :husband_fh %>
+    <%= f.label :wife_fh, 'And of Mr - head of the family of the wife or her representative' %>
+    <%= f.text_field :wife_fh %>
+
+    <p>who agree to the marriage and of</p>
+    <%= f.label :husband_w, 'Mr/Mrs - witness of the husband, and of' %>
+    <%= f.text_field :husband_w %>
+    <%= f.label :wife_w, 'Mr/Mrs - witness of the wife' %>
+    <%= f.text_field :wife_w %>
+    
+    <p>The certificate has been drawn by us</p>
+
+    <%= f.label :registrar, 'Registrar' %>
+    <%= f.text_field :registrar %>
+    <%= f.label :secretary, 'Secretary' %>
+    <%= f.text_field :secretary %>
+    <%= f.label :drawn_at, 'At' %>
+    <%= f.text_field :drawn_at %>
+    <%= f.label :drawn_on, 'On the' %>
+    <%= f.text_field :drawn_on, class: "datepicker" %>
+
+    <div class="submit">
+      <button type="submit"><%= t('.register') %></button>
+    </div>
+  <% end %>
+  <% if I18n.locale == :en %>
+  <script>
+    $(function() {
+      $('.datepicker').pickadate({
+        selectYears: 120,
+        max: new Date(),
+        selectMonths: 12
+      });
+    });
+  </script>
+  <% else %>
+    <script>
+      $(function() {
+        $('.datepicker').pickadate({
+          monthsFull: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+           weekdaysShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
+           today: 'aujourd\'hui',
+           clear: 'effacer',
+           close: 'fermer',
+           formatSubmit: 'yyyy/mm/dd',
+          selectYears: 120,
+          max: new Date(),
+          selectMonths: 12
+        });
+      });
+    </script>
+  <% end %>
+  <script>
+    $(".chosen-select").chosen()
+
+    $(".husband").keyup(function(e){
+      var val = $(this).val();
+      val = val.replace(/[^\w]+/g, " ");
+      $(".husband").val(val);
+    });
+
+    $(".wife").keyup(function(e){
+      var val = $(this).val();
+      val = val.replace(/[^\w]+/g, " ");
+      $(".wife").val(val);
+    });
+  </script>
+</div>
+

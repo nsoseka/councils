@@ -1,0 +1,108 @@
+@import 'colors'
+
+.register-citizen, .register
+  text-align: center
+  h2 
+    color: $blue 
+    text-align: center
+    font-size: 1.5em
+    margin: 20px 0
+    display: block
+    .warning
+      color: $red
+      display: block
+      width: 100%
+      font-weight: bold
+      padding: 30px
+      font-size: 0.6em
+
+  #new-citizen, .new-registration, .new-account
+    text-align: left
+    width: 60%
+    margin: 0 auto
+    padding: 20px
+    border: 1px solid #ddd
+    border-radius: 4px
+    .image-container, .submit
+      text-align: center
+    > input, > select, textarea
+      display: block
+      border: 1px solid #ddd
+      font: inherit
+      font-size: 1.3em
+      font-weight: normal
+      padding: 5px
+      margin: 5px auto 8px auto
+      width: 80%
+      color: $purple
+    textarea
+      font: inherit
+      font-size: 1.3em
+      resize: vertical
+      width: 80%
+      box-sizing: border-box
+      border-radius: 4px
+      margin: 10px auto
+    h3 
+      margin: 40px 0
+      text-align: center
+      color: $purple
+    label 
+      display: block
+      width: 80%
+      margin: 0 auto
+    select
+      width: 25%
+      text-align: center
+      border: 1px solid #ddd
+      font-size: 1.3em
+      font-weight: normal
+      padding: 5px
+      margin: 5px auto 8px auto
+    .sex 
+      width: 80%
+    button 
+      background: $blue 
+      padding: 15px 30px
+      border: 1px solid $pure-white
+      color: $pure-white
+      border-radius: 5px
+      cursor: pointer
+    p 
+      font-size: 0.85em
+      padding: 15px 50px
+      font-weight: bold
+      color: $blue
+    .field_with_errors
+      display: block
+      width: 100%
+      input, select 
+        border: 1px solid $red
+        display: block
+        width: 80%
+        margin: 5px auto 8px auto
+        font-size: 1.3em
+        font-weight: normal
+        padding: 5px
+    img 
+      width: 200px
+      height: auto
+      border-radius: 4px
+.new-plan
+  .new-registration
+    select 
+      width: 80%
+.approval-link, .approval-status
+  text-align: right
+  a, button
+    color: $pure-white
+    background: $blue
+    padding: 8px 20px
+    border-radius: 4px
+    font-weight: bold 
+    font-size: 1em
+    border: none
+    display: inline-block
+    margin: 6px 0
+    i 
+      color: $orange

@@ -1,0 +1,11 @@
+<h1>Todays Deaths</h1>
+<ul class="items">
+  <% if @deceaseds.empty? %>
+    <h3>No deaths have been registered so far today</h3>
+  <% else %>
+    <%== pagy_nav(@pagy) %>
+    <% @deceaseds.each do |deceased|%>
+      <%= render 'deceaseds/deceased', { deceased: deceased } %>
+    <% end %>
+  <% end %>
+</ul>

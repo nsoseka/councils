@@ -1,0 +1,16 @@
+<h2 class="search">
+  <%= link_to search_path do %>
+    <%= fa_icon 'arrow-left' %> Search Again
+  <% end %>
+</h2>
+
+<% if @mean != 0 %>
+  <h3 class="nothing"><%= @message %></h3>
+  <%= area_chart @data %>
+  <%= column_chart @data, download: true %>
+  <%= pie_chart @data, download: true %>
+<% else %>
+  <h3 class="nothing">No <%= @set %> registered so for that <%= @group %></h3>
+<% end %>
+
+

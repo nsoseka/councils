@@ -1,0 +1,56 @@
+<h1>Todays New Births</h1>
+<ul class="children">
+  <% 10.times do %>
+    <li class="has-date">
+      <a href="#">
+        <h3>
+          <%= fa_icon 'child' %>
+            <%= t('ui.shared.childs_name') %>:
+              <span>Nsoseka Rhoda Bongkong</span>
+        </h3>
+        <p>
+          <%= fa_icon 'id-card' %>
+            Certificate Number:
+            <span class="certificate_number">ERTYU2348</span>
+        </p>
+        <p>
+          <%= fa_icon 'calendar' %>
+            <%= t('ui.shared.date_of_birth') %>:
+              <span>2020-31-08</span>
+        </p>
+        <p>
+          <%= fa_icon 'square' %>
+            <%= t('ui.shared.place_of_birth') %>:
+              <span>California Christian Hospital</span>
+        </p>
+        <p>
+          <%= fa_icon 'male' %>
+            <%= fa_icon 'female' %>
+              <%= t('ui.shared.sex') %>:
+                <span>Male</span>
+        </p>
+        <p>
+          <%= fa_icon 'male' %>
+            <%= t('ui.shared.fathers_name') %>:
+              <span>Lukong Isaac Nsoseka</span>
+        </p>
+        <p>
+          <%= fa_icon 'phone' %>
+            <%= t('general.fathers_tel') %>:
+              <span>677829329</span>
+        </p>
+        <p>
+          <%= fa_icon 'female' %>
+            <%= t('ui.shared.mothers_name') %>:
+              <span>Nsoseka Lamaka Kinyuy</span>
+        </p>
+        <p>
+          <%= fa_icon 'phone' %>
+            <%= t('general.mothers_tel') %>:
+              <span>677829329</span>
+        </p>
+      </a>
+       <time class="item-date-ribbon good-news">Born: 25th May 2018</time>
+    </li>
+    <% end %>
+</ul>

@@ -1,0 +1,65 @@
+<h1>Recently Divorced</h1>
+<ul class="items">
+  <% 10.times do|t|%>
+  <li>
+    <h3>
+      <%= fa_icon 'user-secret' %> 
+      <%= t('ui.shared.couple') %>: <span>John Doe John and Faith Ambros</span>
+    </h3>
+    <p>
+      <%= fa_icon 'id-card' %> 
+      <%= t('ui.shared.marriage_certificate_number') %>: 
+      <span class="certificate_number">4684/kc/2011</span>
+    </p>
+    <p>
+      <%= fa_icon 'calendar' %> 
+      <%= t('ui.shared.date_of_marriage') %>: <span>2000-31-08</span>
+    </p>
+    <p>
+      <%= fa_icon 'square' %> 
+      <%= t('ui.shared.place_of_marriage') %>: <span>California Christian Hospital</span>
+    </p>
+    <p>
+      <%= fa_icon 'male' %> 
+      <%= t('ui.shared.husbands_witness_name') %>: <span>Lukong Isaac Nsoseka</span>
+    </p>
+    <p>
+      <%= fa_icon 'female' %> 
+      <%= t('ui.shared.wifes_witness_name') %>: <span>Nsoseka Lamaka Kinyuy</span>
+    </p>
+     <p>
+      <%= fa_icon 'male' %> 
+      <%= t('ui.shared.husbands_family_head') %>: <span>Nsoseka Lamaka Kinyuy</span>
+    </p>
+     <p>
+      <%= fa_icon 'female' %> 
+      <%= t('ui.shared.wifes_family_head') %>: <span>Grace Yenmo</span>
+    </p>
+    <% if t % 2 == 0  %>
+      <p class="request-date">
+        <%= fa_icon 'calendar' %>
+        <%= t('ui.shared.date_requested') %>: <span>2020-04-09</span>
+      </p>
+      <p class="approval-link">
+        <a href="#">
+          <%= t('ui.shared.Inform Parents') %> 
+          <%= fa_icon 'user' %>
+          <%= fa_icon 'minus' %>
+        </a>
+      </p>
+    <% else %>
+      <p class="approval-date">
+        <%= fa_icon 'calendar' %>
+        <%= t('ui.shared.date_informed') %>: <span>2020-04-09</span>
+      </p>
+      <p class="approval-status">
+        <button>
+          <%= t('ui.shared.Informed') %> 
+          <%= fa_icon 'user' %>
+          <%= fa_icon 'check' %>
+        </button>
+      </p>
+    <% end %>
+  </li>
+  <% end %>
+</ul>

@@ -1,0 +1,146 @@
+<ul>
+  <li class="menu-item <%= @tab == 'births' ? 'selected' : '' %>">
+    <span class="item" href="/ui/births">
+      <%= fa_icon 'child' %> Births
+      <span class="notifier"><%= @births_notifier %></span>
+    </span>
+    <div class="sub-menu show">
+      <ul>
+        <li class="<%= @menu == 'latest-b' ? 'sub-menu-selected' : '' %>">
+         <%= link_to latest_births_path do %>
+            <%= fa_icon 'bell' %> New Births
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'new-b' ? 'sub-menu-selected' : '' %>">
+           <%= link_to new_birth_path do %>
+            <%= fa_icon 'plus' %> New Certificate
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'index-b' ? 'sub-menu-selected' : '' %>">
+         <%= link_to births_path do %>
+            <%= fa_icon 'list' %> Latest Certificates
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'find-b' ? 'sub-menu-selected' : '' %>">
+         <%= link_to find_births_path do %>
+            <%= fa_icon 'search' %> Child or Certificate
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </li>
+  <li class="menu-item <%= @tab == 'deaths' ? 'selected' : '' %>">
+    <span class="item" href="/ui/deaths">
+    <%= fa_icon 'exclamation-circle' %> Deaths
+    <span class="notifier"><%= @deaths_notifier %></span>
+    </span>
+    <div class="sub-menu show">
+      <ul>
+        <li class="<%= @menu == 'latest' ? 'sub-menu-selected' : '' %>">
+          <%= link_to latest_deaths_path do %>
+            <%= fa_icon 'bell' %> New Deaths
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'new' ? 'sub-menu-selected' : '' %>">
+          <%= link_to new_death_path do %>
+            <%= fa_icon 'plus' %> New Death Certificate
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'index' ? 'sub-menu-selected' : '' %>">
+          <%= link_to deaths_path do %>
+            <%= fa_icon 'list' %> Recent Certificates
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'search' ? 'sub-menu-selected' : '' %>">
+          <%= link_to find_deaths_path do %>
+            <%= fa_icon 'search' %> Death Certificate
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </li>
+  <li class="menu-item <%= @tab == 'marriages' ? 'selected' : '' %>">
+    <span class="item" href="/ui/marriages"><%= fa_icon 'certificate' %> Marriages
+    </span>
+    <div class="sub-menu show">
+      <ul>
+        <li class="<%= @menu == 'new-m' ? 'sub-menu-selected' : '' %>">
+          <%= link_to new_marriage_path do %>
+            <%= fa_icon 'plus' %> New Marriage</a>
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'index-m' ? 'sub-menu-selected' : '' %>">
+          <%= link_to marriages_path do %>
+            <%= fa_icon 'list' %> Latest Marriages</a>
+          <% end %>
+        </li> 
+        <li class="<%= @menu == 'find-m' ? 'sub-menu-selected' : '' %>">
+          <%= link_to find_marriages_path do %>
+            <%= fa_icon 'search' %> Find Marriage</a>
+          <% end %>
+        </li>
+        <!--<li class="<%= @menu == 'divorced' ? 'sub-menu-selected' : '' %>">
+          <%= link_to divorced_marriages_path do %>
+            <%= fa_icon 'cut' %> Divorced
+          <% end %>
+        </li>-->
+      </ul>
+    </div>
+  </li>
+  <li class="menu-item <%= @tab == 'stats' ? 'selected' : '' %>">
+    <span class="item" href="/ui/statistics"><%= fa_icon 'table' %> Statistics</span>
+    <div class="sub-menu show">
+      <ul>
+        <li class="<%= @menu == 'b-stats' ? 'sub-menu-selected' : '' %>">
+          <%= link_to births_this_week_path do %>
+            <%= fa_icon 'child' %> Birth Statistics
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'm-stats' ? 'sub-menu-selected' : '' %>">
+          <%= link_to marriages_this_week_path do %>
+            <%= fa_icon 'certificate' %> Marriage Statistics
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'd-stats' ? 'sub-menu-selected' : '' %>">
+          <%= link_to deaths_this_week_path do %>
+            <%= fa_icon 'cut' %> Death Statistics
+          <% end %>
+        </li>
+        <li class="<%= @menu == 's-stats' ? 'sub-menu-selected' : '' %>">
+          <%= link_to search_path do %>
+            <%= fa_icon 'search' %> Search Statistics
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </li>
+  <li class="menu-item <%= @tab == 'profile' ? 'selected' : '' %>">
+    <span class="item">
+    <%= fa_icon 'user' %> Your Profile
+    </span>
+    <div class="sub-menu show">
+      <ul>
+        <li class="<%= @menu == 'agents' ? 'sub-menu-selected' : '' %>">
+          <%= link_to agents_path do %>
+            <%= fa_icon 'globe' %> Council Details
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'view-profile' ? 'sub-menu-selected' : '' %>">
+          <%= link_to agent_path(current_agent) do %>
+            <%= fa_icon 'user-circle' %> View Profile
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'edit-profile' ? 'sub-menu-selected' : '' %>">
+          <%= link_to edit_agent_path(current_agent) do %>
+            <%= fa_icon 'edit' %> Edit Profile
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'logout' ? 'sub-menu-selected' : '' %>">
+          <%= link_to sign_out_path do %>
+            <%= fa_icon 'sign-out' %> Logout
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </li>
+</ul>

@@ -1,0 +1,119 @@
+<ul>
+  <li class="menu-item">
+    <span class="item" href="/">Home 
+      <span class="notifier">10</span>
+    </span>
+    <div class="sub-menu">
+      <ul>
+        <li>
+          <a href="/" class="sub-menu-selected">Happy</a>
+        </li>
+        <li>
+          <a href="/">Happy</a>
+        </li>
+        <li>
+          <a href="/">Happy</a>
+        </li>
+        <li>
+          <a href="/">Happy</a>
+        </li>
+      </ul>
+    </div>
+  </li>
+  <li class="menu-item selecte">
+    <span class="item" href="/ui/births">
+      <%= fa_icon 'child' %> Births
+      <span class="notifier">100</span>
+    </span>
+    <div class="sub-menu sho">
+      <ul>
+        <li>
+          <a href="/ui/register_birth"><%= fa_icon 'save' %> Register Birth</a>
+        </li>
+        <li>
+          <a href="/ui/births" class="sub-menu-selected"><%= fa_icon 'bell' %> New Births</a>
+        </li>
+        <li>
+          <a href="/ui/certificates"><%= fa_icon 'list' %> Latest Certificates</a>
+        </li>
+        <li>
+          <a href="/ui/find_child"><%= fa_icon 'search' %> Child or Certificate</a>
+        </li>
+        <li>
+          <a href="/ui/new_certificate"><%= fa_icon 'plus' %> New Certificate</a>
+        </li>
+      </ul>
+    </div>
+  </li>
+  <li class="menu-item selected">
+    <span class="item" href="/ui/deaths">
+    <%= fa_icon 'cut' %> Deaths
+    <span class="notifier">5</span>
+    </span>
+    <div class="sub-menu show">
+      <ul>
+        <li>
+          <a href="/ui/register_death"><%= fa_icon 'save' %> Register Death</a>
+        </li>
+        <li>
+          <a href="/ui/deaths" class="sub-menu-selected"><%= fa_icon 'bell' %> New Deaths</a>
+        </li>
+        <li>
+          <%= link_to deaths_path do %>
+            <%= fa_icon 'list' %> Latest Certificates
+          <% end %>
+          <a href="/ui/latests_deaths"><%= fa_icon 'list' %> Latest Certificates</a>
+        </li>
+        <li>
+          <a href="/ui/find_dc"><%= fa_icon 'search' %> Death Certificate</a>
+        </li>
+        <li>
+          <%= link_to new_death_path do %>
+            <%= fa_icon 'plus' %> New Death Certificate
+          <% end %>
+          <a href="/ui/new_death"><%= fa_icon 'plus' %> New Death Certificate</a>
+        </li>
+      </ul>
+    </div>
+  </li>
+  <li class="menu-item selecte">
+    <span class="item" href="/ui/marriages"><%= fa_icon 'certificate' %> Marriages
+    <span class="notifier">3</span>
+    </span>
+    <div class="sub-menu sho">
+      <ul>
+        <li>
+          <a href="/ui/divorced" class="sub-menu-selected"><%= fa_icon 'cut' %> Divorced</a>
+        </li>
+        <li>
+          <a href="/ui/new_marriage"><%= fa_icon 'plus' %> New Marriage</a>
+        </li>
+        <li>
+          <a href="/ui/find_mc"><%= fa_icon 'search' %> Find Marriage</a>
+        </li>
+        <li>
+          <a href="/ui/latest_marriages"><%= fa_icon 'list' %> Latest Marriages</a>
+        </li>
+      </ul>
+    </div>
+  </li>
+  <li class="menu-item selecte">
+    <span class="item" href="/ui/statistics"><%= fa_icon 'table' %> Statistics</span>
+    <div class="sub-menu sho">
+      <ul>
+        <li>
+          <a href="/ui/death_stats" class="sub-menu-selected"><%= fa_icon 'cut' %> Death Statistics</a>
+        </li>
+        <li>
+          <a href="/ui/birth_stats"><%= fa_icon 'child' %> Birth Statistics</a>
+        </li>
+        <li>
+          <a href="/ui/marriage_stats"><%= fa_icon 'certificate' %> Marriage Statistics</a>
+        </li>
+        <li>
+          <a href="/ui/health_stats"><%= fa_icon 'heartbeat' %> Health Statistics</a>
+        </li>
+      </ul>
+    </div>
+  </li>
+</ul>

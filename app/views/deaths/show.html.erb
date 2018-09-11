@@ -1,0 +1,84 @@
+<h1><%= @death.surname.capitalize + ' ' +  @death.given_name.capitalize %></h1>
+<% choice_factor = '88888888' %>
+<div class="main register-citizen">
+  <div id="new-citizen">
+    <h2>Death Certificate</h2>
+    <label><%= t('.region') %></label>
+    <input type="text" value="<%= current_agent.administrative_region_name.capitalize %>" disabled>
+    <label><%= t('.division') %></label>
+    <input type="text" value="<%= current_agent.division_name.capitalize %>" disabled>
+    <label><%= t('.sub_division') %></label>
+    <input type="text" value="<%= current_agent.sub_division_name.capitalize %>" disabled>
+    <label><%= t('.council') %></label>
+    <input type="text" value="<%= current_agent.council_name.capitalize %>" disabled>
+    <label><%= t('.certificate_number') %></label>
+    <input type="text" value="<%=  @death.certificate_number.capitalize %>" disabled>
+
+    <h3><%= t('.owners_details') %></h3>
+
+    <label><%= t('.surname_of_deceased') %></label>
+    <input type="text" value="<%= @death.surname.capitalize %>" disabled>
+    <label><%= t('.given_name(s)_of_deceased') %></label>
+    <input type="text" value="<%= @death.given_name.capitalize %>" disabled>
+    <label><%= t('.died_on_the') %></label>
+    <input type="text" value="<%= @death.date_died %>" disabled>
+    <label><%= t('.died_at') %></label>
+    <input type="text" value="<%= @death.place_died.capitalize %>" disabled>
+    <label>Mr</label>
+    <input type="text" value="<%= @death.mr.capitalize %>" disabled>
+    <label><%= t('.date_of_birth') %></label>
+    <input type="text" value="<%= @death.date_born %>" disabled>
+    <label><%= t('.place_of_birth') %></label>
+    <input type="text" value="<%= @death.place_born.capitalize %>" disabled>
+    <label><%= t('.sex') %></label>
+    <input type="text" value="<%= @death.sex.capitalize %>" disabled>
+    <label><%= t('.marital_status') %></label>
+    <input type="text" value="<%= @death.marital_status.capitalize %>" disabled>
+    <label>Occupation</label>
+    <input type="text" value="<%= @death.occupation.capitalize %>" disabled>
+    <label><%= t('.resident_at') %></label>
+    <input type="text" value="<%= @death.residence.capitalize %>" disabled>
+    <label><%= t('.father') %></label>
+    <input type="text" value="<%= @death.father.capitalize %>" disabled>
+    <label><%= t('.mother') %></label>
+    <input type="text" value="<%= @death.mother.capitalize %>" disabled>
+    <label>Drawn up on the</label>
+    <input type="text" value="<%= @death.date_drawn %>" disabled>
+    <label>In accordance with the declaration of</label>
+    <input type="text" value="<%= @death.declaration.capitalize %>" disabled>
+
+    <h3>The Declarant</h3>
+    <label><%= t('.declarants_fullname') %></label>
+    <input type="text" value="<%= @death.d_name.capitalize %>" disabled>
+    <label><%= t('.occupation') %></label>
+    <input type="text" value="<%= @death.d_occupation.capitalize %>" disabled>
+    <label><%= t('.capacity') %></label>
+    <input type="text" value="<%= @death.d_capacity.capitalize %>" disabled>
+
+    <h3>First Witness</h3>
+    <label><%= t('.first_witness_fullname') %></label>
+    <input type="text" value="<%= @death.fw_name.capitalize %>" disabled>
+    <label><%= t('.first_witness_occupation') %></label>
+    <input type="text" value="<%= @death.fw_occupation.capitalize %>" disabled>
+    <label><%= t('.first_witness_residence') %></label>
+    <input type="text" value="<%= @death.fw_residence.capitalize %>" disabled>
+
+    <h3>Second Witness</h3>
+    <label><%= t('.second_witness_fullname') %></label>
+    <input type="text" value="<%= @death.sw_name.capitalize %>" disabled>
+    <label><%= t('.second_witness_occupation') %></label>
+    <input type="text" value="<%= @death.sw_occupation.capitalize %>" disabled>
+    <label><%= t('.second_witness_residence') %></label>
+    <input type="text" value="<%= @death.sw_residence.capitalize %>" disabled>
+
+    <h3><%= t('.who_attested_to_the_truth_of_this_declaration') %></h3>
+
+    <label><%= t('.civil_status_registrar') %></label>
+    <input type="text" value="<%= @death.registrar.capitalize %>" disabled>
+    <label><%= t('.secretary') %></label>
+    <input type="text" value="<%= @death.secretary.capitalize %>" disabled>
+    <label><%= t('.on_the') %></label>
+    <input type="text" value="<%= @death.date_made %>" disabled>
+  </div>
+</div>
+

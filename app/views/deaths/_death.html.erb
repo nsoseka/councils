@@ -1,0 +1,45 @@
+<li class="has-date">
+  <%= link_to death_path death do %>
+    <div class="item-container">
+      <h3>
+        <%= fa_icon 'child' %> 
+        <%= t('ui.shared.childs_name') %>: <span><%= death.surname + ' ' + death.given_name %></span>
+      </h3>
+      <p>
+        <%= fa_icon 'id-card' %> 
+        <%= t('ui.shared.bc_number') %>: 
+        <span class="certificate_number"><%= death.certificate_number %></span>
+      </p>
+      <p>
+        <%= fa_icon 'calendar' %> 
+        <%= t('ui.shared.date_of_birth') %>: <span><%= death.date_born %></span>
+      </p>
+      <p>
+        <%= fa_icon 'square' %> 
+        <%= t('ui.shared.place_of_birth') %>: <span><%= death.place_born %></span>
+      </p>
+      <p>
+        <%= fa_icon 'male' %>
+        <%= fa_icon 'female' %> 
+        <%= t('ui.shared.sex') %>: 
+        <span><%= death.sex %></span>
+      </p>
+      <p>
+        <%= fa_icon 'male' %> 
+        <%= t('ui.shared.fathers_name') %>: <span><%= death.father %></span>
+      </p>
+      <p>
+        <%= fa_icon 'female' %> 
+        <%= t('ui.shared.mothers_name') %>: <span><%= death.mother %></span>
+      </p>
+      <time class="item-date-ribbon">Died: <%= formated_date death.date_died %></time>
+    </div>
+  <% end %>
+  <p class="approval-link">
+    <a href="#">
+      <%= t('ui.shared.Inform Guardians') %> 
+      <%= fa_icon 'user' %>
+      <%= fa_icon 'minus' %>
+    </a>  
+  </p>
+</li>

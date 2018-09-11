@@ -1,0 +1,30 @@
+<h1>Edit your Profile</h1>
+<div class="agent register">
+  <div class="page-form" autocomplete="off">
+    <%= my_form_for current_agent, url: agents_path(current_agent), html: { class: "form new-account", autocomplete: 'false' } do |f| %>
+      <h3><%= fa_icon 'exclamation' %> You can't change your council details</h3>
+      <%= f.label :council_id, 'Council' %>
+      <%= f.text_field :council_id, value: current_agent.council_name, disabled: true %>
+      <%= f.label :full_names, 'Full names' %>
+      <%= f.text_field :full_names %>
+      <%= f.label :phone_number, 'Phone number' %>
+      <%= f.text_field :phone_number %>
+      <%= f.label :email, 'Email' %>
+      <%= f.email_field :email %>
+      <%= f.label :username, 'Username' %>
+      <%= f.text_field :username %>
+      <%= f.label :password, 'Password' %>
+      <%= f.password_field :password %>
+      <%= f.label :password_confirmation, 'Confirmation password' %>
+      <%= f.password_field :password_confirmation %>
+      <%= f.label :code, 'Council Code' %>
+      <%= f.text_field :code, disabled: true %>
+      <div class="submitter">
+        <button type="submit">Create Account</button>
+      </div>
+    <% end %>
+  </div>
+  <script>
+    $(".chosen-select").chosen()
+  </script>
+</div>

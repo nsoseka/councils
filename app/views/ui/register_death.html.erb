@@ -1,0 +1,114 @@
+<% 
+  @causes = [ "Disease", "Cardiovascular disease", "Cancer", "Chronic condition", "Injury", "Accident", "Diabetes mellitus", "Suicide", "Stroke", "Pneumonia", "Respiratory disease", "Infection", "Coronary artery disease", "Alzheimer's disease", "Influenza", "Ischemia", "Lower respiratory tract infection", "Cerebrovascular disease", "HIV/AIDS", "Hypertension", "Tuberculosis", "Lung cancer", "Chronic Obstructive Pulmonary Disease", "Breast cancer", "Dementia", "Traffic collision", "Homicide", "Birth defect", "Old age", "Asthma", "Preterm birth", "Poisoning", "Infectious disease", "Prostate cancer", "Diarrhea", "Sepsis", "Kidney disease", "Cirrhosis", "Complication", "Malnutrition", "Perinatal mortality", "Acute disease", "Childbirth", "Obesity", "Malaria", "Gastrointestinal disease", "Maternal death", "Nephritis", "Drowning", "Virus", "Measles"]
+%>
+<h1>Death Registration</h1>
+<div class="main register-citizen">
+  <form id="new-citizen" runat="server">
+    <h2>
+      Registration Form
+    </h2>
+    <h3><%= t('.deceaseds_details') %></h3>
+
+    <label><%= t('.deceaseds_name') %></label>
+    <input type="text" name="deceaseds_name">
+    <label><%= t('.date_of_birth') %></label>
+    <input type="text" name="date_of_birth" class="datepicker">
+    <label><%= t('.place_of_birth') %></label>
+    <input type="text" name="place_of_birth">
+    <label><%= t('.date_of_death') %></label>
+    <input type="text" name="date_of_death" class="datepicker">
+    <label><%= t('.place_of_death') %></label>
+    <input type="text" name="place_of_death">
+    <label><%= t('.occupation') %></label>
+    <input type="text" name="occupation">
+    <label><%= t('.married?') %></label>
+    <select name="married?" class="sex chosen-select-one">
+      <option value="no">No</option>
+      <option value="yes">Yes</option>
+    </select>
+    <label><%= t('.sex') %></label>
+    <select name="sex" class="sex chosen-select-one">
+      <option value="M">Male - l'homme</option>
+      <option value="F">Female - Femme</option>
+    </select>
+
+    <h3><%= t('.fathers_details') %></h3>
+
+    <label><%= t('.fathers_name') %></label>
+    <input type="text" name="father">
+    <label><%= t('.fathers_residence') %></label>
+    <input type="text" name="fathers_residence">
+
+    <h3><%= t('.mothers_details') %></h3>
+
+    <label><%= t('.mothers_name') %></label>
+    <input type="text" name="mother">
+    <label><%= t('.mothers_residence') %></label>
+    <input type="text" name="mothers_residence">
+
+    <h3><%= t('.agnostic_causes_of_death') %></h3>
+    <label>Cause of Death</label>
+    <select multiple name="causes[]" size="20" data-placeholder="Choose causes..." class="chosen-select sex">
+      <% @causes.each do |cause| %>
+        <option value="<%= cause %>"><%= cause %></option>
+      <% end %>
+    </select>
+
+    <h3>Ignore this section if the deceased was not married</h3>
+    <label>Spouses Name's</label>
+    <input type="text" name="spouse">
+    <label><%= t('.number_of_children') %></label>
+    <input type="text" name="number_of_children">
+    <label><%= t('.is_spouse_still_alive?') %></label>
+    <select name="spouse_alive?" class="sex chosen-select-one">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+
+    <h3>Guardians Contact Details</h3>
+    <label>Phone Number</label>
+    <input type="text" name="g_phone_number">
+    <label>Email Address</label>
+    <input type="text" name="g_email">
+    <label>Language Preference</label>
+    <select class="sex chosen-select-one" name="language_pref">
+      <option value="en">English</option>
+      <option value="fre">French</option>
+    </select>
+    <div class="submit">
+      <button type="submit"><%= t('.register') %></button>
+    </div>
+  </form>
+  <% if I18n.locale == :en %>
+  <script>
+    $(function() {
+      $('.datepicker').pickadate({
+        selectYears: 120,
+        max: new Date(),
+        selectMonths: 12
+      });
+    });
+    $(".chosen-select").chosen()
+    $(".chosen-select-one").chosen()
+  </script>
+  <% else %>
+    <script>
+      $(function() {
+        $('.datepicker').pickadate({
+          monthsFull: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+           weekdaysShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
+           today: 'aujourd\'hui',
+           clear: 'effacer',
+           close: 'fermer',
+           formatSubmit: 'yyyy/mm/dd',
+          selectYears: 120,
+          max: new Date(),
+          selectMonths: 12
+        });
+      });
+
+      $(".chosen-select").chosen()
+    </script>
+  <% end %>
+</div>
+

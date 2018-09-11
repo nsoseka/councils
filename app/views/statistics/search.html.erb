@@ -1,0 +1,9 @@
+<h1>Get Specific Statistics</h1>
+<div class="find-dc">
+  <%= render 'search_form', { search_query: @search_query } %>
+</div>
+<% if @message %>
+  <%= javascript_tag do %>
+    swal("<%= @message %>", "", "error");
+  <% end %>
+<% end %>

@@ -1,0 +1,120 @@
+<% choice_factor = '88888888' %>
+<h1>New Death Certificate</h1>
+<div class="main register-citizen">
+  <%= my_form_for @death, url: deaths_path(@death), html: { id: "new-citizen", class: 'form'} do |f| %>
+    <h2>Death Certificate Form</h2>
+    <%= f.label :administrative_region_id, 'Region' %>
+    <input type="text" value="<%= current_agent.administrative_region_name %>" name="administrative_region" disabled/>
+    <label><%= t('.division') %></label>
+    <input type="text" value="<%= current_agent.division_name %>" name="division" disabled/>
+    <label><%= t('.sub_division') %></label>
+    <input type="text" value="<%= current_agent.sub_division_name.capitalize %>" name="administrative_region" disabled/>
+    <label><%= t('.council') %></label>
+    <input type="text" value="<%= current_agent.council_name.capitalize + ' Council' %>" name="administrative_region" disabled/>
+    <%= f.hidden_field :council_id, value: current_agent.council.id, hidden: true %>
+    <%= f.label :certificate_number, 'Certificate Number' %>
+    <%= f.text_field :certificate_number %>
+
+    <h3><%= t('.owners_details') %></h3>
+
+    <%= f.label :surname, 'Surname' %>
+    <%= f.text_field :surname %>
+    <%= f.label :given_name, 'Given names' %>
+    <%= f.text_field :given_name %>
+    <%= f.label :date_died, 'Died on the' %>
+    <%= f.text_field :date_died, class: 'datepicker' %>
+    <%= f.label :place_died, 'At' %>
+    <%= f.text_field :place_died %>
+    <%= f.label :mr, 'Mr' %>
+    <%= f.text_field :mr %>
+    <%= f.label :date_born, 'Date of birth' %>
+    <%= f.text_field :date_born, class: 'datepicker' %>
+    <%= f.label :place_born, 'Place of birth' %>
+    <%= f.text_field :place_born %>
+    <%= f.label :sex, 'Sex'%>
+    <%= f.select :sex, options_for_select([['Choose Sex', choice_factor], ['Male', 'male'], ['Female', 'female']], @death.sex), {}, { class: 'sex chosen-select' } %>
+    <%= f.label :marital_status, 'Marital Status' %>
+    <%= f.select :marital_status, options_for_select([['Choose Status', choice_factor], ['Married', 'married'], ['Single', 'single']], @death.marital_status), {}, { class: 'sex chosen-select' } %>
+    <%= f.label :residence, 'Resident at' %>
+    <%= f.text_field :residence %>
+    <%= f.label :occupation, 'Occupation' %>
+    <%= f.text_field :occupation %>
+    <%= f.label :father, "Father's name" %>
+    <%= f.text_field :father %>
+    <%= f.label :mother, "Mother's name" %>
+    <%= f.text_field :mother %>
+    <%= f.label :date_drawn, 'Drawn up on the' %>
+    <%= f.text_field :date_drawn, class: 'datepicker' %>
+    <%= f.label :declaration, 'In accordance with the declaration of' %>
+    <%= f.text_field :declaration %>
+
+    <h3>The Declarant</h3>
+    <%= f.label :d_name, 'The Declarant' %>
+    <%= f.text_field :d_name %>
+    <%= f.label :d_occupation, 'Occupation' %>
+    <%= f.text_field :d_occupation %>
+    <%= f.label :d_capacity, 'Capacity' %>
+    <%= f.select :d_capacity, options_for_select([['Choose Capacity', choice_factor], ['Head of the family', 'f_head'], ['Relative of the diseased', 'relative'], ['Person who has full knowledge of the death', 'pwk'], ['Head of the medical institution', 'm_head'], ['Head of the prison', 'p_head']], @death.d_capacity), {}, { class: 'sex chosen-select' } %>
+
+    <h3>First Witness</h3>
+    <%= f.label :fw_name, 'First Witness Fullname' %>
+    <%= f.text_field :fw_name %>
+    <%= f.label :fw_occupation, 'Occupation' %>
+    <%= f.text_field :fw_occupation %>
+    <%= f.label :fw_residence, 'Residence' %>
+    <%= f.text_field :fw_residence %>
+    
+
+    <h3>Second Witness</h3>
+    <%= f.label :sw_name, 'Second Witness Fullname' %>
+    <%= f.text_field :sw_name %>
+    <%= f.label :sw_occupation, 'Occupation' %>
+    <%= f.text_field :sw_occupation %>
+    <%= f.label :sw_residence, 'Residence' %>
+    <%= f.text_field :sw_residence %>
+
+    <h3><%= t('.who_attested_to_the_truth_of_this_declaration') %></h3>
+
+    <%= f.label :registrar, 'Civil Status Registrar' %>
+    <%= f.text_field :registrar %>
+    <%= f.label :secretary, 'Secretary' %>
+    <%= f.text_field :secretary %>
+    <%= f.label :date_made, 'On the' %>
+    <%= f.text_field :date_made, class: 'datepicker' %>
+    
+    <div class="submit">
+      <button type="submit"><%= t('.create_certificate') %></button>
+    </div>
+  <% end %>
+  <% if I18n.locale == :en %>
+  <script>
+    $(function() {
+      $('.datepicker').pickadate({
+        selectYears: 120,
+        max: new Date(),
+        selectMonths: 12
+      });
+    });
+  </script>
+  <% else %>
+    <script>
+      $(function() {
+        $('.datepicker').pickadate({
+          monthsFull: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+           weekdaysShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
+           today: 'aujourd\'hui',
+           clear: 'effacer',
+           close: 'fermer',
+           formatSubmit: 'yyyy/mm/dd',
+          selectYears: 120,
+          max: new Date(),
+          selectMonths: 12
+        });
+      });
+    </script>
+  <% end %>
+  <script>
+     $(".chosen-select").chosen()
+  </script>
+</div>
+

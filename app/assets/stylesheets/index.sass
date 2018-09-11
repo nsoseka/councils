@@ -1,0 +1,164 @@
+@import 'colors'
+body
+  background: $pure-white,
+  color: $light-black
+  font: normal 16px 'IBM Plex Sans', Helvetica, Arial, sans-serif
+.header
+  // display: none
+  background: $blue
+  min-width: 270px
+  max-width: 300px
+  min-height: 100%
+  color: $pure-white
+  padding: 0 10px
+  box-sizing: border-box
+  // min-height: 100vh
+  p
+    font-size: 0.85em
+    color: $orange
+    padding: 20px 0
+    font-weight: bold
+  h1 
+    font-size: 1.5em
+    padding: 20px 0 30px 0
+    color: $yellow
+    font-weight: bold
+    text-align: center
+  h1:hover
+    color: $green
+  .menu-item
+    position: relative
+    span.item, a
+      padding: 5px
+      width: 100%
+      display: inline-block
+      font-weight: 500
+      font-size: 1.1em
+      font-weight: 600
+      cursor: pointer
+      border-radius: 4px
+      overflow: hidden
+    .notifier 
+      float: right
+      text-align: left
+      background: $green
+      display: inline-block 
+      padding: 2px 5px
+      min-width: 20px
+      text-align: center
+      border-radius: 30px
+      color: $pure-white
+  .selected, .menu-item:hover
+    span.item
+      background: $light-blue
+  .selected
+    .sub-menu.show
+      display: block
+  .sub-menu
+    display: none
+    padding: 0 10px
+    margin: 5px 0
+    a 
+      margin: 2px 0
+      font-size: 1em
+  .sub-menu-selected, .menu-item.selected li:hover
+    a
+      background: $orange
+      border-radius: 4px
+  nav 
+    padding: 0 10px
+.main
+  display: flex
+  justify-content: flex-start
+  box-sizing: border-box
+  height: 100%
+.main-content 
+  margin: 20px 1% 80px 1%
+  height: 100%
+  min-height: 100vh
+  width: 100%
+  word-wrap: break-word
+  h1 
+    font-size: 2em
+    color: $dark
+    text-align: center
+    margin: 0 0 20px 0
+.children, .items
+  text-align: center
+  h3 
+    text-align: center
+    font-weight: bold 
+    color: $purple
+    font-size: 1.5em
+  li 
+    border: 1px solid $grey
+    margin: 10px 0
+    padding: 5px 10px
+    text-align: left
+  .item-container 
+    padding: 10px 20px
+  .item-container:hover
+    background: #f9f9f9
+  p 
+    padding: 5px 0
+    span + span
+      font-weight: bold 
+      font-size: 1.1em
+.search-results 
+  margin: 40px 0
+footer
+  background: $light-black
+  color: $grey
+  padding: 40px 20px
+  h2 
+    text-align: center
+    padding: 40px 0 0 0
+  ul 
+    text-align: center
+  li 
+    display: inline-block
+    padding: 0 3.5%
+  li:hover 
+    color: $light-blue
+.highlight-red
+  color: $red
+.highlight-green
+  color: $green
+.basic-stats
+  position: fixed
+  z-index: 10
+  top: 20px 
+  right: 20px
+  padding: 10px 20px
+  font-weight: bold
+  color: $pure-white
+  font-size: 1.2em
+.new-borns
+  background: $green
+.new-deaths
+  background: $red
+.new-marriages 
+  background: $purple
+.blog-p 
+  font-size: 1em
+  // color: $orange
+  padding: 20px
+  // font-weight: bold
+.blog-w 
+  width: 90%
+  margin: 0 auto
+  font-size: 1.1em
+  color: $light-black
+  line-height: 1.9em
+  h3 
+    color: $brown 
+    font-size: 1.3em 
+    text-align: center
+    padding: 30px 0
+  h5 
+    text-align: center
+    padding: 40px 0 0 0
+  p 
+    a 
+      color: $orange
+  

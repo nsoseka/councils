@@ -1,0 +1,45 @@
+<li class="has-date">
+  <%= link_to marriage_path marriage do %>
+    <div class="item-container">
+      <h3>
+        <%= fa_icon 'user-secret' %> 
+        <%= t('ui.shared.couple') %>: <span><%= marriage.husband + ' & ' + marriage.wife  %></span>
+      </h3>
+      <p>
+        <%= fa_icon 'id-card' %> 
+        <%= t('ui.shared.marriage_certificate_number') %>: 
+        <span class="certificate_number"><%= marriage.certificate_number %></span>
+      </p>
+      <p>
+        <%= fa_icon 'square' %> 
+        <%= t('ui.shared.place_of_marriage') %>: <span><%= marriage.drawn_at %></span>
+      </p>
+      <p>
+        <%= fa_icon 'male' %> 
+        <%= t('ui.shared.husbands_witness_name') %>: <span><%= marriage.husband_w %></span>
+      </p>
+      <p>
+        <%= fa_icon 'female' %> 
+        <%= t('ui.shared.wifes_witness_name') %>: <span><%= marriage.wife_w %></span>
+      </p>
+      <p>
+        <%= fa_icon 'male' %> 
+        <%= t('ui.shared.husbands_family_head') %>: <span><%= marriage.husband_fh %></span>
+      </p>
+      <p>
+        <%= fa_icon 'female' %> 
+        <%= t('ui.shared.wifes_family_head') %>: <span><%= marriage.wife_fh %></span>
+      </p>
+      <time class="item-date-ribbon">Married: <%= formated_date marriage.appearance_date %></time>
+    </div>
+  <% end %>
+  <p class="approval-link">
+    <a href="#">
+      <%= t('ui.shared.Inform Guardians') %> 
+      <%= fa_icon 'user' %>
+      <%= fa_icon 'minus' %>
+    </a>  
+  </p>
+</li>
+
+

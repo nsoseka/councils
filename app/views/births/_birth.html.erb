@@ -1,0 +1,51 @@
+<li class="has-date">
+  <%= link_to birth_path birth do %>
+    <div class="item-container">
+      <h3>
+        <%= fa_icon 'child' %>
+        <%= t('ui.shared.childs_name') %>:
+        <span><%= birth.surname + ' ' +  birth.given_name %></span>
+      </h3>
+      <p>
+        <%= fa_icon 'id-card' %>
+        <%= t('Certificate Number') %>:
+        <span class="certificate_numbe"><%= birth.certificate_number %></span>
+      </p>
+      <p>
+        <%= fa_icon 'square' %>
+        <%= t('ui.shared.place_of_birth') %>:
+        <span><%= birth.place_born %></span>
+      </p>
+      <p>
+        <%= fa_icon 'male' %>
+        <%= fa_icon 'female' %>
+        <%= t('ui.shared.sex') %>:
+        <span><%= birth.sex %></span>
+      </p>
+      <p>
+        <%= fa_icon 'male' %>
+        <%= t('ui.shared.fathers_name') %>:
+        <span><%= birth.father %></span>
+      </p>
+      <p>
+        <%= fa_icon 'female' %>
+        <%= t('ui.shared.mothers_name') %>:
+        <span><%= birth.mother %></span>
+      </p>
+      <p>
+        <%= fa_icon 'home' %>
+        <%= t('Father and mothers residence') %>:
+        <span><%= birth.father_res + ' and ' + birth.mother_res + ' respectively' %></span>
+      </p>
+
+      <time class="item-date-ribbon good-news">Born: <%= formated_date birth.date_born %></time>
+    </div>
+  <% end %>
+  <p class="approval-link">
+    <a href="#">
+      <%= t('ui.shared.Inform Guardians') %> 
+      <%= fa_icon 'user' %>
+      <%= fa_icon 'minus' %>
+    </a>  
+  </p>
+</li>

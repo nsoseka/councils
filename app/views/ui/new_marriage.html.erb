@@ -1,0 +1,186 @@
+<% divisions = [ 
+  "Bamboutos", "Haut-Nkam", "Hauts-Plateaux", "Koung-Khi", "Menoua", "Mifi", "Ndé", "Noun", "Fako", "Koupé-Manengouba", "Lebialem", "Manyu", "Meme", "Ndian", "Dja-et-Lobo", "Mvila", "Océan", "Vallée-du-Ntem", "Boyo", "Bui", "Donga-Mantung", "Menchum", "Mezam", "Momo", "Ngo-ketunjia", "Bénoué", "Faro", "Mayo-Louti", "Mayo-Rey", "Moungo", "Nkam", "Sanaga-Maritime", "Wouri", "Diamaré", "Logone-et-Chari", "Mayo-Danay", "Mayo-Kani", "Mayo-Sava", "Mayo-Tsanaga", "Boumba-et-Ngoko", "Haut-Nyong", "Kadey", "Lom-et-Djerem", "Haute-Sanaga", "Lekié", "Mbam-et-Inoubou", "Mbam-et-Kim", "Méfou-et-Afamba", "Méfou-et-Akono", "Mfoundi", "Nyong-et-Kéllé", "Nyong-et-Mfoumou", "Nyong-et-So'o", "Djérem", "Faro-et-Déo", "Mayo-Banyo", "Mbéré", "Vina" ]
+
+  sub_divisions =  [
+  "Abong-Mbang", "Afanloum", "Ako", "Akoeman", "Akom II", "Akono", "Akonolinga", "Akwaya", "Alou", "Ambam", "Andek", "Angossas", "Atok", "Awaé", "Ayos", "Babadjou", "Babessi", "Babouantou", "Bafang", "Bafia", "Bafou", "Bafoussam", "Bafut", "Baham", "Bali", "Balikumbat", "Bamenda", "Bamendjou", "Bamuso", "Bana", "Bandja", "Bandjoun", "Bangangté", "Bangem", "Banka", "Bangou", "Bangourain", "Bankim", "Banyo", "Baré", "Bashéo", "Bassamba", "Batcham", "Batchenga", "Batibo", "Batié", "Batoufam", "Batouri", "Bayangam", "Bazou", "Beka", "Bélabo", "Belel", "Belo", "Benakuma", "Bengbis", "Bertoua", "Bétaré-Oya", "Bibemi", "Bibey", "Bikok", "Bipindi", "Biwong-Bane", "Biwong-Bulu", "Biyouha", "Blangoua", "Bokito", "Bonaléa", "Bondjock", "Bot-Makak", "Bourrha", "Campo", "Dargala", "Darak", "Datcheka", "Dembo", "Demding", "Deuk", "Diang", "Dibamba", "Dibang", "Dibombari", "Dikome-Balue", "Dimako", "Dir", "Dizangué", "Djohong", "Djoum", "Douala", "Doumaintang", "Doumé", "Dschang", "Dzeng", "Dziguilao", "Ebebda", "Ebolowa", "Ebone", "Édéa", "Edzendouan", "Efoulan", "Ekondo-Titi", "Elak-Oku", "Elig-Mfomo", "Endom", "Éséka", "Esse", "Evodoula", "Eyumodjock", "Figuil", "Fokoué", "Fonfuka", "Fongo-Tongo", "Fotokol", "Foumban", "Foumbot", "Fundong", "Furu-Awa", "Galim", "Galim-Tignère", "Gari-Gombo", "Garoua", "Garoua-Boulaï", "Gashiga", "Gawaza", "Gobo", "Goulfey", "Gueme", "Guere", "Guider", "Guider", "Guidiguis", "Hile-Alifa", "Hina", "Idabato", "Idenau", "Isanguele", "Jakiri", "Kaélé", "Kai-Kai", "Kalfou", "Kay-Hay", "Kékem", "Kentzou", "Kette", "Kiiki", "Kobdombo", "Kolofata", "Kombo-Abedimo", "Kombo-Idinti", "Kon-Yambetta", "Kongso-Bamougoum", "Kontcha", "Konye", "Kouoptamo", "Kousséri", "Koutaba", "KozaKribi", "Kumba", "Kumbo", "Lafé-Baleng", "Lagdo", "Lembe-Yezoum", "Limbé", "Lobo", "Logone-Birni", "Lokoundje", "Lolodorf", "Lomié", "Loum", "Ma'an", "Mabanga", "Maga", "Magba", "Maikari", "Makak", "Makénéné", "Malentouen", "Mamfé", "Mandingring", "Mandjou", "Manjo", "Manoka", "Maroua", "Massangam", "Massock", "Matomb", "Mayo-Baléo", "Mayo-Darlé", "Mayo-Hourna", "Mayo-Oulo", "Mbalmayo", "Mbandjock", "Mbang", "Mbanga", "Mbangassina", "Mbankomo", "Mbe", "Mbengwi", "Mbiame", "Mboma", "Mbonge", "Mbouda", "Meiganga", "Melong", "Mengang", "Mengong", "Mengueme", "Menji", "Meri", "Messamena", "Messok", "Messondo", "Meyomessala", "Meyomessi", "Mfou", "Mindif", "Mindourou", "Minta", "Mintom", "Misaje", "Modzogo", "Mogode", "Mokolo", "Moloundou", "Mombo", "Monatélé", "Mora", "Mouanko", "Moulvoudaye", "Moutourwa", "Mudemba", "Muyuka", "Mvangane", "Mvengue", "Nanga-Eboko", "Ndelele", "Ndikiniméki", "Ndobian", "Ndom", "Ndop", "Ndoukoula", "Ndu", "Nganha", "Ngambè,Sanaga Maritime,Cameroun", "Ngambè-Tikar", "Ngaoui", "Ngaoundal", "Ngaoundéré", "Ngog-Mapubi", "Ngomedzap", "Ngong", "Ngoro", "Ngoulemakong", "Ngoumou", "Ngoura", "Ngoyla", "Nguelebok", "Nguelemendouka", "Ngui-Bassal", "Ngwei", "Niete", "Nitoukou", "Njikwa", "Njimom", "Njinikom", "Njombé", "Nkambé", "Nkolafamba", "Nkolmetet", "Nkondjock", "Nkongsamba", "Nkongsamba", "Nkong-Zem", "Nkor", "Nkoteng", "Nkum", "Nsem", "Ntui", "Nwa", "Nyambaka", "Nyanon", "Obala", "Okola", "Olamze", "Olanguina", "Ombessa", "Ouli", "Oveng", "Penja", "Penka-Michel", "Petté", "Pitoa", "Poli", "Pouma", "Roua", "Sa'a", "Salapoumbé", "Sangmélima", "Santa", "Santchou", "Soa", "Somalomo", "Tchati-Bali", "Tcholliré", "Tibati", "Tignère", "Tiko", "Tinto", "Toko", "Tokombéré", "Tombel", "Tonga", "Touboro", "Touloum", "Touroua", "Tubah", "Wabane", "Wasa", "Widikum-Boffe", "Wina", "Wum", "Yabassi", "Yagoua", "Yaoundé", "Yingui", "Yokadouma", "Yoko", "Zhoa", "Zina", "Zoétélé"
+  ]
+%>
+<h1>New Marriage Certificate</h1>
+<div class="main register-citizen">
+  <form id="new-citizen" runat="server">
+    <h2>
+      Marriage Certificate Form
+    </h2>
+    <label><%= t('.region') %></label>
+    <input type="text" list="regions">
+    <datalist id="regions">
+      <option value="Northwest - Nord-Ouest">
+      <option value="Southwest - Sud-Ouest">
+      <option value="Center - Centre">
+      <option value="North - Nord">
+      <option value="West - Ouest">
+      <option value="Adamawa - Adamawa">
+      <option value="Litoral - Litorale">
+      <option value="East - Est">
+      <option value="Far North - Extrême-Nord">
+      <option value="South - Sud">
+    </datalist>
+    <label><%= t('.division') %></label>
+    <input type="text" name="division" list="divisions">
+    <datalist id="divisions">
+      <% divisions.each do |d| %>
+        <option><%= d %></option>
+      <% end %>
+    </datalist>
+    <label><%= t('.sub_division') %></label>
+    <input type="text" name="sub_division" list="sub_divisions">
+    <datalist id="sub_divisions">
+      <% sub_divisions.each do |sub| %>
+        <option><%= sub %></option>
+      <% end %>
+    </datalist>
+    <label><%= t('.council') %></label>
+    <input type="text" name="council">
+    <label><%= t('.certificate_number') %></label>
+    <input type="text" name="certificate_number">
+
+    <h3><%= t('.owners_details') %></h3>
+
+    <label><%= t('.marriage_of') %></label>
+    <input type="text" name="marriage_of">
+    <label><%= t('.and_of') %></label>
+    <input type="text" name="and_of">
+    <label><%= t('.on_the') %></label>
+    <input type="text" name="on_the" class="datepicker">
+    <p>Appeared before us publicly</p>
+    
+    <h3><%= t('.mans_details') %></h3>
+
+    <label><%= t('.mr') %></label>
+    <input type="text" name="mr">
+    <label><%= t('.born_on_the') %></label>
+    <input type="text" name="born_on_the">
+    <label><%= t('.at') %></label>
+    <input type="text" name="at">
+    <label><%= t('.occupation') %></label>
+    <input type="text" name="occupation">
+    <label><%= t('.nationality') %></label>
+    <input type="text" name="nationality">
+    <label><%= t('.reference_document') %></label>
+    <select class="sex" name="reference_document">
+      <option>National Identity Card Number</option>
+      <option>Reference of Birth Certificate</option>
+      <option>Reference of Document attesting nationality</option>
+    </select>
+    <label><%= t('.resident_at') %></label>
+    <input type="text" name="resident_at">
+    <label><%= t('.son_of') %></label>
+    <input type="text" name="son_of">
+    <label><%= t('.and_of') %></label>
+    <input type="text" name="and_of">
+
+    <p>On the one hand</p>
+
+    <h3><%= t('.womans_details') %></h3>
+
+    <label><%= t('.miss') %></label>
+    <input type="text" name="miss">
+    <label><%= t('.born_on_the') %></label>
+    <input type="text" name="born_on_the">
+    <label><%= t('.at') %></label>
+    <input type="text" name="at">
+    <label><%= t('.occupation') %></label>
+    <input type="text" name="occupation">
+    <label><%= t('.nationality') %></label>
+    <input type="text" name="nationality">
+    <label><%= t('.reference_document') %></label>
+    <select class="sex" name="reference_document">
+      <option>National Identity Card Number</option>
+      <option>Reference of Birth Certificate</option>
+      <option>Reference of Document attesting nationality</option>
+    </select>
+    <label><%= t('.resident_at') %></label>
+    <input type="text" name="resident_at">
+    <label><%= t('.daughter_of') %></label>
+    <input type="text" name="daughter_of">
+    <label><%= t('.and_of') %></label>
+    <input type="text" name="and_of">
+
+    <p>On the other hand</p>
+
+    <h3><%= t('.marriage_details') %></h3>
+
+    <label>The bride and the groom state that the matrimonial regimes is:</label>
+    <select class="sex" name="regime">
+      <option>Separate Ownership</option>
+      <optio>Joint Ownership</option>
+    </select>
+    <label>Type of marriage</label>
+    <select class="sex" name="system">
+      <option>Monogamy</option>
+      <optio>Polygamy</option>
+    </select>
+    <label>No objections to the marriage have been recorded</label>
+    <input type="text" name="objections">
+    <label><%= t('.mr') %></label>
+    <input type="text" name="mr">
+    <label><%= t('.and_miss') %></label>
+    <input type="text" name="and_miss">
+    <p>
+      Both declared they want to be husband and wife and, in accordance with the law, we pronounce that they are united by the marriage
+    </p>
+    <p>In the presence of</p>
+    <label>Mr - head of the family of the husband or his representative</label>
+    <input type="text" name="husbands_fh">
+    <label>and of Mr - head of the family of the wife or his representative</label>
+    <input type="text" name="wifes_fh">
+    <p>who agree to the marriage and of</p>
+    <label>Mr/Mrs - witness of the husband, and of</label>
+    <input type="text" name="husbands_witness">
+    <label>Mr/Mrs - witness of the wife</label>
+    <input type="text" name="wifes_witness">
+    
+    <p>The certificate has been drawn by us</p>
+
+    <label><%= t('.registrar') %></label>
+    <input type="text" name="registrar">
+    <label><%= t('.secretary') %></label>
+    <input type="text" name="secretary">
+    <label>At</label>
+    <input type="text" name="place_drawn">
+    <label>On the</label>
+    <input type="text" name="date_drawn" class="datepicker">
+
+    <div class="submit">
+      <button type="submit"><%= t('.register') %></button>
+    </div>
+  </form>
+  <% if I18n.locale == :en %>
+  <script>
+    $(function() {
+      $('.datepicker').pickadate({
+        selectYears: 120,
+        max: new Date(),
+        selectMonths: 12
+      });
+    });
+  </script>
+  <% else %>
+    <script>
+      $(function() {
+        $('.datepicker').pickadate({
+          monthsFull: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+           weekdaysShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
+           today: 'aujourd\'hui',
+           clear: 'effacer',
+           close: 'fermer',
+           formatSubmit: 'yyyy/mm/dd',
+          selectYears: 120,
+          max: new Date(),
+          selectMonths: 12
+        });
+      });
+    </script>
+  <% end %>
+</div>
+

@@ -1,0 +1,17 @@
+<div class="agent">
+  <div class="private-details">
+    <h3>Private Details</h3>
+    <p>Username: <span><%= current_agent.username %></span></p>
+    <p>Full Names: <span><%= current_agent.full_names %></span></p>
+    <p>Phone Number: <span><%= current_agent.phone_number %></span></p>
+    <p>Email: <span><%= current_agent.email %></span></p>
+  </div>
+
+  <div class="desk-details">
+    <h3>Council Details</h3>
+    <p>Council: <span><%= current_agent.council_name.capitalize %> Council</span></p>
+    <p>Sub Division: <span><%= current_agent.sub_division_name.capitalize %></span></p>
+    <p>Division: <span><%= current_agent.division_name %></span></p>
+    <p>Region: <span><%= current_agent.administrative_region_name %></span></p>
+  </div>
+</div>

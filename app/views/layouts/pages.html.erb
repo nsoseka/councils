@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Councils</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
+  </head>
+
+  <body>
+    <main class="main pages">
+      <header class="pages-header">
+        <h1>
+          <a href="/">237councils</a>
+        </h1>
+        <nav>
+          <ul>
+            <% if current_agent.nil? && current_hospital.nil? %>
+              <li>
+                <%= link_to 'Create Account', new_account_path %>
+              </li>
+              <li>
+                <%= link_to 'Login', sign_in_path %>
+              </li>
+            <% elsif current_agent.present? %>
+              <li>
+                <%= link_to  home_path  do %>
+                  <%= fa_icon 'table' %> Back to Main Board <%= fa_icon 'arrow-right' %>
+                <% end %>
+              </li>
+            <% elsif current_hospital.present? %>
+              <li>
+                <%= link_to  health_unit_home_path  do %>
+                  <%= fa_icon 'table' %> Back to Main Board <%= fa_icon 'arrow-right' %>
+                <% end %>
+              </li>
+            <% end %>
+            <li class="blog-container">
+              <%= link_to blog_home_path, class: "blog" do %>
+                237councils Blog
+                <span class="new">NEW</span>
+              <% end %>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div class="main-content-pages">
+        <%= yield %>
+      </div>
+    </main>
+    <footer>
+      <ul>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Youtube</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Created by Agape Inc.</a></li>
+      </ul>
+      <h2>&copy; Agape Inc. 2018 <%= fa_icon 'heart' %></h2>
+    </footer>
+  </body>
+</html>

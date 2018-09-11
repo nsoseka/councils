@@ -1,0 +1,49 @@
+<li class="has-date">
+  <%= link_to deceased_path deceased do %>
+    <div class="item-container">
+      <h3>
+        <%= fa_icon 'child' %>
+        <%= t('ui.shared.Deceased Name') %>:
+        <span><%= deceased.d_name %></span>
+      </h3>
+      <p>
+        <%= fa_icon 'id-card' %>
+        <%= t("Place of Death") %>:
+        <span class="certificate_numbe"><%= deceased.d_pd %></span>
+      </p>
+      <p>
+        <%= fa_icon 'square' %>
+        <%= t('Place of Birth') %>:
+        <span><%= deceased.d_pb %></span>
+      </p>
+      <p>
+        <%= fa_icon 'male' %>
+        <%= fa_icon 'female' %>
+        <%= t('ui.shared.sex') %>:
+        <span><%= deceased.sex %></span>
+      </p>
+      <p>
+        <%= fa_icon 'male' %>
+        <%= t('ui.shared.fathers_name') %>:
+        <span><%= deceased.f_name %></span>
+      </p>
+      <p>
+        <%= fa_icon 'female' %>
+        <%= t('ui.shared.mothers_name') %>:
+        <span><%= deceased.m_name %></span>
+      </p>
+      <p>
+        <%= fa_icon 'home' %>
+        <%= t('Father and mothers residence') %>:
+        <span><%= deceased.f_res + ' and ' + deceased.m_res + ' respectively' %></span>
+      </p>
+      <p>
+        <%= fa_icon 'phone' %>
+        <%= t('Contacts Phone Number') %>:
+        <span><%= deceased.contact_tel %></span>
+      </p>
+
+      <time class="item-date-ribbon bad-news">Died: <%= formated_date deceased.d_dd %></time>
+    </div>
+  <% end %>
+</li>

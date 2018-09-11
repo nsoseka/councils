@@ -1,0 +1,96 @@
+<ul>
+  <li class="menu-item <%= @tab == 'new-borns' ? 'selected' : '' %>">
+    <span class="item" href="/ui/births">
+      <%= fa_icon 'child' %> Births
+    </span>
+    <div class="sub-menu show">
+      <ul>
+        <li class="<%= @menu == 'nb-rec' ? 'sub-menu-selected' : '' %>">
+         <%= link_to new_borns_path do %>
+            <%= fa_icon 'bell' %> New Births
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'nb-new' ? 'sub-menu-selected' : '' %>">
+           <%= link_to new_new_born_path do %>
+            <%= fa_icon 'plus' %> Register Child
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'nb-find' ? 'sub-menu-selected' : '' %>">
+         <%= link_to find_new_borns_path do %>
+            <%= fa_icon 'search' %> Child
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </li>
+  <li class="menu-item <%= @tab == 'deceaseds' ? 'selected' : '' %>">
+    <span class="item" href="/ui/deaths">
+    <%= fa_icon 'exclamation-circle' %> Deaths
+    </span>
+    <div class="sub-menu show">
+      <ul>
+        <li class="<%= @menu == 'd-all' ? 'sub-menu-selected' : '' %>">
+          <%= link_to deceaseds_path do %>
+            <%= fa_icon 'bell' %> New Deaths
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'd-new' ? 'sub-menu-selected' : '' %>">
+          <%= link_to new_deceased_path do %>
+            <%= fa_icon 'plus' %> Register Death
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'd-find' ? 'sub-menu-selected' : '' %>">
+          <%= link_to find_deceaseds_path do %>
+            <%= fa_icon 'search' %> Find Death
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </li>
+  <li class="menu-item <%= @tab == 'stats' ? 'selected' : '' %>">
+    <span class="item" href="/ui/statistics"><%= fa_icon 'table' %> Statistics</span>
+    <div class="sub-menu show">
+      <ul>
+        <li class="<%= @menu == 'b-stats' ? 'sub-menu-selected' : '' %>">
+          <%= link_to new_borns_this_week_path do %>
+            <%= fa_icon 'child' %> Birth Statistics
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'd-stats' ? 'sub-menu-selected' : '' %>">
+          <%= link_to deceaseds_this_week_path do %>
+            <%= fa_icon 'cut' %> Death Statistics
+          <% end %>
+        </li>
+        <li class="<%= @menu == 's-stats' ? 'sub-menu-selected' : '' %>">
+          <%= link_to unit_search_path do %>
+            <%= fa_icon 'search' %> Search Statistics
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </li>
+  <li class="menu-item <%= @tab == 'profile' ? 'selected' : '' %>">
+    <span class="item">
+    <%= fa_icon 'user' %> Your Profile
+    </span>
+    <div class="sub-menu show">
+      <ul>
+        <li class="<%= @menu == 'view-profile' ? 'sub-menu-selected' : '' %>">
+          <%= link_to hospital_path(current_hospital) do %>
+            <%= fa_icon 'user-circle' %> View Profile
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'edit-profile' ? 'sub-menu-selected' : '' %>">
+          <%= link_to edit_hospital_path(current_hospital) do %>
+            <%= fa_icon 'edit' %> Edit Profile
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'logout' ? 'sub-menu-selected' : '' %>">
+          <%= link_to sign_out_path do %>
+            <%= fa_icon 'sign-out' %> Logout
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </li>
+</ul>

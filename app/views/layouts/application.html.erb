@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Councils</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
+  </head>
+
+  <body>
+    <main class="main">
+      <header class="header">
+        <h1>
+          <a href="/"><%= current_agent.council_name.capitalize + ' Council' %></a>
+        </h1>
+        <nav>
+          <%= render "shared/header" %>
+        </nav>
+      </header>
+      <div class="main-content">
+        <%= yield %>
+      </div>
+    </main>
+    <footer>
+      <ul>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Youtube</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Created by Agape Inc.</a></li>
+      </ul>
+      <h2>&copy; Agape Inc. 2018 <%= fa_icon 'heart' %></h2>
+    </footer>
+  </body>
+</html>

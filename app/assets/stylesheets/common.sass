@@ -1,0 +1,146 @@
+@import 'colors'
+
+#unobtrusive-flash-messages
+  background: $purple 
+  color: $pure-white
+  .unobtrusive-flash-message-wrapper
+    background: $purple
+    padding: 20px
+    box-sizing: border-box
+    font-weight: bold
+    font-size: 1.4em
+  .unobtrusive-flash-message-wrapper.unobtrusive-flash-error
+    background: $red
+
+.scrollbar::-webkit-scrollbar-track
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+  border-radius: 10px
+  background-color: #F5F5F5
+.scrollbar::-webkit-scrollbar
+  width: 8px
+  background-color: #F5F5F5
+  border-radius: 10px
+.scrollbar::-webkit-scrollbar-thumb
+  border-radius: 10px
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3)
+  background-color: rgba(0, 0, 0, .2)
+
+.arrow-up
+  width: 0 
+  height: 0 
+  border-left: 5px solid transparent
+  border-right: 5px solid transparent
+  border-bottom: 5px solid black
+
+.arrow-down
+  width: 0 
+  height: 0 
+  border-left: 20px solid transparent
+  border-right: 20px solid transparent
+  border-top: 20px solid #f00
+
+.arrow-right
+  width: 0 
+  height: 0 
+  border-top: 60px solid transparent
+  border-bottom: 60px solid transparent
+  border-left: 60px solid green
+
+.arrow-left
+  width: 0 
+  height: 0 
+  border-top: 10px solid transparent
+  border-bottom: 10px solid transparent 
+  border-right: 10px solid $red
+.has-date
+  position: relative
+
+.item-date-ribbon
+  position: absolute
+  top: 2.1em
+  right: -12px
+  padding: .4em
+  background-color: #14485b
+  background-color: $brown
+  font-weight: bold
+  font-size: 1.25em
+  color: #fff
+  // border-radius: 4px 0 0 4px
+
+.item-date-ribbon.good-news
+  background: $green
+.item-date-ribbon.good-news::after
+  border-top-color: $blue
+  border-left-color: $blue
+.item-date-ribbon::after
+  content: ''
+  position: absolute
+  top: 100%
+  right: 0
+  width: 0
+  height: 0
+  border-color: transparent
+  border-style: solid
+  border-width: 6px
+  border-top-color: #0b2731
+  border-left-color: #0b2731
+.chosen-container 
+  width: 100% !important
+  margin: 10px auto
+.chosen-choices
+  width: 100%
+.captcha-container 
+  width: 100%
+  margin: 20px auto 0 auto
+  text-align: center
+.g-recaptcha
+  display: inline-block
+  width: 70%
+  margin: 0 auto
+.error
+  color: $brown
+.loader 
+  width: auto
+  height: 30px
+  display: none
+  vertical-align: middle
+
+// pagy styles
+.pagination
+  // background: $purple
+  color: $white
+  text-align: center
+  padding: 0 0 6px 0
+  .prev, .next, .page
+    padding: 5px 8px
+    font-weight: bold
+  span.prev 
+    background: $purple 
+    border-radius: 4px 0 0 4px
+  span.next 
+    background: $light-blue
+    border-radius: 0 4px 4px 0
+  .page
+    background: $orange
+  .active 
+    background: $red
+  .disabled.next, .disabled.prev 
+    background: $grey
+
+// pickadate styles
+.picker__box
+  .picker__select--month, .picker__select--year
+    width: 43%
+    // height: 40px
+    margin: 0 1%
+    font-weight: bold 
+    font-size: 1.1em
+    padding: 5px 0
+    background: $grey
+    // font-size: 1.3em
+  .picker__button--today, .picker__button--clear, .picker__button--close 
+    background: $blue 
+    color: $pure-white 
+    padding: 8px 20px
+    margin: 0 1%
+    width: 30%

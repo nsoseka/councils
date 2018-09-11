@@ -1,0 +1,114 @@
+@import 'colors'
+
+.calendar-activities
+  text-align: center
+  width: 100%
+  .data-container
+    div 
+      display: inline-block
+      vertical-align: middle
+    .vaccine-time
+      color: $light-blue
+      font-size: 1.2em
+      font-weight: bold
+  .sv4-linker, .sv3-linker, .sv2-linker, .sv1-linker, .stage-indicator, .vaccines
+    display: inline-block
+  .v-linker.s-o
+    .sv4-linker, .sv3-linker, .sv2-linker, .sv1-linker
+      background: $green
+  .v-linker, .h-linker 
+    .sv4-linker, .sv3-linker, .sv2-linker, .sv1-linker, .sh4-linker, .sh3-linker, .sh2-linker, .sh1-linker
+      border-radius: 3px
+      height: 5px
+      width: 5px
+      margin: 0 auto
+      background: $orange
+    .sv3-linker
+      height: 10px
+    .sv2-linker
+      height: 40px
+    .sv1-linker
+      height: 90px
+    .stage-indicator
+      width: auto 
+      border-radius: 50%
+      border: 1px solid $grey
+      padding: 20px 40px
+  .vaccines, .stage-indicator, .administration-status
+    display: inline-block
+    width: 15%
+  .vaccines
+    li 
+      padding: 3px 0
+      text-align: center
+  .stage-indicator, .vaccines, .administration-status
+    box-sizing: border-box
+    border: 1px solid $grey
+    padding: 20px 5px
+    border-radius: 4px
+  .administration-status
+    padding: 0px
+    border: 1px solid $pure-white
+    border-radius: 4px
+    li.status-edit
+      padding: 0
+      a
+        display: inline-block
+        width: 100%
+        box-sizing: border-box
+        color: $pure-white
+        font-weight: bold
+        padding: 10px 0
+        margin: 0px auto
+        border-radius: 0
+        background: $blue
+        i 
+          color: $pure-white
+          font-size: 1.1em
+          vertical-align: middle
+      a:hover
+        background: $light-blue
+
+    i 
+      color: $orange
+      font-size: 1.8em
+      vertical-align: middle
+    li.status-edit + li 
+      background: $grey
+      color: $dark
+      font-weight: bold
+      border: none
+      border-radius: 0
+      padding: 10px 0
+  .h-linker
+    width: 26%
+    .sh4-linker, .sh3-linker, .sh2-linker, .sh1-linker
+      width: 2%
+      height: 6px
+      display: inline-block
+      margin: 0 0.5%
+      box-sizing: border-box
+      background: $red
+    .sh3-linker
+      width: 5%
+    .sh2-linker
+      width: 20%
+    .sh1-linker
+      width: 45%
+  .h-linker.h-left
+    .sh4-linker, .sh3-linker, .sh2-linker, .sh1-linker
+      background: $purple
+
+.n4y-calendar
+  margin: 40px 0
+  div 
+    display: none
+  .show-n4y
+    border: 2px solid $grey
+    display: inline-block
+    padding: 8px 20px
+    cursor: pointer
+  .show-n4y:hover
+    background: $blue
+    border: 2px solid $blue
+    color: $pure-white

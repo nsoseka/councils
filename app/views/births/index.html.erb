@@ -1,0 +1,18 @@
+<h1>Recently Issued Certificates</h1>
+<ul class="items">
+  <% if @births.empty? %>
+    <h3>No birth certificates have been issued so far today</h3>
+  <% else %>
+    <%== pagy_nav(@pagy) %>
+     <% @births.each do|birth|%>
+      <%= render 'birth', { birth: birth } %>
+    <% end %>
+  <% end %>
+</ul>
+<% if @new_birth == 'yes' %>
+<script>
+  swal("Birth Certificate Created", "", "success");
+</script>
+<% end %>
+
+

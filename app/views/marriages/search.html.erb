@@ -1,0 +1,15 @@
+<h1>Search results</h1>
+<div class="find-dc">
+  <%= render 'search_form', { search_query: @search_query } %>
+</div>
+<ul class="children search-results">
+  <% if @marriages.empty? %>
+    <h3>No results match your search</h3>
+  <% else %>
+    <%== pagy_nav(@pagy) %>
+    <% @marriages.each do|marriage|%>
+      <%= render "marriage", {marriage: marriage} %>
+    <% end %>
+  <% end %>
+</ul>
+

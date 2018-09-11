@@ -1,0 +1,35 @@
+<header class="stat-page">
+  <h1 class="stat-page">Death Statistics</h1>
+  <nav class="stat-nav">
+    <ul>
+      <li class="<%= chosen == 'day' ? 'stat-chosen' : '' %>">
+        <%= link_to deaths_this_day_path do %>
+          Day
+        <% end %>
+      </li>
+      <li class="<%= chosen == 'week' ? 'stat-chosen' : '' %>">
+        <%= link_to deaths_this_week_path do %>
+          Week
+        <% end %>
+      </li>
+      <li class="<%= chosen == 'month' ? 'stat-chosen' : '' %>">
+        <%= link_to deaths_this_month_path do %>
+          Month
+        <% end %>
+      </li>
+      <li class="<%= chosen == 'year' ? 'stat-chosen' : '' %>">
+        <%= link_to deaths_this_year_path do %>
+          Year
+        <% end %>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<% if mean != 0 %>
+  <%= area_chart data %>
+  <%= column_chart data, download: true %>
+  <%= pie_chart data, download: true %>
+<% else %>
+  <h3 class="nothing">No deaths registered so far this <%= chosen %></h3>
+<% end %>

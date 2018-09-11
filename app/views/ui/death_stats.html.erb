@@ -1,0 +1,25 @@
+<h1>Death Statistics</h1>
+<% data = [
+  { name: "happy", data: { "1": 5, "2": 106,  "3": 26 , "4": 45}}, 
+  { name: "joy", data: { "1": 36 ,  "2": 46,  "3": 156 , "4": 105}},
+  { name: "sad", data: { "1": 5 , "2": 93 , "3": 106, "4": 80}}, 
+  { name: "peace", data: { "1": 89, "2": 127, "3": 12, "4": 125}}
+  ]
+data1 = { "healthy": 4, "still bearths": 1, "unhealthy": 1 }
+series_a = {
+    "2018-01-01": 350,
+    "2018-01-02": 125,
+    "2018-01-03": 433
+  }
+series_b = {
+    "2018-01-01": 150,
+    "2018-01-02": 425,
+    "2018-01-03": 233
+  }  %>
+<%= area_chart [
+  {name: "Series A", data: series_a},
+  {name: "Series B", data: series_b}
+]
+ %>
+<%= line_chart data, download: true %>
+<%= pie_chart data1, download: true %>

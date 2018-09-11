@@ -1,0 +1,12 @@
+<h1>Agents in the council</h1>
+
+<% current_agent.council.agents.each do |agent| %>
+  <div class="agent">
+    <div class="private-details">
+      <p>Username: <span><%= agent.username %></span></p>
+      <p>Full Names: <span><%= agent.full_names %></span></p>
+      <p>Phone Number: <span><%= agent.phone_number %></span></p>
+      <p>Email: <span><%= agent.email %></span></p>
+    </div>
+  </div>
+<% end %>

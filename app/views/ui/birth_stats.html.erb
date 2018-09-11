@@ -1,0 +1,30 @@
+<h1>Birth Statistics</h1>
+<% data = [
+  { name: "happy", data: { "1": 5, "2": 76,  "3": 26 }}, 
+  { name: "joy", data: { "1": 36 ,  "2": 46,  "3": 56 }},
+  { name: "sad", data: { "3": 5 , "2": 33 , "2": 66 }}, 
+  { name: "peace", data: { "4": 89, "3": 87, "2": 12}}
+  ]
+data1 = { "healthy": 4, "still bearths": 1, "unhealthy": 1 }
+series_a = {
+    "2018-01-01": 350,
+    "2018-01-02": 125,
+    "2018-01-03": 433
+  }
+series_b = {
+    "2018-01-01": 150,
+    "2018-01-02": 425,
+    "2018-01-03": 233
+  }  %>
+<%= bar_chart [
+  {name: "Series A", data: series_a},
+  {name: "Series B", data: series_b}
+]
+ %>
+<%= column_chart data, download: true %>
+<!-- <%= timeline [
+  ["Njavnyuy", "1789-04-29", "1797-03-03"],
+  ["Shisong", "1797-03-03", "1801-03-03"],
+  ["Mbveh", "1801-03-03", "1809-03-03"]
+] %> -->
+<%= pie_chart data1, download: true %>
