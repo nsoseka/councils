@@ -1,7 +1,7 @@
-<h1>Todays Deaths</h1>
+<h1><%= t('.todays_deaths') %></h1>
 <ul class="children">
   <% if @deaths.empty? %>
-    <h3>No death certificates have been issued so far today</h3>
+    <h3><%= t('.no_deaths') %></h3>
   <% else %>
     <%== pagy_nav(@pagy) %>
     <% @deaths.each do|t|%>

@@ -1,9 +1,9 @@
 <% choice_factor = '88888888' %>
-<h1>New Death Certificate</h1>
+<h1><%= t('.title') %></h1>
 <div class="main register-citizen">
   <%= my_form_for @death, url: deaths_path(@death), html: { id: "new-citizen", class: 'form'} do |f| %>
-    <h2>Death Certificate Form</h2>
-    <%= f.label :administrative_region_id, 'Region' %>
+    <h2><%= t('.dc_form') %></h2>
+    <%= f.label :administrative_region_id, t('.region') %>
     <input type="text" value="<%= current_agent.administrative_region_name %>" name="administrative_region" disabled/>
     <label><%= t('.division') %></label>
     <input type="text" value="<%= current_agent.division_name %>" name="division" disabled/>
@@ -12,74 +12,74 @@
     <label><%= t('.council') %></label>
     <input type="text" value="<%= current_agent.council_name.capitalize + ' Council' %>" name="administrative_region" disabled/>
     <%= f.hidden_field :council_id, value: current_agent.council.id, hidden: true %>
-    <%= f.label :certificate_number, 'Certificate Number' %>
+    <%= f.label :certificate_number, t('.certificate_number') %>
     <%= f.text_field :certificate_number %>
 
     <h3><%= t('.owners_details') %></h3>
 
-    <%= f.label :surname, 'Surname' %>
+    <%= f.label :surname, t('.surname') %>
     <%= f.text_field :surname %>
-    <%= f.label :given_name, 'Given names' %>
+    <%= f.label :given_name, t('.given_name') %>
     <%= f.text_field :given_name %>
-    <%= f.label :date_died, 'Died on the' %>
+    <%= f.label :date_died, t('.date_of_death') %>
     <%= f.text_field :date_died, class: 'datepicker' %>
-    <%= f.label :place_died, 'At' %>
+    <%= f.label :place_died, t('.at') %>
     <%= f.text_field :place_died %>
-    <%= f.label :mr, 'Mr' %>
+    <%= f.label :mr, t('.mr') %>
     <%= f.text_field :mr %>
-    <%= f.label :date_born, 'Date of birth' %>
+    <%= f.label :date_born, t('.date_of_birth') %>
     <%= f.text_field :date_born, class: 'datepicker' %>
-    <%= f.label :place_born, 'Place of birth' %>
+    <%= f.label :place_born, t('.place_of_birth') %>
     <%= f.text_field :place_born %>
-    <%= f.label :sex, 'Sex'%>
-    <%= f.select :sex, options_for_select([['Choose Sex', choice_factor], ['Male', 'male'], ['Female', 'female']], @death.sex), {}, { class: 'sex chosen-select' } %>
-    <%= f.label :marital_status, 'Marital Status' %>
-    <%= f.select :marital_status, options_for_select([['Choose Status', choice_factor], ['Married', 'married'], ['Single', 'single']], @death.marital_status), {}, { class: 'sex chosen-select' } %>
-    <%= f.label :residence, 'Resident at' %>
+    <%= f.label :sex, t('.sex') %>
+    <%= f.select :sex, options_for_select([[t('.choose_sex'), choice_factor], [t('.male'), 'male'], [t('.female'), 'female']], @death.sex), {}, { class: 'sex chosen-select' } %>
+    <%= f.label :marital_status, t('.marital_status') %>
+    <%= f.select :marital_status, options_for_select([[t('.choose_status'), choice_factor], [t('.married'), 'married'], [t('.single'), 'single']], @death.marital_status), {}, { class: 'sex chosen-select' } %>
+    <%= f.label :residence, t('.resident_at') %>
     <%= f.text_field :residence %>
-    <%= f.label :occupation, 'Occupation' %>
+    <%= f.label :occupation, t('.occupation') %>
     <%= f.text_field :occupation %>
-    <%= f.label :father, "Father's name" %>
+    <%= f.label :father, t('.father') %>
     <%= f.text_field :father %>
-    <%= f.label :mother, "Mother's name" %>
+    <%= f.label :mother, t('.mother') %>
     <%= f.text_field :mother %>
-    <%= f.label :date_drawn, 'Drawn up on the' %>
+    <%= f.label :date_drawn, t('.date_drawn') %>
     <%= f.text_field :date_drawn, class: 'datepicker' %>
-    <%= f.label :declaration, 'In accordance with the declaration of' %>
+    <%= f.label :declaration, t('.declaration') %>
     <%= f.text_field :declaration %>
 
-    <h3>The Declarant</h3>
-    <%= f.label :d_name, 'The Declarant' %>
+    <h3><%= t('.declarant') %></h3>
+    <%= f.label :d_name, t('.full_name') %>
     <%= f.text_field :d_name %>
-    <%= f.label :d_occupation, 'Occupation' %>
+    <%= f.label :d_occupation, t('.occupation') %>
     <%= f.text_field :d_occupation %>
-    <%= f.label :d_capacity, 'Capacity' %>
-    <%= f.select :d_capacity, options_for_select([['Choose Capacity', choice_factor], ['Head of the family', 'f_head'], ['Relative of the diseased', 'relative'], ['Person who has full knowledge of the death', 'pwk'], ['Head of the medical institution', 'm_head'], ['Head of the prison', 'p_head']], @death.d_capacity), {}, { class: 'sex chosen-select' } %>
+    <%= f.label :d_capacity, t('.capacity') %>
+    <%= f.select :d_capacity, options_for_select([[t('.choose_capacity'), choice_factor], [t('.f_head'), 'f_head'], [t('.relative'), 'relative'], [t('.pwk'), 'pwk'], [t('.m_head'), 'm_head'], [t('.p_head'), 'p_head']], @death.d_capacity), {}, { class: 'sex chosen-select' } %>
 
-    <h3>First Witness</h3>
-    <%= f.label :fw_name, 'First Witness Fullname' %>
+    <h3><%= t('.first_witness') %></h3>
+    <%= f.label :fw_name, t('.full_name') %>
     <%= f.text_field :fw_name %>
-    <%= f.label :fw_occupation, 'Occupation' %>
+    <%= f.label :fw_occupation, t('.occupation') %>
     <%= f.text_field :fw_occupation %>
-    <%= f.label :fw_residence, 'Residence' %>
+    <%= f.label :fw_residence, t('.residence') %>
     <%= f.text_field :fw_residence %>
     
 
-    <h3>Second Witness</h3>
-    <%= f.label :sw_name, 'Second Witness Fullname' %>
+    <h3><%= t('.second_witness') %></h3>
+    <%= f.label :sw_name, t('.full_name') %>
     <%= f.text_field :sw_name %>
-    <%= f.label :sw_occupation, 'Occupation' %>
+    <%= f.label :sw_occupation, t('.occupation') %>
     <%= f.text_field :sw_occupation %>
-    <%= f.label :sw_residence, 'Residence' %>
+    <%= f.label :sw_residence, t('.residence') %>
     <%= f.text_field :sw_residence %>
 
-    <h3><%= t('.who_attested_to_the_truth_of_this_declaration') %></h3>
+    <h3><%= t('.attestators') %></h3>
 
-    <%= f.label :registrar, 'Civil Status Registrar' %>
+    <%= f.label :registrar, t('.registrar') %>
     <%= f.text_field :registrar %>
-    <%= f.label :secretary, 'Secretary' %>
+    <%= f.label :secretary, t('.secretary') %>
     <%= f.text_field :secretary %>
-    <%= f.label :date_made, 'On the' %>
+    <%= f.label :date_made, t('.date_done') %>
     <%= f.text_field :date_made, class: 'datepicker' %>
     
     <div class="submit">
@@ -92,7 +92,8 @@
       $('.datepicker').pickadate({
         selectYears: 120,
         max: new Date(),
-        selectMonths: 12
+        selectMonths: 12,
+        format: 'dd/mm/yyyy',
       });
     });
   </script>
@@ -105,7 +106,7 @@
            today: 'aujourd\'hui',
            clear: 'effacer',
            close: 'fermer',
-           formatSubmit: 'yyyy/mm/dd',
+           format: 'dd/mm/yyyy',
           selectYears: 120,
           max: new Date(),
           selectMonths: 12

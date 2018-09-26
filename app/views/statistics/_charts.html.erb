@@ -1,3 +1,83 @@
-<%= area_chart data %>
+<% if data.count > 1 %>
+  <%= area_chart data %>
+<% end %>
 <%= column_chart data, download: true %>
-<%= pie_chart data, download: true %>
+<%= pie_chart data, download: true, colors: ['#DD551A', '#AD7A99', '#00AA00', '#AFA737', '#FFA737', '#031219', '#225560', '#82204A', '#ECC8AE', '#00FF00', '#BB32FF', '#000000', '#DDFFD9', '#2A9D8F', '#ff9933', '#660066', '#e6b800', '#800000', '#1a0000', '#052A3A', '#151a21', '#3b99fc', '#E9C46A', '#DDD399', '#345432', '#999999', '#465748', '#DEDEDE', '#DAEE', '#8DD', '#43D', '#284989'] %>
+
+<h2 class="stat-analysis">Statistical Analysis</h2>
+<table class="stats-descriptions">
+  <thead>
+    <th>Property</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Entries</td>
+      <td><%= stats[:number] %></td>
+    </tr>
+    <tr>
+      <td>Sum of all Entries</td>
+      <td><%= stats[:sum] %></td>
+    </tr>
+    <tr>
+      <td>Variance</td>
+      <td><%= stats[:variance] %></td>
+    </tr>
+    <tr>
+      <td>Standard Deviation</td>
+      <td><%= stats[:standard_deviation] %></td>
+    </tr>
+    <tr>
+      <td>Mean</td>
+      <td><%= stats[:mean] %></td>
+    </tr>
+    <tr>
+      <td>Mode</td>
+      <td><%= stats[:mean] %></td>
+    </tr>
+    <tr>
+      <td>Median</td>
+      <td><%= stats[:median] %></td>
+    </tr>
+    <tr>
+      <td>Mininum Value</td>
+      <td><%= stats[:min] %></td>
+    </tr>
+    <tr>
+      <td>Maximum Value</td>
+      <td><%= stats[:max] %></td>
+    </tr>
+    <tr>
+      <td>Range</td>
+      <td><%= stats[:range] %></td>
+    </tr>
+    <tr>
+      <td>Q1</td>
+      <td><%= stats[:q1] %></td>
+    </tr>
+    <tr>
+      <td>Q2</td>
+      <td><%= stats[:q2] %></td>
+    </tr>
+    <tr>
+      <td>Q3</td>
+      <td><%= stats[:q3] %></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 class="stat-analysis">DATA ENTRIES</h2>
+<table class="entries">
+  <thead>
+    <th>Time Period</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <% data.each do |key, value| %>
+      <tr>
+        <td><%= key %></td>
+        <td><%= value %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

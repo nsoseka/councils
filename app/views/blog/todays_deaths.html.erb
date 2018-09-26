@@ -1,12 +1,7 @@
 <h1>Todays Death Statistics</h1>
-<p class="new-marriages basic-stats">200 Deaths Today</p>
-<% if @mean != 0 %>
-  <h3 class="nothing">Area Chart</h3>
-  <%= area_chart @data, download: true %>
-  <h3 class="nothing">Column Chart</h3>
-  <%= column_chart @data, download: true %>
-  <h3 class="nothing">Pie Chart</h3>
-  <%= pie_chart @data, download: true %>
+<p class="new-marriages basic-stats"><%= @stats[:sum].to_i %> Death(s) Today</p>
+<% if !@stats[:mean].nil? && @stats[:mean] > 0 %>
+  <%= render 'statistics/charts', { data: @data, stats: @stats } %>
 <% else %>
   <h3 class="nothing">No deaths registered so far today</h3>
 <% end %>

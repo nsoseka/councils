@@ -17,8 +17,7 @@ class StatisticsController < ApplicationController
 
   def deaths_day
     @menu = 'd-stats'
-    @data = days_data current_agent.council.deceaseds 
-    @mean = mean(@data)
+    @data = days_data current_agent.council.deceaseds.today
     @stats = setup_stats(@data)
     @chosen = 'day'
     render 'death_stats'
@@ -27,7 +26,6 @@ class StatisticsController < ApplicationController
   def deaths_week
     @menu = 'd-stats'
     @data = weeks_data current_agent.council.deceaseds
-    @mean = mean(@data)
     @stats = setup_stats(@data)
     @chosen = 'week'
     render 'death_stats'
@@ -36,7 +34,6 @@ class StatisticsController < ApplicationController
    def deaths_month
     @menu = 'd-stats'
     @data = months_data current_agent.council.deceaseds
-    @mean = mean(@data)
     @stats = setup_stats(@data)
     @chosen = 'month'
     render 'death_stats'
@@ -45,7 +42,6 @@ class StatisticsController < ApplicationController
   def deaths_year
     @menu = 'd-stats'
     @data = years_data current_agent.council.deceaseds
-    @mean = mean(@data)
     @stats = setup_stats(@data)
     @chosen = 'year'
     render 'death_stats'
@@ -53,8 +49,7 @@ class StatisticsController < ApplicationController
 
   def births_day
     @menu = 'b-stats'
-    @data = days_data current_agent.council.new_borns
-    @mean = mean(@data)
+    @data = days_data current_agent.council.new_borns.today
     @stats = setup_stats(@data)
     @chosen = 'day'
     render 'birth_stats'
@@ -63,7 +58,6 @@ class StatisticsController < ApplicationController
   def births_week
     @menu = 'b-stats'
     @data = weeks_data current_agent.council.new_borns
-    @mean = mean(@data)
     @stats = setup_stats(@data)
     @chosen = 'week'
     render 'birth_stats'
@@ -72,7 +66,6 @@ class StatisticsController < ApplicationController
   def births_month
     @menu = 'b-stats'
     @data = months_data current_agent.council.new_borns
-    @mean = mean(@data)
     @stats = setup_stats(@data)
     @chosen = 'month'
     render 'birth_stats'
@@ -81,7 +74,6 @@ class StatisticsController < ApplicationController
   def births_year
     @menu = 'b-stats'
     @data = years_data current_agent.council.new_borns
-    @mean = mean(@data)
     @stats = setup_stats(@data)
     @chosen = 'year'
     render 'birth_stats'
@@ -90,7 +82,6 @@ class StatisticsController < ApplicationController
   def marriages_week
     @menu = 'm-stats'
     @data = weeks_data current_agent.council.marriages
-    @mean = mean(@data)
     @stats = setup_stats(@data)
     @chosen = 'week'
     render 'marriage_stats'
@@ -99,7 +90,6 @@ class StatisticsController < ApplicationController
   def marriages_month
     @menu = 'm-stats'
     @data = months_data current_agent.council.marriages
-    @mean = mean(@data)
     @stats = setup_stats(@data)
     @chosen = 'month'
     render 'marriage_stats'
@@ -108,7 +98,6 @@ class StatisticsController < ApplicationController
   def marriages_year
     @menu = 'm-stats'
     @data = years_data current_agent.council.marriages
-    @mean = mean(@data)
     @stats = setup_stats(@data)
     @chosen = 'year'
     render 'marriage_stats'
@@ -134,14 +123,12 @@ class StatisticsController < ApplicationController
     @data = get_data(date, @set, @group, current_agent.council)
     @message = craft_message(@group, @set, @period, date)
 
-    @mean = mean(@data)
     @stats = setup_stats(@data)
   end
 
   def deceaseds_day
     @menu = 'd-stats'
     @data = days_data current_hospital.deceaseds
-    @mean = mean(@data)
     @stats = setup_stats(@data)
     @chosen = 'day'
     render 'deceased_stats'
@@ -150,7 +137,6 @@ class StatisticsController < ApplicationController
   def deceaseds_week
     @menu = 'd-stats'
     @data = weeks_data current_hospital.deceaseds
-    @mean = mean(@data)
     @stats = setup_stats(@data)
     @chosen = 'week'
     render 'deceased_stats'
@@ -159,7 +145,6 @@ class StatisticsController < ApplicationController
    def deceaseds_month
     @menu = 'd-stats'
     @data = months_data current_hospital.deceaseds
-    @mean = mean(@data)
     @stats = setup_stats(@data)
     @chosen = 'month'
     render 'deceased_stats'
@@ -168,7 +153,6 @@ class StatisticsController < ApplicationController
   def deceaseds_year
     @menu = 'd-stats'
     @data = years_data current_hospital.deceaseds
-    @mean = mean(@data)
     @stats = setup_stats(@data)
     @chosen = 'year'
     render 'deceased_stats'
@@ -177,7 +161,6 @@ class StatisticsController < ApplicationController
   def new_borns_day
     @menu = 'b-stats'
     @data = days_data current_hospital.new_borns
-    @mean = mean(@data)
     @stats = setup_stats(@data)
     @chosen = 'day'
     render 'new_born_stats'
@@ -186,7 +169,6 @@ class StatisticsController < ApplicationController
   def new_borns_week
     @menu = 'b-stats'
     @data = weeks_data current_hospital.new_borns
-    @mean = mean(@data)
     @stats = setup_stats(@data)
     @chosen = 'week'
     render 'new_born_stats'
@@ -195,7 +177,6 @@ class StatisticsController < ApplicationController
   def new_borns_month
     @menu = 'b-stats'
     @data = months_data current_hospital.new_borns
-    @mean = mean(@data)
     @stats = setup_stats(@data)
     @chosen = 'month'
     render 'new_born_stats'
@@ -204,7 +185,6 @@ class StatisticsController < ApplicationController
   def new_borns_year
     @menu = 'b-stats'
     @data = years_data current_hospital.new_borns
-    @mean = mean(@data)
     @stats = setup_stats(@data)
     @chosen = 'year'
     render 'new_born_stats'
@@ -228,7 +208,6 @@ class StatisticsController < ApplicationController
     date = Date.new(@period[0].to_i, @period[1].to_i, @period[2].to_i)
     @data = get_data(date, @set, @group, current_hospital)
     @message = craft_message(@group, @set, @period, date)
-    @mean = mean(@data)
     @stats = setup_stats(@data)
   end
 
@@ -240,6 +219,7 @@ class StatisticsController < ApplicationController
 
   def setup_stats(data)
     @stats = data.values.extend(DescriptiveStatistics).descriptive_statistics
+    @stats
   end
 
   def resolve_layout

@@ -3,47 +3,47 @@
     <div class="item-container">
       <h3>
         <%= fa_icon 'child' %>
-        <%= t('ui.shared.childs_name') %>:
+        <span><%= t('.childs_name') %>:</span>
         <span><%= new_born.c_name %></span>
       </h3>
       <p>
         <%= fa_icon 'id-card' %>
-        <%= t("Child's' Code") %>:
+        <span><%= t(".childs_code") %>:</span>
         <span class="certificate_numbe"><%= new_born.child_code.upcase %></span>
       </p>
       <p>
         <%= fa_icon 'square' %>
-        <%= t('ui.shared.place_of_birth') %>:
+        <span><%= t('.place_of_birth') %>:</span>
         <span><%= new_born.c_pb %></span>
       </p>
       <p>
         <%= fa_icon 'male' %>
         <%= fa_icon 'female' %>
-        <%= t('ui.shared.sex') %>:
-        <span><%= new_born.sex %></span>
+        <span><%= t('.sex') %>:</span>
+        <span><%= t ('.' + new_born.sex) %></span>
       </p>
       <p>
         <%= fa_icon 'male' %>
-        <%= t('ui.shared.fathers_name') %>:
+        <span><%= t('.fathers_name') %>:</span>
         <span><%= new_born.f_name %></span>
       </p>
       <p>
         <%= fa_icon 'female' %>
-        <%= t('ui.shared.mothers_name') %>:
+        <span><%= t('.mothers_name') %>:</span>
         <span><%= new_born.m_name %></span>
       </p>
       <p>
         <%= fa_icon 'home' %>
-        <%= t('Father and mothers residence') %>:
-        <span><%= new_born.f_res + ' and ' + new_born.m_res + ' respectively' %></span>
+        <span><%= t(".father_and_mothers_res") %>:</span>
+        <span><%= new_born.f_res + t('.and') + new_born.m_res + t('.respectively') %></span>
       </p>
       <p>
         <%= fa_icon 'phone' %>
-        <%= t('Father and mothers phone number') %>:
-        <span><%= new_born.f_tel + ' and ' + new_born.m_tel + ' respectively' %></span>
+        <span><%= t(".father_and_mothers_tel") %>:</span>
+        <span><%= new_born.f_tel + t('.and') + new_born.m_tel + t('.respectively') %></span>
       </p>
 
-      <time class="item-date-ribbon good-news">Born: <%= formated_date new_born.c_db %></time>
+      <time class="item-date-ribbon good-news"><%= t(".born") %>: <%= formated_date new_born.c_db %></time>
     </div>
   <% end %>
 </li>

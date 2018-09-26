@@ -1,9 +1,7 @@
 <h1><%= @birth.surname + ' ' + @birth.given_name %></h1>
 <div class="main register-citizen">
   <div id="new-citizen">
-    <h2>
-      Birth Certificate
-    </h2>
+    <h2><%= t('.title') %></h2>
     <label>Region</label>
     <input type="text" value="<%= current_agent.administrative_region_name %>" name="administrative_region" disabled/>
     <label><%= t('.division') %></label>
@@ -12,74 +10,74 @@
     <input type="text" value="<%= current_agent.sub_division_name.capitalize %>" name="administrative_region" disabled/>
     <label><%= t('.council') %></label>
     <input type="text" value="<%= current_agent.council_name.capitalize + ' Council' %>" name="administrative_region" disabled/>
-    <label>Secondary registration centre</label>
+    <label><%= t('.secondary_center') %></label>
     <input type="text" value="<%= @birth.sub_center %>" disabled>
-    <label>Certificate Number</label>
+    <label><%= t('.certificate_number') %></label>
     <input type="text" value="<%= @birth.certificate_number %>" disabled>
 
-    <p>Child's details</p>
+    <p><%= t('.owners_details') %></p>
 
-    <label><%= t('Surname of the child') %></label>
+    <label><%= t('.surname') %></label>
     <input type="text" value="<%= @birth.surname %>" disabled>
-    <label><%= t('Given name of the child') %></label>
+    <label><%= t('.given_names') %></label>
     <input type="text" value="<%= @birth.given_name %>" disabled>
-    <label><%= t('Born on the') %></label>
+    <label><%= t('.date_of_birth') %></label>
     <input type="text" value="<%= formated_date @birth.date_born %>" disabled>
-    <label><%= t('At') %></label>
+    <label><%= t('.at') %></label>
     <input type="text" value="<%= @birth.place_born %>" disabled>
-    <label><%= t('Sex') %></label>
-    <input type="text" value="<%= @birth.sex %>" disabled>
+    <label><%= t('.sex') %></label>
+    <input type="text" value="<%= t('.' + @birth.sex) %>" disabled>
 
-    <p>Father's details</p>
+    <p><%= t('.fathers_details') %></p>
 
-    <label><%= t('Of') %></label>
+    <label><%= t('.father') %></label>
     <input type="text" value="<%= @birth.father %>" disabled>
-    <label><%= t('Born at') %></label>
+    <label><%= t('.fathers_place_of_birth') %></label>
     <input type="text" value="<%= @birth.father_pb %>" disabled>
-    <label><%= t('Om the') %></label>
+    <label><%= t('.fathers_date_of_birth') %></label>
     <input type="text" value="<%= formated_date @birth.father_db %>" disabled>
-    <label><%= t('Resident at') %></label>
+    <label><%= t('.fathers_residence') %></label>
     <input type="text" value="<%= @birth.father_res %>" disabled>
-    <label><%= t('Occupation') %></label>
+    <label><%= t('.fathers_occupation') %></label>
     <input type="text" value="<%= @birth.father_job %>" disabled>
-    <label><%= t('Nationality') %></label>
+    <label><%= t('.nationality') %></label>
     <input type="text" value="<%= @birth.father_n %>" disabled>
-    <label><%= t('Reference Document') %></label>
+    <label><%= t('.reference_documents') %></label>
     <input type="text" value="<%= formated_rf_doc @birth.father_rf %>" disabled>
 
-    <p>Mother's details</p>
+    <p><%= t('.mothers_details') %></p>
 
-    <label><%= t('And of') %></label>
+    <label><%= t('.mother') %></label>
     <input type="text" value="<%= @birth.mother %>" disabled>
-    <label><%= t('Born at') %></label>
+    <label><%= t('.mothers_place_of_birth') %></label>
     <input type="text" value="<%= @birth.mother_pb %>" disabled>
-    <label><%= t('On the') %></label>
+    <label><%= t('.mothers_date_of_birth') %></label>
     <input type="text" value="<%= formated_date @birth.mother_db %>" disabled>
-    <label><%= t('Resident at') %></label>
+    <label><%= t('.mothers_residence') %></label>
     <input type="text" value="<%= @birth.mother_res %>" disabled>
-    <label><%= t('Occupation') %></label>
+    <label><%= t('.mothers_occupation') %></label>
     <input type="text" value="<%= @birth.mother_job %>" disabled>
-    <label><%= t('Nationality') %></label>
+    <label><%= t('.nationality') %></label>
     <input type="text" value="<%= @birth.mother_n %>" disabled>
-    <label><%= t('Reference Document') %></label>
-    <input type="text" value="<%= formated_rf_doc @birth.mother_rf %>" disabled>
+    <label><%= t('.reference_documents') %></label>
+    <input type="text" value="<%= t('.' + @birth.mother_rf) %>" disabled>
 
-    <label><%= t('Drawn up on the') %></label>
+    <label><%= t('.drawn_up_on') %></label>
     <input type="text" value="<%= formated_date @birth.date_drawn %>" disabled>
-    <label><%= t('In accordance with the declaration of') %></label>
+    <label><%= t('.accord') %></label>
     <input type="text" value="<%= @birth.declaration %>" disabled>
 
-    <p>Who attested to the truth of this declaration</p>
+    <p><%= t('.attestator') %></p>
 
-    <label><%= t('By us') %></label>
+    <label><%= t('.by_us') %></label>
     <input type="text" value="<%= @birth.registrar %>" disabled>
-    <p>Civil Status Registrar</p>
+    <p><%= t('.registrar') %></p>
 
-    <label><%= t('In the presence of') %></label>
+    <label><%= t('.presence_of') %></label>
     <input type="text" value="<%= @birth.secretary %>" disabled>
-    <p>Secretary</p>
+    <p><%= t('.secretary') %></p>
 
-    <label><%= t('Done on the') %></label>
+    <label><%= t('.done_on_the') %></label>
     <input type="text" value="<%= formated_date @birth.date_done %>" disabled>
   </div>
 </div>

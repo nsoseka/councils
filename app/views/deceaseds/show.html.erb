@@ -1,10 +1,8 @@
 <h1><%= @deceased.d_name %></h1>
 <div class="main register-citizen">
   <div id="new-citizen">
-    <h2>
-      Death Registration Card
-    </h2>
-    <label><%= t('.deceaseds_name') %></label>
+    <h2><%= t('.death_registration_card') %></h2>
+    <label><%= t('.deceased_name') %></label>
     <input type="text" value="<%= @deceased.d_name %>" disabled>
     <label><%= t('.date_of_birth') %></label>
     <input type="text" value="<%= formated_date @deceased.d_db %>" disabled>
@@ -16,12 +14,12 @@
     <input type="text" value="<%= @deceased.d_pd %>" disabled>
     <label><%= t('.occupation') %></label>
     <input type="text" value="<%= @deceased.d_job %>" disabled>
-    <label><%= t('.Marital status') %></label>
+    <label><%= t('.marital_status') %></label>
     <input type="text" value="<%= @deceased.marital_status %>" disabled>
-    <label><%= t('.Number of children') %></label>
+    <label><%= t('.number_of_children') %></label>
     <input type="text" value="<%= @deceased.num_children %>" disabled>
-    <label><%= t('.Sex') %></label>
-    <input type="text" value="<%= @deceased.sex %>" disabled>
+    <label><%= t('.sex') %></label>
+    <input type="text" value="<%= t('.' + @deceased.sex) %>" disabled>
 
     <h3><%= t('.fathers_details') %></h3>
 
@@ -38,12 +36,12 @@
     <input type="text" value="<%= @deceased.m_res %>" disabled>
 
 
-    <h3>Guardians Contact Details</h3>
-    <label>Persorn to contact's name</label>
+    <h3><%= t('.contacts_details') %></h3>
+    <label><%= t('.contacts_name') %></label>
     <input type="text" value="<%= @deceased.contact %>" disabled>
-    <label>Phone Number</label>
+    <label><%= t('.contacts_number') %></label>
     <input type="text" value="<%= @deceased.contact_tel %>" disabled>
-    <label><%= t('.Contacts language preference') %></label>
+    <label><%= t('.preferred_language') %></label>
     <input type="text" value="<%= @deceased.contact_lang.capitalize %>" disabled>
   </div>
 </div>

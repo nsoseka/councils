@@ -6,9 +6,7 @@
 
 <% if @mean != 0 %>
   <h3 class="nothing"><%= @message %></h3>
-  <%= area_chart @data %>
-  <%= column_chart @data, download: true %>
-  <%= pie_chart @data, download: true %>
+  <%= render 'statistics/charts', { data: @data, stats: {} } %>
 <% else %>
   <h3 class="nothing"><%= @message %> </h3>
   <h3 class="nothing n-registered">No <%= @set %> registered yet </h3>

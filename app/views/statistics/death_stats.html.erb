@@ -26,8 +26,8 @@
   </nav>
 </header>
 
-<% if @stats[:mean] != 0 %>
-  <%= render 'charts', { data: @data } %>
+<% if !@stats[:mean].nil? && @stats[:mean] > 0 %>
+  <%= render 'charts', { data: @data, stats: @stats } %>
 <% else %>
   <h3 class="nothing">No deaths registered so far this <%= @chosen %></h3>
 <% end %>

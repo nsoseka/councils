@@ -1,4 +1,6 @@
 module StatisticsAnalyzer
+  TIME_ZONE = "West Central Africa"
+
   def craft_message(group, set, period, date)
     if group == 'day'
       "#{set.gsub('s', '').capitalize} statitics for the #{period[2]} of #{period.join(',')}"
@@ -27,6 +29,7 @@ module StatisticsAnalyzer
   end
 
   def get_data(date, set, group, unit)
+    Groupdate.time_zone = TIME_ZONE
     set = get_dataset(set, unit)
     if group == 'day'
       set.group_by_hour_of_day(:created_at, format: "%-l %P", range: date.beginning_of_day..date.end_of_day).count
@@ -54,18 +57,22 @@ module StatisticsAnalyzer
   end
 
   def days_data(set)
-    set.group_by_hour_of_day(:created_at, format: "%-l %P", range: Time.zone.now.beginning_of_day..Time.now).count
+    Groupdate.time_zone = TIME_ZONE
+    set.group_by_hour_of_day(:created_at, format: "%-l %P", range: Time.zone.now.beginning_of_day..Time.zone.now, series: false).count
   end
 
   def weeks_data(set)
+    Groupdate.time_zone = TIME_ZONE
     set.group_by_day(:created_at, last: Date.today.cwday).count
   end
 
   def months_data(set)
-    set.group_by_week(:created_at, range: Date.new(Date.today.year, Date.today.month, 1)..Time.now).count
+    Groupdate.time_zone = TIME_ZONE
+    set.group_by_day(:created_at, range: Date.new(Date.today.year, Date.today.month, 1)..Time.now).count
   end
 
   def years_data(set)
-    set.group_by_month(:created_at, range: Date.new(Date.today.year, 1, 1)..Time.now).count
+    Groupdate.time_zone = TIME_ZONE
+    set.group_by_month(:created_at, range: Date.new(Date.today.year, 1, 1)..Time.now, series: false).count
   end
 end

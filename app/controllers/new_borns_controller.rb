@@ -76,4 +76,4 @@ class NewBornsController < ApplicationController
   def council_handler
     set_up_council_notifiers if current_agent
   end
-end 
+end

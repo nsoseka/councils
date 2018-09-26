@@ -84,5 +84,43 @@ ul.chosen-results
   i 
     width: 19%
     font-size: 6em
-  
+h2.stat-analysis 
+  font-size: 1.5em
+  text-align: center
+  padding: 40px 0
+  color: $purple
+.stats-descriptions, .entries
+  width: 50%
+  margin: 0 auto 
+  text-align: left
+  border-collapse: collapse
+  thead
+    tr:nth-child(2n+1)
+      background: $grey
+    th 
+      font-weight: bold
+      color: $dark
+      font-size: 1.4em
+      padding: 20px
+  td 
+    font-size: 1.1em
+    padding: 10px 20px
+  td:last-child 
+    // font-weight: bold
+  tr:nth-child(2n+1)
+    background: $orange
+    font-weight: bold
+    color: $blue
+  tr:nth-child(2n+2)
+    color: $brown
+    font-weight: bold
   // display: none
+.entries 
+  thead
+    tr:nth-child(2n+1)
+      background: $grey
+  tr:nth-child(2n+1)
+    background: $light-blue
+  tr:nth-child(2n+2)
+    color: $green
+    font-weight: bold

@@ -5,6 +5,7 @@ document.addEventListener("turbolinks:before-cache", function () {
 });
 
 document.addEventListener("turbolinks:load", function () {
+
   $('.menu-item').unbind('click').on('click', function(e) {
     $(e.target).closest('li').toggleClass('selected').siblings('.sub-menu').slideToggle('fast');
 	});
@@ -35,4 +36,5 @@ function moveCursorToEnd(el) {
 		range.select();
 	}
 }
+
 

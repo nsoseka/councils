@@ -1,6 +1,6 @@
 class AgentsController < ApplicationController
   before_action :require_agent, except: [:create, :new]
-  before_action :set_tab, :set_up_council_notifiers
+  before_action :set_tab, :set_up_council_notifiers, except: [:new, :create]
 
   layout :resolve_layout
 

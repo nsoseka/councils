@@ -17,15 +17,15 @@ class Death < ApplicationRecord
   def choices_made
     puts sex, marital_status, d_capacity, CHOICE_FACTOR, d_capacity == CHOICE_FACTOR
     if sex.present? && sex == CHOICE_FACTOR
-      errors.add(:sex, 'choose sex')
+      errors.add(:sex, :choose_sex)
     end
 
     if marital_status.present? && marital_status == CHOICE_FACTOR
-      errors.add(:marital_status, 'choose marital status')
+      errors.add(:marital_status, :choose_marital_status)
     end
 
     if d_capacity.present? && d_capacity == CHOICE_FACTOR
-      errors.add(:d_capacity, 'choose capacity')
+      errors.add(:d_capacity, :choose_capacity)
     end
   end
 

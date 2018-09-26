@@ -13,15 +13,15 @@ class Birth < ApplicationRecord
 
   def choices_made
     if sex.present? && sex == CHOICE_FACTOR
-      errors.add(:sex, 'please choose the sex of the child')
+      errors.add(:sex, :choose_sex)
     end
 
     if father_rf.present? && father_rf == CHOICE_FACTOR
-      errors.add(:father_rf, 'please choose a reference document')
+      errors.add(:father_rf, :choose_rf)
     end
 
     if mother_rf.present? && mother_rf == CHOICE_FACTOR
-      errors.add(:mother_rf, 'please choose a reference document')
+      errors.add(:mother_rf, :choose_rf)
     end
   end
 end

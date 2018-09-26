@@ -3,47 +3,44 @@
     <div class="item-container">
       <h3>
         <%= fa_icon 'child' %>
-        <%= t('ui.shared.Deceased Name') %>:
+        <%= t('.deceased_name') %>:
         <span><%= deceased.d_name %></span>
       </h3>
       <p>
         <%= fa_icon 'id-card' %>
-        <%= t("Place of Death") %>:
+        <span><%= t('.place_of_death') %>:</span>
         <span class="certificate_numbe"><%= deceased.d_pd %></span>
       </p>
       <p>
+        <%= fa_icon 'id-card' %>
         <%= fa_icon 'square' %>
-        <%= t('Place of Birth') %>:
-        <span><%= deceased.d_pb %></span>
+        <span><%= t('.date_of_birth') + t('.and') + t('.place_of_birth') %>:</span>
+        <span class="certificate_numbe"><%= formated_date(deceased.d_db) + ', ' + deceased.d_pb %></span>
       </p>
       <p>
         <%= fa_icon 'male' %>
         <%= fa_icon 'female' %>
-        <%= t('ui.shared.sex') %>:
-        <span><%= deceased.sex %></span>
+        <span><%= t('.sex') %>:</span>
+        <span><%= t('.' + deceased.sex) %></span>
       </p>
       <p>
         <%= fa_icon 'male' %>
-        <%= t('ui.shared.fathers_name') %>:
-        <span><%= deceased.f_name %></span>
-      </p>
-      <p>
         <%= fa_icon 'female' %>
-        <%= t('ui.shared.mothers_name') %>:
-        <span><%= deceased.m_name %></span>
+        <span><%= t('.fathers_name') + t('.and') + t('.mothers_name')%>:</span>
+        <span><%= deceased.f_name + t('.and') + deceased.m_name +  t('.respectively') %></span>
       </p>
       <p>
         <%= fa_icon 'home' %>
-        <%= t('Father and mothers residence') %>:
-        <span><%= deceased.f_res + ' and ' + deceased.m_res + ' respectively' %></span>
+        <span><%= t('.father_and_mothers_res') %>:</span>
+        <span><%= deceased.f_res + t('.and') + deceased.m_res + t('.respectively') %></span>
       </p>
       <p>
         <%= fa_icon 'phone' %>
-        <%= t('Contacts Phone Number') %>:
+        <span><%= t('.contact') %>:</span>
         <span><%= deceased.contact_tel %></span>
       </p>
 
-      <time class="item-date-ribbon bad-news">Died: <%= formated_date deceased.d_dd %></time>
+      <time class="item-date-ribbon bad-news"><%= t('.died') %>: <%= formated_date deceased.d_dd %></time>
     </div>
   <% end %>
 </li>

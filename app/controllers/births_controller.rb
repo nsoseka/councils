@@ -3,7 +3,7 @@ class BirthsController < ApplicationController
 
   def index
     # @births = Birth.today
-    @pagy, @births = pagy(Birth.today.where(council_id: current_agent.council.id))
+    @pagy, @births = pagy Birth.today.order('created_at DESC').where(council: current_agent.council)
 
     @new_birth = params['new_birth']
     @menu = 'index-b'
@@ -47,7 +47,7 @@ class BirthsController < ApplicationController
 
   def latest
     @menu = 'latest-b'
-    @pagy, @new_borns = pagy(current_agent.council.new_borns.today)
+    @pagy, @new_borns = pagy current_agent.council.new_borns.today.order('created_at DESC')
   end
 
   private

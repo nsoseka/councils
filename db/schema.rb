@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2018_09_10_134609) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "administrative_regions", force: :cascade do |t|
     t.text "name"
     t.text "capital"

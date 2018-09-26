@@ -1,0 +1,703 @@
+fr:
+  shared: 
+    header:
+      births: "Les naissances"
+      new_births: "Nouvelles naissances"
+      new_certificate: "Nouveau certificat"
+      latest_certificates: "Derniers certificats"
+      child_or_certificate: "Enfant ou certificat"
+      deaths: "Des morts"
+      new_deaths: "Nouveaux décès"
+      find_deceased: "Trouver décédé"
+      marriages: "Mariages"
+      new_marriage: "Nouveau mariage"
+      latest_marriages: "Derniers mariages"
+      find_marriage: "Trouver un mariage"
+      statistics: "Statistiques"
+      birth_statistics: "Statistiques de naissance"
+      marriage_statistics: "Statistiques du mariage"
+      death_statistics: "Statistiques de la mort"
+      search_statistics: "Obtenir des statistiques"
+      your_profile: "Votre profil"
+      council_details: "Détails du conseil"
+      view_profile: "Voir le profil"
+      edit_profile: "Editer le profil"
+      logout: "Connectez - Out"
+  new_borns:
+    new_born: 
+      childs_name: "Nom de l'enfant"
+      childs_code: "Code de l'enfant"
+      place_of_birth: "Lieu de naissance"
+      sex: "Sexe"
+      fathers_name: "Le nom du père"
+      mothers_name: "Le nom de la mère"
+      father_and_mothers_res: "Résidence du père et de la mère"
+      father_and_mothers_tel: "Numéro de téléphone du père et de la mère"
+      and: " et "
+      male: "Mâle"
+      female: "Femelle"
+      respectively: " respectivement"
+      born: "Née"
+  births: 
+    latest:
+      todays_births: "Les nouveaux nés aujourd'hui"
+      no_births: "Aucune naissance n'a été enregistrée jusqu'à présent aujourd'hui"
+    birth: 
+      childs_name: "Nom de l'enfant"
+      certificate_number: "Numéro de certificat"
+      place_of_birth: "Lieu de naissance"
+      sex: "Sexe"
+      father: "Père"
+      mother: "Mère"
+      father_and_mothers_res: "Résidence du père et de la mère"
+      born: "Née"
+      inform_guardians: "Informer les tuteurs"
+      male: "Mâle"
+      female: "Femelle"
+      and: " et "
+      respectively: " respectivement"
+    index: 
+      recent_certificates: "Certificats émis récemment"
+      no_certificates: "Aucun certificat de naissance n'a été délivré jusqu'à présent aujourd'hui"
+    new: 
+      title: "Nouveau acte de naissance"
+      bc_form: "Formulaire de certificat de naissance"
+      region: "Region"
+      division: "Departement"
+      sub_division: "Arrondissement"
+      council: "Centre d'etat civil de"
+      secondary_center: "Centre d'enregistrement secondaire"
+      certificate_number: "Numéro de certificat"
+      owners_details: "Detail de possesor"
+      surname: "Nom de l'enfant"
+      given_names: "Prénoms de l'enfant"
+      date_of_birth: "Ne Le"
+      place_of_birth: "Est né à"
+      childs_name_confirmation: "Nom de l'enfant"
+      sex: "De sexe"
+      choose_sex: "Choisir le sexe"
+      father: "De"
+      fathers_place_of_birth: "Né à"
+      fathers_date_of_birth: "Le"
+      fathers_residence: "Domicilié à"
+      fathers_occupation: "Profession"
+      mother: "Et de"
+      mothers_place_of_birth: "Née à"
+      mothers_date_of_birth: "Le"
+      mothers_residence: "Domiciliée à"
+      mothers_occupation: "Profession"
+      drawn_up_on: "Dressé le"
+      accord: "Sur le déclaration de"
+      attestator: "Lesquels ont certifié la sincérité de la présents déclaration"
+      mayor: "Pour nous"
+      registrar: "De l'etat civil du contre de"
+      secretary: "En présence de la secrétaire"
+      register: "Enregistre"
+      fathers_details: "Les détails du Père"
+      mothers_details: "Les détails de la Mère"
+      done_on_the: "Le"
+      choose_reference: "Choisir le document de référence"
+      id_number: "Numéro de carte nationale d'identité"
+      bc_reference: "Références de l'acte de naissance"
+      nat_reference: "Références des documents prouvant de la nationalité"
+      male: "Mâle"
+      female: "Femelle"
+      nationality: "Nationalité"
+      reference_documents: "Documents de référence"
+    show: 
+      title: "Acte de naissance"
+      region: "Region"
+      division: "Departement"
+      sub_division: "Arrondissement"
+      council: "Centre d'etat civil de"
+      secondary_center: "Centre d'enregistrement secondaire"
+      certificate_number: "Numéro de certificat"
+      owners_details: "Detail de possesor"
+      surname: "Nom de l'enfant"
+      given_names: "Prénoms de l'enfant"
+      date_of_birth: "Ne Le"
+      place_of_birth: "Est né à"
+      childs_name_confirmation: "Nom de l'enfant"
+      sex: "De sexe"
+      father: "De"
+      fathers_place_of_birth: "Né à"
+      fathers_date_of_birth: "Le"
+      fathers_residence: "Domicilié à"
+      fathers_occupation: "Profession"
+      mother: "Et de"
+      mothers_place_of_birth: "Née à"
+      mothers_date_of_birth: "Le"
+      mothers_residence: "Domiciliée à"
+      mothers_occupation: "Profession"
+      drawn_up_on: "Dressé le"
+      accord: "Sur le déclaration de"
+      attestator: "Lesquels ont certifié la sincérité de la présents déclaration"
+      by_us: "Par nous"
+      registrar: "De l'etat civil du contre de"
+      presence_of: "Assisté de"
+      secretary: "Secrétaire d'état civile"
+      register: "Enregistre"
+      fathers_details: "Les détails du Père"
+      mothers_details: "Les détails de la Mère"
+      done_on_the: "Le"
+      choose_reference: "Choisir le document de référence"
+      id: "Numéro de carte nationale d'identité"
+      bc: "Références de l'acte de naissance"
+      dan: "Références des documents prouvant de la nationalité"
+      male: "Mâle"
+      female: "Femelle"
+      nationality: "Nationalité"
+      reference_documents: "Document de référence"
+    find: 
+      find_child: "Rechercher un enfant ou un certificat"
+    search: 
+      search_results: "Résultats de la recherche"
+      no_results: "Aucun résultat ne correspond à votre recherche"
+    search_form: 
+      father_or_mothers_name: "Nom du père ou de la mère"
+      childs_code: "Code de l'enfant"
+      childs_name: "Nom de l'enfant"
+      search_by: "Vous pouvez rechercher par"
+  deaths: 
+    death: 
+      deceased_name: "Nom du défunt"
+      dc_number: "Numéro de certificat"
+      date_of_birth: "Date de naissance"
+      place_of_birth: "Lieu de naissance"
+      sex: "Sexe"
+      fathers_name: "Le nom du père"
+      mothers_name: "Le nom de la mère"
+      inform_guardians: "Informer les tuteurs"
+      died: "Décédés"
+      male: "Mâle"
+      female: "Femelle"
+    index: 
+      todays_deaths: "Derniers certificats de décès"
+      no_deaths: "Aucun décès enregistré jusqu'à présent aujourd'hui"
+    latest: 
+      todays_deaths: "Les morts d'aujourd'hui"
+      no_deaths: "Aucun certificat de décès n'a été délivré jusqu'à présent"
+    new:
+      title: "Nouveau acte de décès"
+      dc_form: "Formulaire de certificat de décès"
+      region: "Region"
+      division: "Departement"
+      sub_division: "Arrondisement"
+      council: "Centre d'etat civil de"
+      secondary_center: "Centre d'enregistrement secondaire"
+      certificate_number: "Numéro de certificat"
+      owners_details: "Détails du propriétaire"
+      surname: "Nom du(de la) décédé(e)"
+      given_name: "Prénoms du(de la) décédé(e)"
+      date_of_death: "Décédé(e) le"
+      at: "A"
+      mr: "M"
+      date_of_birth: "Né(e) le"
+      place_of_birth: "A"
+      sex: "De sexe"
+      choose_sex: "Choisir la sexe"
+      male: "Mâle"
+      female: "Femelle"
+      marital_status: "Situation matrimoniale"
+      choose_status: "Choisir l'état matrimonial"
+      married: "Marié(e)"
+      single: "Célibataire"
+      occupation: "Profession"
+      resident_at: "Domicilié(e) à"
+      father: "Fils / fille de"
+      mother: "Et de"
+      date_drawn: "Dressé le"
+      declaration: "Sur la déclaration de"
+      declarant: "Déclarant"
+      full_name: "Nom et prénoms"
+      capacity: "Qualité"
+      choose_capacity: "Choisir la qualité"
+      f_head: "Chef de famille"
+      relative: "Parent du défunt"
+      pwk: "Personne ayant eu connaissance certaine du décès"
+      m_head: "Chef d'établissement hospitalier"
+      p_head: "Chef d'établissement pénitentiaire"
+      first_witness: "Premier témoin"
+      residence: "Résidence"
+      second_witness: "Deuxième témoin"
+      attestators: "Lesquels ont certifié la sincérité de la présente déclaration"
+      by: "Par nous"
+      registrar: "Civil status registrar"
+      present: "Assisté de"
+      secretary: "Secrétaire d'état civil"
+      date_done: "Le"
+      date_made: ""
+      create_certificate: "Enregistre"
+    show: 
+      death_certificate: "Acte de décès"
+      region: "Region"
+      division: "Departement"
+      sub_division: "Arrondisement"
+      council: "Centre d'etat civil de"
+      secondary_center: "Centre d'enregistrement secondaire"
+      certificate_number: "Numéro de certificat"
+      owners_details: "Détails du propriétaire"
+      surname: "Nom du(de la) décédé(e)"
+      given_name: "Prénoms du(de la) décédé(e)"
+      date_of_death: "Décédé(e) le"
+      at: "A"
+      mr: "M"
+      date_of_birth: "Né(e) le"
+      place_of_birth: "A"
+      sex: "De sexe"
+      male: "Mâle"
+      female: "Femelle"
+      marital_status: "Situation matrimoniale"
+      married: "Marié(e)"
+      single: "Célibataire"
+      occupation: "Profession"
+      resident_at: "Domicilié(e) à"
+      father: "Fils / fille de"
+      mother: "Et de"
+      date_drawn: "Dressé le"
+      declaration: "Sur la déclaration de"
+      declarant: "Déclarant"
+      full_name: "Nom et prénoms"
+      capacity: "Qualité"
+      f_head: "Chef de famille"
+      relative: "Parent du défunt"
+      pwk: "Personne ayant eu connaissance certaine du décès"
+      m_head: "Chef d'établissement hospitalier"
+      p_head: "Chef d'établissement pénitentiaire"
+      first_witness: "Premier témoin"
+      residence: "Résidence"
+      second_witness: "Deuxième témoin"
+      attestators: "Lesquels ont certifié la sincérité de la présente déclaration"
+      by: "Par nous"
+      registrar: "Civil status registrar"
+      present: "Assisté de"
+      secretary: "Secrétaire d'état civil"
+      date_done: "Le"
+      date_made: ""
+    find: 
+      find_dc: "Trouver une personne décédée"
+    search: 
+      search_results: "Résultats de la recherche"
+      no_results: "Aucun résultat ne correspond à votre recherche"
+    search_form: 
+      search_by: "Vous pouvez rechercher par"
+      deceased_name: "Nom du défunt"
+      mothers_name: "Le nom de la mère"
+      fathers_name: "Le nom du père"
+  marriages: 
+    marriage: 
+    new:
+      title: "Nouveau acte de mariage"
+      mc_form: "Formulaire de certificat de mariage"
+      region: "Region"
+      division: "Departement"
+      sub_division: "Arrondisement"
+      council: "Centre d'etat civil de"
+      secondary_center: "Centre d'enregistrement secondaire"
+      certificate_number: "Numéro de certificat"
+      couples_details: "Détails des couples"
+      husband: "Marriage de"
+      wife: "Et de"
+      appearance_date: "Le"
+      public_appearance: "Devant Nous ont comparu publiquement"
+      husbands_details: "Détails du mari"
+      mr: "M"
+      husbands_date_of_birth: "Né le"
+      husbands_place_of_birth: "A"
+      occupation: "Profession"
+      nationality: "Nationalité"
+      reference_document: "Document de référence"
+      residence: "Domicilié a"
+      husbands_father: "Fils de"
+      mother: "Et de"
+      one_hand: "d'une part"
+      wifes_details: "Détails de l'épouse"
+      miss: "Et mademoiselle"
+      wifes_date_of_birth: "Née le"
+      wifes_place_of_birth: "A"
+      wifes_father: "Fille de"
+      other_hand: "d'autre part"
+      marriage_details: "Détails du mariage"
+      regime: "Les futurs époux déclarent que le régime des biens est:"
+      type: "Système matrimonial"
+      objections: "Il n'a été constaté aucune opposition"
+      both_declared: "Ont déclaré l'une après l'autre vouloir se prendre pour époux et Nous avons prononcé au nom de la loi qu'ils sont unie par le marriage"
+      present: "En présence de"
+      husband_fh: "M - Chef de famille de l'époux ou son représentant"
+      wife_fh: "Et de M - Chef de famille de l'épouse ou son représentant"
+      agree: "Qui consentent au marriage, et de"
+      husband_w: "M - témoin de l'époux, et de"
+      wife_w: "M - témoin de l'épouse"
+      drawn_by: "Le présent acte a été dréssé par Nous"
+      registrar: "Officier d'état civil"
+      sec_present: "Assisté de"
+      secretary: "Secrétaire d'état civil"
+      at: "A"
+      on_the: "Le"
+      register: "Enregistrer"
+      choose_reference: "Choisir le document de référence"
+      id: "Numéro de carte nationale d'identité"
+      bc: "Références de l'acte de naissance"
+      dan: "Références des documents prouvant de la nationalit"
+      choose_objection: "Choisissez le statut d'objection"
+      yesbo: "Oui"
+      nobo: "Non"
+      choose_type: "Choisissez le système matrimonial"
+      monogamy: "Monogamie"
+      polygamy: "La polygamie"
+      choose_regime: "Choisissez le régime de mariage"
+      seperate: "Séparationde biens"
+      joint: "Communauté"
+    show:
+      title: "Acte de mariage"
+      region: "Region"
+      division: "Departement"
+      sub_division: "Arrondisement"
+      council: "Centre d'etat civil de"
+      secondary_center: "Centre d'enregistrement secondaire"
+      certificate_number: "Numéro de certificat"
+      couples_details: "Détails des couples"
+      husband: "Marriage de"
+      wife: "Et de"
+      appearance_date: "Le"
+      public_appearance: "Devant Nous ont comparu publiquement"
+      husbands_details: "Détails du mari"
+      mr: "M"
+      husbands_date_of_birth: "Né le"
+      husbands_place_of_birth: "A"
+      occupation: "Profession"
+      nationality: "Nationalité"
+      reference_document: "Document de référence"
+      id: "Numéro de carte nationale d'identité"
+      bc: "Références de l'acte de naissance"
+      dan: "Références des documents prouvant de la nationalit"
+      residence: "Domicilié a"
+      husbands_father: "Fils de"
+      mother: "Et de"
+      one_hand: "d'une part"
+      wifes_details: "Détails de l'épouse"
+      miss: "Et mademoiselle"
+      wifes_date_of_birth: "Née le"
+      wifes_place_of_birth: "A"
+      wifes_father: "Fille de"
+      other_hand: "d'autre part"
+      marriage_details: "Détails du mariage"
+      regime: "Les futurs époux déclarent que le régime des biens est:"
+      seperate: "Séparationde biens"
+      joint: "Communauté"
+      type: "Système matrimonial"
+      monogamy: "Monogamie"
+      polygamy: "La polygamie"
+      objections: "Il n'a été constaté aucune opposition"
+      yesb: "Non"
+      nob: "Oui"
+      both_declared: "Ont déclaré l'une après l'autre vouloir se prendre pour époux et Nous avons prononcé au nom de la loi qu'ils sont unie par le marriage"
+      present: "En présence de"
+      husband_fh: "M - Chef de famille de l'époux ou son représentant"
+      wife_fh: "Et de M - Chef de famille de l'épouse ou son représentant"
+      agree: "Qui consentent au marriage, et de"
+      husband_w: "M - témoin de l'époux, et de"
+      wife_w: "M - témoin de l'épouse"
+      drawn_by: "Le présent acte a été dréssé par Nous"
+      registrar: "Officier d'état civil"
+      sec_present: "Assisté de"
+      secretary: "Secrétaire d'état civil"
+      at: "A"
+      on_the: "Le"
+      register: "Enregistrer"
+    index: 
+      recent: "Certificats émis récemment"
+      no_certificates: "Aucun certificat de mariage n'a été délivré jusqu'à présent"
+    marriage: 
+      couple: "Couple"
+      certificate_number: "Numéro de certificat"
+      drawn_at: "Fait à"
+      husbands_w: "Témoin de l'époux"
+      wifes_w: "Témoin de l'épouse"
+      husbands_fh: "Chef de famille du mari"
+      wifes_fh: "Chef de famille de l'épouse"
+      married: "Marié"
+      inform_guardians: "Informer les tuteurs"
+    find:
+      find_m: "Trouvez un enregistrement de mariage"
+    search: 
+      results: "Résultats de la recherche" 
+      no_results: "Aucun résultat ne correspond à votre recherche"
+    search_form:
+      search_by: "Vous pouvez rechercher par"
+      husbands_name: "Nom de l'Epoux"
+      wifes_name: "Le nom de l'épouse"
+      wife_or_parent: "Nom du témoin ou du parent"
+  deceaseds: 
+    deceased:
+      deceased_name: "Nom du défunt"
+      place_of_death: "Lieu du décès"
+      dc_number: "Numéro de certificat"
+      date_of_birth: "Date de naissance"
+      place_of_birth: "Lieu de naissance"
+      sex: "Sexe"
+      fathers_name: "Le nom du père"
+      mothers_name: "Le nom de la mère"
+      inform_guardians: "Informer les tuteurs"
+      father_and_mothers_res: "Résidence du père et de la mère"
+      died: "Décédés"
+      male: "Mâle"
+      female: "Femelle"
+      contact: "Numéro de téléphone du contact"
+      and: " et "
+      respectively: " respectivement"
+    show: 
+      death_registration_card: "Carte d'enregistrement de décès"
+      deceased_name: "Nom du défunt"
+      date_of_birth: "Date de naissance"
+      place_of_birth: "Lieu de naissance"
+      date_of_death: "Date de décès"
+      place_of_death: "Lieu du décès"
+      occupation: "Profession"
+      marital_status: "État civil"
+      number_of_children: "Nombre d'enfants"
+      sex: "Sexe"
+      fathers_details: "Les détails du père"
+      fathers_name: "Le nom du père"
+      fathers_residence: "La résidence du père"
+      mothers_name: "Le nom de la mère"
+      mothers_residence: "La résidence de la mère"
+      contacts_details: "Détails du contact"
+      contacts_name: "Prénom"
+      contacts_number: "Numéro de téléphone"
+      preferred_language: "Langue préférée"
+      male: "Mâle"
+      female: "Femelle"
+  date: 
+    formats: 
+      default: '%d-%m-%Y'
+  statistics:
+    day: "Journée"
+    week: "La semaine"
+    month: "Mois"
+    year: "An"
+    birth_statistics: "Statistiques de naissance"
+    no_births: "Aucune naissance enregistrée jusqu'à présent"
+  activerecord:
+    errors:
+      models:
+        new_born:
+          attributes:
+            c_name:
+              blank: "ne peut pas être vide"
+            c_db: 
+              blank: "ne peut pas être vide"
+            c_pb: 
+              blank: "ne peut pas être vide"
+            f_name: 
+              blank: "ne peut pas être vide"
+            f_db: 
+              blank: "ne peut pas être vide"
+            f_pb: 
+              blank: "ne peut pas être vide"
+            f_tel: 
+              blank: "ne peut pas être vide"
+            f_res: 
+              blank: "ne peut pas être vide"
+            m_name:
+              blank: "ne peut pas être vide"
+            m_db: 
+              blank: "ne peut pas être vide"
+            m_pb: 
+              blank: "ne peut pas être vide"
+            m_tel: 
+              blank: "ne peut pas être vide"
+              wrong_length: "Devrait être 9 caractères"
+            m_res: 
+              blank: "ne peut pas être vide"
+            attended_clinic:
+              clinic_status: "veuillez indiquer si elle a fréquenté une clinique"
+            sex:
+              choose_sex: "veuillez choisir le sexe de l'enfant"
+        birth: 
+          attributes: 
+            council_id: 
+              blank: "ne peut pas être vide"
+            sub_center: 
+              blank: "ne peut pas être vide"
+            certificate_number: 
+              blank: "ne peut pas être vide"
+            surname: 
+              blank: "ne peut pas être vide"
+            given_name : 
+              blank: "ne peut pas être vide"
+            date_born: 
+              blank: "ne peut pas être vide"
+            place_born: 
+              blank: "ne peut pas être vide"
+            sex : 
+              choose_sex: "veuillez choisir le sexe de l'enfant"
+            father: 
+              blank: "ne peut pas être vide"
+            father_pb: 
+              blank: "ne peut pas être vide"
+            father_db: 
+              blank: "ne peut pas être vide"
+            father_res: 
+              blank: "ne peut pas être vide"
+            father_job: 
+              blank: "ne peut pas être vide"
+            father_n : 
+              blank: "ne peut pas être vide"
+            father_rf : 
+              choose_rf: "veuillez choisir un document de référence"
+            mother: 
+              blank: "ne peut pas être vide"
+            mother_pb: 
+              blank: "ne peut pas être vide"
+            mother_db: 
+              blank: "ne peut pas être vide"
+            mother_res: 
+              blank: "ne peut pas être vide"
+            mother_job: 
+              blank: "ne peut pas être vide"
+            mother_n : 
+              blank: "ne peut pas être vide"
+            mother_rf: 
+              choose_rf: "veuillez choisir un document de référence"
+            date_drawn : 
+              blank: "ne peut pas être vide"
+            declaration: 
+              blank: "ne peut pas être vide"
+            registrar : 
+              blank: "ne peut pas être vide"
+            secretary: 
+              blank: "ne peut pas être vide"
+            date_done: 
+              blank: "ne peut pas être vide"
+        marriage: 
+          attributes: 
+            council_id:
+              blank: "ne peut pas être vide"
+            certificate_number:
+              blank: "ne peut pas être vide"
+            husband:
+              blank: "ne peut pas être vide"
+            wife:
+              blank: "ne peut pas être vide"
+            appearance_date:
+              blank: "ne peut pas être vide"
+            husband_db:
+              blank: "ne peut pas être vide"
+            husband_pb:
+              blank: "ne peut pas être vide"
+            husband_job:
+              blank: "ne peut pas être vide"
+            husband_n:
+              blank: "ne peut pas être vide"
+            husband_rf:
+              choose: "s'il vous plaît faire un choix"
+            husband_res:
+              blank: "ne peut pas être vide"
+            husband_f:
+              blank: "ne peut pas être vide"
+            husband_m:
+              blank: "ne peut pas être vide"
+            wife_db:
+              blank: "ne peut pas être vide"
+            wife_pb:
+              blank: "ne peut pas être vide"
+            wife_job:
+              blank: "ne peut pas être vide"
+            wife_n:
+              blank: "ne peut pas être vide"
+            wife_rf:
+              choose: "s'il vous plaît faire un choix"
+            wife_res:
+              blank: "ne peut pas être vide"
+            wife_f:
+              blank: "ne peut pas être vide"
+            wife_m:
+              blank: "ne peut pas être vide"
+            marriage_ownership:
+              choose: "s'il vous plaît faire un choix"
+            marriage_type:
+              choose: "s'il vous plaît faire un choix"
+            objections_raised:
+              choose: "s'il vous plaît faire un choix"
+            husband_fh:
+              blank: "ne peut pas être vide"
+            wife_fh:
+              blank: "ne peut pas être vide"
+            husband_w:
+              blank: "ne peut pas être vide"
+            wife_w:
+              blank: "ne peut pas être vide"
+            registrar:
+              blank: "ne peut pas être vide"
+            secretary:
+              blank: "ne peut pas être vide"
+            drawn_at:
+              blank: "ne peut pas être vide"
+            drawn_on:
+              blank: "ne peut pas être vide"
+        death:
+          attributes: 
+            council_id:
+              blank: "ne peut pas être vide"
+            certificate_number:
+              blank: "ne peut pas être vide"
+            surname:
+              blank: "ne peut pas être vide"
+            given_name:
+              blank: "ne peut pas être vide"
+            date_born:
+              blank: "ne peut pas être vide"
+            place_born:
+              blank: "ne peut pas être vide"
+            mr:
+              blank: "ne peut pas être vide"
+            date_died:
+              blank: "ne peut pas être vide"
+            place_died :
+              blank: "ne peut pas être vide"
+            sex:
+              blank: "ne peut pas être vide"
+              choose_sex: "veuillez choisir le sexe"
+            marital_status:
+              blank: "ne peut pas être vide"
+              choose_marital_status: "veuillez choisir l'état matrimonial"
+            occupation:
+              blank: "ne peut pas être vide"
+            residence:
+              blank: "ne peut pas être vide"
+            father:
+              blank: "ne peut pas être vide"
+            mother:
+              blank: "ne peut pas être vide"
+            date_drawn:
+              blank: "ne peut pas être vide"
+            declaration:
+              blank: "ne peut pas être vide"
+            d_name :
+              blank: "ne peut pas être vide"
+            d_occupation:
+              blank: "ne peut pas être vide"
+            d_capacity:
+              blank: "ne peut pas être vide"
+              choose_capacity: "veuillez choisir la qualité"
+            fw_name:
+              blank: "ne peut pas être vide"
+            fw_occupation:
+              blank: "ne peut pas être vide"
+            fw_residence:
+              blank: "ne peut pas être vide"
+            sw_name:
+              blank: "ne peut pas être vide"
+            sw_occupation:
+              blank: "ne peut pas être vide"
+            sw_residence:
+              blank: "ne peut pas être vide"
+            attestator:
+              blank: "ne peut pas être vide"
+            registrar:
+              blank: "ne peut pas être vide"
+            secretary:
+              blank: "ne peut pas être vide"
+            date_made:
+              blank: "ne peut pas être vide"

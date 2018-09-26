@@ -3,47 +3,47 @@
     <div class="item-container">
       <h3>
         <%= fa_icon 'child' %>
-        <%= t('ui.shared.childs_name') %>:
+        <span><%= t('.childs_name') %>:</span>
         <span><%= birth.surname + ' ' +  birth.given_name %></span>
       </h3>
       <p>
         <%= fa_icon 'id-card' %>
-        <%= t('Certificate Number') %>:
+        <span><%= t('.certificate_number') %>:</span>
         <span class="certificate_numbe"><%= birth.certificate_number %></span>
       </p>
       <p>
         <%= fa_icon 'square' %>
-        <%= t('ui.shared.place_of_birth') %>:
+        <span><%= t('.place_of_birth') %>:</span>
         <span><%= birth.place_born %></span>
       </p>
       <p>
         <%= fa_icon 'male' %>
         <%= fa_icon 'female' %>
-        <%= t('ui.shared.sex') %>:
-        <span><%= birth.sex %></span>
+        <span><%= t('.sex') %>:</span>
+        <span><%= t ('.' + birth.sex) %></span>
       </p>
       <p>
         <%= fa_icon 'male' %>
-        <%= t('ui.shared.fathers_name') %>:
+        <span><%= t('.father') %>:</span>
         <span><%= birth.father %></span>
       </p>
       <p>
         <%= fa_icon 'female' %>
-        <%= t('ui.shared.mothers_name') %>:
+        <span><%= t('.mother') %>:</span>
         <span><%= birth.mother %></span>
       </p>
       <p>
         <%= fa_icon 'home' %>
-        <%= t('Father and mothers residence') %>:
-        <span><%= birth.father_res + ' and ' + birth.mother_res + ' respectively' %></span>
+        <span><%= t('.father_and_mothers_res') %>:</span>
+        <span><%= birth.father_res +  t('.and') + birth.mother_res + t('.respectively') %></span>
       </p>
 
-      <time class="item-date-ribbon good-news">Born: <%= formated_date birth.date_born %></time>
+      <time class="item-date-ribbon good-news"><span><%= t('.born') %> <%= formated_date birth.date_born %></time>
     </div>
   <% end %>
   <p class="approval-link">
     <a href="#">
-      <%= t('ui.shared.Inform Guardians') %> 
+      <span><%= t('.inform_guardians') %> 
       <%= fa_icon 'user' %>
       <%= fa_icon 'minus' %>
     </a>  

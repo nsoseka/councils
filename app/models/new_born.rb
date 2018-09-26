@@ -17,14 +17,13 @@ class NewBorn < ApplicationRecord
 
   def choices_made
     if sex.present? && sex == CHOICE_FACTOR
-      errors.add(:sex, 'please choose the sex of the child')
+      errors.add(:sex, :choose_sex)
     end
 
     if attended_clinic.present? && attended_clinic == CHOICE_FACTOR
-      errors.add(:attended_clinic, 'Please indicate if she got any pre-birth help')
+      errors.add(:attended_clinic, :clinic_status)
     end
   end
-
 
 
   def generate_child_code

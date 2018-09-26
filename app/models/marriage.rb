@@ -22,23 +22,23 @@ class Marriage < ApplicationRecord
 
   def choices_made
     if husband_rf.present? && husband_rf == CHOICE_FACTOR
-      errors.add(:husband_rf, "choose husband's reference document")
+      errors.add(:husband_rf, :choose)
     end
 
     if wife_rf.present? && wife_rf == CHOICE_FACTOR
-      errors.add(:wife_rf, "choose wife's reference document")
+      errors.add(:wife_rf, :choose)
     end
 
     if marriage_ownership.present? && marriage_ownership == CHOICE_FACTOR
-      errors.add(:marriage_ownership, "choose marital regime")
+      errors.add(:marriage_ownership, :choose)
     end
 
     if marriage_type.present? && marriage_type == CHOICE_FACTOR
-      errors.add(:marriage_type, "choose type of marriage")
+      errors.add(:marriage_type, :choose)
     end
 
     if objections_raised.present? && objections_raised == CHOICE_FACTOR
-      errors.add(:objections_raised, "choose whether objections have been raised or not")
+      errors.add(:objections_raised, :choose)
     end
   end
 

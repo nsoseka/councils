@@ -3,7 +3,15 @@ class ApplicationController < ActionController::Base
   
   protect_from_forgery with: :exception
   after_action :prepare_unobtrusive_flash
-
+  before_action :set_locale
+   
+  def set_locale
+    #logger.debug "* Accept-Language: #{request.env['HTTP_ACCEPT_LANGUAGE']}"
+    puts I18n.locale, 'the one i set myself'
+    session[:language] = params[:locale] ? params[:locale] : session[:language]
+    I18n.locale =  session[:language] ? session[:language] : I18n.locale || I18n.default_locale
+    I18n.locale = :fr
+  end
 
   def require_agent
     redirect_to sign_in_path unless current_agent
@@ -26,7 +34,8 @@ class ApplicationController < ActionController::Base
   end
 
   def formated_date(time)
-    time.strftime("%Y-%b-%d")
+    I18n.localize time
+    #time.strftime("%Y-%b-%d")
   end
 
   def set_up_council_notifiers
