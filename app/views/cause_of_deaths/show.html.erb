@@ -1,0 +1,22 @@
+<h1><%= t('cause_of_deaths.' + @deceased.sex) %>: 
+  <i>
+    <%= link_to deceased_path @deceased do %>
+      <%= @deceased.d_name %>
+    <% end %>
+  </i>
+</h1>
+<div class="mother-health cause-of-death">
+  <p>
+    <span class="factor slategray"><%= t('cause_of_deaths.sex') %></span>
+    <span><%= t('cause_of_deaths.' + @cause_of_death.sex) %></span>
+  </p>
+  <p>
+    <span class="factor gray"><%= t('cause_of_deaths.show_cause') %></span>
+    <span><%= t('cause_of_deaths.' + @cause_of_death.cause) %></span>
+  </p>
+  <p>
+    <span class="factor darkslategray"><%= t('cause_of_deaths.age') %></span>
+    <span><%= @cause_of_death.age %></span>
+  </p>
+</div>
+

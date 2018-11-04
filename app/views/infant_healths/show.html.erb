@@ -1,0 +1,62 @@
+<h1><%= t('.' + @new_born.sex) %>: 
+  <i>
+    <%= link_to new_born_path @new_born do %>
+      <%= @new_born.c_name %>
+    <% end %>
+  </i>
+</h1>
+<div class="child-health">
+  <p>
+    <span class="factor gray"><%= t('.term') %></span>
+    <span><%= t('infant_healths.' + @infant_health.term) %></span>
+  </p>
+  <p>
+    <span class="factor gray"><%= t('.fsb') %></span>
+    <span><%= t('infant_healths.' + @infant_health.fsb) %></span>
+  </p>
+  <p>
+    <span class="factor gray"><%= t('.msb') %></span>
+    <span><%= t('infant_healths.' + @infant_health.msb) %></span>
+  </p>
+  <p>
+    <span class="factor slategray"><%= t('.still_birth_cause') %></span>
+    <span><%= t('infant_healths.' + @infant_health.still_birth_cause) %></span>
+  </p>
+  <p>
+    <span class="factor slategray"><%= t('.abnormalities') %></span>
+    <span><%= t('infant_healths.' + @infant_health.abnormalities) %></span>
+  </p>
+  <p>
+    <span class="factor slategray small"><%= t('.resuscitation') %></span>
+    <span><%= t('infant_healths.' + @infant_health.resuscitation) %></span>
+  </p>
+  <p>
+    <span class="factor darkslategray"><%= t('infant_healths.head_circumference') %></span>
+    <span><%= @infant_health.head_circumference %></span>
+  </p>
+  <p>
+    <span class="factor darkslategray"><%= t('infant_healths.length') %></span>
+    <span><%= @infant_health.length %></span>
+  </p>
+  <p>
+    <span class="factor darkslategray"><%= t('infant_healths.weight') %></span>
+    <span><%= @infant_health.weight %></span>
+  </p>
+  <p>
+    <span class="factor darkgray"><%= t('infant_healths.agpar_scor_1') %></span>
+    <span><%= @infant_health.agpar_scor_1 %></span>
+  </p>
+  <p>
+    <span class="factor darkgray"><%= t('infant_healths.agpar_scor_5') %></span>
+    <span><%= @infant_health.agpar_scor_5 %></span>
+  </p>
+  <p>
+    <span class="factor dimgray"><%= t('.sex') %></span>
+    <span><%= t('infant_healths.' + @new_born.sex) %></span>
+  </p>
+  <p>
+    <span class="factor dimgray"><%= t('.art') %></span>
+    <span><%= t('infant_healths.' + @infant_health.art) %></span>
+  </p>
+</div>
+

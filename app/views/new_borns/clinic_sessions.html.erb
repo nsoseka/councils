@@ -1,0 +1,53 @@
+<ul class="items">
+  <% if @appointments.empty? %>
+    <h3><%= t('.no_deaths') %></h3>
+  <% else %>
+    <% @appointments.each do |appointment|%>
+      <%= render 'clinic/appointment', { appointment: appointment, new_born: appointment.new_born } %>
+    <% end %>
+  <% end %>
+</ul>
+<% if I18n.locale == :en %>
+  <script>
+    var date = new Date(),
+          year = date.getFullYear() + 1,
+          month = date.getMonth() + 6,
+          day = date.getDate();
+
+    $(function() {
+      $('.datepicker').pickadate({
+        selectYears: 120,
+        max: new Date(year + 3, month, day),
+        min: new Date(year - 2, month + 6, day),
+        selectMonths: 12,
+        format: 'dd/mm/yyyy',
+      });
+    });
+  </script>
+  <% else %>
+    <script>
+      var date = new Date(),
+          year = date.getFullYear() + 1,
+          month = date.getMonth() + 6,
+          day = date.getDate();
+      $(function() {
+        $('.datepicker').pickadate({
+          monthsFull: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+           weekdaysShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
+           today: 'aujourd\'hui',
+           clear: 'effacer',
+           close: 'fermer',
+           format: 'dd/mm/yyyy',
+          selectYears: 120,
+          max: new Date(year, month, day),
+          selectMonths: 12
+        });
+      });
+    </script>
+  <% end %>
+  <script>
+    $(".chosen-select").chosen()
+  </script>
+<script>
+  $(".chosen-select").chosen()
+</script>

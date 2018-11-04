@@ -15,12 +15,24 @@
     <main class="main">
       <header class="header">
         <h1>
-          <a href="/"><%= current_hospital.name.capitalize + ' Health Unit' %></a>
+          <a href="/"><%= t('.hospital_name', h_name: current_hospital.name.upcase) %></a>
         </h1>
         <nav>
           <%= render "shared/hospital_header" %>
         </nav>
       </header>
+
+      <div id="informant">
+        <p class="saving updating"><%= t('.updating') %><span>.</span><span>.</span><span>.</span></p>
+        <p class="saving failed"><%= t('.failed') %><span>✘</span></p>
+        <p class="saving succeeded"><%= t('.updated') %><span>✅</span></p>
+      </div>
+
+      <div id="nav-buttons">
+        <p onclick="goBack()" class="back"><%= fa_icon "arrow-left" %> <%= t('layouts.back') %></p>
+        <p onclick="goForward()" class="forward"><%= t('layouts.forward') %> <%= fa_icon "arrow-right" %></p>
+      </div>
+
       <div class="main-content">
         <%= yield %>
       </div>
@@ -31,11 +43,21 @@
         <li><a href="#">Instagram</a></li>
         <li><a href="#">Youtube</a></li>
         <li><a href="#">Facebook</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Created by Agape Inc.</a></li>
+        <li><a href="#"><%= t('.about') %></a></li>
+        <li><a href="#"><%= t('.careers') %></a></li>
+        <li><a href="#"><%= t('.created_by') %> Agape Inc.</a></li>
       </ul>
       <h2>&copy; Agape Inc. 2018 <%= fa_icon 'heart' %></h2>
     </footer>
   </body>
+
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+
+    function goForward() {
+      window.history.forward();
+    }  
+  </script>
 </html>

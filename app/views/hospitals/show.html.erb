@@ -1,18 +1,3 @@
-<h1>Agents Profile</h1>
-<div class="agent">
-  <div class="private-details">
-    <h3>Private Details</h3>
-    <p>Username: <span><%= current_hospital.username %></span></p>
-    <p>Full Names: <span><%= current_hospital.name %></span></p>
-    <p>Phone Number: <span><%= current_hospital.phone_number %></span></p>
-    <p>Email: <span><%= current_hospital.email %></span></p>
-  </div>
+<h1><%= t('.agents_profile') %></h1>
+<%= render "shared/profile", { agent: current_hospital } %>
 
-  <div class="desk-details">
-    <h3>Council Details</h3>
-    <p>Council: <span><%= current_hospital.council_name.capitalize %> Council</span></p>
-    <p>Sub Division: <span><%= current_hospital.sub_division_name.capitalize %></span></p>
-    <p>Division: <span><%= current_hospital.division_name %></span></p>
-    <p>Region: <span><%= current_hospital.administrative_region_name %></span></p>
-  </div>
-</div>

@@ -1,0 +1,82 @@
+<% choice_factor = '88888888' %>
+<h1>
+  <i>
+    <%= link_to deceased_path @deceased do %>
+      <%= @deceased.d_name %>
+    <% end %>
+  </i>
+</h1>
+<div class="main register-citizen">
+  <%= my_form_for @cause_of_death, url: deceased_cause_of_deaths_path(@deceased), html: { id: "new-citizen", class: 'form'} do |f| %>
+    <h2><%= t('cause_of_deaths.cause_of_death_form') %></h2>
+    <%= f.hidden_field :hospital_id, value: current_hospital.id, hidden: true %>
+    <%= f.hidden_field :deceased_id, value: @deceased.id, hidden: true %>
+    <%= f.hidden_field :sex, value: @deceased.sex, hidden: true %>
+    <%= f.hidden_field :age, value:  @deceased.d_dd.year - @deceased.d_db.year, hidden: true %>
+
+    <h3><%= t('cause_of_deaths.analysis') %></h3>
+
+    <%= f.label :cause , t('cause_of_deaths.cause') %>
+    <%= f.select :cause, options_for_select([
+    [t('cause_of_deaths.choose'), choice_factor], 
+    [t('cause_of_deaths.cardiovascular_disease'), "cardiovascular_disease"],
+    [t('cause_of_deaths.cancer'), "cancer"],
+    [t('cause_of_deaths.chronic_condition'), "chronic_condition"],
+    [t('cause_of_deaths.injury'), "injury"],
+    [t('cause_of_deaths.accident'), "accident"],
+    [t('cause_of_deaths.diabetes_mellitus'), "diabetes_mellitus"],
+    [t('cause_of_deaths.suicide'), "suicide"],
+    [t('cause_of_deaths.stroke'), "stroke"],
+    [t('cause_of_deaths.pneumonia'), "pneumonia"],
+    [t('cause_of_deaths.respiratory_disease'), "respiratory_disease"],
+    [t('cause_of_deaths.infection'), "infection"],
+    [t('cause_of_deaths.coronary_artery_disease'), "coronary_artery_disease"],
+    [t('cause_of_deaths.alzheimers_disease'), "alzheimers_disease"],
+    [t('cause_of_deaths.influenza'), "influenza"],
+    [t('cause_of_deaths.ischemia'), "ischemia"],
+    [t('cause_of_deaths.lower_respiratory_tract_infection'), "lower_respiratory_tract_infection"],
+    [t('cause_of_deaths.cerebrovascular_disease'), "cerebrovascular_diseasee"],
+    [t('cause_of_deaths.hiv_aids'), "hiv_aids"],
+    [t('cause_of_deaths.hypertension'), "hypertension"],
+    [t('cause_of_deaths.tuberculosis'), "tuberculosis"],
+    [t('cause_of_deaths.lung_cancer'), "lung_cancer"],
+    [t('cause_of_deaths.chronic_obstructive_pulmonary_disease'), "chronic_obstructive_pulmonary_disease"],
+    [t('cause_of_deaths.breast_cancer'), "breast_cancer"],
+    [t('cause_of_deaths.dementia'), "dementia"],
+    [t('cause_of_deaths.traffic_collision'), "traffic_collisio"],
+    [t('cause_of_deaths.homicide'), "homicide"],
+    [t('cause_of_deaths.birth_defect'), "birth_defect"],
+    [t('cause_of_deaths.old_age'), "old_age"],
+    [t('cause_of_deaths.asthma'), "asthma"],
+    [t('cause_of_deaths.preterm_birth'), "preterm_birth"],
+    [t('cause_of_deaths.poisoning'), "poisoning"],
+    [t('cause_of_deaths.infectious_disease'), "infectious_disease"],
+    [t('cause_of_deaths.prostate_cancer'), "prostate_cancer"],
+    [t('cause_of_deaths.diarrhea'), "diarrhea"],
+    [t('cause_of_deaths.sepsis'), "sepsis"],
+    [t('cause_of_deaths.kidney_disease'), "kidney_disease"],
+    [t('cause_of_deaths.cirrhosis'), "cirrhosis"],
+    [t('cause_of_deaths.complication'), "complication"],
+    [t('cause_of_deaths.malnutrition'), "malnutrition"],
+    [t('cause_of_deaths.perinatal_mortality'), "perinatal_mortality"],
+    [t('cause_of_deaths.acute_disease'), "acute_disease"],
+    [t('cause_of_deaths.child_birth'), "child_birth"],
+    [t('cause_of_deaths.obesity'), "obesity"],
+    [t('cause_of_deaths.malaria'), "malaria"],
+    [t('cause_of_deaths.gastro_intestinal_disease'), "gastrointestinal_disease"],
+    [t('cause_of_deaths.maternal_death'), "maternal_death"],
+    [t('cause_of_deaths.nephritis'), "nephritis"],
+    [t('cause_of_deaths.drowning'), "drowning"],
+    [t('cause_of_deaths.virus'), "virous"],
+    [t('cause_of_deaths.measle'), "measle"],
+    [t('cause_of_deaths.other'), "other"]], @cause_of_death.cause), {}, { class: 'sex chosen-select' } %>
+
+    <div class="submit">
+      <button type="submit"><%= t('cause_of_deaths.register') %></button>
+    </div>
+  <% end %>
+  <script>
+    $(".chosen-select").chosen()
+  </script>
+</div>
+

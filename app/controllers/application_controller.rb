@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     puts I18n.locale, 'the one i set myself'
     session[:language] = params[:locale] ? params[:locale] : session[:language]
     I18n.locale =  session[:language] ? session[:language] : I18n.locale || I18n.default_locale
-    I18n.locale = :fr
+    I18n.locale = :en
   end
 
   def require_agent
@@ -35,10 +35,12 @@ class ApplicationController < ActionController::Base
 
   def formated_date(time)
     I18n.localize time
-    #time.strftime("%Y-%b-%d")
+    time.strftime("%Y-%b-%d")
   end
 
   def set_up_council_notifiers
+    # current_agent.council.includes(:deceaseds, :new_borns)
+    puts Council.includes(:deceaseds, :new_borns).where(id: current_agent.council.id), 'awesome'
     @deaths_notifier = current_agent.council.deceaseds.today.count
     @births_notifier = current_agent.council.new_borns.today.count
   end
@@ -54,3 +56,15 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_agent, :formated_date, :formated_rf_doc, :current_hospital
 end
+
+
+# set up appoitnments menu, to show one day, three days and in a week
+# set stats to show children born with defects and those with none, still births
+# children born without prebirth maternal care
+# missed appointments yesterday, 3 days and 1 month, year
+# status of mother and delivery
+
+# add causes of death
+# set up stats to show cause distributions
+# add disability cases
+#infant health, #delivery and mother, #health calendar

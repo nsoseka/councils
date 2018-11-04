@@ -2,9 +2,8 @@ class DeathsController < ApplicationController
   before_action :set_tab, :require_agent, :set_up_council_notifiers
 
   def index
-    @pagy, @deaths = pagy Death.today.where(council: current_agent.council)
+    @pagy, @deaths = pagy Death.all.where(council: current_agent.council)
     @menu = 'index'
-    # puts ENV['RECAPTCHA_SITE_KEY'], 'work buddy'
   end
 
   def show
@@ -22,7 +21,7 @@ class DeathsController < ApplicationController
     @death = Death.new(death_params)
 
     if @death.save
-      flash[:notice] = "Death certificate was succesfully added"
+      flash[:notice] = I18n.translate "flash.certificate_added"
 
       redirect_to deaths_path
     else
@@ -35,6 +34,11 @@ class DeathsController < ApplicationController
     @search_query = params[:search_query]
     @pagy, @deaths = pagy Death.ransack(surname_or_given_name_or_father_or_mother_cont_any: @search_query.split(' ')).result
     @pagy2, @deceaseds = pagy Deceased.ransack(d_name_or_f_name_or_m_name_cont_any: @search_query.split(' ')).result.where(council: current_agent.council)
+
+    if params[:page].to_i > 1 
+      @deaths = @pagy.count <= params[:items].to_i ? [] : @deaths
+      @deceaseds = @pagy2.count <= params[:items].to_i ? [] : @deceaseds
+    end
   end
 
   def find

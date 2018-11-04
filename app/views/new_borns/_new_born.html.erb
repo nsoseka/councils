@@ -24,13 +24,8 @@
       </p>
       <p>
         <%= fa_icon 'male' %>
-        <span><%= t('.fathers_name') %>:</span>
-        <span><%= new_born.f_name %></span>
-      </p>
-      <p>
-        <%= fa_icon 'female' %>
-        <span><%= t('.mothers_name') %>:</span>
-        <span><%= new_born.m_name %></span>
+        <span><%= t('.fathers_name') %> <%= t('.and') %> <%= t('.mothers_name') %>:</span>
+        <span><%= new_born.f_name %><%= t('.and') %> <%= new_born.m_name %> <%= t('.respectively') %></span>
       </p>
       <p>
         <%= fa_icon 'home' %>
@@ -43,7 +38,44 @@
         <span><%= new_born.f_tel + t('.and') + new_born.m_tel + t('.respectively') %></span>
       </p>
 
-      <time class="item-date-ribbon good-news"><%= t(".born") %>: <%= formated_date new_born.c_db %></time>
+      <time class="item-date-ribbon good-news">
+        <% if new_born.infant_health && new_born.infant_health.fsb == "yes" %>
+          <%= fa_icon "warning" %> 
+        <% end %>
+
+        <%= fa_icon "calendar" %> 
+        <span><%= t(".born") %>: <%= formated_date new_born.c_db %></span>
+      </time>
+    </div>
+  <% end %>
+  <% if current_hospital %>
+    <div class="childs-board">
+      <%= link_to new_born_vaccination_calendar_path(new_born, new_born.vaccination_calendar), class: "board-item long-item cal" do %>
+        <%= fa_icon "calendar" %> <%= t('.vaccination_calendar') %>
+      <% end %>
+      <%= link_to new_born_appointments_path(new_born), class: "board-item cal" do %>
+        <%= fa_icon "clock-o" %> <%= t('.appointments') %>
+      <% end %>
+      <% if new_born.maternal_health %>
+          <%= link_to new_born_maternal_health_path(new_born, new_born.maternal_health), class: "board-item m-health " do %>
+          <%= fa_icon "female" %> <%= t('.mothers_health') %>
+        <% end %>
+      <% else %>
+        <%= link_to new_new_born_maternal_health_path(new_born), class: "board-item m-health adder" do %>
+          <%= fa_icon "plus" %> <%= t('.add_mothers_health') %>
+        <% end %>
+      <% end %>
+      <% if new_born.infant_health %>
+        <%= link_to new_born_infant_health_path(new_born, new_born.infant_health), class: "board-item c-health" do %>
+          <%= fa_icon "child" %> <%= t('.childs_health') %>
+        <% end %>
+      <% else %>
+        <%= link_to new_new_born_infant_health_path(new_born, new_born.infant_health), class: "board-item c-health adder" do %>
+          <%= fa_icon "plus" %> <%= t('.add_childs_health') %>
+        <% end %>
+      <% end %>
     </div>
   <% end %>
 </li>
+
+

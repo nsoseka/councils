@@ -1,12 +1,12 @@
 <%= form_tag search_new_borns_path, remote: false, class: "search-form", method: "get" do |f| %>
   <input id="searcher" type="text" name="search_query" autofocus value="<%= @search_query %>"><!--
     --><button type="submit"><%= fa_icon 'search' %></button>
-    <h3>You can search by</h3>
+    <h3><%= t('.search_by') %></h3>
     <p>
       <ul>
-        <li>Fathers | Mother's Name</li>
-        <li>Childs Code</li>
-        <li>Childs Name</li>
+        <li><%= t('.father_or_mothers_name') %></li>
+        <li><%= t('.childs_code') %></li>
+        <li><%= t('.childs_name') %></li>
       </ul>
     </p>
   </p>

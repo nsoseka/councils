@@ -1,0 +1,135 @@
+<% choice_factor = '88888888' %>
+<h1>
+  <i>
+    <%= link_to new_born_path @new_born do %>
+      <%= @new_born.c_name %>
+    <% end %>
+  </i>
+</h1>
+<div class="main register-citizen">
+  <%= my_form_for @maternal_health, url: new_born_maternal_healths_path(@new_born), html: { id: "new-citizen", class: 'form'} do |f| %>
+    <h2><%= t('maternal_healths.maternal_health_form') %></h2>
+    <%= f.hidden_field :hospital_id, value: current_hospital.id, hidden: true %>
+    <%= f.hidden_field :new_born_id, value: @new_born.id, hidden: true %>
+
+    <h3><%= t('maternal_healths.analysis') %></h3>
+
+    <%= f.label :birth_attendant, t('maternal_healths.birth_attendant') %>
+    <%= f.select :birth_attendant, options_for_select([
+    [t('maternal_healths.choose'), choice_factor], 
+    [t('maternal_healths.doctor'), "doctor"], 
+    [t('maternal_healths.midwife'), "midwife"], 
+    [t('maternal_healths.traditional'), "traditional"],
+    [t('maternal_healths.other'), "other"]], @maternal_health.birth_attendant), {}, { class: 'sex chosen-select' } %>
+
+    <%= f.label :place_of_delivery, t('maternal_healths.place_of_delivery') %>
+    <%= f.select :place_of_delivery, options_for_select([
+    [t('maternal_healths.choose'), choice_factor], 
+    [t('maternal_healths.hospital'), "hospital"], 
+    [t('maternal_healths.maternity_clinic'), "maternity_clinic"], 
+    [t('maternal_healths.health_center'), "health_center"],
+    [t('maternal_healths.other'), "other"]], @maternal_health.place_of_delivery), {}, { class: 'sex chosen-select' } %>
+
+    <%= f.label :gestational_age, t('maternal_healths.gestational_age') %>
+    <%= f.text_field :gestational_age %>
+
+    <%= f.label :duration_of_labour, t('maternal_healths.duration_of_labour') %>
+    <%= f.text_field :duration_of_labour %>
+
+    <%= f.label :labour_on_set, t('maternal_healths.labour_on_set') %>
+    <%= f.select :labour_on_set, options_for_select([
+    [t('maternal_healths.choose'), choice_factor], 
+    [t('maternal_healths.spontaneous'), "spontaneous"], 
+    [t('maternal_healths.induced'), "induced"], 
+    [t('maternal_healths.augmented'), "augmented"]], @maternal_health.labour_on_set), {}, { class: 'sex chosen-select' } %>
+
+    <%= f.label :type_of_delivery, t('maternal_healths.type_of_delivery') %>
+    <%= f.select :type_of_delivery, options_for_select([
+    [t('maternal_healths.choose'), choice_factor], 
+    [t('maternal_healths.normal'), "normal"], 
+    [t('maternal_healths.assisted'), "assisted"], 
+    [t('maternal_healths.cs'), "cs"],
+    [t('maternal_healths.breech'), "breech"],
+    [t('maternal_healths.bba'), "bba"],
+    [t('maternal_healths.other'), "other"]], @maternal_health.type_of_delivery), {}, { class: 'sex chosen-select' } %>
+
+    <%= f.label :placenta_separation, t('maternal_healths.placenta_separation') %>
+    <%= f.select :placenta_separation, options_for_select([
+    [t('maternal_healths.choose'), choice_factor], 
+    [t('maternal_healths.schultze'), "schultze"],
+    [t('maternal_healths.matthews_duncan'), "matthews_duncan"]], @maternal_health.placenta_separation), {}, { class: 'sex chosen-select' } %>
+
+    <%= f.label :placenta, t('maternal_healths.placenta') %>
+    <%= f.select :placenta, options_for_select([
+    [t('maternal_healths.choose'), choice_factor], 
+    [t('maternal_healths.complete'), "complete"], 
+    [t('maternal_healths.incomplete'), "incomplete"]], @maternal_health.placenta), {}, { class: 'sex chosen-select' } %>
+
+    <%= f.label :membranes, t('maternal_healths.membranes') %>
+    <%= f.select :membranes, options_for_select([
+    [t('maternal_healths.choose'), choice_factor], 
+    [t('maternal_healths.complete'), "complete"], 
+    [t('maternal_healths.incomplete'), "incomplete"]], @maternal_health.membranes), {}, { class: 'sex chosen-select' } %>
+
+    <%= f.label :nature_of_cord, t('maternal_healths.nature_of_cord') %>
+    <%= f.select :nature_of_cord, options_for_select([
+    [t('maternal_healths.choose'), choice_factor], 
+    [t('maternal_healths.normal'), "normal"], 
+    [t('maternal_healths.abnormal'), "normal"]], @maternal_health.nature_of_cord), {}, { class: 'sex chosen-select' } %>
+
+    <%= f.label :vessels, t('maternal_healths.vessels') %>
+    <%= f.select :vessels, options_for_select([
+    [t('maternal_healths.choose'), choice_factor], 
+    [t('maternal_healths.two'), 2],
+    [t('maternal_healths.three'), 3]], @maternal_health.vessels), {}, { class: 'sex chosen-select' } %>
+    <%= f.label :blood_loss, t('maternal_healths.blood_loss') %>
+    <%= f.text_field :blood_loss %>
+    <%= f.label :source_of_pph, t('maternal_healths.source_of_pph') %>
+    <%= f.select :source_of_pph, options_for_select([
+    [t('maternal_healths.choose'), choice_factor], 
+    [t('maternal_healths.no_haemorrhage'), "no_haemorrhage"],
+    [t('maternal_healths.tone'), "tone"], 
+    [t('maternal_healths.trauma'), "trauma"],
+    [t('maternal_healths.tissue'), "tissue"],
+    [t('maternal_healths.thrombin'), "thrombin"]], @maternal_health.source_of_pph), {}, { class: 'sex chosen-select' } %>
+    <%= f.label :episiotomy , t('maternal_healths.episiotomy') %>
+    <%= f.select :episiotomy, options_for_select([[t('maternal_healths.choose'), choice_factor], [t('maternal_healths.yest'), "no"], [t('maternal_healths.not'), "yes"]], @maternal_health.episiotomy), {}, { class: 'sex chosen-select' } %>
+    <%= f.label :laceration, t('maternal_healths.laceration') %>
+    <%= f.select :laceration, options_for_select([
+    [t('maternal_healths.choose'), choice_factor],
+    [t('maternal_healths.none'), "none"], 
+    [t('maternal_healths.first'), "first"], 
+    [t('maternal_healths.second'), "second"],
+    [t('maternal_healths.third'), "third"]], @maternal_health.laceration), {}, { class: 'sex chosen-select' } %>
+
+    <%= f.label :sutures, t('maternal_healths.sutures') %>
+    <%= f.text_field :sutures %>
+    <%= f.label :uterus, t('maternal_healths.uterus') %>
+    <%= f.select :uterus, options_for_select([
+    [t('maternal_healths.choose'), choice_factor], 
+    [t('maternal_healths.atonic'), "atonic"], 
+    [t('maternal_healths.tonic'), "tonic"]], @maternal_health.uterus), {}, { class: 'sex chosen-select' } %>
+    <%= f.label :mothers_condition, t('maternal_healths.mothers_condition') %>
+    <%= f.select :mothers_condition, options_for_select([
+    [t('maternal_healths.choose'), choice_factor], 
+    [t('maternal_healths.healthy'), "healthy"], 
+    [t('maternal_healths.sick'), "sick"],
+    [t('maternal_healths.deceased'), "deceased"]], @maternal_health.mothers_condition), {}, { class: 'sex chosen-select' } %>
+    <%= f.label :post_partum_complications, t('maternal_healths.post_partum_complications') %>
+    <%= f.select :post_partum_complications, options_for_select([
+    [t('maternal_healths.choose'), choice_factor],
+    [t('maternal_healths.no_complications'), "no_complications"], 
+    [t('maternal_healths.haemorrhage'), "haemorrhage"], 
+    [t('maternal_healths.fever'), "fever"],
+    [t('maternal_healths.convulsions'), "convulsions"],
+    [t('maternal_healths.smelly_lochia'), "smelly_lochia"]], @maternal_health.post_partum_complications), {}, { class: 'sex chosen-select' } %>
+
+    <div class="submit">
+      <button type="submit"><%= t('maternal_healths.register') %></button>
+    </div>
+  <% end %>
+  <script>
+    $(".chosen-select").chosen()
+  </script>
+</div>
+

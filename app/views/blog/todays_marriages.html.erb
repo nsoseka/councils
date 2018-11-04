@@ -1,12 +1,7 @@
-<h1>Todays Marriage Statistics</h1>
-<p class="new-marriages basic-stats">200 Marriages Today</p>
-<% if @mean != 0 %>
-  <h3 class="nothing">Area Chart</h3>
-  <%= area_chart @data, download: true %>
-  <h3 class="nothing">Column Chart</h3>
-  <%= column_chart @data, download: true %>
-  <h3 class="nothing">Pie Chart</h3>
-  <%= pie_chart @data, download: true %>
+<h1><%= t('statistics.todays_marriages') %></h1>
+<p class="new-marriages basic-stats"><%= @stats[:sum].to_i %> <%= t('statistics.number_mt') %></p>
+<% if !@stats[:mean].nil? && @stats[:mean] > 0 %>
+  <%= render 'statistics/charts', { data: @data, stats: @stats } %>
 <% else %>
-  <h3 class="nothing">No marriages registered so far today</h3>
+  <h3 class="nothing"><%= t('statistics.no_marriages') %></h3>
 <% end %>

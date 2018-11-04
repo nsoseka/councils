@@ -2,53 +2,53 @@
   <%= area_chart data %>
 <% end %>
 <%= column_chart data, download: true %>
-<%= pie_chart data, download: true, colors: ['#DD551A', '#AD7A99', '#00AA00', '#AFA737', '#FFA737', '#031219', '#225560', '#82204A', '#ECC8AE', '#00FF00', '#BB32FF', '#000000', '#DDFFD9', '#2A9D8F', '#ff9933', '#660066', '#e6b800', '#800000', '#1a0000', '#052A3A', '#151a21', '#3b99fc', '#E9C46A', '#DDD399', '#345432', '#999999', '#465748', '#DEDEDE', '#DAEE', '#8DD', '#43D', '#284989'] %>
+<%= pie_chart data, donut: true, download: true, colors: ['#DD551A', '#AD7A99', '#00AA00', '#AFA737', '#FFA737', '#031219', '#225560', '#82204A', '#ECC8AE', '#00FF00', '#BB32FF', '#000000', '#DDFFD9', '#2A9D8F', '#ff9933', '#660066', '#e6b800', '#800000', '#1a0000', '#052A3A', '#151a21', '#3b99fc', '#E9C46A', '#DDD399', '#345432', '#999999', '#465748', '#DEDEDE', '#DAEE', '#8DD', '#43D', '#284989'] %>
 
-<h2 class="stat-analysis">Statistical Analysis</h2>
+<h2 class="stat-analysis"><%= t('statistics.stat_analysis') %></h2>
 <table class="stats-descriptions">
   <thead>
-    <th>Property</th>
-    <th>Value</th>
+    <th><%= t('statistics.property') %></th>
+    <th><%= t('statistics.value') %></th>
   </thead>
   <tbody>
     <tr>
-      <td>Entries</td>
+      <td><%= t('statistics.entries') %></td>
       <td><%= stats[:number] %></td>
     </tr>
     <tr>
-      <td>Sum of all Entries</td>
+      <td><%= t('statistics.sum_of_entries') %></td>
       <td><%= stats[:sum] %></td>
     </tr>
     <tr>
-      <td>Variance</td>
+      <td><%= t('statistics.variance') %></td>
       <td><%= stats[:variance] %></td>
     </tr>
     <tr>
-      <td>Standard Deviation</td>
+      <td><%= t('statistics.standard_deviation') %></td>
       <td><%= stats[:standard_deviation] %></td>
     </tr>
     <tr>
-      <td>Mean</td>
+      <td><%= t('statistics.mean') %></td>
       <td><%= stats[:mean] %></td>
     </tr>
     <tr>
-      <td>Mode</td>
-      <td><%= stats[:mean] %></td>
+      <td><%= t('statistics.mode') %></td>
+      <td><%= stats[:mode] %></td>
     </tr>
     <tr>
-      <td>Median</td>
+      <td><%= t('statistics.median') %></td>
       <td><%= stats[:median] %></td>
     </tr>
     <tr>
-      <td>Mininum Value</td>
+      <td><%= t('statistics.min_value') %></td>
       <td><%= stats[:min] %></td>
     </tr>
     <tr>
-      <td>Maximum Value</td>
+      <td><%= t('statistics.max_value') %></td>
       <td><%= stats[:max] %></td>
     </tr>
     <tr>
-      <td>Range</td>
+      <td><%= t('statistics.range') %></td>
       <td><%= stats[:range] %></td>
     </tr>
     <tr>
@@ -66,11 +66,11 @@
   </tbody>
 </table>
 
-<h2 class="stat-analysis">DATA ENTRIES</h2>
+<h2 class="stat-analysis"><%= t('statistics.data_entries') %></h2>
 <table class="entries">
   <thead>
-    <th>Time Period</th>
-    <th>Value</th>
+    <th><%= t('statistics.time_period') %></th>
+    <th><%= t('statistics.value') %></th>
   </thead>
   <tbody>
     <% data.each do |key, value| %>

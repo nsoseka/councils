@@ -2,14 +2,28 @@ module StatisticsAnalyzer
   TIME_ZONE = "West Central Africa"
 
   def craft_message(group, set, period, date)
-    if group == 'day'
-      "#{set.gsub('s', '').capitalize} statitics for the #{period[2]} of #{period.join(',')}"
-    elsif group == 'week'
-      "#{set.gsub('s', '').capitalize} statitics for the #{date.cweek} week of #{period.join(',')}"
-    elsif group == 'month'
-      "#{set.gsub('s', '').capitalize} statitics for the #{period[1]} month of #{period.join(',')}"
-    elsif group == 'year'
-      "#{set.gsub('s', '').capitalize} statitics for the year #{period[0]}"
+    dataset = { birth: "nassaince", marriage: "mariage", death: "décès" }
+
+    if I18n.locale == :en
+      if group == 'day'
+        "#{set.gsub('s', '').capitalize} statitics for the #{period[2]} of #{period.join(',')}"
+      elsif group == 'week'
+        "#{set.gsub('s', '').capitalize} statitics for the #{date.cweek} week of #{period.join(',')}"
+      elsif group == 'month'
+        "#{set.gsub('s', '').capitalize} statitics for the #{period[1]} month of #{period.join(',')}"
+      elsif group == 'year'
+        "#{set.gsub('s', '').capitalize} statitics for the year #{period[0]}"
+      end
+    else
+      if group == 'day'
+        "Statistiques de #{dataset[set.gsub('s', '').to_sym]} pour le #{period[2]} de #{period.join(',')}"
+      elsif group == 'week'
+        "Statistiques de #{dataset[set.gsub('s', '').to_sym]} pour le #{date.cweek} semain de #{period.join(',')}"
+      elsif group == 'month'
+        "Statistiques de #{dataset[set.gsub('s', '').to_sym]} pour le #{period[1]} mois de #{period.join(',')}"
+      elsif group == 'year'
+        "Statistiques de #{dataset[set.gsub('s', '').to_sym]} pour l'année #{period[0]}"
+      end
     end
   end
 
@@ -32,7 +46,11 @@ module StatisticsAnalyzer
     Groupdate.time_zone = TIME_ZONE
     set = get_dataset(set, unit)
     if group == 'day'
-      set.group_by_hour_of_day(:created_at, format: "%-l %P", range: date.beginning_of_day..date.end_of_day).count
+      if I18n.locale == :fr
+        set.group_by_hour_of_day(:created_at, format: "%H %M", range: date.beginning_of_day..date.end_of_day).count
+      else
+        set.group_by_hour_of_day(:created_at, format: "%-l %P", range: date.beginning_of_day..date.end_of_day).count
+      end
     elsif group == 'week'
       set.group_by_day(:created_at, range: date.beginning_of_week..date.end_of_week).count
     elsif group == 'month'
@@ -58,7 +76,11 @@ module StatisticsAnalyzer
 
   def days_data(set)
     Groupdate.time_zone = TIME_ZONE
-    set.group_by_hour_of_day(:created_at, format: "%-l %P", range: Time.zone.now.beginning_of_day..Time.zone.now, series: false).count
+    if I18n.locale == :fr
+      set.group_by_hour_of_day(:created_at, format: "%H : %M", range: Time.zone.now.beginning_of_day..Time.zone.now, series: false).count
+    else 
+      set.group_by_hour_of_day(:created_at, format: "%-l %P", range: Time.zone.now.beginning_of_day..Time.zone.now, series: false).count
+    end
   end
 
   def weeks_data(set)

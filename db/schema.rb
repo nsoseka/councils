@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_10_134609) do
+ActiveRecord::Schema.define(version: 2018_11_02_171058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,17 @@ ActiveRecord::Schema.define(version: 2018_09_10_134609) do
     t.text "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "appointments", force: :cascade do |t|
+    t.integer "new_born_id"
+    t.integer "hospital_id"
+    t.date "date"
+    t.text "purpose"
+    t.boolean "kept", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "contact"
   end
 
   create_table "births", force: :cascade do |t|
@@ -68,6 +79,25 @@ ActiveRecord::Schema.define(version: 2018_09_10_134609) do
     t.text "registrar"
     t.text "secretary"
     t.date "date_done"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cause_of_deaths", force: :cascade do |t|
+    t.integer "deceased_id"
+    t.integer "hospital_id"
+    t.integer "age"
+    t.string "cause"
+    t.string "sex"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "council_reminders", force: :cascade do |t|
+    t.integer "council_id"
+    t.integer "certificate_id"
+    t.integer "count"
+    t.string "certificate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -149,6 +179,15 @@ ActiveRecord::Schema.define(version: 2018_09_10_134609) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "hospital_reminders", force: :cascade do |t|
+    t.integer "hospital_id"
+    t.integer "count"
+    t.string "period"
+    t.date "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "hospitals", force: :cascade do |t|
     t.text "username"
     t.text "name"
@@ -163,6 +202,25 @@ ActiveRecord::Schema.define(version: 2018_09_10_134609) do
     t.boolean "email_verified?", default: false
     t.integer "council_id"
     t.text "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "infant_healths", force: :cascade do |t|
+    t.integer "hospital_id"
+    t.integer "new_born_id"
+    t.string "term"
+    t.string "fsb"
+    t.string "msb"
+    t.string "still_birth_cause"
+    t.decimal "agpar_scor_1", precision: 4, scale: 2
+    t.decimal "agpar_scor_5", precision: 4, scale: 2
+    t.decimal "weight", precision: 7, scale: 2
+    t.decimal "length", precision: 4, scale: 2
+    t.decimal "head_circumference", precision: 4, scale: 2
+    t.string "resuscitation"
+    t.string "abnormalities"
+    t.string "art"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -206,6 +264,32 @@ ActiveRecord::Schema.define(version: 2018_09_10_134609) do
     t.boolean "divorced", default: false
   end
 
+  create_table "maternal_healths", force: :cascade do |t|
+    t.integer "hospital_id"
+    t.integer "new_born_id"
+    t.string "birth_attendant"
+    t.string "place_of_delivery"
+    t.integer "gestational_age"
+    t.decimal "duration_of_labour"
+    t.string "labour_on_set"
+    t.string "type_of_delivery"
+    t.string "placenta_separation"
+    t.string "placenta"
+    t.string "membranes"
+    t.string "nature_of_cord"
+    t.integer "vessels"
+    t.decimal "blood_loss", precision: 6, scale: 2
+    t.string "source_of_pph"
+    t.string "episiotomy"
+    t.string "laceration"
+    t.integer "sutures"
+    t.string "uterus"
+    t.string "mothers_condition"
+    t.string "post_partum_complications"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "new_borns", force: :cascade do |t|
     t.integer "hospital_id"
     t.text "child_code"
@@ -236,6 +320,29 @@ ActiveRecord::Schema.define(version: 2018_09_10_134609) do
     t.integer "area"
     t.integer "population"
     t.integer "division_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "vaccination_calendars", force: :cascade do |t|
+    t.integer "new_born_id"
+    t.integer "hospital_id"
+    t.boolean "at_birth", default: false
+    t.boolean "six_weeks", default: false
+    t.boolean "ten_weeks", default: false
+    t.boolean "fourteen_weeks", default: false
+    t.boolean "six_months", default: false
+    t.boolean "nine_months", default: false
+    t.boolean "one_year", default: false
+    t.boolean "recent_appointment", default: false
+    t.date "at_birth_d"
+    t.date "six_weeks_d"
+    t.date "ten_weeks_d"
+    t.date "fourteen_weeks_d"
+    t.date "six_months_d"
+    t.date "nine_months_d"
+    t.date "one_year_d"
+    t.date "recent_appointment_d"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,7 +1,7 @@
-<h1>Recently Registered Births</h1>
+<h1><%= t('.recent_rb') %></h1>
 <ul class="items">
   <% if @new_borns.empty? %>
-    <h3>No births have been registered so far today</h3>
+    <h3><%= t('.no_births') %></h3>
   <% else %>
     <%== pagy_nav(@pagy) %>
     <% @new_borns.each do|new_born|%>

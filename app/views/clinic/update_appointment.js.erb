@@ -1,0 +1,17 @@
+var informant = $("#informant");
+
+if (!<%= @success %>) {
+
+  swal('<%= @message %>', '', 'error');
+  failureAlert(informant);
+} else {
+
+  successAlert(informant);
+  $("[data-id='<%= @appointment.id %>']").addClass('done-deal');
+};
+
+
+
+
+
+

@@ -1,25 +1,25 @@
 <header class="stat-page">
-  <h1 class="stat-page">Birth Statistics</h1>
+  <h1 class="stat-page"><%= t('statistics.birth_stats') %></h1>
   <nav class="stat-nav">
     <ul>
       <li class="<%= @chosen == 'day' ? 'stat-chosen' : '' %>">
         <%= link_to new_borns_this_day_path do %>
-          Day
+          <%= t('statistics.day') %>
         <% end %>
       </li>
       <li class="<%= @chosen == 'week' ? 'stat-chosen' : '' %>">
         <%= link_to new_borns_this_week_path do %>
-          Week
+          <%= t('statistics.week') %>
         <% end %>
       </li>
       <li class="<%= @chosen == 'month' ? 'stat-chosen' : '' %>">
         <%= link_to new_borns_this_month_path do %>
-          Month
+          <%= t('statistics.month') %>
         <% end %>
       </li>
       <li class="<%= @chosen == 'year' ? 'stat-chosen' : '' %>">
         <%= link_to new_borns_this_year_path do %>
-          Year
+          <%= t('statistics.year') %>
         <% end %>
       </li>
     </ul>
@@ -29,6 +29,6 @@
 <% if !@stats[:mean].nil? && @stats[:mean] > 0 %>
   <%= render 'charts', { data: @data, stats: @stats } %>
 <% else %>
-  <h3 class="nothing">No births registered so far this <%= @chosen %></h3>
+  <h3 class="nothing"><%= t('statistics.no_births') %></h3>
 <% end %>
 

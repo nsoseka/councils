@@ -2,6 +2,10 @@ class NewBorn < ApplicationRecord
   CHOICE_FACTOR  = '88888888'
   belongs_to :hospital
   belongs_to :council
+  has_one :vaccination_calendar
+  has_many :appointments
+  has_one :infant_health
+  has_one :maternal_health
   # has_one :council, through: :hospital
   # belongs_to :division
   # belongs_to :administrative_region

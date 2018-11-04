@@ -1,39 +1,59 @@
-<h1>Get Specific Statistics</h1>
+<h1><%= t('statistics.get_stats') %></h1>
 <%= form_tag blog_find_path, remote: false, class: "search-form blog-p", method: "get" do |t| %>
   <input class="datepicker" id="searcher" type="text" name="period" required><!--
   --><button type="submit"><%= fa_icon 'search' %></button>
 
-  <p class="choose-council">Choose Council</p>
-  <%= select_tag('council_id', options_for_select(Council.all.map { |r| [r.name, r.id] }.unshift(['Choose Council', 88888888])), { class: 'short-select chosen-select' }) %>
+  <p class="choose-council"><%= t('statistics.choose_council') %></p>
+  <%= select_tag('council_id', options_for_select(Council.all.map { |r| [r.name, r.id] }.unshift([t('statistics.choose_council'), 88888888])), { class: 'short-select chosen-select' }) %>
   <p>
     <ul class="stats">
-      <li>Period: </li>
-      <li>  <input type="radio" name="group" value="day">Day</li>
-      <li><input type="radio" name="group" value="week">Week</li>
-      <li><input type="radio" name="group" value="month" checked>Month</li>
-      <li><input type="radio" name="group" value="year">Year</li>
+      <li><%= t('statistics.period') %>: </li>
+      <li>  <input type="radio" name="group" value="day"><%= t('statistics.day') %></li>
+      <li><input type="radio" name="group" value="week"><%= t('statistics.week') %></li>
+      <li><input type="radio" name="group" value="month" checked><%= t('statistics.month') %></li>
+      <li><input type="radio" name="group" value="year"><%= t('statistics.year') %></li>
     </ul>
   </p>
 
   <p>
     <ul class="stats">
-      <li>Set: </li>
-      <li>  <input type="radio" name="set" value="marriages">Marriage</li>
-      <li><input type="radio" name="set" value="births" checked>Birth</li>
-      <li><input type="radio" name="set" value="deaths">Death</li>
+      <li><%= t('statistics.set') %>: </li>
+      <li>  <input type="radio" name="set" value="marriages"><%= t('statistics.marriage') %></li>
+      <li><input type="radio" name="set" value="births" checked><%= t('statistics.birth') %></li>
+      <li><input type="radio" name="set" value="deaths"><%= t('statistics.death') %></li>
     </ul>
   </p>
 <% end %>
 
-<script>
-  var element = document.getElementById('searcher');
-  moveCursorToEnd(element)
-  $('.datepicker').pickadate({
-    selectYears: 120,
-    min: new Date(2018, 6, 1),
-    max: new Date(),
-    selectMonths: 12,
-    format: 'yyyy, mm, dd'
-  });
-  $(".chosen-select").chosen()
-</script>
+<% if I18n.locale == :en %>
+  <script>
+    $(function() {
+      $('.datepicker').pickadate({
+        selectYears: 120,
+        min: new Date(2018, 6, 1),
+        max: new Date(),
+        selectMonths: 12,
+        format: 'yyyy, mm, dd',
+      });
+    });
+    $(".chosen-select").chosen()
+  </script>
+  <% else %>
+    <script>
+      $(function() {
+        $('.datepicker').pickadate({
+          monthsFull: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+          weekdaysShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
+          today: 'aujourd\'hui',
+          clear: 'effacer',
+          close: 'fermer',
+          format: 'yyyy, mm, dd',
+          selectYears: 120,
+          min: new Date(2018, 6, 1),
+          max: new Date(),
+          selectMonths: 12,
+        });
+      });
+      $(".chosen-select").chosen()
+    </script>
+  <% end %>

@@ -2,6 +2,12 @@ class Hospital < ApplicationRecord
   belongs_to :council
   has_many :new_borns
   has_many :deceaseds
+  has_many :vaccination_calendars
+  has_many :appointments
+  has_many :infant_healths
+  has_many :maternal_healths
+  has_many :cause_of_deaths
+  has_many :hospital_reminders
   delegate :name, to: :council, prefix: true, allow_nil: true
   has_one :administrative_region, through: :council
   has_one :sub_division, through: :council
@@ -24,19 +30,19 @@ class Hospital < ApplicationRecord
 
   def strict_unique_username
     if username.present? && Agent.find_by(username: username)
-      errors.add(:username, 'Please that username has been taken')
+      errors.add(:username, :username_taken)
     end
   end
 
   def council_choice
     if council_id.present? && council_id == 88888888
-      errors.add(:council_id, 'must be chosen')
+      errors.add(:council_id, :choose)
     end
   end
 
   def name_given?
     if name.present? && name.split.length < 2
-      errors.add(:name, 'please provided full names separated by a space')
+      errors.add(:name, :give_names)
     end
   end
 end

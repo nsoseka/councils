@@ -43,4 +43,20 @@
       <time class="item-date-ribbon bad-news"><%= t('.died') %>: <%= formated_date deceased.d_dd %></time>
     </div>
   <% end %>
+
+  <% if current_hospital %>
+    <div class="childs-board">
+      <% if deceased.cause_of_death %>
+          <%= link_to deceased_cause_of_death_path(deceased, deceased.cause_of_death), class: "board-item m-health " do %>
+          <%= fa_icon "info" %> <%= t('.cause_of_death') %>
+        <% end %>
+      <% else %>
+        <%= link_to new_deceased_cause_of_death_path(deceased), class: "board-item m-health adder" do %>
+          <%= fa_icon "plus" %> <%= t('.add_cause_of_death') %>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
 </li>
+
+

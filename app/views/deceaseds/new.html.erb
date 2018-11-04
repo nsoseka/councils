@@ -1,50 +1,50 @@
 <% choice_factor = '88888888' %>
-<h1>Death Registration</h1>
+<h1><%= t('.death_registration') %></h1>
 <div class="main register-citizen">
   <%= my_form_for @deceased, url: deceaseds_path(@new_born), html: { id: "new-citizen", class: 'form'} do |f| %>
-    <h2>Registration Form</h2>
+    <h2><%= t('.dr_form') %></h2>
     <%= f.hidden_field :hospital_id, value: current_hospital.id, hidden: true %>
 
     <h3><%= t('.deceaseds_details') %></h3>
-    <%= f.label :d_name, "Name of the deceased" %>
+    <%= f.label :d_name, t('.deceased_name') %>
     <%= f.text_field :d_name %>
-    <%= f.label :d_db, "Date of birth" %>
+    <%= f.label :d_db, t('.date_of_birth') %>
     <%= f.text_field :d_db, class: "datepicker" %>
-    <%= f.label :d_pb, "Place of birth" %>
+    <%= f.label :d_pb, t('.place_of_birth') %>
     <%= f.text_field :d_pb %>
-    <%= f.label :d_dd, "Date of death" %>
+    <%= f.label :d_dd, t('.date_of_death') %>
     <%= f.text_field :d_dd, class: "datepicker" %>
-    <%= f.label :d_pd, "Place of death" %>
+    <%= f.label :d_pd, t('.place_of_death') %>
     <%= f.text_field :d_pd %>
-    <%= f.label :d_job, "Occupation" %>
+    <%= f.label :d_job, t('.occupation') %>
     <%= f.text_field :d_job %>
-    <%= f.label :marital_status, "Marital Status" %>
-    <%= f.select :marital_status, options_for_select([['Choose Marital Status', choice_factor], ['Married', 'married'], ['Single', 'single']], @deceased.marital_status), {}, { class: 'sex chosen-select' } %>
-    <%= f.label :num_children, "Number of children" %>
+    <%= f.label :marital_status, t('.marital_status') %>
+    <%= f.select :marital_status, options_for_select([[t('.choose_status'), choice_factor], [t('.married'), 'married'], [t('.single'), 'single']], @deceased.marital_status), {}, { class: 'sex chosen-select' } %>
+    <%= f.label :num_children, t('.number_of_children') %>
     <%= f.text_field :num_children %>
-    <%= f.label :sex, "Sex" %>
-    <%= f.select :sex, options_for_select([['Choose Sex', choice_factor], ['Male', 'male'], ['Female', 'female']], @deceased.sex), {}, { class: 'sex chosen-select' } %>
+    <%= f.label :sex, t('.sex') %>
+    <%= f.select :sex, options_for_select([[t('.choose_sex'), choice_factor], [t('.male'), 'male'], [t('.female'), 'female']], @deceased.sex), {}, { class: 'sex chosen-select' } %>
 
     <h3><%= t('.fathers_details') %></h3>
 
-    <%= f.label :f_name, "Father's name" %>
+    <%= f.label :f_name, t('.fathers_name') %>
     <%= f.text_field :f_name %>
-    <%= f.label :f_res, "Father's residence" %>
+    <%= f.label :f_res, t('.fathers_residence') %>
     <%= f.text_field :f_res %>
 
     <h3><%= t('.mothers_details') %></h3>
-    <%= f.label :m_name, "Mother's name" %>
+    <%= f.label :m_name, t('.mothers_name') %>
     <%= f.text_field :m_name %>
-    <%= f.label :m_res, "Mother's residence" %>
+    <%= f.label :m_res, t('.mothers_residence') %>
     <%= f.text_field :m_res %>
 
-    <h3>Contact Details</h3>
-    <%= f.label :contact, "Name of person to contact" %>
+    <h3><%= t('.contacts_details') %></h3>
+    <%= f.label :contact, t('.contacts_name') %>
     <%= f.text_field :contact %>
-    <%= f.label :contact_tel, "Contacts phone number" %>
+    <%= f.label :contact_tel, t('.contacts_number') %>
     <%= f.text_field :contact_tel %>
-    <%= f.label :contact_lang, "Contact's language of preference" %>
-    <%= f.select :contact_lang, options_for_select([['Choose Language', choice_factor], ['English', 'english'], ['French', 'french']], @deceased.contact_lang), {}, { class: 'sex chosen-select' } %>
+    <%= f.label :contact_lang, t('.preferred_language') %>
+    <%= f.select :contact_lang, options_for_select([[t('.choose_language'), choice_factor], [t('.english'), 'english'], [t('.french'), 'french']], @deceased.contact_lang), {}, { class: 'sex chosen-select' } %>
 
     <div class="submit">
       <button type="submit"><%= t('.register') %></button>

@@ -1,35 +1,54 @@
 <%= form_tag find_path, remote: false, class: "search-form", method: "get" do |f| %>
   <input class="datepicker" id="searcher" type="text" name="period" required><!--
   --><button type="submit"><%= fa_icon 'search' %></button>
-  <h3>You can search by</h3>
+  <h3><%= t('statistics.search_by') %></h3>
   <p>
     <ul class="stats">
-      <li>Period: </li>
-      <li>  <input type="radio" name="group" value="day">Day</li>
-      <li><input type="radio" name="group" value="week">Week</li>
-      <li><input type="radio" name="group" value="month" checked>Month</li>
-      <li><input type="radio" name="group" value="year">Year</li>
+      <li><%= t('statistics.period') %>: </li>
+      <li>  <input type="radio" name="group" value="day"><%= t('statistics.day') %></li>
+      <li><input type="radio" name="group" value="week"><%= t('statistics.week') %></li>
+      <li><input type="radio" name="group" value="month" checked><%= t('statistics.month') %></li>
+      <li><input type="radio" name="group" value="year"><%= t('statistics.year') %></li>
     </ul>
   </p>
 
   <p>
     <ul class="stats">
-      <li>Set: </li>
-      <li>  <input type="radio" name="set" value="marriages">Marriage</li>
-      <li><input type="radio" name="set" value="births" checked>Birth</li>
-      <li><input type="radio" name="set" value="deaths">Death</li>
+      <li><%= t('statistics.set') %>: </li>
+      <li>  <input type="radio" name="set" value="marriages"><%= t('statistics.marriage') %></li>
+      <li><input type="radio" name="set" value="births" checked><%= t('statistics.birth') %></li>
+      <li><input type="radio" name="set" value="deaths"><%= t('statistics.death') %></li>
     </ul>
   </p>
 <% end %>
 
-<script>
-  var element = document.getElementById('searcher');
-  moveCursorToEnd(element)
-  $('.datepicker').pickadate({
-    selectYears: 120,
-    min: new Date(2018, 6, 1),
-    max: new Date(),
-    selectMonths: 12,
-    format: 'yyyy, mm, dd'
-  });
-</script>
+ <% if I18n.locale == :en %>
+  <script>
+    $(function() {
+      $('.datepicker').pickadate({
+        selectYears: 120,
+        min: new Date(2018, 6, 1),
+        max: new Date(),
+        selectMonths: 12,
+        format: 'yyyy, mm, dd',
+      });
+    });
+  </script>
+  <% else %>
+    <script>
+      $(function() {
+        $('.datepicker').pickadate({
+          monthsFull: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+          weekdaysShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
+          today: 'aujourd\'hui',
+          clear: 'effacer',
+          close: 'fermer',
+          format: 'yyyy, mm, dd',
+          selectYears: 120,
+          min: new Date(2018, 6, 1),
+          max: new Date(),
+          selectMonths: 12,
+        });
+      });
+    </script>
+  <% end %>

@@ -2,10 +2,8 @@ class BirthsController < ApplicationController
   before_action :require_agent, :set_tab, :set_up_council_notifiers
 
   def index
-    # @births = Birth.today
-    @pagy, @births = pagy Birth.today.order('created_at DESC').where(council: current_agent.council)
+    @pagy, @births = pagy Birth.all.order('created_at DESC').where(council: current_agent.council)
 
-    @new_birth = params['new_birth']
     @menu = 'index-b'
   end
 
@@ -19,10 +17,9 @@ class BirthsController < ApplicationController
     @birth = Birth.new(birth_params)
 
     if @birth.save
-      # flash[:notice] = "birth was succesfully created," +
-      #                   "once verified you will be able to access the platform"
+      flash[:notice] = I18n.translate "flash.certificate_added"
 
-      redirect_to births_path @birth, new_birth: 'yes'
+      redirect_to births_path
     else
       render 'births/new'
     end
@@ -42,7 +39,13 @@ class BirthsController < ApplicationController
     @search_query = params[:search_query]
     @menu = 'find-b'
     @pagy, @births = pagy(Birth.ransack(surname_or_given_name_or_father_or_mother_or_certificate_number_cont_any: @search_query.split(' ')).result)
+
     @pagy2, @new_borns = pagy NewBorn.ransack(c_name_or_child_code_or_f_name_or_m_name_cont_any: @search_query.split(' ')).result.where(council: current_agent.council)
+
+    if params[:page].to_i > 1 
+      @births = @pagy.count <= params[:items].to_i ? [] : @births
+      @new_borns = @pagy2.count <= params[:items].to_i ? [] : @new_borns
+    end
   end
 
   def latest

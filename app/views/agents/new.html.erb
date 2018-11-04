@@ -1,30 +1,30 @@
 <div class="login-and-creator register">
-  <h4>Create a New Council Account</h4>
+  <h4><%= t('.new_account') %></h4>
   <div class="aside-container">
     <%= image_tag  "councils.jpg" %>
   </div>
   <div class="page-form" autocomplete="off">
     <%= my_form_for @agent, url: agents_path(@agent), html: { class: "form new-account", autocomplete: 'false' } do |f| %>
-      <h5>New Account Form</h5>
+      <h5><%= t('.new_account_form') %></h5>
       
-      <%= f.label :council_id, 'Council' %>
-      <%= f.select :council_id, options_for_select(Council.all.map { |r| [r.name, r.id] }.unshift(['Choose Council', 88888888]), @agent.council_id), {}, { class: 'sex chosen-select' } %>
-      <%= f.label :full_names, 'Full names' %>
+      <%= f.label :council_id, t('.council') %>
+      <%= f.select :council_id, options_for_select(Council.all.map { |r| [r.name, r.id] }.unshift([t('.choose_council'), 88888888]), @agent.council_id), {}, { class: 'sex chosen-select' } %>
+      <%= f.label :full_names, t('.full_names') %>
       <%= f.text_field :full_names %>
-      <%= f.label :phone_number, 'Phone number' %>
+      <%= f.label :phone_number, t('.phone_number') %>
       <%= f.text_field :phone_number %>
-      <%= f.label :email, 'Email' %>
+      <%= f.label :email, t('.email') %>
       <%= f.email_field :email %>
-      <%= f.label :username, 'Username' %>
+      <%= f.label :username, t('.username') %>
       <%= f.text_field :username %>
-      <%= f.label :password, 'Password' %>
+      <%= f.label :password, t('.password') %>
       <%= f.password_field :password %>
-      <%= f.label :password_confirmation, 'Confirmation password' %>
+      <%= f.label :password_confirmation, t('.confirmation_password') %>
       <%= f.password_field :password_confirmation %>
-      <%= f.label :code, 'Council Code' %>
+      <%= f.label :code, t('.council_code') %>
       <%= f.text_field :code %>
       <div class="submitter">
-        <button type="submit">Create Account</button>
+        <button type="submit"><%= t('.create_account') %></button>
       </div>
     <% end %>
   </div>

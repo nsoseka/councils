@@ -1,0 +1,20 @@
+<li class="has-date apt">
+  <div class="item-container">
+    <h3>
+      <%= fa_icon 'child' %>
+      <span><%= t('.mothers_name') %>:</span>
+      <span><%= new_born.m_name %> & </span>
+      <span><%= t('.childs_name') %>:</span>
+      <span><%= new_born.c_name %></span>
+    </h3>
+  </div>
+  <p class="purpose">
+    <%= fa_icon 'eraser' %>
+    <span><%= t('.purpose_for_appointment') %>:</span>
+    <span><%= t("appointments.edit." + appointment.purpose) %> </span>
+  </p>
+</li>
+
+
+
+

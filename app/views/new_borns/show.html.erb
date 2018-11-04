@@ -1,9 +1,7 @@
 <h1><%= @new_born.c_name %></h1>
 <div class="main register-citizen">
   <div id="new-citizen">
-    <h2>
-      Birth Registration Card
-    </h2>
+    <h2><%= t('.br_card') %></h2>
     <h3><%= t('.childs_details') %></h3>
 
     <label><%= t('.childs_name') %></label>
@@ -12,37 +10,110 @@
     <input type="text" value="<%= formated_date @new_born.c_db %>" disabled>
     <label><%= t('.place_of_birth') %></label>
     <input type="text" value="<%= @new_born.c_pb %>" disabled>
-    <label><%= t('.childs code') %></label>
+    <label><%= t('.childs_code') %></label>
     <input type="text" value="<%= @new_born.child_code.upcase %>" disabled>
     <label><%= t('.sex') %></label>
-    <input type="text" value="<%= @new_born.sex %>" disabled>
+    <input type="text" value="<%= t('.' + @new_born.sex) %>" disabled>
 
     <h3><%= t('.fathers_details') %></h3>
 
     <label><%= t('.fathers_name') %></label>
     <input type="text" value="<%= @new_born.f_name %>" disabled>
-    <label><%= t('.fathers_date_of_birth') %></label>
+    <label><%= t('.date_of_birth') %></label>
     <input type="text" value="<%= formated_date @new_born.f_db %>" disabled>
-    <label><%= t('.fathers_place_of_birth') %></label>
+    <label><%= t('.place_of_birth') %></label>
     <input type="text" value="<%= @new_born.f_pb %>" disabled>
-    <label><%= t('.fathers_residence') %></label>
+    <label><%= t('.residence') %></label>
     <input type="text" value="<%= @new_born.f_res %>" disabled>
-    <label>Fathers Phone Number</label>
+    <label><%= t('.phone_number') %></label>
     <input type="text" value="<%= @new_born.f_tel %>" disabled>
 
     <h3><%= t('.mothers_details') %></h3>
 
     <label><%= t('.mothers_name') %></label>
     <input type="text" value="<%= @new_born.m_name %>" disabled>
-    <label><%= t('.mothers_place_of_birth') %></label>
+    <label><%= t('.place_of_birth') %></label>
     <input type="text" value="<%= @new_born.m_pb %>" disabled>
-    <label><%= t('.mothers_year_of_birth') %></label>
+    <label><%= t('.date_of_birth') %></label>
     <input type="text" value="<%= formated_date @new_born.m_db %>" disabled>
-    <label><%= t('.mothers_residence') %></label>
+    <label><%= t('.residence') %></label>
     <input type="text" value="<%= @new_born.m_res %>" disabled>
-    <label>Mothers Phone Number</label>
+    <label><%= t('.phone_number') %></label>
     <input type="text" value="<%= @new_born.m_tel %>" disabled>
-    <label><%= t('.did_mother_have_access_to_prebirth_health_services?') %></label>
-    <input type="text" value="<%= @new_born.attended_clinic ? "Yes" : "No" %>" disabled>
+    <label><%= t('.clinic_attendance') %></label>
+    <input type="text" value="<%= @new_born.attended_clinic == 'yes' ? t('.yesb') : t('.nob') %>" disabled>
   </div>
+
+  <% if current_hospital %>
+    <div class="control-board">
+      <div class="cb-apps">
+        <%= link_to new_born_appointments_path @new_born do %>
+          <%= fa_icon 'clock-o' %> Click here to add vaccination appointments for the new born
+        <% end %>
+      </div>
+      <div class="cb-ch">
+        <% if @new_born.infant_health %>
+          <%= link_to new_born_infant_health_path(@new_born, @new_born.infant_health), class: "board-item c-health" do %>
+            <%= fa_icon "eye" %> <%= fa_icon "child" %> <%= t('.view_childs_health') %>
+          <% end %>
+        <% else %>
+          <%= link_to new_new_born_infant_health_path(@new_born, @new_born.infant_health), class: "board-item c-health adder" do %>
+            <%= fa_icon "plus" %> Click here to add child health analysis
+          <% end %>
+        <% end %>
+      </div>
+      <div class="cb-mh">
+        <% if @new_born.maternal_health %>
+          <%= link_to new_born_maternal_health_path(@new_born, @new_born.maternal_health), class: "board-item m-health " do %>
+            <%= fa_icon "eye" %> <%= fa_icon "female" %> <%= t('.view_mothers_health') %>
+          <% end %>
+        <% else %>
+          <%= link_to new_new_born_maternal_health_path(@new_born), class: "board-item m-health adder" do %>
+            <%= fa_icon "plus" %> Click here to add maternal health analysis
+          <% end %>
+        <% end %>
+      </div>
+      <div class="cb-vc">
+        <%= link_to new_born_vaccination_calendar_path @new_born, @new_born.vaccination_calendar do %>
+          <%= fa_icon 'calendar' %> Click here see vaccination calendar
+        <% end %>
+      </div>
+      <div class="cb-vc">
+        <%= link_to clinic_sessions_new_born_path @new_born, @new_born do %>
+          <%= fa_icon 'doc' %> Click to view Clinic Sessions
+        <% end %>
+      </div>
+    </div>
+
+    <% if @new_born_added == "added" && (!@new_born.appointments || !@new_born.maternal_health || !@new_born.infant_health) %>
+    <div class="add-factors">
+      <div class="adder-board">
+        <div class="control-board">
+          <h1>The birth of <span class="c-name"><%= @new_born.c_name %></span> was registered ✅</h1>
+          <% if !@new_born.appointments %>
+            <div class="cb-apps">
+              <%= link_to new_born_appointments_path @new_born do %>
+                <%= fa_icon 'street-view' %> Click here to add vaccination appointments for the new born
+              <% end %>
+            </div>
+          <% end %>
+          <% if !@new_born.infant_health %>
+            <div class="cb-ch">
+              <%= link_to new_new_born_infant_health_path @new_born do %>
+                <%= fa_icon 'child' %> Click here to add child health analysis
+              <% end %>
+            </div>
+          <% end %>
+          <% if !@new_born.maternal_health %>
+            <div class="cb-mh">
+              <%= link_to new_new_born_maternal_health_path @new_born do %>
+                <%= fa_icon 'female' %> Click here to add maternal health analysis
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <% end %>
 </div>

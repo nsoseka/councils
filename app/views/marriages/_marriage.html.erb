@@ -2,7 +2,8 @@
   <%= link_to marriage_path marriage do %>
     <div class="item-container">
       <h3>
-        <%= fa_icon 'user-secret' %> 
+        <%= fa_icon 'male' %> 
+        <%= fa_icon 'female' %> 
         <span><%= t('.couple') %>:</span> 
         <span><%= marriage.husband + ' & ' + marriage.wife  %></span>
       </h3>
@@ -36,7 +37,7 @@
         <span><%= t('.wifes_fh') %>:</span> 
         <span><%= marriage.wife_fh %></span>
       </p>
-      <time class="item-date-ribbon"><%= t('.married') %>: <%= formated_date marriage.appearance_date %></time>
+      <time class="item-date-ribbon glad-news"><%= t('.married') %>: <%= formated_date marriage.appearance_date %></time>
     </div>
   <% end %>
   <p class="approval-link">

@@ -1,26 +1,26 @@
-<h1>Edit your Profile</h1>
+<h1><%= t('.edit_profile') %></h1>
 <div class="agent register">
   <div class="page-form" autocomplete="off">
-    <%= my_form_for current_agent, url: agents_path(current_agent), html: { class: "form new-account", autocomplete: 'false' } do |f| %>
-      <h3><%= fa_icon 'exclamation' %> You can't change your council details</h3>
-      <%= f.label :council_id, 'Council' %>
-      <%= f.text_field :council_id, value: current_agent.council_name, disabled: true %>
-      <%= f.label :full_names, 'Full names' %>
+    <%= my_form_for @agent, url: agent_path(@agent), html: { class: "form new-account", autocomplete: 'false' } do |f| %>
+      <h3><%= fa_icon 'exclamation' %> <%= t('.no_change') %></h3>
+      <%= f.label :council_id, t('.council') %>
+      <%= f.text_field :council_id, value: @agent.council_name, disabled: true %>
+      <%= f.label :full_names, t('.full_names') %>
       <%= f.text_field :full_names %>
-      <%= f.label :phone_number, 'Phone number' %>
+      <%= f.label :phone_number, t('.phone_number') %>
       <%= f.text_field :phone_number %>
-      <%= f.label :email, 'Email' %>
+      <%= f.label :email, t('.email') %>
       <%= f.email_field :email %>
-      <%= f.label :username, 'Username' %>
+      <%= f.label :username, t('.username') %>
       <%= f.text_field :username %>
-      <%= f.label :password, 'Password' %>
+      <%= f.label :password, t('.password') %>
       <%= f.password_field :password %>
-      <%= f.label :password_confirmation, 'Confirmation password' %>
+      <%= f.label :password_confirmation, t('.confirmation_password') %>
       <%= f.password_field :password_confirmation %>
-      <%= f.label :code, 'Council Code' %>
+      <%= f.label :code, t('.council_code') %>
       <%= f.text_field :code, disabled: true %>
       <div class="submitter">
-        <button type="submit">Create Account</button>
+        <button type="submit"><%= t('.update_account') %></button>
       </div>
     <% end %>
   </div>

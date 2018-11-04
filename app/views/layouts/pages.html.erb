@@ -21,28 +21,28 @@
           <ul>
             <% if current_agent.nil? && current_hospital.nil? %>
               <li>
-                <%= link_to 'Create Account', new_account_path %>
+                <%= link_to t('.create_account'), new_account_path %>
               </li>
               <li>
-                <%= link_to 'Login', sign_in_path %>
+                <%= link_to t('.login'), sign_in_path %>
               </li>
             <% elsif current_agent.present? %>
               <li>
                 <%= link_to  home_path  do %>
-                  <%= fa_icon 'table' %> Back to Main Board <%= fa_icon 'arrow-right' %>
+                  <%= fa_icon 'table' %> <%= t('.main_board') %> <%= fa_icon 'arrow-right' %>
                 <% end %>
               </li>
             <% elsif current_hospital.present? %>
               <li>
                 <%= link_to  health_unit_home_path  do %>
-                  <%= fa_icon 'table' %> Back to Main Board <%= fa_icon 'arrow-right' %>
+                  <%= fa_icon 'table' %> <%= t('.main_board') %>  <%= fa_icon 'arrow-right' %>
                 <% end %>
               </li>
             <% end %>
             <li class="blog-container">
               <%= link_to blog_home_path, class: "blog" do %>
                 237councils Blog
-                <span class="new">NEW</span>
+                <span class="new"><%= t('.new') %></span>
               <% end %>
             </li>
           </ul>
@@ -58,9 +58,9 @@
         <li><a href="#">Instagram</a></li>
         <li><a href="#">Youtube</a></li>
         <li><a href="#">Facebook</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Created by Agape Inc.</a></li>
+        <li><a href="#"><%= t('.about') %></a></li>
+        <li><a href="#"><%= t('.careers') %></a></li>
+        <li><a href="#"><%= t('.created_by') %> Agape Inc.</a></li>
       </ul>
       <h2>&copy; Agape Inc. 2018 <%= fa_icon 'heart' %></h2>
     </footer>

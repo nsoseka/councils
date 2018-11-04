@@ -1,16 +1,16 @@
 <h2 class="search">
   <%= link_to search_path do %>
-    <%= fa_icon 'arrow-left' %> Search Again
+    <%= fa_icon 'arrow-left' %>
+    <%= t('statistics.search_again') %>
   <% end %>
 </h2>
 
-<% if @mean != 0 %>
+<% if @stats[:mean] > 0 %>
   <h3 class="nothing"><%= @message %></h3>
-  <%= area_chart @data %>
-  <%= column_chart @data, download: true %>
-  <%= pie_chart @data, download: true %>
+  <%= render 'charts', { data: @data, stats: @stats } %>
 <% else %>
-  <h3 class="nothing">No <%= @set %> registered so for that <%= @group %></h3>
+  <h3 class="nothing"><%= @message %></h3>
+  <h3 class="nothing secondary"><%= t('statistics.no_stats', dataset: t('statistics.' + @set), group: t('statistics.this_' +@group)) %></h3>
 <% end %>
 
 

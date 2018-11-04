@@ -15,25 +15,27 @@
     <main class="main">
       <header class="header">
         <h1>
-          <a href="/"><%= current_agent.council_name.capitalize + ' Council' %></a>
+          <a href="/"><%= t('.council_name', c_name: current_agent.council.name.upcase ) %></a>
         </h1>
         <nav>
           <%= render "shared/header" %>
         </nav>
       </header>
+      
       <div class="main-content">
         <%= yield %>
       </div>
     </main>
+
     <footer>
       <ul>
         <li><a href="#">Twitter</a></li>
         <li><a href="#">Instagram</a></li>
         <li><a href="#">Youtube</a></li>
         <li><a href="#">Facebook</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Created by Agape Inc.</a></li>
+        <li><a href="#"><%= t('.about') %></a></li>
+        <li><a href="#"><%= t('.careers') %></a></li>
+        <li><a href="#"><%= t('.created_by') %> Agape Inc.</a></li>
       </ul>
       <h2>&copy; Agape Inc. 2018 <%= fa_icon 'heart' %></h2>
     </footer>

@@ -1,23 +1,23 @@
 <ul>
   <li class="menu-item <%= @tab == 'new-borns' ? 'selected' : '' %>">
     <span class="item" href="/ui/births">
-      <%= fa_icon 'child' %> Births
+      <%= fa_icon 'child' %> <%= t('.births') %>
     </span>
     <div class="sub-menu show">
       <ul>
         <li class="<%= @menu == 'nb-rec' ? 'sub-menu-selected' : '' %>">
          <%= link_to new_borns_path do %>
-            <%= fa_icon 'bell' %> New Births
+            <%= fa_icon 'bell' %> <%= t('.new_births') %>
           <% end %>
         </li>
         <li class="<%= @menu == 'nb-new' ? 'sub-menu-selected' : '' %>">
            <%= link_to new_new_born_path do %>
-            <%= fa_icon 'plus' %> Register Child
+            <%= fa_icon 'plus' %> <%= t('.register_child') %>
           <% end %>
         </li>
         <li class="<%= @menu == 'nb-find' ? 'sub-menu-selected' : '' %>">
          <%= link_to find_new_borns_path do %>
-            <%= fa_icon 'search' %> Child
+            <%= fa_icon 'search' %> <%= t('.find_child') %>
           <% end %>
         </li>
       </ul>
@@ -25,45 +25,94 @@
   </li>
   <li class="menu-item <%= @tab == 'deceaseds' ? 'selected' : '' %>">
     <span class="item" href="/ui/deaths">
-    <%= fa_icon 'exclamation-circle' %> Deaths
+    <%= fa_icon 'exclamation-circle' %> <%= t('.deaths') %>
     </span>
     <div class="sub-menu show">
       <ul>
         <li class="<%= @menu == 'd-all' ? 'sub-menu-selected' : '' %>">
           <%= link_to deceaseds_path do %>
-            <%= fa_icon 'bell' %> New Deaths
+            <%= fa_icon 'bell' %> <%= t('.new_deaths') %>
           <% end %>
         </li>
         <li class="<%= @menu == 'd-new' ? 'sub-menu-selected' : '' %>">
           <%= link_to new_deceased_path do %>
-            <%= fa_icon 'plus' %> Register Death
+            <%= fa_icon 'plus' %> <%= t('.register_death') %>
           <% end %>
         </li>
         <li class="<%= @menu == 'd-find' ? 'sub-menu-selected' : '' %>">
           <%= link_to find_deceaseds_path do %>
-            <%= fa_icon 'search' %> Find Death
+            <%= fa_icon 'search' %> <%= t('.find_deceased') %>
           <% end %>
         </li>
       </ul>
     </div>
   </li>
   <li class="menu-item <%= @tab == 'stats' ? 'selected' : '' %>">
-    <span class="item" href="/ui/statistics"><%= fa_icon 'table' %> Statistics</span>
+    <span class="item" href="/ui/statistics"><%= fa_icon 'table' %> <%= t('.statistics') %></span>
     <div class="sub-menu show">
       <ul>
         <li class="<%= @menu == 'b-stats' ? 'sub-menu-selected' : '' %>">
           <%= link_to new_borns_this_week_path do %>
-            <%= fa_icon 'child' %> Birth Statistics
+            <%= fa_icon 'child' %> <%= t('.birth_stats') %>
           <% end %>
         </li>
         <li class="<%= @menu == 'd-stats' ? 'sub-menu-selected' : '' %>">
           <%= link_to deceaseds_this_week_path do %>
-            <%= fa_icon 'cut' %> Death Statistics
+            <%= fa_icon 'cut' %> <%= t('.death_stats') %>
           <% end %>
         </li>
         <li class="<%= @menu == 's-stats' ? 'sub-menu-selected' : '' %>">
           <%= link_to unit_search_path do %>
-            <%= fa_icon 'search' %> Search Statistics
+            <%= fa_icon 'search' %> <%= t('.search_stats') %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </li>
+  <li class="menu-item <%= @tab == 'clinic' ? 'selected' : '' %>">
+    <span class="item" href="/ui/statistics"><%= fa_icon 'user-md' %> <%= t('.clinic') %></span>
+    <div class="sub-menu show">
+      <ul>
+        <li class="<%= @menu == 'due' ? 'sub-menu-selected' : '' %>">
+          <%= link_to due_today_path do %>
+            <%= fa_icon 'list' %> <%= t('.todays_appointments') %>
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'one-day' ? 'sub-menu-selected' : '' %>">
+          <%= link_to one_day_upcoming_path do %>
+            <%= fa_icon 'calendar' %> <%= t('.upcoming_appointments') %>
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'clinic-search' ? 'sub-menu-selected' : '' %>">
+          <%= link_to clinic_find_path do %>
+            <%= fa_icon 'search' %> <%= t('.search_stats') %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </li>
+  <li class="menu-item <%= @tab == 'analysis' ? 'selected' : '' %>">
+    <span class="item" href="/ui/statistics"><%= fa_icon 'bar-chart' %> <%= t('.analysis') %></span>
+    <div class="sub-menu show">
+      <ul>
+        <li class="<%= @menu == 'infant_health' ? 'sub-menu-selected' : '' %>">
+          <%= link_to infant_health_analysis_path do %>
+            <%= fa_icon 'child' %> <%= t('.infant_health') %>
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'maternal_health' ? 'sub-menu-selected' : '' %>">
+          <%= link_to maternal_health_analysis_path do %>
+            <%= fa_icon 'female' %> <%= t('.maternal_health') %>
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'death' ? 'sub-menu-selected' : '' %>">
+          <%= link_to death_analysis_path do %>
+            <%= fa_icon 'info' %> <%= t('.death') %>
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'appointments' ? 'sub-menu-selected' : '' %>">
+          <%= link_to appointments_analysis_path do %>
+            <%= fa_icon 'calendar' %> <%= t('.appointments') %>
           <% end %>
         </li>
       </ul>
@@ -71,23 +120,23 @@
   </li>
   <li class="menu-item <%= @tab == 'profile' ? 'selected' : '' %>">
     <span class="item">
-    <%= fa_icon 'user' %> Your Profile
+    <%= fa_icon 'user' %> <%= t('.your_profile') %>
     </span>
     <div class="sub-menu show">
       <ul>
         <li class="<%= @menu == 'view-profile' ? 'sub-menu-selected' : '' %>">
           <%= link_to hospital_path(current_hospital) do %>
-            <%= fa_icon 'user-circle' %> View Profile
+            <%= fa_icon 'user-circle' %> <%= t('.view_profile') %>
           <% end %>
         </li>
         <li class="<%= @menu == 'edit-profile' ? 'sub-menu-selected' : '' %>">
           <%= link_to edit_hospital_path(current_hospital) do %>
-            <%= fa_icon 'edit' %> Edit Profile
+            <%= fa_icon 'edit' %> <%= t('.edit_profile') %>
           <% end %>
         </li>
         <li class="<%= @menu == 'logout' ? 'sub-menu-selected' : '' %>">
           <%= link_to sign_out_path do %>
-            <%= fa_icon 'sign-out' %> Logout
+            <%= fa_icon 'sign-out' %> <%= t('.logout') %>
           <% end %>
         </li>
       </ul>

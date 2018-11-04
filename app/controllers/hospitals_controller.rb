@@ -20,10 +20,9 @@ class HospitalsController < ApplicationController
     @hospital = Hospital.new(hospital_params)
 
     if @hospital.save
-      flash[:notice] = "Account was succesfully created," +
-                        "once verified you will be able to access the platform"
-
+      flash[:notice] = I18n.translate "flash.account_created"
       redirect_to sign_in_path
+      
     else
       render "hospitals/new"
     end

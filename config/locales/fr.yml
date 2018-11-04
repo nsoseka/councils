@@ -1,4 +1,18 @@
 fr:
+  time: 
+    pm: ""
+    am: ""
+  flash: 
+    wrong_query: "Vos requêtes de recherche sont incorrectes ou mal formatées ✘"
+    council_buy: "S'il vous plaît, la mairie locale devra acheter le logiciel pour que vous puissiez accéder au service."
+    logout: "Vous vous êtes déconnecté avec succès"
+    login: "Vous vous êtes connecté avec succès"
+    wrong_credentials: "Nom d'utilisateur ou mot de passe incorrect ✘"
+    account_created: "Compte a été créé avec succès, une fois vérifié, vous pourrez accéder à la plate-forme ✅"
+    certificate_added: "Le certificat a été ajouté avec succès ✅"
+    registered: "Enregistré avec succès ✅"
+    already_registered: "c'était déjà enregistré"
+    updated: "Compte mis à jour avec succès ✅"
   shared: 
     header:
       births: "Les naissances"
@@ -19,12 +33,43 @@ fr:
       death_statistics: "Statistiques de la mort"
       search_statistics: "Obtenir des statistiques"
       your_profile: "Votre profil"
-      council_details: "Détails du conseil"
+      council_details: "Détails de la mairie"
       view_profile: "Voir le profil"
       edit_profile: "Editer le profil"
       logout: "Connectez - Out"
+    hospital_header:
+      births: "Les naissances"
+      new_births: "Nouvelles naissances"
+      register_child: "Enregistrez un nouveau-né"
+      find_child: "Trouver un enfant"
+      deaths: "Des morts"
+      new_deaths: "Nouveaux décès"
+      register_death: "Enregistrer la mort"
+      find_deceased: "Trouver le défunt"
+      statistics: "Statistiques"
+      birth_stats: "Statistiques de naissance"
+      death_stats: "Statistiques de la mort"
+      search_stats: "Obtenir des statistiques"
+      your_profile: "Votre profil"
+      view_profile: "Voir le profil"
+      edit_profile: "Editer le profil"
+      logout: "Connectez - Out"
+    profile:
+      council_agents: "Agents au mairie"
+      username: "Nom d'utilisateur"
+      full_names: "Noms complets"
+      phone_number: "Numéro de téléphone"
+      email: "Email"
+      private_details: "Détails personnels"
+      council_details: "Détails du mairie"
+      council: "mairie"
+      region: "Region"
+      division: "Departement"
+      sub_division: "Arrondissement"
+    blog_header:
+      beta_mode: "<span class = 'highlight-red'> Cette section de l’application est toujours en mode bêta. </span> Veuillez noter que les statistiques sont fournies par le conseil local et que tous les conseils locaux ne sont pas abonnés au service. ne pas avoir de données pour tous les conseils locaux. Nous attendons de vos nouvelles sur votre intérêt en ce qui concerne les données de votre conseil municipal ou du territoire national en général. Laissez-nous un tweet nous disant ce que vous voulez et nous allons commencer à travailler dessus. Merci. "
   new_borns:
-    new_born: 
+    new_born:
       childs_name: "Nom de l'enfant"
       childs_code: "Code de l'enfant"
       place_of_birth: "Lieu de naissance"
@@ -38,6 +83,70 @@ fr:
       female: "Femelle"
       respectively: " respectivement"
       born: "Née"
+      vaccination_calendar: "calendrier de vaccination"
+      set_appointment: "fixer rendez-vous"
+      appointments: "rendez-vous"
+      mothers_health: "la santé de la mère"
+      childs_health: "la santé de l'enfant"
+      add_mothers_health: "la santé de la mère"
+      add_childs_health: "la santé de l'enfant"
+      index: 
+      recent_rb: "Naissance récemment enregistrée"
+      no_births: "Aucune naissance n'a été enregistrée jusqu'à présent aujourd'hui"
+    new: 
+      birth_registration: "Enregistrement de la nouvelle naissance"
+      registration_form: "Formulaire d'inscription"
+      childs_code: "Code de l'enfant"
+      childs_details: "Détails de l'enfant"
+      childs_name: "Nom de l'enfant"
+      date_of_birth: "Date de naissance"
+      place_of_birth: "Lieu de naissance"
+      sex: "Sexe"
+      choose_sex: "Choisir le sexe"
+      male: "Mâle"
+      female: "Femelle"
+      fathers_details: "Les détails du père"
+      fathers_name: "Le nom du père"
+      residence: "Résidence"
+      phone_number: "Numéro de téléphone"
+      mothers_details: "Les détails de la mère"
+      mothers_name: "Le nom de la mère"
+      clinic_attendance: "La mère a-t-elle fréquenté une clinique avant d'accoucher?"
+      choose_attendance: "Choisissez le statut de présence"
+      yesb: "Oui"
+      nob: "Non"
+      register: "ENREGISTRER"
+    show: 
+      br_card: "Carte d'enregistrement de naissance"
+      birth_registration: "Enregistrement de la nouvelle naissance"
+      childs_code: "Code de l'enfant"
+      childs_details: "Détails de l'enfant"
+      childs_name: "Nom de l'enfant"
+      date_of_birth: "Date de naissance"
+      place_of_birth: "Lieu de naissance"
+      sex: "Sexe"
+      male: "Mâle"
+      female: "Femelle"
+      fathers_details: "Les détails du père"
+      fathers_name: "Le nom du père"
+      residence: "Résidence"
+      phone_number: "Numéro de téléphone"
+      mothers_details: "Les détails de la mère"
+      mothers_name: "Le nom de la mère"
+      clinic_attendance: "La mère a-t-elle fréquenté une clinique avant d'accoucher?"
+      yesb: "Oui"
+      nob: "Non"
+      register: "ENREGISTRER"
+    find: 
+      find_child: "Trouver un enfant"
+    search_form: 
+      search_by: "Vous pouvez rechercher par"
+      father_or_mothers_name: "Nom du père ou de la mère"
+      childs_code: "Code de l'enfant"
+      childs_name: "Nom de l'enfant"
+    search: 
+      search_results: "Résultats de la recherche"
+      no_results: "Aucun résultat ne correspond à votre recherche"
   births: 
     latest:
       todays_births: "Les nouveaux nés aujourd'hui"
@@ -446,6 +555,42 @@ fr:
       contact: "Numéro de téléphone du contact"
       and: " et "
       respectively: " respectivement"
+      add_cause_of_death: "ajouter la cause du décès"
+      cause_of_death: "cause de décès"
+    new: 
+      death_registration: "Enregistrement de la mort"
+      dr_form: "Formulaire d'inscription"
+      deceaseds_details: "Détails du défunt"
+      deceased_name: "Nom du défunt"
+      date_of_birth: "Date de naissance"
+      place_of_birth: "Lieu de naissance"
+      date_of_death: "Date de décès"
+      place_of_death: "Lieu du décès"
+      occupation: "Profession"
+      marital_status: "État civil"
+      number_of_children: "Nombre d'enfants"
+      sex: "Sexe"
+      choose_sex: "Choisir le sexe"
+      fathers_details: "Les détails du père"
+      fathers_name: "Le nom du père"
+      fathers_residence: "La résidence du père"
+      mothers_details: "Les détails de la mère"
+      mothers_name: "Le nom de la mère"
+      mothers_residence: "La résidence de la mère"
+      contacts_details: "Détails du contact"
+      contacts_name: "Prénom"
+      contacts_number: "Numéro de téléphone"
+      preferred_language: "Langue préférée"
+      male: "Mâle"
+      female: "Femelle"
+      marital_status: "État civil"
+      choose_status: "Choisissez l'état matrimonial"
+      married: "Marié"
+      single: "Célibataire"
+      choose_language: "Choisissez la langue"
+      english: "Anglais"
+      french: "Français"
+      register: "ENREGISTRER"
     show: 
       death_registration_card: "Carte d'enregistrement de décès"
       deceased_name: "Nom du défunt"
@@ -468,6 +613,109 @@ fr:
       preferred_language: "Langue préférée"
       male: "Mâle"
       female: "Femelle"
+      english: "Anglais"
+      french: "Français"
+    index: 
+      recent_rd: "Décès enregistrés récemment"
+      no_deaths: "Aucun décès n'a été enregistré jusqu'à présent aujourd'hui"
+    search_form: 
+      search_by: "Vous pouvez rechercher par"
+      deceaseds_name: "Nom du défunt"
+      mothers_name: "Le nom de la mère"
+      fathers_name: "Le nom du père"
+    find: 
+      find_dc: "Trouver une personne décédée"
+    search:
+      search_results: "Résultats de la recherche"
+      no_results: "Aucun résultat ne correspond à votre recherche"
+  agents: 
+    index: 
+      council_agents: "Agents au mairie"
+      username: "Nom d'utilisateur"
+      hospital_agents: "Agents hospitaliers"
+      full_names: "Noms complets"
+      phone_number: "Numéro de téléphone"
+      email: "Email"
+    show: 
+      agents_profile: "Profil d'agents"
+    new:
+      new_account: "Créer un nouveau compte du conseil"
+      new_account_form: "NOUVEAU FORMULAIRE DE COMPTE"
+      edit_profile: "Modifier votre profil"
+      no_change: "Vous ne pouvez pas changer les détails de votre mairie"
+      council: "mairie"
+      choose_council: "Choisissez le conseil"
+      full_names: "Noms complets"
+      phone_number: "Numéro de téléphone"
+      email: "Email"
+      username: "Nom d'utilisateur"
+      password: "Mot de passe"
+      confirmation_password: "Confirmez le mot de passe"
+      council_code: "Code de la mairie"
+      create_account: "Crée un compte"
+    edit:
+      edit_profile: "Modifier votre profil"
+      no_change: "Vous ne pouvez pas changer les détails de votre mairie"
+      council: "mairie"
+      full_names: "Noms complets"
+      phone_number: "Numéro de téléphone"
+      email: "Email"
+      username: "Nom d'utilisateur"
+      password: "Mot de passe"
+      confirmation_password: "Confirmez le mot de passe"
+      council_code: "Code de la mairie"
+      update_account: "COMPTE MIS À JOUR"
+  hospitals: 
+    show: 
+      agents_profile: "Profil d'agents"
+    new: 
+      new_account: "Créer un nouveau compte de service de santé"
+      new_account_form: "NOUVEAU FORMULAIRE DE COMPTE"
+      edit_profile: "Modifier votre profil"
+      no_change: "Vous ne pouvez pas changer les détails de votre mairie"
+      council: "mairie"
+      choose_council: "Choisissez le conseil"
+      institution_name: "Nom de l'établissement de santé"
+      phone_number: "Numéro de téléphone"
+      email: "Email"
+      username: "Nom d'utilisateur"
+      password: "Mot de passe"
+      confirmation_password: "Confirmez le mot de passe"
+      council_code: "Code de la mairie"
+      create_account: "Crée un compte"
+  appointments: 
+    new: 
+      new_appointment: "Nouveau rendez-vous pour"
+      appointment_details: "Détails du rendez-vous"
+      date_of_appointment: "Date du rendez-vous"
+      purpose: "Objectif (quel vaccin)"
+      choose_purpose: "choisir un vaccin"
+      create_appointment: "créer le rendez-vous"
+      at_birth: "BCG, VPO 0"
+      six_weeks: "DTC-HepB-Hib 1, VPO 1, Pneumo 13-1(PVC), ROTA 1"
+      ten_weeks: "DTC-HepB-Hib 2, VPO 2, Pneumo 13-2, ROTA 2"
+      fourteen_weeks: "DTC-HepB-Hib 3, VPO 3, *VPI*, Pneumo 13-3"
+      six_months: "Vit A, *RR*"
+      nine_months: "VAA"
+      one_year: "Vit A"
+    edit: 
+      new_appointment: "Nouveau rendez-vous pour"
+      appointment_details: "Détails du rendez-vous"
+      date_of_appointment: "Date du rendez-vous"
+      purpose: "Objectif (quel vaccin)"
+      choose_purpose: "choisir un vaccin"
+      create_appointment: "créer le rendez-vous"
+      at_birth: "BCG, VPO 0"
+      six_weeks: "DTC-HepB-Hib 1, VPO 1, Pneumo 13-1(PVC), ROTA 1"
+      ten_weeks: "DTC-HepB-Hib 2, VPO 2, Pneumo 13-2, ROTA 2"
+      fourteen_weeks: "DTC-HepB-Hib 3, VPO 3, *VPI*, Pneumo 13-3"
+      six_months: "Vit A, *RR*"
+      nine_months: "VAA"
+      one_year: "Vit A"
+      kept: "Venu pour rendez-vous?"
+      yest: "Oui"
+      not: "Non"
+      update_appointment: "changer de rendez-vous"
   date: 
     formats: 
       default: '%d-%m-%Y'
@@ -475,12 +723,169 @@ fr:
     day: "Journée"
     week: "La semaine"
     month: "Mois"
-    year: "An"
-    birth_statistics: "Statistiques de naissance"
+    year: "Annuel"
+    birth_stats: "Statistiques de naissance"
     no_births: "Aucune naissance enregistrée jusqu'à présent"
+    death_stats: "Statistiques de décès"
+    no_deaths: "Aucun décès enregistré jusqu'à présent"
+    marriage_stats: "Statistiques du mariage"
+    no_marriages: "Aucun mariage enregistré jusqu'à présent"
+    stat_analysis: "Analyses statistiques"
+    property: "Facteur"
+    value: "Valeur"
+    entries: "Entrées"
+    sum_of_entries: "Somme de toutes les entrées"
+    variance: "Variance"
+    standard_deviation: "Déviation standard"
+    mean: "Signifier"
+    mode: "Mode"
+    median: "Médian"
+    min_value: "Valeur minimum"
+    max_value: "Valeur maximum"
+    range: "Gamme"
+    data_entries: "Entrées de données"
+    time_period: "Période de temps"
+    get_stats: "Obtenir des statistiques"
+    search_by: "Vous pouvez rechercher par"
+    period: "Période"
+    set: "Ensemble"
+    death: "Décès"
+    birth: "Naissance"
+    marriage: "Mariage"
+    search_again: "Chercher à nouveau"
+    deaths: "décès"
+    births: "naissances"
+    marriages: "mariages"
+    this_day: "ce jour"
+    this_week: "cette semaine"
+    this_month: "ce mois-ci"
+    this_year: "cette année"
+    no_stats: "Aucun %{dataset} enregistré pour %{group}"
+    basic_stats: "Statistiques de base"
+    todays_births: "Statistiques de naissance d'aujourd'hui"
+    number_bt: "Naissances aujourd'hui"
+    todays_deaths: "Statistiques de décès aujourd'hui"
+    number_dt: "Morts aujourd'hui"
+    todays_marriages: "Statistiques de mariage d'aujourd'hui"
+    number_mt: "Mariages aujourd'hui"
+    choose_council: "Choisissez une mairie"
+    day_in_charts: "Le jour en graphique"
+  layouts:
+    forward: "devant" 
+    back: "retour"
+    pages: 
+      login: "S'identifier"
+      create_account: "Créer un compte"
+      careers: "Carrières"
+      created_by: "Créé par"
+      about: "À propos de nous"
+      new: "NOUVEAU"
+      main_board: "Retour au tableau principal"
+    application: 
+      careers: "Carrières"
+      created_by: "Créé par"
+      about: "À propos de nous"
+      council_name: "mairie de %{c_name}"
+    blog: 
+      careers: "Carrières"
+      created_by: "Créé par"
+      about: "À propos de nous"
+    hospital: 
+      careers: "Carrières"
+      created_by: "Créé par"
+      about: "À propos de nous"
+      hospital_name: "Bureau de santé de %{h_name}"
+      updating: "MISE À JOUR"
+      failed: "ÉCHOUÉ"
+      updated: "MIS À JOUR"
+  sessions: 
+    new: 
+      login_to_account: "Connectez-vous à votre compte"
+      login_form: "Formulaire de connexion"
+      username: "Nom d'utilisateur"
+      password: "Mot de passe"
+      login: "S'identifier"
+  pages: 
+    new_account: 
+      choose_link: "Choisissez l'un des liens ci-dessous pour créer votre compte"
+      council_account: "Créer un compte pour la mairie"
+      health_unit_account: "Créer un compte d'unité de santé"
+    front:
+      offer: "Ce que nous offrons..."
+      new_bc: "Nouveau Certificat de Naissance & Enregistrement" 
+      birth: "Aucune nouvelle dans ce monde n'est plus puissante que celle d'un nouveau-né. C'est le cri le plus puissant du monde. Cependant élever un enfant prend un village. Cela nécessite du personnel de santé dédié. Nous les aidons à développer leur système immunitaire afin de vivre sainement dans ce monde. En tant que mairie, la santé des nouveau-nés dans votre circonscription est entre vos mains, grâce à la décentralisation. Mais comment surveillez-vous leur santé ou savez-vous qu'ils sont déjà nés? Nous sommes là pour ça. Nous vous fournissons une base de données vous permettant d’enregistrer officiellement toutes vos nouvelles naissances au niveau du bureau de santé et également de surveiller les activités du bureau de santé et les carnets de vaccination..."
+      new_mc: "Acte de mariage & enregistrement"
+      marriage: "Le mariage est une belle chose. Cela aide à créer l’unité la plus importante des sociétés, LA FAMILLE. Plus les gens se marient, meilleure est la société. Les enfants ont un chez-soi et des personnes sur lesquelles ils peuvent compter. Combien de personnes se marient dans votre circonscription et combien veulent le faire mais n'en ont pas les moyens. Quel est le taux de pénétration du mariage et quel est le taux de divorce? Quels sont les principaux facteurs conduisant au divorce et quelles stratégies de campagne pouvons-nous développer pour aider à gérer certaines de ces questions? Permet de vous aider avec cela. SE DÉTENDRE...."
+      new_dc: "Certificat de décès & enregistrement"
+      death: "Vous vous souciez des gens de votre circonscription. Vous devez connaître l'effet des campagnes de santé que vous menez dans les différents villages. Malheureusement, certaines personnes meurent encore. Mais combien d'entre eux sont passés aujourd'hui, hier, cette semaine, la semaine dernière, ce mois-ci, le mois dernier, cette année, l'année dernière? Et ainsi de suite. Comment pouvons-nous comparer les taux de mortalité entre les jours, les semaines, les mois, les années. Y a-t-il un motif? Y a-t-il des maladies particulières qui ne vont pas changer? Vous avez besoin de toutes ces informations pour développer de bonnes stratégies pour améliorer la santé."
+      new_stats: "Collecte de données & analyse statistique"
+      stats: "Vos données sont stockées dans des fichiers. Ils sont si nombreux que les consulter pour générer des statistiques importantes est une tâche ardue qui nécessite un statisticien très patient. Les fichiers sont tout simplement trop nombreux pour être stockés et pour récupérer l’analyse et la réanalyse à mesure que le jeu de données s’enfonce. Inutile de vous inquiéter, nous prendrons toutes ces données pour vous donner un sens en moins d’une minute. Et quand cela changera, avant même de remarquer le changement, les statistiques refléteront déjà les changements."
   activerecord:
     errors:
       models:
+        agent: 
+          attributes:
+            username:
+              blank: "ne peut pas être vide"
+              taken: "déjà pris"
+            full_names:
+              blank: "ne peut pas être vide"
+              give_names: "s'il vous plaît fourni vos noms complets séparés par un espace"
+            phone_number:
+              blank: "ne peut pas être vide"
+              wrong_length: "Devrait être 9 caractères"
+              not_a_number: "ce n'est pas un numéro de téléphone"
+              taken: "déjà pris"
+            email:
+              blank: "ne peut pas être vide"
+              taken: "déjà pris"
+            password:
+              blank: "ne peut pas être vide"
+              too_short: "est trop court"
+            password_confirmation:
+              blank: "ne peut pas être vide"
+              confirmation: "le mot de passe et la confirmation du mot de passe ne correspondent pas"
+            verified?:
+              blank: "ne peut pas être vide"
+            email_verified?:
+              blank: "ne peut pas être vide"
+            council_id:
+              blank: "ne peut pas être vide"
+              choose: "veuillez choisir une mairie"
+            code:
+              blank: "ne peut pas être vide"
+        hospital: 
+          attributes:
+            username:
+              blank: "ne peut pas être vide"
+              taken: "déjà pris"
+              username_taken: "déjà pris"
+            name:
+              blank: "ne peut pas être vide"
+              give_names: "veuillez indiquer le nom complet de l'unité de santé séparée par un espace"
+            phone_number:
+              blank: "ne peut pas être vide"
+              wrong_length: "Devrait être 9 caractères"
+              not_a_number: "ce n'est pas un numéro de téléphone"
+              taken: "déjà pris"
+            email:
+              blank: "ne peut pas être vide"
+              taken: "déjà pris"
+            password:
+              blank: "ne peut pas être vide"
+              too_short: "est trop court"
+            password_confirmation:
+              blank: "ne peut pas être vide"
+              confirmation: "le mot de passe et la confirmation du mot de passe ne correspondent pas"
+            verified?:
+              blank: "ne peut pas être vide"
+            email_verified?:
+              blank: "ne peut pas être vide"
+            council_id:
+              blank: "ne peut pas être vide"
+              choose: "veuillez choisir une mairie"
+            code:
+              blank: "ne peut pas être vide"
         new_born:
           attributes:
             c_name:
@@ -497,6 +902,8 @@ fr:
               blank: "ne peut pas être vide"
             f_tel: 
               blank: "ne peut pas être vide"
+              wrong_length: "Devrait être 9 caractères"
+              not_a_number: "ce n'est pas un numéro de téléphone"
             f_res: 
               blank: "ne peut pas être vide"
             m_name:
@@ -508,6 +915,7 @@ fr:
             m_tel: 
               blank: "ne peut pas être vide"
               wrong_length: "Devrait être 9 caractères"
+              not_a_number: "ce n'est pas un numéro de téléphone"
             m_res: 
               blank: "ne peut pas être vide"
             attended_clinic:
@@ -701,3 +1109,50 @@ fr:
               blank: "ne peut pas être vide"
             date_made:
               blank: "ne peut pas être vide"
+        appointment: 
+          attributes: 
+            purpose:
+              choose: "s'il vous plaît choisir le vaccin"
+            date: 
+              blank: "ne peut pas être vide"
+        deceased: 
+          attributes: 
+            hospital_id:
+              blank: "ne peut pas être vide"
+            d_name:
+              blank: "ne peut pas être vide"
+            d_db:
+              blank: "ne peut pas être vide"
+            d_pb:
+              blank: "ne peut pas être vide"
+            d_dd:
+              blank: "ne peut pas être vide"
+            d_pd:
+              blank: "ne peut pas être vide"
+            d_job:
+              blank: "ne peut pas être vide"
+            marital_status:
+              blank: "ne peut pas être vide"
+              choose: "veuillez indiquer l'état matrimonial"
+            sex:
+              blank: "ne peut pas être vide"
+              choose: "veuillez choisir le sexe"
+            f_name:
+              blank: "ne peut pas être vide"
+            f_res:
+              blank: "ne peut pas être vide"
+            m_name :
+              blank: "ne peut pas être vide"
+            m_res:
+              blank: "ne peut pas être vide"
+            num_children:
+              blank: "ne peut pas être vide"
+            contact:
+              blank: "ne peut pas être vide"
+            contact_tel:
+              blank: "ne peut pas être vide"
+              wrong_length: "Devrait être 9 caractères"
+              not_a_number: "ce n'est pas un numéro de téléphone"
+            contact_lang:
+              blank: "ne peut pas être vide"
+              choose: "veuillez choisir la langue préférée"

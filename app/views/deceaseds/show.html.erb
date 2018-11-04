@@ -42,6 +42,39 @@
     <label><%= t('.contacts_number') %></label>
     <input type="text" value="<%= @deceased.contact_tel %>" disabled>
     <label><%= t('.preferred_language') %></label>
-    <input type="text" value="<%= @deceased.contact_lang.capitalize %>" disabled>
+    <input type="text" value="<%= t('.' + @deceased.contact_lang) %>" disabled>
   </div>
+
+  <% if current_hospital %>
+    <div class="control-board">
+      <div class="cb-cd">
+        <% if @deceased.cause_of_death %>
+            <%= link_to deceased_cause_of_death_path(@deceased, @deceased.cause_of_death), class: "board-item m-health " do %>
+            <%= fa_icon "info" %> <%= t('cause_of_deaths.cause_of_death') %>
+          <% end %>
+        <% else %>
+          <%= link_to new_deceased_cause_of_death_path(@deceased), class: "board-item m-health adder" do %>
+            <%= fa_icon "plus" %> <%= t('cause_of_deaths.add_cause_of_death') %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <% if @deceased_added == "added" && !@deceased.cause_of_death %>
+    <div class="add-factors">
+      <div class="adder-board">
+        <div class="control-board">
+          <h1>The death of <span class="c-name"><%= @deceased.d_name %></span> was registered ✅</h1>
+          <% if !@deceased.cause_of_death %>
+            <div class="cb-ch">
+              <%= link_to new_deceased_cause_of_death_path @deceased do %>
+                <%= fa_icon 'info' %> Click here to add cause of death
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <% end %>
 </div>

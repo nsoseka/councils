@@ -1,0 +1,64 @@
+<h1><%= t('.new_appointment') %> 
+  <i class="new-appointment">
+    <%= link_to new_born_path @new_born do  @new_born.c_name end %>
+  </i>
+</h1>
+<% choice_factor = '88888888' %>
+<div class="main register-citizen">
+  <%= my_form_for [@new_born, @appointment], url: new_born_appointment_path(new_born_id:     @new_born.id, id: @appointment), html: { id: "new-citizen", class: 'form'} do |f| %>
+      <h3><%= t('.appointment_details') %></h3>
+
+      <%= f.label :kept, t('.kept') %>
+      <%= f.select :kept, options_for_select([[t('.choose_kept'), choice_factor], [t('.yest'), true], [t('.not'), false]], @appointment.kept), {}, { class: 'sex chosen-select' } %>
+      <%= f.label :date, t('.date_of_appointment') %>
+      <%= f.text_field :date, class: "datepicker" %>
+      <%= f.label :purpose, t('.purpose') %>
+      <%= f.text_field :purpose, disabled: true, value: t('.' + @appointment.purpose) %>
+      <div class="submit">
+        <button type="submit"><%= t('.update_appointment') %></button>
+      </div>
+    <% end %>
+</div>
+
+<% if I18n.locale == :en %>
+  <script>
+    var date = new Date(),
+          year = date.getFullYear() + 1,
+          month = date.getMonth() + 6,
+          day = date.getDate();
+
+    $(function() {
+      $('.datepicker').pickadate({
+        selectYears: 120,
+        max: new Date(year + 3, month, day),
+        min: new Date(year - 2, month + 6, day),
+        selectMonths: 12,
+        format: 'dd/mm/yyyy'
+      });
+    });
+  </script>
+  <% else %>
+    <script>
+      var date = new Date(),
+          year = date.getFullYear() + 1,
+          month = date.getMonth() + 6,
+          day = date.getDate();
+      $(function() {
+        $('.datepicker').pickadate({
+          monthsFull: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+           weekdaysShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
+           today: 'aujourd\'hui',
+           clear: 'effacer',
+           close: 'fermer',
+           format: 'dd/mm/yyyy',
+          selectYears: 120,
+          max: new Date(year + 3, month, day),
+          min: new Date(year - 2, month + 6, day),
+          selectMonths: 12
+        });
+      });
+    </script>
+  <% end %>
+  <script>
+    $(".chosen-select").chosen()
+  </script>

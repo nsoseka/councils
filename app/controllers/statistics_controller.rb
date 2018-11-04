@@ -77,6 +77,7 @@ class StatisticsController < ApplicationController
     @stats = setup_stats(@data)
     @chosen = 'year'
     render 'birth_stats'
+    # puts Trend.anomalies(@data), Trend.forecast(@data)
   end
 
   def marriages_week
@@ -115,7 +116,7 @@ class StatisticsController < ApplicationController
     @period = params[:period].split(',')
 
     if invalid_params?(@period, @set, @group)
-      flash[:notice] = 'Your search queries are either wrong or poorly formatted'
+      flash[:notice] = I18n.translate "flash.wrong_query"
       return redirect_to search_path
     end
 
@@ -124,6 +125,14 @@ class StatisticsController < ApplicationController
     @message = craft_message(@group, @set, @period, date)
 
     @stats = setup_stats(@data)
+    
+    trial_data = {}
+
+    @data.each do |key, value|
+      trial_data[key] = value + rand(5..20)
+    end
+
+    puts Trend.anomalies(trial_data), Trend.forecast(trial_data, count: 30)
   end
 
   def deceaseds_day
@@ -201,8 +210,8 @@ class StatisticsController < ApplicationController
     @period = params[:period].split(',')
 
     if invalid_params?(@period, @set, @group)
-      flash[:notice] = 'Your search queries are either wrong or poorly formatted'
-      return redirect_to search_path
+      flash[:notice] = I18n.translate "flash.wrong_query"
+      return redirect_to unit_search_path
     end
 
     date = Date.new(@period[0].to_i, @period[1].to_i, @period[2].to_i)
@@ -219,7 +228,6 @@ class StatisticsController < ApplicationController
 
   def setup_stats(data)
     @stats = data.values.extend(DescriptiveStatistics).descriptive_statistics
-    @stats
   end
 
   def resolve_layout

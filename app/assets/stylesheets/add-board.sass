@@ -1,0 +1,41 @@
+@import 'colors'
+
+.add-factors 
+  position: fixed 
+  top: 0 
+  left: 0
+  right: 0
+  bottom: 0
+  background: rgba(0, 0, 0, 0.5)
+  .adder-board
+    .control-board
+      background: $pure-white
+      top: 20% 
+      margin: 0 8%
+      right: 0%
+      left: 0%
+      padding: 40px 10px 80px 0
+      border-radius: 4px
+      div 
+        display: inline-block
+        padding: 20px
+        width: 28%
+        vertical-align: top
+        a 
+          min-height: 50px
+          font-size: 1.2em
+      .cb-apps 
+        a 
+          background: $green
+      .cb-mh 
+        a 
+          background: $yellow
+      .cb-ch
+        a
+          background: $purple
+      .cb-mh, .cb-vc, .cb-ch, .cb-apps
+        a:hover 
+          background: $blue
+      .c-name, h1
+        color: $blue
+        // color: $green

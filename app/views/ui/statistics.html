@@ -1,4 +1,24 @@
-<h1>Statistics</h1>
-<%= area_chart @data %>
-<%= column_chart @data, download: true %>
-<%= pie_chart @data, download: true %>
+<table>
+  <thead>
+    <th>
+      <td>Name</td>
+      <td>Next Appointment Date</td>
+      <td>Appointment Status</td>
+    </th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Lukong Isaac Nsoseka</td>
+      <form>
+        <td>
+          <input type="text" class="datepicker">
+        </td>
+        <td>
+          <button>KEPT</button>
+        </td>
+      </form>
+    </tr>
+  </tbody>
+
+</table>
+

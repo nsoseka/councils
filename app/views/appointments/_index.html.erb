@@ -1,0 +1,77 @@
+<div class="main dashboard">
+  <div class="appointments">
+  <table class="appointment">
+  <thead>
+    <tr>
+      <th>NO</th>
+      <th>NAME</th>
+      <th>NEXT APPOINTMENT DATE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% 20.times do |n| %>
+    <tr>
+      <td><%= n + 1 %></td>
+      <td>Lukong Isaac Nsoseka Nsoseka Nsoseka</td>
+      <td>
+        <form>
+          <input type="date" class="datepicker">
+          <button>KEPT</button>
+        </form>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+
+</table>
+</div>
+</div>
+<% if I18n.locale == :en %>
+  <script>
+    var date = new Date(),
+          year = date.getFullYear() + 1,
+          month = date.getMonth() + 6,
+          day = date.getDate();
+
+    $(function() {
+      $('.datepicker').pickadate({
+        selectYears: 120,
+        max: new Date(year, month, day),
+        selectMonths: 12,
+        format: 'dd/mm/yyyy'
+      });
+    });
+  </script>
+  <% else %>
+    <script>
+      var date = new Date(),
+          year = date.getFullYear() + 1,
+          month = date.getMonth() + 6,
+          day = date.getDate();
+      $(function() {
+        $('.datepicker').pickadate({
+          monthsFull: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+           weekdaysShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
+           today: 'aujourd\'hui',
+           clear: 'effacer',
+           close: 'fermer',
+           format: 'dd/mm/yyyy',
+          selectYears: 120,
+          max: new Date(year, month, day),
+          selectMonths: 12
+        });
+      });
+    </script>
+  <% end %>
+  <script>
+    $(".chosen-select").chosen()
+  </script>
+
+#new_born_id 
+#hospital_id 
+#date 
+#purpose
+#timestamps
+#kept -- mark and then find #new_born and #purpose and mark as true and set date for #purpose done
+#when setting the next appointment, make sure to add calendar's next too
+#see new appointment

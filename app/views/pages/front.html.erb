@@ -1,12 +1,12 @@
  <%= image_tag  "council3.jpg" %>
- <h2>What we offer...</h2>
+ <h2><%= t('.offer') %></h2>
 <ul>
   <li class="pages-li">
     <a href="#">
       <figure>
         <%= image_tag "child.jpg" %>
-        <h3>New Birth Certification & Registration</h3>
-        <figcaption>There is no news in this world more powerful than the news of a new born. Its the most powerful cry in the world. However raising a child takes a village. It requires dedicated health personnel. We help them develope their immune systems inorder to live healthily in this world. As a council, the health of the new born in your constituency is in your hands, thanks to decentralization. But how do you monitor their health or know they have been born already? We are here for that. We provide a database for you to record all your new births officially at the level of the health unit and also to monitor the activities of the health unit and the vaccination charts.....</figcaption>
+        <h3><%= t('.new_bc') %></h3>
+        <figcaption><%= t('.birth') %></figcaption>
       </figure>
     </a>
   </li>
@@ -14,10 +14,8 @@
     <a href="#">
       <figure>
         <%= image_tag "wedding.jpg" %>
-        <h3>Marriage Certification & Registration</h3>
-        <figcaption>
-         Marriage is a beautiful thing. It helps to create societies most important unit, THE FAMILY. The more people get married, the better the society. The children have a place to call home and people they can depend on. How many people are getting married in your constituency, and how many want to but can't afford it. What is the marriage penetration rate, and what is the divorce rate? What are the main factors leading to divorce and what campaign strategies can we develope to help manage some of these issues? Lets help you out with this. RELAX....
-        </figcaption>
+        <h3><%= t('.new_mc') %></h3>
+        <figcaption><%= t('.marriage') %></figcaption>
       </figure>
     </a>
   </li>
@@ -25,8 +23,8 @@
     <a href="#">
       <figure>
         <%= image_tag "dead.jpg" %>
-        <h3>Death Certification & Registration</h3>
-        <figcaption>You care about the people in your constituency. You need to know the effect of the health campaigns you carry out in the various villages. Some people sadly, still pass away. But how many of them passed on, today, yesterday, this week, last week, this month, last month, this year, last year? And so on and so forth. How can we compare the death rates between the days, weeks, months, years. Is there a pattern? Are there particular diseases that just wont budge? You need all this information to develope good strategies to improve health.</figcaption>
+        <h3><%= t('.new_dc') %></h3>
+        <figcaption><%= t('.death') %></figcaption>
       </figure>
     </a>
   </li>
@@ -34,8 +32,8 @@
     <a href="#">
       <figure>
         <%= image_tag "data.jpg" %>
-        <h3>Data Collection & Statistical Analysis</h3>
-        <figcaption>Your data is stored in files. There are so many of them that having to go through them to generate important statistics is a tough one and requires a statistician with a lot of patience. The files are just too many to store and also to have to retrieve analayse and reanalyse as the dataset inscreases. No need to worry, we will take all this data and let it make sense to you in less than a minute. And when it changes, before you even notice the change, the statistics will reflect the changes already.</figcaption>
+        <h3><%= t('.new_stats') %></h3>
+        <figcaption><%= t('.stats') %></figcaption>
       </figure>
     </a>
   </li>

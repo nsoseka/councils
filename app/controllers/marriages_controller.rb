@@ -2,7 +2,7 @@ class MarriagesController < ApplicationController
   before_action :set_tab, :require_agent, :set_up_council_notifiers
 
   def index
-    @pagy, @marriages = pagy current_agent.council.marriages
+    @pagy, @marriages = pagy current_agent.council.marriages.order(created_at: "DESC")
     @menu = 'index-m'
     puts ENV['RECAPTCHA_SITE_KEY'], 'work buddy'
   end
@@ -10,17 +10,6 @@ class MarriagesController < ApplicationController
   def show
     @marriage = Marriage.find(params[:id])
     @menu = 'index-m'
-    require 'net/http'
-    # @marriage.send_notifications!
-    # https://api.budgetsms.net/sendsms/
-    # https://api.budgetsms.net/testsms/ test site
-    # @http = Net::HTTP.new('api.budgetsms.net')
-    # @http = @http.start    
-    # url = "https://api.budgetsms.net/testsms/?username=nsoseka&userid=15734&handle=66a34c76669b3a0b78e7ae6bbca7dfd1&credit=1&price=1&msg=testing things out to be honest&from=237 councils&to=237685574177"
-    # req = Net::HTTP::Get.new(URI.encode(url))
-    # req.basic_auth USERNAME, API_KEY
-    # res = @http.request(req) 
-    # puts res.body, 'is this even working', res, res.code, res.message
 
     @result = 'food'
   end
@@ -35,9 +24,9 @@ class MarriagesController < ApplicationController
     @marriage = Marriage.new(marriage_params)
 
     if @marriage.save
-      flash[:notice] = "marriage was succesfully saved"
-
+      flash[:notice] = I18n.translate "flash.certificate_added"
       redirect_to marriages_path
+      
     else
       render 'marriages/new'
     end

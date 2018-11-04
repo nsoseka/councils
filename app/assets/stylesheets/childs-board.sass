@@ -1,0 +1,102 @@
+@import 'colors'
+  
+.childs-board
+  text-align: center
+  padding: 10px 0
+  .board-item 
+    display: inline-block
+    width: 21%
+    margin: 0 0.5%
+    padding: 5px 0.5%
+    box-sizing: border-box
+    border-radius: 4px
+    background: $darkslategray
+    color: $pure-white
+    font-size: 0.98em
+    font-weight: bold
+  .board-item.long-item 
+    width: 30%
+  .fa-times
+    color: $red
+  .adder 
+    background: $grey
+    color: $light-black
+  // .m-health 
+  //   background: $light-black
+  // .c-health 
+  //   background: $light-black
+  // .cal 
+  //   background: $light-black
+.control-board 
+  position: fixed
+  top: 16%
+  right: 3%
+  div
+    width: 130px
+    text-align: left
+    margin: 15px 0
+    font-size: 0.92em
+    font-weight: bold
+    a 
+      width: 100%
+      display: inline-block
+      background: $green
+      padding: 10px
+      color: $pure-white
+      border-radius: 4px
+      border: 1px solid $grey 
+    a:hover 
+      background: $blue
+  .cb-ch 
+    a 
+      background: $light-blue
+  .cb-mh 
+    a 
+      background: $yellow
+  .cb-cd 
+    a 
+      background: $brown
+.child-health, .mother-health
+  text-align: center
+  p 
+    display: inline-block
+    width: 30%
+    box-sizing: border-box
+    text-align: center
+    padding: 5px 10px
+    border: 1px solid $grey
+    vertical-align: top
+    margin: 10px 1%
+    span 
+      display: inline-block
+      width: 100%
+    .factor
+      font-weight: bold 
+      color: $pure-white
+      font-size: 0.9em
+      padding: 5px 0
+      margin: 5px 0
+      text-transform: uppercase
+      &.gray 
+        background: $gray
+      &.darkslategray
+        background: $darkslategray
+      &.slategray
+        background: $slategray
+      &.dimgray 
+        background: $dimgray
+      &.darkgray 
+        background: $darkgray
+      &.lightslategray 
+        background: $lightslategray
+      & + span 
+        text-transform: uppercase
+        font-weight: bold
+        margin: 5px 0 0 0
+.cause-of-death.mother-health 
+  p
+    width: 50%
+    margin: 20px 0 
+    .factor
+      font-size: 1.2em 
+      &.gray

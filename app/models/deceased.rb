@@ -2,6 +2,7 @@ class Deceased < ApplicationRecord
   CHOICE_FACTOR  = '88888888'
   belongs_to :hospital
   belongs_to :council 
+  has_one :cause_of_death
   # belongs_to :division
   # belongs_to :administrative_region
   # belongs_to :agent
@@ -15,15 +16,15 @@ class Deceased < ApplicationRecord
 
   def choices_made
     if sex.present? && sex == CHOICE_FACTOR
-      errors.add(:sex, 'please choose the sex of the child')
+      errors.add(:sex, :choose)
     end
 
     if marital_status.present? && marital_status == CHOICE_FACTOR
-      errors.add(:marital_status, "Please indicate the deceased's marital status")
+      errors.add(:marital_status, :choose)
     end
 
     if contact_lang.present? && contact_lang == CHOICE_FACTOR
-      errors.add(:contact_lang, "Please indicate contact's preferred language")
+      errors.add(:contact_lang, :choose)
     end
   end
 end

@@ -1,0 +1,70 @@
+<h1>Appoinments coming up tomorrow</h1>
+<% if @appointments.empty? %>
+  <h1><%= t('.no_appointments') %></h1>
+<% else %>
+  <h1 id="tobe-reminded" class="reminder <%= !@status ? 'show' : 'hide' %>">
+    <%= link_to reminder_path(due_in: 'one_day'), remote: true, method: 'patch', data: { disable_with: "#{t('sweet_alert.sending_reminders')}", disable: true } do %>
+      Send a reminder to all
+    <% end %>
+  </h1>
+  <h1 id="reminded" class="reminded already <%= @status ? 'show' : 'hide' %>">
+    SMS texts have been sent to remind all those due for the appointment
+  </h1>
+<% end %>
+<div class="purpose-bc">
+  <div class="purpose-board bcg">
+    <h2><%= t("appointments.edit.at_birth") %></h2>
+    <p class="number">appointments: <%= @appointment_stats["at_birth"] || 0 %>
+    <div class="purpose-time">
+      <p><%= t("appointments.edit.at_births") %></p>
+    </div>
+  </div>
+
+  <div class="purpose-board six-weeks">
+    <h2><%= t("appointments.edit.six_weeks") %></h2>
+    <p class="number">appointments: <%= @appointment_stats["six_weeks"] || 0 %>
+    <div class="purpose-time">
+      <p><%= t("appointments.edit.six_weekss") %></p>
+    </div>
+  </div>
+
+  <div class="purpose-board ten-weeks">
+    <h2><%= t("appointments.edit.ten_weeks") %></h2>
+    <p class="number">appointments: <%= @appointment_stats["ten_weeks"] || 0 %>
+    <div class="purpose-time">
+      <p><%= t("appointments.edit.ten_weekss") %></p>
+    </div>
+  </div>
+
+  <div class="purpose-board fourteen-weeks">
+    <h2><%= t("appointments.edit.fourteen_weeks") %></h2>
+    <p class="number">appointments: <%= @appointment_stats["fourteen_weeks"] || 0 %>
+    <div class="purpose-time">
+      <p><%= t("appointments.edit.fourteen_weekss") %></p>
+    </div>
+  </div>
+
+  <div class="purpose-board six-months">
+    <h2><%= t("appointments.edit.six_months") %></h2>
+    <p class="number">appointments: <%= @appointment_stats["six_months"] || 0 %>
+    <div class="purpose-time">
+      <p><%= t("appointments.edit.six_monthss") %></p>
+    </div>
+  </div>
+
+  <div class="purpose-board nine-months">
+    <h2><%= t("appointments.edit.nine_months") %></h2>
+    <p class="number">appointments: <%= @appointment_stats["nine_months"] || 0 %>
+    <div class="purpose-time">
+      <p><%= t("appointments.edit.nine_monthss") %></p>
+    </div>
+  </div>
+
+  <div class="purpose-board one-year">
+    <h2><%= t("appointments.edit.one_year") %></h2>
+    <p class="number">appointments: <%= @appointment_stats["one_year"] || 0 %>
+    <div class="purpose-time">
+      <p><%= t("appointments.edit.one_years") %></p>
+    </div>
+  </div>
+</div>

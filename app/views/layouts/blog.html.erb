@@ -7,13 +7,13 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+    <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
      <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
   </head>
 
   <body>
     <main class="main">
-      <header class="header">
+      <header class="header blog">
         <h1>
           <a href="/"><%= fa_icon "arrow-left" %> 237councils</a>
         </h1>
@@ -31,9 +31,9 @@
         <li><a href="#">Instagram</a></li>
         <li><a href="#">Youtube</a></li>
         <li><a href="#">Facebook</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Created by Agape Inc.</a></li>
+        <li><a href="#"><%= t('.about') %></a></li>
+        <li><a href="#"><%= t('.careers') %></a></li>
+        <li><a href="#"><%= t('.created_by') %> Agape Inc.</a></li>
       </ul>
       <h2>&copy; Agape Inc. 2018 <%= fa_icon 'heart' %></h2>
     </footer>

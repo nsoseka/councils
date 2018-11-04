@@ -3,5 +3,6 @@ class Division < ApplicationRecord
   has_many :sub_divisions
   has_many :deaths, through: :sub_divisions
   has_many :councils, through: :sub_divisions
+  has_many :deceaseds, through: :sub_divisions
 end
 

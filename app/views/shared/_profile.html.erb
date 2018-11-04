@@ -1,17 +1,17 @@
 <div class="agent">
   <div class="private-details">
-    <h3>Private Details</h3>
-    <p>Username: <span><%= current_agent.username %></span></p>
-    <p>Full Names: <span><%= current_agent.full_names %></span></p>
-    <p>Phone Number: <span><%= current_agent.phone_number %></span></p>
-    <p>Email: <span><%= current_agent.email %></span></p>
+    <h3><%= t('.private_details') %></h3>
+    <p><span class="prop"><%= t('.username') %>:</span> <span><%= agent.username %></span></p>
+    <p><span class="prop"><%= t('.full_names') %>:</span> <span><%= agent.respond_to?(:full_names) ? agent.full_names : agent.name %></span></p>
+    <p><span class="prop"><%= t('.phone_number') %>:</span> <span><%= agent.phone_number %></span></p>
+    <p><span class="prop"><%= t('.email') %>:</span> <span><%= agent.email %></span></p>
   </div>
 
   <div class="desk-details">
-    <h3>Council Details</h3>
-    <p>Council: <span><%= current_agent.council_name.capitalize %> Council</span></p>
-    <p>Sub Division: <span><%= current_agent.sub_division_name.capitalize %></span></p>
-    <p>Division: <span><%= current_agent.division_name %></span></p>
-    <p>Region: <span><%= current_agent.administrative_region_name %></span></p>
+    <h3><%= t('.council_details') %></h3>
+    <p><%= t('.council') %>: <span><%= agent.council_name.capitalize %> Council</span></p>
+    <p><%= t('.sub_division') %>: <span><%= agent.sub_division_name.capitalize %></span></p>
+    <p><%= t('.division') %>: <span><%= agent.division_name %></span></p>
+    <p><%= t('.region') %>: <span><%= agent.administrative_region_name %></span></p>
   </div>
 </div>

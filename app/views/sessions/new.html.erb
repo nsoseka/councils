@@ -1,18 +1,18 @@
 <div class="login-and-creator register">
-  <h4>Login to your account</h4>
+  <h4><%= t('.login_to_account') %></h4>
   <div class="aside-container">
     <%= image_tag  "councils.jpg" %>
   </div>
   <div class="page-form" autocomplete="off">
     <%= form_tag sessions_path, class: "form new-account" do %>
-      <h5>Login Form</h5>
-      <%= label_tag :username, 'Username', autocomplete: :off %>
+      <h5><%= t('.login_form') %></h5>
+      <%= label_tag :username, t('.username'), autocomplete: :off %>
       <%= text_field_tag :username %>
-      <%= label_tag :password, 'Password' %>
+      <%= label_tag :password, t('.password') %>
       <%= password_field_tag :password %>
 
       <div class="submitter">
-        <button type="submit">Log In</button>
+        <button type="submit"><%= t('.login') %></button>
       </div>
     <% end %>
   </div>

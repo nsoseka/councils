@@ -60,7 +60,7 @@ body
     margin: 5px 0
     a 
       margin: 2px 0
-      font-size: 1em
+      font-size: 0.96em
   .sub-menu-selected, .menu-item.selected li:hover
     a
       background: $orange
@@ -79,7 +79,7 @@ body
   width: 100%
   word-wrap: break-word
   h1 
-    font-size: 2em
+    font-size: 1.7em
     color: $dark
     text-align: center
     margin: 0 0 20px 0
@@ -117,7 +117,7 @@ footer
     text-align: center
   li 
     display: inline-block
-    padding: 0 3.5%
+    padding: 0 2%
   li:hover 
     color: $light-blue
 .highlight-red
@@ -132,7 +132,7 @@ footer
   padding: 10px 20px
   font-weight: bold
   color: $pure-white
-  font-size: 1.2em
+  font-size: 1em
 .new-borns
   background: $green
 .new-deaths
@@ -165,4 +165,58 @@ footer
   p 
     a 
       color: $orange
-  
+.hospital-agents 
+  text-align: center
+  font-size: 1.5em
+  color: $purple
+  padding: 20px 0
+header.blog 
+  min-width: 280px
+  max-width: 300px
+.blog-site
+  li 
+    font-size: 0.95em
+    width: 100%
+
+.area-chart
+  #chart-1, #chart-2
+    width: 6000px !important
+    height: 600px !important
+
+#informant
+  display: none
+  position: fixed 
+  top: 8%
+  right: 3%
+  z-index: 20
+  background: $purple
+  padding: 0 20px
+  border-radius: 4px
+  .saving.succeeded, .saving.failed
+    display: none
+    span 
+      font-size: 1.4em
+#informant.success
+  background: $green 
+#informant.error 
+  background: $red
+#nav-buttons 
+  .back, .forward
+    position: fixed
+    top: 1%
+    background: $purple
+    color: $pure-white
+    font-size: 0.9em
+    font-weight: bold
+    padding: 10px 10px
+    cursor: pointer
+    // width: 110px
+    box-sizing: border-box
+    text-align: center
+    z-index: 1
+  .back:hover, .forward:hover
+    background: $blue
+  .back 
+    left: 280px
+  .forward
+    right: 1%

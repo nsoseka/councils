@@ -1,15 +1,16 @@
 <h2 class="search">
   <%= link_to blog_search_path do %>
-    <%= fa_icon 'arrow-left' %> Search Again
+    <%= fa_icon 'arrow-left' %>
+    <%= t('statistics.search_again') %>
   <% end %>
 </h2>
 
-<% if @mean != 0 %>
+<% if @stats[:mean] > 0 %>
   <h3 class="nothing"><%= @message %></h3>
-  <%= render 'statistics/charts', { data: @data, stats: {} } %>
+  <%= render 'statistics/charts', { data: @data, stats: @stats } %>
 <% else %>
   <h3 class="nothing"><%= @message %> </h3>
-  <h3 class="nothing n-registered">No <%= @set %> registered yet </h3>
+  <h3 class="nothing n-registered"><%= t('statistics.no_stats', dataset: t('statistics.' + @set), group: t('statistics.this_' +@group)) %></h3>
 <% end %>
 
 

@@ -65,10 +65,14 @@
   font-weight: bold
   font-size: 1.25em
   color: #fff
+  .fa-warning, .fa-warning + .fa-calendar, .fa-warning ~ span
+    color: $dark
   // border-radius: 4px 0 0 4px
 
 .item-date-ribbon.good-news
   background: $green
+.item-date-ribbon.glad-news
+  background: $yellow
 .item-date-ribbon.good-news::after
   border-top-color: $blue
   border-left-color: $blue
@@ -144,3 +148,35 @@
     padding: 8px 20px
     margin: 0 1%
     width: 30%
+/*Huge thanks to @tobiasahlin at http://tobiasahlin.com/spinkit/ */
+
+//spinbully
+@keyframes blink
+  0%
+    opacity: .2
+  20%
+    opacity: 1
+  100%
+    opacity: .2
+.saving 
+  color: $pure-white
+  font-weight: bold
+  font-size: 1.2em
+  vertical-align: middle
+  height: auto
+  span
+    display: inline-block
+    padding: 5px 2px
+    animation-name: blink
+    animation-duration: 1.4s
+    animation-iteration-count: infinite
+    animation-fill-mode: both 
+    font-size: 2em
+  span:nth-child(2)
+    animation-delay: .2s
+  span:nth-child(3)
+    animation-delay: .4s
+
+  
+
+  

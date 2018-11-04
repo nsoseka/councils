@@ -23,12 +23,11 @@ class AgentsController < ApplicationController
     puts council_finder,'real potators'
 
     if @council.nil?
-      flash[:notice] = "Please the local council will have to buy the software for you to access the service. #{params[:code]}"
+      flash[:notice] = I18n.translate "flash.council_buy"
       render "agents/new"
-    elsif @agent.save
-      flash[:notice] = "Account was succesfully created," +
-                        "once verified you will be able to access the platform"
 
+    elsif @agent.save
+      flash[:notice] = I18n.translate "flash.account_created"
       redirect_to sign_in_path
     else
       render "agents/new"
@@ -37,6 +36,19 @@ class AgentsController < ApplicationController
 
   def edit
     @menu = 'edit-profile'
+    @agent = current_agent
+  end
+
+  def update
+    @menu = 'edit-profile'
+    @agent = Agent.find(params[:id])
+
+    if @agent.update(update_params)
+      flash[:notice] = I18n.translate "flash.updated"
+      redirect_to agent_path
+    else
+      render "agents/edit"
+    end
   end
 
   private
@@ -52,6 +64,10 @@ class AgentsController < ApplicationController
 
   def agent_params
     params.require(:agent).permit(:username, :full_names, :phone_number, :email, :password, :password_confirmation, :verified?, :email_verified?, :council_id, :code)
+  end
+
+  def update_params
+    params.require(:agent).permit(:username, :full_names, :phone_number, :email, :password, :password_confirmation, :code)
   end
 
   # check extract params data used to get a specific council

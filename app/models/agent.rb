@@ -25,13 +25,13 @@ class Agent < ApplicationRecord
 
   def council_choice
     if council_id.present? && council_id == 88888888
-      errors.add(:council_id, 'must be chosen')
+      errors.add(:council_id, :choose)
     end
   end
 
   def full_names_given?
     if full_names.present? && full_names.split.length < 2
-      errors.add(:full_names, 'please provided your full names separated by a space')
+      errors.add(:full_names, :give_names)
     end
   end
 end

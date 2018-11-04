@@ -1,51 +1,51 @@
 <% choice_factor = '88888888' %>
-<h1>New Birth Registration</h1>
+<h1><%= t('.birth_registration') %></h1>
 <div class="main register-citizen">
   <%= my_form_for @new_born, url: new_borns_path(@new_born), html: { id: "new-citizen", class: 'form'} do |f| %>
-    <h2>Registration Form</h2>
+    <h2><%= t('.registration_form') %></h2>
     <%= f.hidden_field :hospital_id, value: current_hospital.id, hidden: true %>
-    <%= f.label :child_code , "Child's Code" %>
+    <%= f.label :child_code , t('.childs_code') %>
     <%= f.text_field :child_code, readonly: true %>
 
     <h3><%= t('.childs_details') %></h3>
 
-    <%= f.label :c_name , "Child's name" %>
+    <%= f.label :c_name , t('.childs_name') %>
     <%= f.text_field :c_name %>
-    <%= f.label :c_db, "Date of birth" %>
+    <%= f.label :c_db, t('.date_of_birth') %>
     <%= f.text_field :c_db, class: "datepicker" %>
-    <%= f.label :c_pb, "Place of birth" %>
+    <%= f.label :c_pb, t('.place_of_birth') %>
     <%= f.text_field :c_pb %>
-    <%= f.label :sex, 'Sex' %>
-    <%= f.select :sex, options_for_select([['Choose Sex', choice_factor], ['Male', 'male'], ['Female', 'female']], @new_born.sex), {}, { class: 'sex chosen-select' } %>
+    <%= f.label :sex, t('.sex') %>
+    <%= f.select :sex, options_for_select([[t('.choose_sex'), choice_factor], [t('.male'), 'male'], [t('.female'), 'female']], @new_born.sex), {}, { class: 'sex chosen-select' } %>
 
     <h3><%= t('.fathers_details') %></h3>
 
-    <%= f.label :f_name, "Fathers's name" %>
+    <%= f.label :f_name, t('.fathers_name') %>
     <%= f.text_field :f_name %>
-    <%= f.label :f_pb, "Father's place of birth" %>
+    <%= f.label :f_pb, t('.place_of_birth') %>
     <%= f.text_field :f_pb %>
-    <%= f.label :f_db, "Date of birth" %>
+    <%= f.label :f_db, t('.date_of_birth') %>
     <%= f.text_field :f_db, class: "datepicker" %>
-    <%= f.label :f_res, "Residence" %>
+    <%= f.label :f_res, t('.residence') %>
     <%= f.text_field :f_res %>
-    <%= f.label :f_tel, "Father's phone number" %>
+    <%= f.label :f_tel, t('.phone_number') %>
     <%= f.text_field :f_tel %>
 
 
     <h3><%= t('.mothers_details') %></h3>
 
-    <%= f.label :m_name, "mothers's name" %>
+    <%= f.label :m_name, t('.mothers_name') %>
     <%= f.text_field :m_name %>
-    <%= f.label :m_pb, "mother's place of birth" %>
+    <%= f.label :m_pb, t('.place_of_birth') %>
     <%= f.text_field :m_pb %>
-    <%= f.label :m_db, "Date of birth" %>
+    <%= f.label :m_db, t('.date_of_birth') %>
     <%= f.text_field :m_db, class: 'datepicker' %>
-    <%= f.label :m_res, "Residence" %>
+    <%= f.label :m_res, t('.residence') %>
     <%= f.text_field :m_res %>
-    <%= f.label :m_tel, "Mother's phone number" %>
+    <%= f.label :m_tel, t('.phone_number') %>
     <%= f.text_field :m_tel %>
-    <%= f.label :attended_clinic, "Did the mother attend a clinic prior to birth?" %>
-    <%= f.select :attended_clinic, options_for_select([['Choose Clinic Attendance', choice_factor], ['Yes', 'yes'], ['No', 'no']], @new_born.attended_clinic), {}, { class: 'sex chosen-select' } %>
+    <%= f.label :attended_clinic, t('.clinic_attendance') %>
+    <%= f.select :attended_clinic, options_for_select([[t('.choose_attendance'), choice_factor], [t('.yesb'), 'yes'], [t('.nob'), 'no']], @new_born.attended_clinic), {}, { class: 'sex chosen-select' } %>
 
     <div class="submit">
       <button type="submit"><%= t('.register') %></button>

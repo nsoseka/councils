@@ -1,28 +1,28 @@
 <div class="login-and-creator register">
-  <h4>Create a New Health Unit Account</h4>
+  <h4><%= t('.new_account') %></h4>
   <div class="aside-container">
     <%= image_tag  "councils.jpg" %>
   </div>
   <div class="page-form" autocomplete="off">
     <%= my_form_for @hospital, url: hospitals_path(@hospital), html: { class: "form new-account", autocomplete: 'false' } do |f| %>
-      <h5>New Account Form</h5>
+      <h5><%= t('.new_account_form') %></h5>
       
-      <%= f.label :council_id, 'Council' %>
-      <%= f.select :council_id, options_for_select(Council.all.map { |r| [r.name, r.id] }.unshift(['Choose Council', 88888888]), @hospital.council_id), {}, { class: 'sex chosen-select' } %>
-      <%= f.label :name, 'Name of Health insitution' %>
+      <%= f.label :council_id, t('.council') %>
+      <%= f.select :council_id, options_for_select(Council.all.map { |r| [r.name, r.id] }.unshift([t('.choose_council'), 88888888]), @hospital.council_id), {}, { class: 'sex chosen-select' } %>
+      <%= f.label :name, t('.institution_name') %>
       <%= f.text_field :name %>
-      <%= f.label :phone_number, 'Phone number' %>
+      <%= f.label :phone_number, t('.phone_number') %>
       <%= f.text_field :phone_number %>
-      <%= f.label :email, 'Email' %>
+      <%= f.label :email, t('.email') %>
       <%= f.email_field :email %>
-      <%= f.label :username, 'Username' %>
+      <%= f.label :username, t('.username') %>
       <%= f.text_field :username %>
-      <%= f.label :password, 'Password' %>
+      <%= f.label :password, t('.password') %>
       <%= f.password_field :password %>
-      <%= f.label :password_confirmation, 'Confirmation password' %>
+      <%= f.label :password_confirmation, t('.confirmation_password') %>
       <%= f.password_field :password_confirmation %>
       <div class="submitter">
-        <button type="submit">Create Account</button>
+        <button type="submit"><%= t('.create_account') %></button>
       </div>
     <% end %>
   </div>

@@ -1,14 +1,14 @@
 <div class="login-and-creator register">
-  <h4>Choose one of the links below to create your account</h4>
+  <h4><%= t('.choose_link') %></h4>
   <div class="aside-container">
     <%= image_tag  "councils.jpg" %>
   </div>
   <div class="page-form new-accounts" autocomplete="off">
     <p>
-      <%= link_to 'Create Council Account', register_path %>
+      <%= link_to t('.council_account'), register_path %>
     </p>
     <p>
-      <%= link_to 'Create Health Unit Account', register_hospital_path %>
+      <%= link_to t('.health_unit_account'), register_hospital_path %>
     </p>
     </li>
   </div>

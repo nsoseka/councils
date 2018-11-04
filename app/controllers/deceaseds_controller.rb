@@ -6,12 +6,13 @@ class DeceasedsController < ApplicationController
 
   def index 
     @menu = 'd-all'
-    @pagy, @deceaseds = pagy Deceased.order('created_at DESC').limit(50).where(hospital_id: current_hospital.id)
+    @pagy, @deceaseds = pagy Deceased.order('created_at DESC').limit(50).where(hospital_id: current_hospital.id).includes(:cause_of_death)
   end
 
   def show 
     @menu = 'd-all'
-    @deceased = Deceased.find(params[:id])
+    @deceased = Deceased.includes(:cause_of_death).find(params[:id])
+    @deceased_added = params[:deceased]
     @tab = "deceaseds"
 
     if current_agent
@@ -33,8 +34,9 @@ class DeceasedsController < ApplicationController
     @deceased.council = current_hospital.council
 
     if @deceased.save
-      flash[:notice] = 'Deceased register succefully'
-      redirect_to deceaseds_path
+      flash[:notice] = I18n.translate "flash.registered"
+      redirect_to deceased_path(id: @deceased.id, deceased: "added")
+      
     else
       render "deceaseds/new"
     end
@@ -74,3 +76,4 @@ class DeceasedsController < ApplicationController
     set_up_council_notifiers if current_agent
   end
 end
+

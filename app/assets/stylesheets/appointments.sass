@@ -1,0 +1,155 @@
+@import 'colors'
+.appointments 
+  width: 80%
+  display: inline-block
+  padding: 0 10%
+.new-appointment 
+  color: $light-green
+  font-size: 0.8em
+.control 
+  text-align: center
+.add-appointment, .change-date 
+  display: inline-block
+  margin: 0 2%
+  a
+    display: inline-block
+    padding: 10px 20px
+    background: $blue
+    width: 90%
+    margin: 5% 20px
+    color: $pure-white
+
+.edit-appointment:hover
+  color: $red
+.apt-button 
+  border: 1px solid $green
+  font: inherit
+  font-size: 1.3em
+  font-weight: bold
+  cursor: pointer
+.item-date-ribbon.apt-button 
+  font-size: 1em
+  top: 82%
+  padding: 10px 5px
+.item-date-ribbon.apt-button:hover 
+  background: $blue
+.update-apts 
+  text-align: center
+  padding: 5px 0
+  .form-div.small-div
+    width: 20%
+  .form-div 
+    display: inline-block
+    width: 32%
+    margin: 0 2%
+    text-align: left
+    label, input
+      width: 100%
+      display: inline-block
+    input 
+      font: inherit
+      border: 1px solid $grey
+      padding: 5px 8px
+    .chosen-search-input
+      width: 100%
+.cover-modal 
+  display: none
+.done-deal
+  position: relative 
+  .cover-modal 
+    display: block
+    position: absolute 
+    text-align: center
+    top: 0 
+    right: -1%
+    left: 0
+    bottom: -1%
+    background: rgba(0, 0, 0, 0.2)
+    .edit-apt 
+      padding: 10px 
+      position: absolute 
+      top: 40%
+      width: 20%
+      left: 40%
+      display: inline-block
+      background: $pure-white
+      color: $blue 
+      font-weight: bold
+      border: 1px solid $pure-white
+      cursor: pointer
+
+.done-shower 
+  display: none
+  color: $green 
+  font-size: 2em
+  font-weight: bold
+  position: absolute
+  left: 2%
+  top: 38%
+  letter-spacing: 0.1em
+  text-transform: uppercase
+.done-deal 
+  .done-shower 
+    display: block
+.apt.has-date
+  h3 
+    font-size: 1.2em
+  .purpose 
+    color: $darkslategray
+    font-weight: bold
+.reminded.already
+  font-size: 1.3em 
+  color: $purple
+.reminder.hide, .reminded.hide
+  display: none 
+.reminded.show, .reminder.show
+  display: block
+.reminder 
+  padding: 0 0 10px 0
+  a 
+    padding: 8px 20px
+    background: $gray
+    color: $pure-white
+    border-radius: 4px
+    font-size: 0.6em
+    text-transform: uppercase
+    font-weight: bold
+.purpose-bc 
+  text-align: center
+.purpose-board
+  display: inline-block
+  width: 31%
+  vertical-align: top
+  box-sizing: border-box
+  background: $white
+  border: 1px solid $grey
+  color: $faint-black
+  font-size: 1.2em
+  font-weight: bold 
+  padding: 20px
+  text-align: center
+  margin: 20px 0.5%
+  border-radius: 4px
+  h2 
+    padding: 10px 0
+    font-size: 1em
+  .cancel, .remind, .number
+    a 
+      width: 100%
+      display: inline-block
+      border-radius: 4px
+      padding: 20px 0
+      margin: 5px 0
+      border: 1px dashed $slategray
+    a:hover 
+      background: $pure-white
+  .number 
+    color: $blue
+    padding: 20px 0
+    font-size: 1.2em
+.purpose-time 
+  color: $green
+  p 
+    text-transform: uppercase
+    font-size: 0.7em 
+    font-weight: bold

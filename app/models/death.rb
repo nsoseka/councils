@@ -11,7 +11,7 @@ class Death < ApplicationRecord
   NON_VALIDATABLE_ATTRS = ["id", "created_at", "updated_at", "attestator"] #or any other attribute that does not need validation
   VALIDATABLE_ATTRS = Death.attribute_names.reject{ |attr| NON_VALIDATABLE_ATTRS.include?(attr) }
   validates_presence_of VALIDATABLE_ATTRS
-
+  validates_uniqueness_of :certificate_number
   validate :choices_made
 
   def choices_made

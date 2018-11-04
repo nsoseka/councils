@@ -1,0 +1,96 @@
+<% choice_factor = '88888888' %>
+<h1>
+  <i>
+    <%= link_to new_born_path @new_born do %>
+      <%= @new_born.c_name %>
+    <% end %>
+  </i>
+</h1>
+<div class="main register-citizen">
+  <%= my_form_for @infant_health, url: new_born_infant_healths_path(@new_born), html: { id: "new-citizen", class: 'form'} do |f| %>
+    <h2><%= t('infant_healths.infant_health_form') %></h2>
+    <%= f.hidden_field :hospital_id, value: current_hospital.id, hidden: true %>
+    <%= f.hidden_field :new_born_id, value: @new_born.id, hidden: true %>
+
+    <h3><%= t('infant_healths.analysis') %></h3>
+
+    <%= f.label :term, t('infant_healths.term') %>
+    <%= f.select :term, options_for_select([
+    [t('infant_healths.choose_term'), choice_factor], 
+    [t('infant_healths.full_term'), "full_term"], 
+    [t('infant_healths.pre_term'), "pre_term"], 
+    [t('infant_healths.post_term'), "post_term"], 
+    [t('infant_healths.small_for_date'), "small_for_date"]], @infant_health.term), {}, { class: 'sex chosen-select' } %>
+    <%= f.label :fsb , t('infant_healths.child_alive') %>
+    <%= f.select :fsb, options_for_select([[t('infant_healths.choose_status'), choice_factor], [t('infant_healths.yest'), "no"], [t('infant_healths.not'), "yes"]], @infant_health.fsb), {}, { class: 'sex chosen-select' } %>
+
+    <%= f.label :msb , t('infant_healths.mother_alive') %>
+    <%= f.select :msb, options_for_select([[t('infant_healths.choose_status'), choice_factor], [t('infant_healths.yest'), "no"], [t('infant_healths.not'), "yes"]], @infant_health.msb), {}, { class: 'sex chosen-select' } %>
+
+    <%= f.label :still_birth_cause, t('infant_healths.still_birth_cause') %>
+    <%= f.select :still_birth_cause, options_for_select([
+    [t('infant_healths.not_still_birth'), "not_still_birth"], 
+    [t('infant_healths.pregnancy_complications'), "pregnancy_complications"], 
+    [t('infant_healths.placenta_problems'), "placenta_problems"], 
+    [t('infant_healths.birth_defects'), "birth_defects"], 
+    [t('infant_healths.infection'), "infection"], 
+    [t('infant_healths.umblical_cord_problems'), "umblical_cord_problems"], 
+    [t('infant_healths.high_blood_disorders'), "high_blood_disorders"], 
+    [t('infant_healths.complications_with_mother'), "complications_with_mother"], 
+    [t('infant_healths.stress_of_mother'), "stress_of_mother"], 
+    [t('infant_healths.mother_took_drugs'), "mother_took_drugs"], 
+    [t('infant_healths.other'), "other"]], @infant_health.still_birth_cause), {}, { class: 'sex chosen-select' } %>
+
+    <%= f.label :agpar_scor_1 , t('infant_healths.agpar_scor_1') %>
+    <%= f.text_field :agpar_scor_1 %>
+    <%= f.label :agpar_scor_5 , t('infant_healths.agpar_scor_5') %>
+    <%= f.text_field :agpar_scor_5 %>
+    <%= f.label :weight , t('infant_healths.weight') %>
+    <%= f.text_field :weight %>
+    <%= f.label :length , t('infant_healths.length') %>
+    <%= f.text_field :length %>
+    <%= f.label :head_circumference, t('infant_healths.head_circumference') %>
+    <%= f.text_field :head_circumference %>
+    <%= f.label :resuscitation , t('infant_healths.resuscitation') %>
+    <%= f.select :resuscitation, options_for_select([
+    [t('infant_healths.choose_status'), choice_factor], 
+    [t('infant_healths.done_good'), "done_good"], 
+    [t('infant_healths.done_bad'), "done_bad"], 
+    [t('infant_healths.not_done'), "not_done"]], @infant_health.resuscitation), {}, { class: 'sex chosen-select' } %>
+
+    <%= f.label :abnormalities , t('infant_healths.abnormalities') %>
+    <%= f.select :abnormalities, options_for_select([
+    [t('infant_healths.choose_status'), choice_factor], 
+    [t('infant_healths.none'), "none"], 
+    [t('infant_healths.anencephaly'), "anencephaly"], 
+    [t('infant_healths.anophthalmia_microphthalmia'), "anophthalmia_microphthalmia"], 
+    [t('infant_healths.anotia_microtia'), "anotia_microtia"], 
+    [t('infant_healths.cleft'), "cleft"], 
+    [t('infant_healths.congenital_heart_defects'), "congenital_heart_defects"], 
+    [t('infant_healths.craniosynostosis'), "craniosynostosis"], 
+    [t('infant_healths.diaphragmatic_hernia'), "diaphragmatic_hernia'"], 
+    [t('infant_healths.down_syndrome'), "down_syndrome"], 
+    [t('infant_healths.encephalocele'), "encephalocele"], 
+    [t('infant_healths.esophageal_atresia'), "esophageal_atresia"], 
+    [t('infant_healths.gastroschisis'), "gastroschisis"], 
+    [t('infant_healths.hypospadias'), "hypospadias"], 
+    [t('infant_healths.microcephaly'), "microcephaly"], 
+    [t('infant_healths.omphalocele'), "omphalocele"], 
+    [t('infant_healths.spina_bifida'), "spina_bifida"], 
+    [t('infant_healths.upper_and_lower_limb_reduction_defects'), "upper_and_lower_limb_reduction_defects"], 
+    [t('infant_healths.other'), "other"]], @infant_health.abnormalities), {}, { class: 'sex chosen-select' } %>
+    <%= f.label :art , t('infant_healths.art') %>
+    <%= f.select :art, options_for_select([
+    [t('infant_healths.choose_status'), choice_factor], 
+    [t('infant_healths.yest'), "yes"], 
+    [t('infant_healths.not'), "no"]], @infant_health.art), {}, { class: 'sex chosen-select' } %>
+
+    <div class="submit">
+      <button type="submit"><%= t('infant_healths.register') %></button>
+    </div>
+  <% end %>
+  <script>
+    $(".chosen-select").chosen()
+  </script>
+</div>
+

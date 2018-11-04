@@ -1,7 +1,9 @@
-<h1>Todays Death Statistics</h1>
-<p class="new-marriages basic-stats"><%= @stats[:sum].to_i %> Death(s) Today</p>
+<h1><%= t('statistics.todays_deaths') %></h1>
+<p class="new-marriages basic-stats"> <%= @stats[:sum].to_i %> <%= t('statistics.number_dt') %></p>
 <% if !@stats[:mean].nil? && @stats[:mean] > 0 %>
   <%= render 'statistics/charts', { data: @data, stats: @stats } %>
 <% else %>
-  <h3 class="nothing">No deaths registered so far today</h3>
+  <h3 class="nothing"> <%= t('statistics.no_deaths') %></h3>
 <% end %>
+
+
