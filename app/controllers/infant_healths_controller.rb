@@ -8,13 +8,13 @@ class InfantHealthsController < ApplicationController
   end
 
   def new
-    @new_born = NewBorn.find(params[:new_born_id])
+    @new_born = NewBorn.friendly.find(params[:new_born_id])
     @infant_health = InfantHealth.new
   end
 
   def create 
     @infant_health = InfantHealth.new(infant_health_params)
-    @new_born = NewBorn.find(params[:new_born_id])
+    @new_born = NewBorn.friendly.find(params[:new_born_id])
 
     if @new_born.infant_health
       flash[:notice] = I18n.translate "flash.already_registered" 
@@ -30,7 +30,7 @@ class InfantHealthsController < ApplicationController
 
   def show
     @infant_health = InfantHealth.find(params[:id])
-    @new_born = NewBorn.find(params[:new_born_id])
+    @new_born = NewBorn.friendly.find(params[:new_born_id])
   end
 
   private

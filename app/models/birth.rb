@@ -1,4 +1,7 @@
 class Birth < ApplicationRecord
+  extend FriendlyId
+  friendly_id :given_name, use: :slugged
+  
   CHOICE_FACTOR  = '88888888'
   belongs_to :council
   # belongs_to :division

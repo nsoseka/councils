@@ -27,7 +27,7 @@ class BirthsController < ApplicationController
 
   def show
     @menu = 'find-b'
-    @birth = Birth.find(params[:id])
+    @birth = Birth.friendly.find(params[:id])
   end
 
   def find 

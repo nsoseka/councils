@@ -66,7 +66,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'jquery-rails'
 gem 'chosen-rails'
 gem 'recaptcha'
-gem 'friendly_id'
+gem 'friendly_id', '~> 5.2.0'
 gem 'sucker_punch', '~> 2.0'
 gem 'sweetalert-rails'
 gem 'bcrypt', platforms: 'ruby'

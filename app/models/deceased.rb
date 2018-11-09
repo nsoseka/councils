@@ -1,4 +1,7 @@
 class Deceased < ApplicationRecord
+  extend FriendlyId
+  friendly_id :d_name, use: :slugged
+
   CHOICE_FACTOR  = '88888888'
   belongs_to :hospital
   belongs_to :council 

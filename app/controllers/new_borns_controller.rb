@@ -12,7 +12,7 @@ class NewBornsController < ApplicationController
 
   def show 
     @menu = 'nb-rec'
-    @new_born = NewBorn.find(params[:id])
+    @new_born = NewBorn.friendly.find(params[:id])
     @new_born_added = params[:new_born]
 
     @tab = "new-borns"
@@ -58,7 +58,7 @@ class NewBornsController < ApplicationController
 
   def clinic_sessions
     @menu = 'nb-rec'
-    @new_born = NewBorn.find(params[:id])
+    @new_born = NewBorn.friendly.find(params[:id])
     @appointments = @new_born.appointments
   end
 

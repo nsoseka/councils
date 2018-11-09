@@ -229,4 +229,4 @@ class AnalysisController < ApplicationController
 end
 
 #GET30OFF domain code
-#https://lisaacjunior.wixsite.com/possoinfrais
+

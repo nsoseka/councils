@@ -8,12 +8,12 @@ class MaternalHealthsController < ApplicationController
   end
 
   def new
-    @new_born = NewBorn.find(params[:new_born_id])
+    @new_born = NewBorn.friendly.find(params[:new_born_id])
     @maternal_health = MaternalHealth.new
   end
 
   def create 
-    @new_born = NewBorn.find(params[:new_born_id])
+    @new_born = NewBorn.friendly.find(params[:new_born_id])
     @maternal_health = MaternalHealth.new(maternal_health_params)
     @maternal_health.age = @new_born.c_db.year - @new_born.m_db.year
 
@@ -30,7 +30,7 @@ class MaternalHealthsController < ApplicationController
 
   def show
     @maternal_health = MaternalHealth.find(params[:id])
-    @new_born = NewBorn.find(params[:new_born_id])
+    @new_born = NewBorn.friendly.find(params[:new_born_id])
   end
 
   private

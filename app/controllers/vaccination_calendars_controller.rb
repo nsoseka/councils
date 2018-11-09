@@ -4,7 +4,7 @@ class VaccinationCalendarsController < ApplicationController
   layout "hospital"
 
   def show 
-    @new_born = NewBorn.find(params[:new_born_id])
+    @new_born = NewBorn.friendly.find(params[:new_born_id])
     @vaccination_calendar = @new_born.vaccination_calendar
   end
 

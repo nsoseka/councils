@@ -1,4 +1,7 @@
 class Marriage < ApplicationRecord
+  extend FriendlyId
+  friendly_id :slug_candidates, use: :slugged
+
   CHOICE_FACTOR  = '88888888'
   belongs_to :council
   # belongs_to :division
@@ -11,6 +14,9 @@ class Marriage < ApplicationRecord
   validates_uniqueness_of :certificate_number
   validate :choices_made
 
+  def slug_candidates
+    [:husband, :wife]
+  end
 
   def send_notifications!
     # send a notification that the marriage has been posted up on their status

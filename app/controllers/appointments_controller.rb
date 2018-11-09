@@ -14,12 +14,12 @@ class AppointmentsController < ApplicationController
       one_year: "Vit A"
     }
 
-    @new_born = NewBorn.find(params[:new_born_id])
+    @new_born = NewBorn.friendly.find(params[:new_born_id])
     @appointments = @new_born.appointments.order("date ASC")
   end
 
   def new 
-    @new_born = NewBorn.find(params[:new_born_id])
+    @new_born = NewBorn.friendly.find(params[:new_born_id])
     @appointment = Appointment.new
   end
 
@@ -27,7 +27,7 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    @new_born = NewBorn.find(params[:new_born_id])
+    @new_born = NewBorn.friendly.find(params[:new_born_id])
     checker = Appointment.find_by(purpose: appointment_params[:purpose], new_born_id: params[:new_born_id])
 
     if checker 
@@ -48,14 +48,14 @@ class AppointmentsController < ApplicationController
   end
 
   def edit 
-    @new_born = NewBorn.find(params[:new_born_id])
+    @new_born = NewBorn.friendly.find(params[:new_born_id])
     @appointment = Appointment.find(params[:id])
   end
 
   def update
     @appointment = Appointment.find(params[:id])
     kept_status = params.require(:appointment).permit(:kept)[:kept] == "true"
-    @new_born = NewBorn.find(params[:new_born_id])
+    @new_born = NewBorn.friendly.find(params[:new_born_id])
 
     if smart_update(kept_status)
       flash[:notice] = "appointment updated successfully"

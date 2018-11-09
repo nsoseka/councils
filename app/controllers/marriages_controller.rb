@@ -4,11 +4,10 @@ class MarriagesController < ApplicationController
   def index
     @pagy, @marriages = pagy current_agent.council.marriages.order(created_at: "DESC")
     @menu = 'index-m'
-    puts ENV['RECAPTCHA_SITE_KEY'], 'work buddy'
   end
 
   def show
-    @marriage = Marriage.find(params[:id])
+    @marriage = Marriage.friendly.find(params[:id])
     @menu = 'index-m'
 
     @result = 'food'

@@ -8,13 +8,13 @@ class CauseOfDeathsController < ApplicationController
   end
 
   def new
-    @deceased = Deceased.find(params[:deceased_id])
+    @deceased = Deceased.friendly.find(params[:deceased_id])
     @cause_of_death = CauseOfDeath.new
   end
 
   def create 
     @cause_of_death = CauseOfDeath.new(cause_of_death_params)
-    @deceased = Deceased.find(params[:deceased_id])
+    @deceased = Deceased.friendly.find(params[:deceased_id])
 
     if @deceased.cause_of_death
       flash[:notice] = I18n.translate "flash.already_registered"
@@ -30,7 +30,7 @@ class CauseOfDeathsController < ApplicationController
 
   def show
     @cause_of_death = CauseOfDeath.find(params[:id])
-    @deceased = Deceased.find(params[:deceased_id])
+    @deceased = Deceased.friendly.find(params[:deceased_id])
   end
 
   private

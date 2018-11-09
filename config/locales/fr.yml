@@ -864,7 +864,7 @@ fr:
     induced: "induit"
     augmented: "augmenté"
     type_of_delivery: "Type d'accouchement"
-    normal: "accouchement normal"
+    normal_d: "accouchement normal"
     assisted: "accouchement assisté"
     cs: "césarienne"
     breech: "accouchement par culotte"

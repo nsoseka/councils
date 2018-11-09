@@ -1,5 +1,8 @@
 class NewBorn < ApplicationRecord
+  extend FriendlyId
+  friendly_id :c_name, use: :slugged
   CHOICE_FACTOR  = '88888888'
+
   belongs_to :hospital
   belongs_to :council
   has_one :vaccination_calendar

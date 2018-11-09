@@ -7,7 +7,7 @@ class DeathsController < ApplicationController
   end
 
   def show
-    @death = Death.find(params[:id])
+    @death = Death.friendly.find(params[:id])
     @menu = 'search'
   end
 

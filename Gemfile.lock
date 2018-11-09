@@ -279,7 +279,7 @@ DEPENDENCIES
   descriptive_statistics (~> 2.4.0)
   figaro
   font-awesome-rails
-  friendly_id
+  friendly_id (~> 5.2.0)
   groupdate
   hightop
   jbuilder (~> 2.5)

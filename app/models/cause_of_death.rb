@@ -1,4 +1,4 @@
-class CauseOfDeath < ApplicationRecord 
+class CauseOfDeath < ApplicationRecord
   CHOICE_FACTOR  = '88888888'
   belongs_to :deceased
   belongs_to :hospital

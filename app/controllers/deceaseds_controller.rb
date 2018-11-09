@@ -11,7 +11,7 @@ class DeceasedsController < ApplicationController
 
   def show 
     @menu = 'd-all'
-    @deceased = Deceased.includes(:cause_of_death).find(params[:id])
+    @deceased = Deceased.includes(:cause_of_death).friendly.find(params[:id])
     @deceased_added = params[:deceased]
     @tab = "deceaseds"
 
