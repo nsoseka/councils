@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     puts I18n.locale, 'the one i set myself'
     session[:language] = params[:locale] ? params[:locale] : session[:language]
     I18n.locale =  session[:language] ? session[:language] : I18n.locale || I18n.default_locale
-    I18n.locale = :en
+    I18n.locale = :fr
   end
 
   def require_agent
@@ -39,10 +39,8 @@ class ApplicationController < ActionController::Base
   end
 
   def set_up_council_notifiers
-    # current_agent.council.includes(:deceaseds, :new_borns)
-    puts Council.includes(:deceaseds, :new_borns).where(id: current_agent.council.id), 'awesome'
-    @deaths_notifier = current_agent.council.deceaseds.today.count
-    @births_notifier = current_agent.council.new_borns.today.count
+    @deaths_notifier = current_agent.council.deceaseds.today.length
+    @births_notifier = current_agent.council.new_borns.today.length
   end
 
   def formated_rf_doc(doc)

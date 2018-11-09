@@ -1,0 +1,124 @@
+<header class="stat-page">
+  <h1><%= t("death.death") %></h1>
+  <nav class="stat-nav">
+    <ul>
+      <li class="<%= @chosen == 'all' ? 'stat-chosen' : '' %>">
+        <%= link_to death_analysis_path(set: "all") do %>
+          <%= t('death.all') %>
+        <% end %>
+      </li>
+      <li class="<%= @chosen == 'male' ? 'stat-chosen' : '' %>">
+        <%= link_to death_analysis_path(set: "male") do %>
+          <%= t('death.male') %>
+        <% end %>
+      </li>
+      <li class="<%= @chosen == 'female' ? 'stat-chosen' : '' %>">
+        <%= link_to death_analysis_path(set: "female") do %>
+          <%= t('death.female') %>
+        <% end %>
+      </li>
+    </ul>
+  </nav>
+</header>
+<div class="purpose-bc analytics">
+  <div class="purpose-board bcg">
+    <h2><%= t("death.infant_deaths") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:infant_deaths] %></span>
+    <div class="purpose-time">
+      <p><%= t("death.number_of_infants") %></p>
+    </div>
+
+    <div class="purpose-time">
+      <p><%= t("death.two_years") %></p>
+    </div>
+  </div>
+
+  <div class="purpose-board bcg">
+    <h2><%= t("death.under_five") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:under_five_deaths] %></span>
+    <div class="purpose-time">
+      <p><%= t("death.number_of_infants") %></p>
+    </div>
+
+    <div class="purpose-time">
+      <p><%= t("death.five_years") %></p>
+    </div>
+  </div>
+
+  <div class="purpose-board bcg">
+    <h2><%= t("death.children") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:children] %></span>
+    <div class="purpose-time">
+      <p><%= t("death.number_of_infants") %></p>
+    </div>
+
+    <div class="purpose-time">
+      <p><%= t("death.twelve_years") %></p>
+    </div>
+  </div>
+
+  <div class="purpose-board bcg">
+    <h2><%= t("death.teenagers") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:teenage_deaths] %></span>
+    <div class="purpose-time">
+      <p><%= t("death.number_of_infants") %></p>
+    </div>
+
+    <div class="purpose-time">
+      <p><%= t("death.nineteen_years") %></p>
+    </div>
+  </div>
+
+  <div class="purpose-board bcg">
+    <h2><%= t("death.early_adults") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:early_adult_deaths] %></span>
+    <div class="purpose-time">
+      <p><%= t("death.number_of_infants") %></p>
+    </div>
+
+    <div class="purpose-time">
+      <p><%= t("death.twenty_years") %></p>
+    </div>
+  </div>
+
+  <div class="purpose-board bcg">
+    <h2><%= t("death.middle_adults") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:middle_adult_deaths] %></span>
+    <div class="purpose-time">
+      <p><%= t("death.number_of_infants") %></p>
+    </div>
+
+    <div class="purpose-time">
+      <p><%= t("death.thirtyfive_years") %></p>
+    </div>
+  </div>
+
+  <div class="purpose-board bcg">
+    <h2><%= t("death.later_adults") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:later_adults_deaths] %></span>
+    <div class="purpose-time">
+      <p><%= t("death.number_of_infants") %></p>
+    </div>
+
+    <div class="purpose-time">
+      <p><%= t("death.sixtyfive_years") %></p>
+    </div>
+  </div>
+
+  <div class="purpose-board bcg">
+    <h2><%= t("death.old_adults") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:old_adults] %></span>
+    <div class="purpose-time">
+      <p><%= t("death.number_of_infants") %></p>
+    </div>
+
+    <div class="purpose-time">
+      <p><%= t("death.seventyfive") %></p>
+    </div>
+  </div>
+</div>
+<div class="deaths-board">
+  <% data = { t("death.infant_deaths") => @stats[:infant_deaths], t("death.under_five") => @stats[:under_five_deaths], t("death.children") => @stats[:children], t("death.teenagers") => @stats[:teenage_deaths], t("death.early_adults") => @stats[:early_adult_deaths], t("death.middle_adults") => @stats[:middle_adult_deaths], t("death.later_adults") => @stats[:later_adults_deaths], t("death.old_adults") => @stats[:old_adults] } %>
+  <%= pie_chart data %>
+</div>
+

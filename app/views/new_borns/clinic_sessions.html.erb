@@ -1,3 +1,11 @@
+<h1 class="c-name">
+  <i>
+  <%= link_to new_born_path @new_born do %>
+    <%= @new_born.c_name %>
+  <% end %>
+  </i>
+</h1>
+
 <ul class="items">
   <% if @appointments.empty? %>
     <h3><%= t('.no_deaths') %></h3>

@@ -2,6 +2,7 @@ class Appointment < ApplicationRecord
   CHOICE_FACTOR  = '88888888' 
   belongs_to :hospital 
   belongs_to :new_born
+  has_one :council, through: :hospital
 
   before_create :set_contact
 

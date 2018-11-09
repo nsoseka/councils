@@ -6,7 +6,10 @@
     <% end %>
     </i>
   </h1>
-  <h2 class="vc"><%= fa_icon 'street-view' %> Vaccination Calendar</h2>
+  <h2 class="vc">
+    <%= fa_icon 'street-view' %> 
+    <%= t("vaccination.vaccination_calendar") %>
+  </h2>
   <div class="calendar-activities">
     <div class="v-linker">
       <div class="sv4-linker"></div>
@@ -32,9 +35,9 @@
         --><div class="sh1-linker"></div>
       </div><!--
       --><div class="stage-indicator">
-          <p class="vaccine-time">At birth</p>
+          <p class="vaccine-time"><%= t("vaccination.at_birth") %></p>
           <p>
-            <%= @vaccination_calendar.at_birth_d ? formated_date(@vaccination_calendar.at_birth_d) : t('.date_not_set')  %>
+            <%= @vaccination_calendar.at_birth_d ? formated_date(@vaccination_calendar.at_birth_d) : t('vaccination.date_not_set')  %>
           </p>
       </div><!--
       --><div class="h-linker h-left"> 
@@ -48,14 +51,16 @@
           <% if @vaccination_calendar.at_birth %>
             <li class="status-edit at_birth">
               <%= link_to new_born_vaccination_calendar_path(aspect: 'at_birth'), remote: true, method: 'patch' do %>
-                Done deal <%= fa_icon 'check' %>
+                <%= t("vaccination.done_deal") %>
+                <%= fa_icon 'check' %>
               <% end %>
             </li>
             <li class="state-indicator"><%= fa_icon 'heart' %></li>
           <% else %>
             <li class="status-edit at_birth">
               <%= link_to new_born_vaccination_calendar_path(aspect: 'at_birth'), remote: true, method: 'patch' do %>
-                Mark as done <%= fa_icon 'star' %>
+                <%= t("vaccination.mark_done") %>
+                 <%= fa_icon 'star' %>
               <% end %>
             </li>
             <li class="state-indicator"><%= fa_icon 'times' %></li>
@@ -89,8 +94,8 @@
         --><div class="sh1-linker"></div>
       </div><!--
       --><div class="stage-indicator">
-          <p class="vaccine-time">6 weeks</p>
-          <p><%= @vaccination_calendar.six_weeks_d ? formated_date(@vaccination_calendar.six_weeks_d) : t('.date_not_set')  %></p>
+          <p class="vaccine-time"><%= t("vaccination.six_weeks") %></p>
+          <p><%= @vaccination_calendar.six_weeks_d ? formated_date(@vaccination_calendar.six_weeks_d) : t('vaccination.date_not_set')  %></p>
       </div><!--
       --><div class="h-linker h-left"> 
         <div class="sh1-linker"></div><!--
@@ -103,14 +108,15 @@
           <% if @vaccination_calendar.six_weeks %>
             <li class="status-edit six_weeks">
               <%= link_to new_born_vaccination_calendar_path(aspect: 'six_weeks'), remote: true, method: 'patch'  do %>
-                Done deal <%= fa_icon 'check' %>
+                <%= t("vaccination.done_deal") %> <%= fa_icon 'check' %>
               <% end %>
             </li>
             <li class="state-indicator"><%= fa_icon 'heart' %></li>
           <% else %>
             <li class="status-edit six_weeks">
               <%= link_to new_born_vaccination_calendar_path(aspect: 'six_weeks'), remote: true, method: 'patch' do %>
-                Mark as done <%= fa_icon 'star' %>
+                <%= t("vaccination.mark_done") %>
+                 <%= fa_icon 'star' %>
               <% end %>
             </li>
             <li class="state-indicator"><%= fa_icon 'times' %></li>
@@ -144,8 +150,8 @@
         --><div class="sh1-linker"></div>
       </div><!--
       --><div class="stage-indicator">
-          <p class="vaccine-time">10 weeks</p>
-          <p><%= @vaccination_calendar.ten_weeks_d ? formated_date(@vaccination_calendar.ten_weeks_d) : t('.date_not_set')  %></p>
+          <p class="vaccine-time"><%= t("vaccination.ten_weeks") %></p>
+          <p><%= @vaccination_calendar.ten_weeks_d ? formated_date(@vaccination_calendar.ten_weeks_d) : t('vaccination.date_not_set')  %></p>
       </div><!--
       --><div class="h-linker h-left"> 
         <div class="sh1-linker"></div><!--
@@ -158,14 +164,15 @@
           <% if @vaccination_calendar.ten_weeks %>
             <li class="status-edit ten_weeks">
               <%= link_to new_born_vaccination_calendar_path(aspect: 'ten_weeks'), remote: true, method: 'patch'  do %>
-                Done deal <%= fa_icon 'check' %>
+                <%= t("vaccination.done_deal") %> <%= fa_icon 'check' %>
               <% end %>
             </li>
             <li class="state-indicator"><%= fa_icon 'heart' %></li>
           <% else %>
             <li class="status-edit ten_weeks">
               <%= link_to new_born_vaccination_calendar_path(aspect: 'ten_weeks'), remote: true, method: 'patch' do %>
-                Mark as done <%= fa_icon 'star' %>
+                <%= t("vaccination.mark_done") %>
+                 <%= fa_icon 'star' %>
               <% end %>
             </li>
             <li class="state-indicator"><%= fa_icon 'times' %></li>
@@ -199,8 +206,8 @@
         --><div class="sh1-linker"></div>
       </div><!--
       --><div class="stage-indicator">
-          <p class="vaccine-time">14 weeks</p>
-          <p><%= @vaccination_calendar.fourteen_weeks_d ? formated_date(@vaccination_calendar.fourteen_weeks_d) : t('.date_not_set')  %></p>
+          <p class="vaccine-time"><%= t("vaccination.fourteen_weeks") %></p>
+          <p><%= @vaccination_calendar.fourteen_weeks_d ? formated_date(@vaccination_calendar.fourteen_weeks_d) : t('vaccination.date_not_set')  %></p>
       </div><!--
       --><div class="h-linker h-left"> 
         <div class="sh1-linker"></div><!--
@@ -213,14 +220,15 @@
           <% if @vaccination_calendar.fourteen_weeks %>
             <li class="status-edit fourteen_weeks">
               <%= link_to new_born_vaccination_calendar_path(aspect: 'fourteen_weeks'), remote: true, method: 'patch'  do %>
-                Done deal <%= fa_icon 'check' %>
+                <%= t("vaccination.done_deal") %> <%= fa_icon 'check' %>
               <% end %>
             </li>
             <li class="state-indicator"><%= fa_icon 'heart' %></li>
           <% else %>
             <li class="status-edit fourteen_weeks">
               <%= link_to new_born_vaccination_calendar_path(aspect: 'fourteen_weeks'), remote: true, method: 'patch' do %>
-                Mark as done <%= fa_icon 'star' %>
+                <%= t("vaccination.mark_done") %>
+                 <%= fa_icon 'star' %>
               <% end %>
             </li>
             <li class="state-indicator"><%= fa_icon 'times' %></li>
@@ -251,8 +259,8 @@
         --><div class="sh1-linker"></div>
       </div><!--
       --><div class="stage-indicator">
-          <p class="vaccine-time">6 months</p>
-          <p><%= @vaccination_calendar.six_months_d ? formated_date(@vaccination_calendar.six_months_d) : t('.date_not_set')  %></p>
+          <p class="vaccine-time"><%= t("vaccination.six_months") %></p>
+          <p><%= @vaccination_calendar.six_months_d ? formated_date(@vaccination_calendar.six_months_d) : t('vaccination.date_not_set')  %></p>
       </div><!--
       --><div class="h-linker h-left"> 
         <div class="sh1-linker"></div><!--
@@ -265,14 +273,15 @@
           <% if @vaccination_calendar.six_months %>
             <li class="status-edit six_months">
               <%= link_to new_born_vaccination_calendar_path(aspect: 'six_months'), remote: true, method: 'patch'  do %>
-                Done deal <%= fa_icon 'check' %>
+                <%= t("vaccination.done_deal") %> <%= fa_icon 'check' %>
               <% end %>
             </li>
             <li class="state-indicator"><%= fa_icon 'heart' %></li>
           <% else %>
             <li class="status-edit six_months">
               <%= link_to new_born_vaccination_calendar_path(aspect: 'six_months'), remote: true, method: 'patch' do %>
-                Mark as done <%= fa_icon 'star' %>
+                <%= t("vaccination.mark_done") %>
+                 <%= fa_icon 'star' %>
               <% end %>
             </li>
             <li class="state-indicator"><%= fa_icon 'times' %></li>
@@ -293,8 +302,8 @@
     <div class="data-container">
       <div class="vaccines">
         <ul>
-          <li>MEASLES</li>
-          <li>YELLOW FEVER</li>
+          <li><%= t("vaccination.measles") %></li>
+          <li><%= t("vaccination.yellow_fever") %></li>
         </ul>
       </div><!--
       --><div class="h-linker">
@@ -304,8 +313,8 @@
         --><div class="sh1-linker"></div>
       </div><!--
       --><div class="stage-indicator">
-          <p class="vaccine-time">9 months</p>
-          <p><%= @vaccination_calendar.nine_months_d ? formated_date(@vaccination_calendar.nine_months_d) : t('.date_not_set')  %></p>
+          <p class="vaccine-time"><%= t("vaccination.nine_months") %></p>
+          <p><%= @vaccination_calendar.nine_months_d ? formated_date(@vaccination_calendar.nine_months_d) : t('vaccination.date_not_set')  %></p>
       </div><!--
       --><div class="h-linker h-left"> 
         <div class="sh1-linker"></div><!--
@@ -318,14 +327,15 @@
           <% if @vaccination_calendar.nine_months %>
             <li class="status-edit nine_months">
               <%= link_to new_born_vaccination_calendar_path(aspect: 'nine_months'), remote: true, method: 'patch'  do %>
-                Done deal <%= fa_icon 'check' %>
+                <%= t("vaccination.done_deal") %> <%= fa_icon 'check' %>
               <% end %>
             </li>
             <li class="state-indicator"><%= fa_icon 'heart' %></li>
           <% else %>
             <li class="status-edit nine_months">
               <%= link_to new_born_vaccination_calendar_path(aspect: 'nine_months'), remote: true, method: 'patch' do %>
-                Mark as done <%= fa_icon 'star' %>
+                <%= t("vaccination.mark_done") %>
+                 <%= fa_icon 'star' %>
               <% end %>
             </li>
             <li class="state-indicator"><%= fa_icon 'times' %></li>
@@ -356,8 +366,8 @@
         --><div class="sh1-linker"></div>
       </div><!--
       --><div class="stage-indicator">
-          <p class="vaccine-time">1 year</p>
-          <p><%= @vaccination_calendar.one_year_d ? formated_date(@vaccination_calendar.one_year_d) : t('.date_not_set')  %></p>
+          <p class="vaccine-time"><%= t("vaccination.one_year") %></p>
+          <p><%= @vaccination_calendar.one_year_d ? formated_date(@vaccination_calendar.one_year_d) : t('vaccination.date_not_set')  %></p>
       </div><!--
       --><div class="h-linker h-left"> 
         <div class="sh1-linker"></div><!--
@@ -370,14 +380,15 @@
           <% if @vaccination_calendar.one_year %>
             <li class="status-edit one_year">
               <%= link_to new_born_vaccination_calendar_path(aspect: 'one_year'), remote: true, method: 'patch'  do %>
-                Done deal <%= fa_icon 'check' %>
+                <%= t("vaccination.done_deal") %> <%= fa_icon 'check' %>
               <% end %>
             </li>
             <li class="state-indicator"><%= fa_icon 'heart' %></li>
           <% else %>
             <li class="status-edit one_year">
               <%= link_to new_born_vaccination_calendar_path(aspect: 'one_year'), remote: true, method: 'patch' do %>
-                Mark as done <%= fa_icon 'star' %>
+                <%= t("vaccination.mark_done") %>
+                 <%= fa_icon 'star' %>
               <% end %>
             </li>
             <li class="state-indicator"><%= fa_icon 'times' %></li>
@@ -388,10 +399,9 @@
   </div>
 
   <div class="n4y-calendar calendar-activities">
-    <h2 class="show-n4y">Show calendar for the next 4 years</h2>
     <h2 class="show-n4y">
     <%= link_to new_born_appointments_path(@new_born), class: "board-item cal" do %>
-        <%= fa_icon "calendar" %> <%= t('.appointments') %>
+        <%= fa_icon "calendar" %> <%= t('vaccination.appointments') %>
       <% end %>
       </h1>
     <div class="v-linker s-o">
@@ -418,7 +428,7 @@
       </div><!--
       --><div class="stage-indicator">
           <p class="vaccine-time">1 year 6 months</p>
-          <p><%= @vaccination_calendar.at_birth_d ? formated_date(@vaccination_calendar.at_birth_d) : t('.date_not_set')  %></p>
+          <p><%= @vaccination_calendar.at_birth_d ? formated_date(@vaccination_calendar.at_birth_d) : t('vaccination.date_not_set')  %></p>
       </div><!--
       --><div class="h-linker h-left"> 
         <div class="sh1-linker"></div><!--
@@ -428,7 +438,8 @@
       </div><!--
       --><div class="administration-status">
         <ul>
-          <li class="status-edit"><a href="#">Mark as done <%= fa_icon 'star' %></a></li>
+          <li class="status-edit"><a href="#"><%= t("vaccinmark_done_birth") %>
+           <%= fa_icon 'star' %></a></li>
           <li>Upcoming <%= fa_icon 'calendar' %></li>
         </ul>
       </div>

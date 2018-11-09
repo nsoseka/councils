@@ -20,6 +20,9 @@ class VaccinationCalendarsController < ApplicationController
     @vaccination_calendar[@aspect] = !@vaccination_calendar[@aspect.to_s]
     @appointment.kept = @vaccination_calendar[@aspect.to_s]
     @vaccination_calendar[@aspect.to_s + "_d"] = Date.today
+
+    @done = I18n.translate('vaccination.done_deal')
+    @not_done = I18n.translate('vaccination.mark_done')
     puts "what is ithis", smart_update
     #  CVXN86148270
   end

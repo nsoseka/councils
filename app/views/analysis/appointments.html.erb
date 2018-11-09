@@ -1,0 +1,21 @@
+<h1><%= t("appointment_analysis.appointment_analysis") %></h1>
+<div class="appointments">
+  <div class="purpose-board bcg">
+    <h2><%= t("appointment_analysis.appointments") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:missed] %></span>
+    <div class="purpose-time">
+      <p><%= t("appointment_analysis.missed_appointments") %></p>
+    </div>
+
+    <p class="number"><span class="analysis"><%= @stats[:honoured] %></span>
+    <div class="purpose-time">
+      <p><%= t("appointment_analysis.honoured_appointments") %></p>
+    </div>
+
+    <% data = { t("appointment_analysis.missed_appointments") => @stats[:missed], t("appointment_analysis.honoured_appointments") => @stats[:honoured] } %>
+    <%= pie_chart data, donut: true, colors: ['#DD551A', '#AD7A99'] %>
+  </div>
+</div>
+
+
+

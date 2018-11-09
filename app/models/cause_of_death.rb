@@ -2,6 +2,7 @@ class CauseOfDeath < ApplicationRecord
   CHOICE_FACTOR  = '88888888'
   belongs_to :deceased
   belongs_to :hospital
+  belongs_to :council
 
   NON_VALIDATABLE_ATTRS = ["id", "created_at", "updated_at"] 
   VALIDATABLE_ATTRS = CauseOfDeath.attribute_names.reject{ |attr| NON_VALIDATABLE_ATTRS.include?(attr) }

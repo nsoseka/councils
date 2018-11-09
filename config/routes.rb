@@ -90,8 +90,7 @@ Rails.application.routes.draw do
     patch :reminder, to: "clinic#reminder"
     get :one_day_upcoming, to: "clinic#one_day_upcoming"
     get :three_days_upcoming, to: "clinic#three_days_upcoming"
-    get :clinic_find, to: "clinic#find"
-    get :clinic_search, to: "clinic#search"
+    get :missed_appointments, to: "clinic#missed_appointments"
   end
 
   scope :analysis do
@@ -99,6 +98,7 @@ Rails.application.routes.draw do
     get :maternal_health_analysis, to: "analysis#maternal_health"
     get :death_analysis, to: "analysis#death"
     get :appointments_analysis, to: "analysis#appointments"
+    get :forecast, to: "analysis#forecast"
   end
 
   scope :blog do

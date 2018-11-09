@@ -2,49 +2,52 @@
   <div class="item-container">
     <h3>
       <%= fa_icon 'child' %>
-      <span><%= t('.mothers_name') %>:</span>
+      <span><%= t('appointments.mothers_name') %>:</span>
       <span><%= new_born.m_name %> & </span>
-      <span><%= t('.childs_name') %>:</span>
+      <span><%= t('appointments.childs_name') %>:</span>
       <span><%= new_born.c_name %></span>
     </h3>
   </div>
-  <p class="done-shower">Done</p>
+  <p class="appointment-date"><%= appointment.date %></p>
+  <p class="done-shower"><%= t("appointments.done") %></p>
   <%= form_tag update_appointment_path, method: "post", remote: true, class: "update-apts", data: { disable: true } do %>
     <input type="hidden" value="<%= new_born.id %>" name="new_born_id">
     <input type="hidden" value="<%= appointment.id %>" name="appointment_id">
     <div class="form-div small-div">
-      <%= label_tag :weight %>
+      <%= label_tag :weight, t("appointments.weight") %>
       <%= text_field_tag :weight %>
     </div>
     <div class="form-div small-div">
-      <%= label_tag :height %>
+      <%= label_tag :height, t("appointments.height") %>
       <%= text_field_tag :height %>
     </div>
     <div class="form-div small-div">
-      <%= label_tag :head_circumference %>
+      <%= label_tag :head_circumference, t("appointments.head_circumference") %>
       <%= text_field_tag :head_circumference %>
     </div>
     <div class="form-div">
-      <%= label_tag :purpose %>
+      <%= label_tag :purpose, t("appointments.purpose") %>
       <%= select_tag :purpose, options_for_select([[t('appointments.edit.choose_purpose'), "88888888"], [t('appointments.edit.at_birth'), 'at_birth'], [t('appointments.edit.six_weeks'), 'six_weeks'], [t('appointments.edit.ten_weeks'), 'ten_weeks'], [t('appointments.edit.fourteen_weeks'), 'fourteen_weeks'], [t('appointments.edit.six_months'), 'six_months'], [t('appointments.edit.nine_months'), 'nine_months'], [t('appointments.edit.one_year'), 'one_year']]), { class: 'sex chosen-select' } %>
     </div>
     <div class="form-div">
-      <%= label_tag :date %>
+      <%= label_tag :date, t("appointments.date") %>
       <%= text_field_tag :date, "", class: "datepicker" %>
     </div>
     <button type="submit" class="apt-button item-date-ribbon good-news">
-      <%= appointment.kept ? "CLICK TO MARK UNHONOURED" : "CLICK TO MARK HONOURED" %>
+      <%= appointment.kept ? t("appointments.unhonoured"): t("appointments.honoured")%>
     </button>
   <% end %>
 
   <p class="purpose">
     <%= fa_icon 'eraser' %>
-    <span><%= t('.purpose_for_tadays_appointment') %>:</span>
+    <span><%= t('appointments.todays_purpose') %>:</span>
     <span><%= t("appointments.edit." + appointment.purpose) %> </span>
   </p>
 
   <div class="cover-modal">
-    <p class="edit-apt"><%= fa_icon "pencil" %> EDIT</p>
+    <p class="edit-apt">
+    <%= fa_icon "pencil" %>
+    <%= t("appointments.editor") %></p>
   </div>
 </li>
 

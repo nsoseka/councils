@@ -1,0 +1,301 @@
+<h1><%= t("maternal_health.maternal_health") %></h1>
+<div class="purpose-bc analytics">
+  <div class="purpose-board ten-weeks">
+    <h2><%= t("maternal_health.average_labour_duration") %></h2>
+    <p class="number"><span class="analysis"><%= (@stats[:sum_labour_duration] / @stats[:total]).round(2) %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.in_minutes") %></p>
+    </div>
+  </div>
+
+  <div class="purpose-board one-year">
+    <h2><%= t("maternal_health.sutures") %></h2>
+    <p class="number"><span class="analysis"><%= (@stats[:sutures] / @stats[:total]).round(2) %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.average_number_of_sutures") %></p>
+    </div>
+  </div>
+
+  <div class="purpose-board one-year">
+    <h2><%= t("maternal_health.blood_loss") %></h2>
+    <p class="number"><span class="analysis"><%= (@stats[:blood_loss] / @stats[:total]).round(2) %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.average_blood_loss") %></p>
+    </div>
+  </div>
+  
+  <div class="purpose-board bcg">
+    <h2><%= t("maternal_health.pregnancies") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:teenage_pregnancy] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.teenage_pregnancies") %></p>
+    </div>
+
+    <p class="number"><span class="analysis"><%= @stats[:high_risk_pregnancy] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.high_risk_pregnancies") %></p>
+    </div>
+
+    <p class="number"><span class="analysis"><%= @stats[:total] - @stats[:high_risk_pregnancy] - @stats[:teenage_pregnancy] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.normal_pregnancies") %></p>
+    </div>
+
+    <% data = { t("maternal_health.teenage_pregnancies") => @stats[:teenage_pregnancy], t("maternal_health.high_risk_pregnancies") => @stats[:high_risk_pregnancy], t("maternal_health.normal_pregnancies") => @stats[:total] - @stats[:high_risk_pregnancy] - @stats[:teenage_pregnancy] } %>
+    <%= pie_chart data, donut: true, colors: ['#DD551A', '#AD7A99', '#3b99fc'] %>
+  </div>
+
+  <div class="purpose-board six-weeks">
+    <h2><%= t("maternal_health.birth_attendant") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:doctor] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.doctor") %></p>
+    </div>
+
+    <p class="number"><span class="analysis"><%= @stats[:midwife] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.midwife") %></p>
+    </div>
+
+    <p class="number"><span class="analysis"><%= @stats[:total] - @stats[:doctor] - @stats[:midwife] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.others") %></p>
+    </div>
+
+    <% data = { t("maternal_health.doctor") => @stats[:doctor], t("maternal_health.midwife") => @stats[:midwife], t("maternal_health.others") => @stats[:total] - @stats[:doctor] - @stats[:midwife] } %>
+    <%= pie_chart data, donut: true, colors: ['#3b99fc', '#E9C46A', '#8DD'] %>
+  </div>
+
+  <div class="purpose-board ten-weeks">
+    <h2><%= t("maternal_health.place_of_delivery") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:out_of_health_facility] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.not_health_facility") %></p>
+    </div>
+
+    <p class="number"><span class="analysis"><%= @stats[:total] - @stats[:out_of_health_facility] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.health_facility") %></p>
+    </div>
+
+    <% data = { t("maternal_health.health_facility") => @stats[:total] - @stats[:out_of_health_facility], t("maternal_health.not_health_facility") => @stats[:out_of_health_facility] } %>
+    <%= bar_chart data, donut: true, colors: ['#DAEE', '#8DD'] %>
+  </div>
+
+  <div class="purpose-board bcg">
+    <h2><%= t("maternal_health.episiotomy") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:episiotomy] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.episiotomy") %></p>
+    </div>
+
+    <p class="number"><span class="analysis"><%= @stats[:total] - @stats[:episiotomy] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.no_episiotomy") %></p>
+    </div>
+
+    <% data = { t("maternal_health.no_episiotomy") => @stats[:total] - @stats[:episiotomy], t("maternal_health.episiotomy") => @stats[:episiotomy] } %>
+    <%= pie_chart data, donut: true, colors: ['#DD551A', '#AD7A99'] %>
+  </div>
+
+  <div class="purpose-board bcg">
+    <h2><%= t("maternal_health.laceration") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:laceration] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.lacerations") %></p>
+    </div>
+    <p class="number"><span class="analysis"><%= @stats[:total] - @stats[:laceration] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.no_laceration") %></p>
+    </div>
+
+    <% data = { t("maternal_health.no_laceration") => @stats[:total] - @stats[:laceration], t("maternal_health.lacerations") => @stats[:laceration] } %>
+    <%= pie_chart data, donut: true, colors: ['#DD551A', '#AD7A99'] %>
+  </div>
+
+  <div class="purpose-board bcg">
+    <h2><%= t("maternal_health.uterus") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:atonic] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.atonic") %></p>
+    </div>
+
+    <p class="number"><span class="analysis"><%= @stats[:total] - @stats[:atonic] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.tonic") %></p>
+    </div>
+
+    <% data = { t("maternal_health.atonic") => @stats[:atonic], t("maternal_health.tonic") => @stats[:total] - @stats[:atonic] } %>
+    <%= pie_chart data, donut: true, colors: ['#DD551A', '#AD7A99'] %>
+  </div>
+
+  <div class="purpose-board bcg">
+    <h2><%= t("maternal_health.membranes") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:membranes] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.complete") %></p>
+    </div>
+
+    <p class="number"><span class="analysis"><%= @stats[:total] - @stats[:membranes] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.incomplete") %></p>
+    </div>
+
+    <% data = { t("maternal_health.complete") => @stats[:membranes], t("maternal_health.incomplete") => @stats[:total] - @stats[:membranes] } %>
+    <%= pie_chart data, donut: true, colors: ['#DD551A', '#AD7A99'] %>
+  </div>
+
+  <div class="purpose-board six-weeks">
+    <h2><%= t("maternal_health.placenta") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:placenta] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.complete") %></p>
+    </div>
+
+    <p class="number"><span class="analysis"><%= @stats[:total] - @stats[:placenta] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.incomplete") %></p>
+    </div>
+
+    <h2><%= t("maternal_health.placenta_separation") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:placenta] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.matthews_duncan") %></p>
+    </div>
+
+    <p class="number"><span class="analysis"><%= @stats[:total] - @stats[:matthews_duncan] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.schultze") %></p>
+    </div>
+
+    <% data = { t("maternal_health.complete") => @stats[:placenta], t("maternal_health.incomplete") => @stats[:total] - @stats[:placenta] } %>
+    <%= pie_chart data, donut: true, colors: ['#3b99fc', '#E9C46A'] %>
+  </div>
+
+  <div class="purpose-board bcg">
+    <h2><%= t("maternal_health.umblical_cord") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:cord] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.three_vessels") %></p>
+    </div>
+
+    <p class="number"><span class="analysis"><%= @stats[:total] - @stats[:cord] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.two_vessels") %></p>
+    </div>
+
+    <% data = { t("maternal_health.three_vessels") => @stats[:cord], t("maternal_health.two_vessels") => @stats[:total] - @stats[:cord] } %>
+    <%= pie_chart data, donut: true, colors: ['#DD551A', '#AD7A99'] %>
+  </div>
+
+  <div class="purpose-board bcg">
+    <h2><%= t("maternal_health.haemorrhage") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:haemorrhage] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.haemorrhage") %></p>
+    </div>
+
+    <p class="number"><span class="analysis"><%= @stats[:total] - @stats[:haemorrhage] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.mo_haemorrhage") %></p>
+    </div>
+
+    <% data = { t("maternal_health.complete") => @stats[:haemorrhage], t("maternal_health.incomplete") => @stats[:total] - @stats[:haemorrhage] } %>
+    <%= pie_chart data, donut: true, colors: ['#DD551A', '#AD7A99'] %>
+  </div>
+
+  <div class="purpose-board bcg">
+    <h2><%= t("maternal_health.mothers_condition") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:mothers_health] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.healthy") %></p>
+    </div>
+
+    <p class="number"><span class="analysis"><%= @stats[:total] - @stats[:mothers_health] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.unhealthy") %></p>
+    </div>
+
+    <% data = { t("maternal_health.healthy") => @stats[:mothers_health], t("maternal_health.unhealthy") => @stats[:total] - @stats[:mothers_health] } %>
+    <%= pie_chart data, donut: true, colors: ['#DD551A', '#AD7A99'] %>
+  </div>
+
+  <div class="purpose-board bcg">
+    <h2><%= t("maternal_health.post_partum") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:post_partum_complications] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.complications") %></p>
+    </div>
+
+    <p class="number"><span class="analysis"><%= @stats[:total] - @stats[:post_partum_complications] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.no_complications") %></p>
+    </div>
+
+    <% data = { t("maternal_health.complications") => @stats[:post_partum_complications], t("maternal_health.no_complications") => @stats[:total] - @stats[:post_partum_complications] } %>
+    <%= pie_chart data, donut: true, colors: ['#DD551A', '#AD7A99'] %>
+  </div>
+
+  <div class="purpose-board fourteen-weeks">
+    <h2><%= t("maternal_health.gestational_age") %></h2>
+    <p class="number"><%= t("maternal_health.average") %>: <span class="analysis"><%= (@stats[:sum_gestational_age] / @stats[:total]).round(2) %></span>
+    <p class="number"><span class="analysis"><%= @stats[:pre_mature] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.pre_term") %></p>
+    </div>
+    <p class="number"><span class="analysis"><%= @stats[:total] - @stats[:pre_mature] - @stats[:post_mature] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.full_term") %></p>
+    </div>
+    <p class="number"><span class="analysis"><%= @stats[:post_mature] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.post_term") %></p>
+    </div>
+
+    <% data = { t("maternal_health.pre_term") => @stats[:pre_mature], t("maternal_health.post_term") => @stats[:post_mature], t("maternal_health.full_term") => @stats[:total] - @stats[:pre_mature] - @stats[:post_mature] } %>
+    <%= pie_chart data, colors: ['#E9C46A', '#DDD399', '#345432'] %>
+  </div>
+
+  <div class="purpose-board fourteen-weeks">
+    <h2><%= t("maternal_health.type_of_delivery") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:normal_birth] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.normal_birth") %></p>
+    </div>
+    <p class="number"><span class="analysis"><%= @stats[:cs] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.caesarian_section") %></p>
+    </div>
+    <p class="number"><span class="analysis"><%= @stats[:breech] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.breech") %></p>
+    </div>
+    <p class="number"><span class="analysis"><%= @stats[:total] - @stats[:normal_birth] - @stats[:breech] - @stats[:cs] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.others") %></p>
+    </div>
+
+    <% data = { t("maternal_health.normal_birth") =>  @stats[:normal_birth], t("maternal_health.caesarian_section") => @stats[:cs], t("maternal_health.breech") => @stats[:breech], t("maternal_health.others") => @stats[:total] - @stats[:normal_birth] - @stats[:breech] - @stats[:cs] } %>
+    <%= pie_chart data, colors: ['#E9C46A', '#DDD399', '#345432'] %>
+  </div>
+
+  <div class="purpose-board one-year">
+    <h2><%= t("maternal_health.labour_on_set") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:induced] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.induced") %></p>
+    </div>
+    <p class="number"><span class="analysis"><%= @stats[:spontaneous] %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.spontaneous") %></p>
+    </div>
+    <p class="number"><span class="analysis"><%= @stats[:total] - @stats[:induced] - @stats[:spontaneous]  %></span>
+    <div class="purpose-time">
+      <p><%= t("maternal_health.augmented") %></p>
+    </div>
+
+    <% data = { t("maternal_health.induced") => @stats[:induced], t("maternal_health.spontaneous") => @stats[:spontaneous], t("maternal_health.augmented") => @stats[:total] - @stats[:induced] - @stats[:spontaneous] } %>
+    <%= pie_chart data %>
+  </div>
+</div>
+

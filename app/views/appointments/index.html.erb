@@ -1,4 +1,4 @@
-<h1>Appointments for 
+<h1><%= t("appointments.appointments_for") %> 
 <i class="new-appointment">
   <%= link_to new_born_path @new_born do  @new_born.c_name end %>
 </i>
@@ -9,10 +9,10 @@
   <table class="appointment">
   <thead>
     <tr>
-      <th>Purpose</th>
-      <th>Date</th>
-      <th>Status</th>
-      <th>Update Status</th>
+      <th><%= t("appointments.purpose") %></th>
+      <th><%= t("appointments.date") %></th>
+      <th><%= t("appointments.status") %></th>
+      <th><%= t("appointments.update_status") %></th>
     </tr>
   </thead>
   <tbody>
@@ -20,11 +20,11 @@
       <tr>
         <td><%= @set[appointment.purpose.to_sym] %></td>
         <td><%= formated_date appointment.date %></td>
-        <td><%= appointment.kept && appointment.date <= Date.today ? "appointment kept" : appointment.date < Date.today ? "appointment was missed" :
-        appointment.kept && appointment.date > Date.today ? "appointment cancelled" : "upcoming" %></td>
+        <td><%= appointment.kept && appointment.date <= Date.today ? t("appointments.kept") : appointment.date < Date.today ? t("appointments.missed") :
+        appointment.kept && appointment.date > Date.today ? t("appointments.cancelled") : t("appointments.upcoming") %></td>
         <td class="edit-appointment">
           <%= link_to edit_new_born_appointment_path(@new_born, appointment), class: "board-item cal" do %>
-            <%= fa_icon "pencil" %> <%= t('.edit_appointment') %>
+            <%= fa_icon "pencil" %> <%= t('appointments.edit_appointment') %>
           <% end %>
         </td>
       </tr>
@@ -37,7 +37,7 @@
 <div class="control">
   <p class="add-appointment">
     <%= link_to new_new_born_appointment_path(@new_born), class: "board-item cal" do %>
-      <%= fa_icon "calendar" %> <%= t('.add_new_appointment') %>
+      <%= fa_icon "calendar" %> <%= t('appointments.add_new_appointment') %>
     <% end %>
   </p>
 </div>

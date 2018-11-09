@@ -83,15 +83,15 @@
             <%= fa_icon 'calendar' %> <%= t('.upcoming_appointments') %>
           <% end %>
         </li>
-        <li class="<%= @menu == 'clinic-search' ? 'sub-menu-selected' : '' %>">
-          <%= link_to clinic_find_path do %>
-            <%= fa_icon 'search' %> <%= t('.search_stats') %>
+        <li class="<%= @menu == 'clinic-missed' ? 'sub-menu-selected' : '' %>">
+          <%= link_to missed_appointments_path do %>
+            <%= fa_icon 'calendar' %> <%= t('.missed_appointments') %>
           <% end %>
         </li>
       </ul>
     </div>
   </li>
-  <li class="menu-item <%= @tab == 'analysis' ? 'selected' : '' %>">
+  <li class="menu-item analysis <%= @tab == 'analysis' ? 'selected' : '' %>">
     <span class="item" href="/ui/statistics"><%= fa_icon 'bar-chart' %> <%= t('.analysis') %></span>
     <div class="sub-menu show">
       <ul>
@@ -106,13 +106,18 @@
           <% end %>
         </li>
         <li class="<%= @menu == 'death' ? 'sub-menu-selected' : '' %>">
-          <%= link_to death_analysis_path do %>
+          <%= link_to death_analysis_path(set: "all") do %>
             <%= fa_icon 'info' %> <%= t('.death') %>
           <% end %>
         </li>
         <li class="<%= @menu == 'appointments' ? 'sub-menu-selected' : '' %>">
           <%= link_to appointments_analysis_path do %>
             <%= fa_icon 'calendar' %> <%= t('.appointments') %>
+          <% end %>
+        </li>
+        <li class="forecast <%= @menu == 'forecast' ? 'sub-menu-selected' : '' %>">
+          <%= link_to forecast_path do %>
+            <%= fa_icon 'line-chart' %> <%= t('.forecasts') %>
           <% end %>
         </li>
       </ul>

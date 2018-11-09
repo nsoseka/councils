@@ -3,10 +3,10 @@ var state = aspect.next('li').find('i');
 var action = aspect.find('a');
 
 if (state.hasClass('fa-times')) {
-  action.html('Done deal <i class="fa fa-check"></i>');
+  action.html('<%= @done %> <i class="fa fa-check"></i>');
   state.removeClass('fa-times').addClass('fa-heart');
 } else {
-  action.html('Mark as done <i class="fa fa-star"></i>');
+  action.html('<%= @not_done %> <i class="fa fa-star"></i>');
   state.removeClass('fa-heart').addClass('fa-times');
 }
 

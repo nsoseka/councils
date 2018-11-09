@@ -114,6 +114,38 @@
       </ul>
     </div>
   </li>
+  <li class="menu-item analysis <%= @tab == 'analysis' ? 'selected' : '' %>">
+    <span class="item" href="/ui/statistics"><%= fa_icon 'bar-chart' %> <%= t('shared.hospital_header.analysis') %></span>
+    <div class="sub-menu show">
+      <ul>
+        <li class="<%= @menu == 'infant_health' ? 'sub-menu-selected' : '' %>">
+          <%= link_to infant_health_analysis_path do %>
+            <%= fa_icon 'child' %> <%= t('shared.hospital_header.infant_health') %>
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'maternal_health' ? 'sub-menu-selected' : '' %>">
+          <%= link_to maternal_health_analysis_path do %>
+            <%= fa_icon 'female' %> <%= t('shared.hospital_header.maternal_health') %>
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'death' ? 'sub-menu-selected' : '' %>">
+          <%= link_to death_analysis_path(set: "all") do %>
+            <%= fa_icon 'info' %> <%= t('shared.hospital_header.death') %>
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'appointments' ? 'sub-menu-selected' : '' %>">
+          <%= link_to appointments_analysis_path do %>
+            <%= fa_icon 'calendar' %> <%= t('shared.hospital_header.appointments') %>
+          <% end %>
+        </li>
+        <li class="forecast <%= @menu == 'forecast' ? 'sub-menu-selected' : '' %>">
+          <%= link_to forecast_path do %>
+            <%= fa_icon 'line-chart' %> <%= t('shared.hospital_header.forecasts') %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </li>
   <li class="menu-item <%= @tab == 'profile' ? 'selected' : '' %>">
     <span class="item">
     <%= fa_icon 'user' %> <%= t('.your_profile') %>

@@ -1,3 +1,144 @@
-<h1>Infant Health Analysis</h1>
-<p><%= @stats %></p>
+<h1><%= t("infant_health.infant_health") %></h1>
+<div class="purpose-bc analytics">
+  <div class="purpose-board bcg">
+    <h2><%= t("infant_health.agpar_score") %> 1 min</h2>
+    <p class="number"><span class="analysis"><%= t("infant_health.average") %> <%= @stats[:average_agpar_scor_1] %></span>
+    <div class="purpose-time">
+      <p><%= t("infant_health.at_birth") %></p>
+    </div>
 
+    <p class="number"><span class="analysis"><%= @stats[:agpar_scor_1_above] %></span>
+    <div class="purpose-time">
+      <p><%= t("infant_health.great_agpar_score") %> 1 min</p>
+    </div>
+
+    <p class="number"><span class="analysis"><%= @stats[:total] - @stats[:agpar_scor_1_above] %></span>
+    <div class="purpose-time">
+      <p><%= t("infant_health.below_good_agpar_score") %> 1 min</p>
+    </div>
+
+    <% data = { t("infant_health.good") => @stats[:agpar_scor_1_above], t("infant_health.bad") => @stats[:total] - @stats[:agpar_scor_1_above] } %>
+    <%= pie_chart data, donut: true, colors: ['#DD551A', '#AD7A99'] %>
+  </div>
+
+  <div class="purpose-board ten-weeks">
+    <h2><%= t("infant_health.growth_indicators") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:average_length] %></span>
+    <div class="purpose-time">
+      <p><%= t("infant_health.average_length") %></p>
+    </div>
+
+    <p class="number"><span class="analysis"><%= @stats[:average_weight] %></span>
+    <div class="purpose-time">
+      <p><%= t("infant_health.average_weight") %></p>
+    </div>
+
+    <p class="number"><span class="analysis"><%= @stats[:average_head_circumference] %></span>
+    <div class="purpose-time">
+      <p><%= t("infant_health.average_head_circumference") %></p>
+    </div>
+  </div>
+
+  <div class="purpose-board six-weeks">
+    <h2><%= t("infant_health.agpar_score") %> 5 min</h2>
+    <p class="number"><span class="analysis"><%= t("infant_health.average") %> <%= @stats[:average_agpar_scor_5] %></span>
+    <div class="purpose-time">
+      <p><%= t("infant_health.at_five") %> 5 min</p>
+    </div>
+
+    <p class="number"><span class="analysis"><%= @stats[:agpar_scor_5_above] %></span>
+    <div class="purpose-time">
+      <p><%= t("infant_health.great_agpar_score") %> 5 min</p>
+    </div>
+
+    <p class="number"><span class="analysis"><%= @stats[:total] - @stats[:agpar_scor_5_above] %></span>
+    <div class="purpose-time">
+      <p><%= t("infant_health.below_good_agpar_score") %> 5min</p>
+    </div>
+
+    <% data = { t("infant_health.good") => @stats[:agpar_scor_5_above], t("infant_health.bad") => @stats[:total] - @stats[:agpar_scor_5_above] } %>
+    <%= pie_chart data, donut: true, colors: ['#DD551A', '#AD7A99'] %>
+  </div>
+
+  <div class="purpose-board bcg">
+    <h2><%= t("infant_health.art") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:art] %></span>
+    <div class="purpose-time">
+      <p><%= t("infant_health.art") %></p>
+    </div>
+
+    <% data = { t("infant_health.art") => @stats[:art], t("infant_health.no_art") => @stats[:total] - @stats[:art] } %>
+    <%= pie_chart data, donut: true, colors: ['#DD551A', '#AD7A99'] %>
+  </div>
+
+  <div class="purpose-board six-weeks">
+    <h2><%= t("infant_health.fsb") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:fsb] %></span>
+    <div class="purpose-time">
+      <p><%= t("infant_health.fsb_e") %></p>
+    </div>
+
+    <% data = { failed: 25, passed: 75 } %>
+    <% data = { t("infant_health.fsb") => @stats[:fsb], t("infant_health.no_fsb") => @stats[:total] - @stats[:fsb] } %>
+    <%= pie_chart data, donut: true, colors: ['#3b99fc', '#E9C46A'] %>
+  </div>
+
+  <div class="purpose-board ten-weeks">
+    <h2><%= t("infant_health.msb") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:msb] %></span>
+    <div class="purpose-time">
+      <p><%= t("infant_health.msb_e") %></p>
+    </div>
+
+    <% data = { t("infant_health.msb") => @stats[:msb], t("infant_health.no_msb") => @stats[:total] - @stats[:msb] } %>
+    <%= pie_chart data, donut: true, colors: ['#DAEE', '#8DD'] %>
+  </div>
+
+  <div class="purpose-board fourteen-weeks">
+    <h2><%= t("infant_health.full_term") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:full_term] || 0 %></span>
+    <div class="purpose-time">
+      <p><%= t("infant_health.full_term") %></p>
+    </div>
+    <p class="number"><span class="analysis"><%= @stats[:pre_term] || 0 %></span>
+    <div class="purpose-time">
+      <p><%= t("infant_health.pre_term") %></p>
+    </div>
+    <p class="number"><span class="analysis"><%= @stats[:post_term] %></span>
+    <div class="purpose-time">
+      <p><%= t("infant_health.post_term") %></p>
+    </div>
+
+    <% data = { t("infant_health.full_term") => @stats[:full_term], t("infant_health.pre_term") => @stats[:pre_term], t("infant_health.post_term") => @stats[:post_term] } %>
+    <%= pie_chart data, colors: ['#E9C46A', '#DDD399', '#345432'] %>
+  </div>
+
+  <div class="purpose-board one-year">
+    <h2><%= t("infant_health.abnormalities") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:abnormalities] || 0 %></span>
+    <div class="purpose-time">
+      <p><%= t("infant_health.abnormalities_e") %></p>
+    </div>
+    <% data = { t("infant_health.abnormalities") => @stats[:abnormalities], t("infant_health.no_abnormalities") => @stats[:total] - @stats[:abnormalities] } %>
+    <%= pie_chart data, donut: true, colors: ['#1a0000', '#052A3A'] %>
+  </div>
+
+  <div class="purpose-board one-year">
+    <h2><%= t("infant_health.resuscitation") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:resuscitation_db] || 0 %></span>
+    <div class="purpose-time">
+      <p><%= t("infant_health.resuscitation_db") %></p>
+    </div>
+    <p class="number"><span class="analysis"><%= @stats[:resuscitation_dg] || 0 %></span>
+    <div class="purpose-time">
+      <p><%= t("infant_health.resuscitation_dg") %></p>
+    </div>
+    <p class="number"><span class="analysis"><%= @stats[:resuscitation_nd] || 0 %></span>
+    <div class="purpose-time">
+      <p><%= t("infant_health.resuscitation_nd") %></p>
+    </div>
+
+    <% data = { t("infant_health.resuscitation_nd") => @stats[:resuscitation_nd], t("infant_health.resuscitation_dg") => @stats[:resuscitation_dg], t("infant_health.resuscitation_db") => @stats[:resuscitation_db], } %>
+    <%= pie_chart data %>
+  </div>
+</div>

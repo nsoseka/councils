@@ -48,7 +48,7 @@
     <div class="control-board">
       <div class="cb-apps">
         <%= link_to new_born_appointments_path @new_born do %>
-          <%= fa_icon 'clock-o' %> Click here to add vaccination appointments for the new born
+          <%= fa_icon 'clock-o' %> <%= t('.add_appointments') %>
         <% end %>
       </div>
       <div class="cb-ch">
@@ -58,29 +58,33 @@
           <% end %>
         <% else %>
           <%= link_to new_new_born_infant_health_path(@new_born, @new_born.infant_health), class: "board-item c-health adder" do %>
-            <%= fa_icon "plus" %> Click here to add child health analysis
+            <%= fa_icon "plus" %> 
+            <%= t('.add_infant_health') %>
           <% end %>
         <% end %>
       </div>
       <div class="cb-mh">
         <% if @new_born.maternal_health %>
           <%= link_to new_born_maternal_health_path(@new_born, @new_born.maternal_health), class: "board-item m-health " do %>
-            <%= fa_icon "eye" %> <%= fa_icon "female" %> <%= t('.view_mothers_health') %>
+            <%= fa_icon "eye" %> <%= fa_icon "female" %> <%= t('.view_maternal_health') %>
           <% end %>
         <% else %>
           <%= link_to new_new_born_maternal_health_path(@new_born), class: "board-item m-health adder" do %>
-            <%= fa_icon "plus" %> Click here to add maternal health analysis
+            <%= fa_icon "plus" %>
+            <%= t('.add_maternal_health') %>
           <% end %>
         <% end %>
       </div>
       <div class="cb-vc">
         <%= link_to new_born_vaccination_calendar_path @new_born, @new_born.vaccination_calendar do %>
-          <%= fa_icon 'calendar' %> Click here see vaccination calendar
+          <%= fa_icon 'calendar' %>
+          <%= t('.view_calendar') %>
         <% end %>
       </div>
       <div class="cb-vc">
         <%= link_to clinic_sessions_new_born_path @new_born, @new_born do %>
-          <%= fa_icon 'doc' %> Click to view Clinic Sessions
+          <%= fa_icon "eye" %> 
+          <%= t('.view_clinic') %>
         <% end %>
       </div>
     </div>
@@ -89,25 +93,28 @@
     <div class="add-factors">
       <div class="adder-board">
         <div class="control-board">
-          <h1>The birth of <span class="c-name"><%= @new_born.c_name %></span> was registered ✅</h1>
+          <h1><span class="c-name"><%= @new_born.c_name %></span> <%= t(".registered") %></h1>
           <% if !@new_born.appointments %>
             <div class="cb-apps">
               <%= link_to new_born_appointments_path @new_born do %>
-                <%= fa_icon 'street-view' %> Click here to add vaccination appointments for the new born
+                <%= fa_icon 'street-view' %>
+                <%= t('.add_appointments') %>
               <% end %>
             </div>
           <% end %>
           <% if !@new_born.infant_health %>
             <div class="cb-ch">
               <%= link_to new_new_born_infant_health_path @new_born do %>
-                <%= fa_icon 'child' %> Click here to add child health analysis
+                <%= fa_icon 'child' %>
+                <%= t('.add_infant_health') %>
               <% end %>
             </div>
           <% end %>
           <% if !@new_born.maternal_health %>
             <div class="cb-mh">
               <%= link_to new_new_born_maternal_health_path @new_born do %>
-                <%= fa_icon 'female' %> Click here to add maternal health analysis
+                <%= fa_icon 'female' %> 
+                <%= t('.add_maternal_health') %>
               <% end %>
             </div>
           <% end %>

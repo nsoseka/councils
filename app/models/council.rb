@@ -7,6 +7,10 @@ class Council < ApplicationRecord
   has_many :marriages
   has_many :births
   has_many :hospitals
+  has_many :infant_healths, through: :hospitals
+  has_many :maternal_healths, through: :hospitals
+  has_many :appointments, through: :hospitals
+  has_many :cause_of_deaths, through: :hospitals
   # has_many :new_borns, through: :hospitals
   has_many :deceaseds
   has_many :new_borns

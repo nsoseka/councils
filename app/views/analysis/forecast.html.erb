@@ -1,0 +1,66 @@
+<h1><%= t("forecast.forecast") %></h1>
+<% if @error == "server_busy" %>
+  <h2 class="server-busy"><%= t("forecast.server_busy") %></h2>
+<% else %>
+<div class="purpose-bc analytics">
+  <% if current_hospital %>
+    <div class="purpose-board bcg">
+      <h2><%= t("forecast.blood_needed") %></h2>
+      <% if @blood_forecast.size == 0 %>
+        <p class="number">
+          <span class="analysis"><%= t("forecast.data_not_enough") %></span>
+        </p>
+        <div class="purpose-time">
+          <p><%= t("forecast.total_amount_needed") %></p>
+        </div>
+        <% else %>
+          <p class="number"><span class="analysis"><%= @blood_forecast.values.inject(0, :+) %> mls</span>
+        <div class="purpose-time">
+          <p><%= t("forecast.total_amount_needed") %></p>
+        </div>
+        <h3 class="highlight"><%= t("forecast.weeks_graph") %></h3>
+        <%= area_chart @blood_forecast %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="purpose-board bcg">
+    <h2><%= t("forecast.births") %></h2>
+    <% if @births_forecast.size == 0 %>
+      <p class="number">
+        <span class="analysis"><%= t("forecast.data_not_enough") %></span>
+      </p>
+      <div class="purpose-time">
+        <p><%= t("forecast.births_expected") %></p>
+      </div>
+    <% else %>
+      <p class="number"><span class="analysis"><%= @births_forecast.values.inject(0, :+) %></span>
+      <div class="purpose-time">
+        <p><%= t("forecast.births_expected") %></p>
+      </div>
+      <h3 class="highlight"><%= t("forecast.weeks_graph") %></h3>
+      <%= area_chart @births_forecast %>
+    <% end %>
+  </div>
+
+  <div class="purpose-board bcg">
+    <h2><%= t("forecast.deaths") %></h2>
+    <% if @deaths_forecast.size == 0 %>
+      <p class="number">
+        <span class="analysis"><%= t("forecast.data_not_enough") %></span>
+      </p>
+      <div class="purpose-time">
+        <p><%= t("forecast.deaths_expected") %></p>
+      </div>
+    <% else %>
+      <p class="number"><span class="analysis"><%= @deaths_forecast.values.inject(0, :+) %></span>
+      <div class="purpose-time">
+        <p><%= t("forecast.deaths_expected") %></p>
+      </div>
+      <h3 class="highlight"><%= t("forecast.weeks_graph") %></h3>
+      <%= area_chart @deaths_forecast %>
+    <% end %>
+  </div>
+</div>
+
+<% end %>
+

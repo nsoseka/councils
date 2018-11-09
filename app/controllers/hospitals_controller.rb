@@ -33,6 +33,19 @@ class HospitalsController < ApplicationController
     @hospital = current_hospital
   end
 
+  def update
+    @menu = 'edit-profile'
+    @hospital = Hospital.find(params[:id])
+
+    if @hospital.update(update_params)
+      flash[:notice] = I18n.translate "flash.updated"
+      redirect_to hospital_path
+    else
+      puts @hospital.errors.full_messages, "the messages wer here"
+      render "hospitals/edit"
+    end
+  end
+
   private
 
   def resolve_layout
@@ -46,6 +59,10 @@ class HospitalsController < ApplicationController
 
   def hospital_params
     params.require(:hospital).permit(:username, :name, :phone_number, :email, :password, :password_confirmation, :verified?, :email_verified?, :council_id)
+  end
+
+  def update_params
+    params.require(:hospital).permit(:username, :name, :phone_number, :email, :password, :password_confirmation)
   end
 
   def set_tab

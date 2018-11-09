@@ -8,9 +8,6 @@ class ClinicController < ApplicationController
     @pagy, @appointments = pagy Appointment.by_dates(Date.today, Date.today).includes(:new_born)
   end
 
-  # handle errors in sucker punch exceptionnotification gem with sucker punch and clear the hospitalreminder
-  # in the database
-
   def one_day_upcoming 
     @menu = "one-day"
     @period = params[:due_in]
@@ -23,6 +20,11 @@ class ClinicController < ApplicationController
     end
 
     puts @appointment_stats, "the stats are here"
+  end
+
+  def missed_appointments
+    @menu = "clinic-missed"
+    @pagy, @appointments = pagy Appointment.where(kept: false).where("date < ?", Date.today).includes(:new_born).order("date DESC")
   end
 
   def update_appointment
@@ -71,13 +73,6 @@ class ClinicController < ApplicationController
     end
   end
 
-  def find 
-    @menu = "clinic-search"
-  end
-
-  def search 
-  end
-
   private
    
   def set_tab
@@ -100,25 +95,3 @@ class ClinicController < ApplicationController
   end
 end
 
-
-  # <p class="remind"><a href="#">Send a reminder</a></p>
-  #   <p class="cancel">
-  #     <a href="#">Cancel and notify all</a>
-  #   </p>
-
-#   <ul class="items">
-  # <% if @appointments.empty? %>
-  #   <h3><%= t('.no_appointments') %></h3>
-  # <% else %>
-  #   <h1 class="reminder">
-  #     <%= link_to reminder_path(due_in: 'one_day'), remote: true, method: 'patch', data: { disable_with: "#{t('sweet_alert.sending_reminders')}", disable: true } do %>
-  #       Send a reminder to all
-  #     <% end %>
-  #   </h1>
-
-  #   <%== pagy_nav(@pagy) %>
-  #   <% @appointments.each do |appointment|%>
-  #     <%= render 'upcoming_appointment', { appointment: appointment, new_born: appointment.new_born } %>
-  #   <% end %>
-#   <% end %>
-# </ul>

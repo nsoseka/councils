@@ -75,12 +75,20 @@ gem 'unobtrusive_flash', '>=3'
 gem 'figaro'
 gem 'chartkick'
 gem 'groupdate'
-gem 'trend'
+gem 'trend', '~> 0.1.1'
 gem 'descriptive_statistics', '~> 2.4.0', :require => 'descriptive_statistics/safe'
 # gem 'webpacker'
 # gem 'fast_jsonapi'
+# gem "ruby2js"
 gem 'ransack'
 gem 'pagy'
+gem 'hightop'
 #gem 'peek'
 gem 'rack-contrib'
 gem "font-awesome-rails"
+
+# analyse data 
+# gem "daru"
+
+#administrators
+gem "administrate"

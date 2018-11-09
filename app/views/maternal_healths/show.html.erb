@@ -1,4 +1,4 @@
-<h1><%= t('.' + @new_born.sex) %>: 
+<h1><%= t('maternal_healths.' + @new_born.sex) %>: 
   <i>
     <%= link_to new_born_path @new_born do %>
       <%= @new_born.c_name %>
@@ -7,79 +7,79 @@
 </h1>
 <div class="mother-health">
   <p>
-    <span class="factor gray"><%= t('.birth_attendant') %></span>
+    <span class="factor gray"><%= t('maternal_healths.birth_attendant') %></span>
     <span><%= t('maternal_healths.' + @maternal_health.birth_attendant) %></span>
   </p>
   <p>
-    <span class="factor gray"><%= t('.place_of_delivery') %></span>
+    <span class="factor gray"><%= t('maternal_healths.place_of_delivery') %></span>
     <span><%= t('maternal_healths.' + @maternal_health.place_of_delivery) %></span>
   </p>
   <p>
-    <span class="factor gray"><%= t('.gestational_age') %></span>
+    <span class="factor gray"><%= t('maternal_healths.gestational_age') %></span>
     <span><%= @maternal_health.gestational_age %></span>
   </p>
   <p>
-    <span class="factor slategray"><%= t('.duration_of_labour') %></span>
+    <span class="factor slategray"><%= t('maternal_healths.duration_of_labour') %></span>
     <span><%=  @maternal_health.duration_of_labour %></span>
   </p>
   <p>
-    <span class="factor slategray"><%= t('.labour_on_set') %></span>
+    <span class="factor slategray"><%= t('maternal_healths.labour_on_set') %></span>
     <span><%= t('maternal_healths.' + @maternal_health.labour_on_set) %></span>
   </p>
   <p>
-    <span class="factor slategray small"><%= t('.type_of_delivery') %></span>
+    <span class="factor slategray small"><%= t('maternal_healths.type_of_delivery') %></span>
     <span><%= t('maternal_healths.' + @maternal_health.type_of_delivery) %></span>
   </p>
   <p>
     <span class="factor darkslategray"><%= t('maternal_healths.placenta_separation') %></span>
-    <span><%= @maternal_health.placenta_separation %></span>
+    <span><%= t('maternal_healths.' + @maternal_health.placenta_separation) %></span>
   </p>
   <p>
     <span class="factor darkslategray"><%= t('maternal_healths.placenta') %></span>
-    <span><%= @maternal_health.placenta %></span>
+    <span><%= t('maternal_healths.' +  @maternal_health.placenta) %></span>
   </p>
   <p>
     <span class="factor darkslategray"><%= t('maternal_healths.membranes') %></span>
-    <span><%= @maternal_health.membranes %></span>
+    <span><%= t('maternal_healths.' + @maternal_health.membranes) %></span>
   </p>
   <p>
     <span class="factor darkgray"><%= t('maternal_healths.nature_of_cord') %></span>
-    <span><%= @maternal_health.nature_of_cord %></span>
+    <span><%= t('maternal_healths.' + @maternal_health.nature_of_cord) %></span>
   </p>
   <p>
     <span class="factor darkgray"><%= t('maternal_healths.vessels') %></span>
-    <span><%= @maternal_health.vessels %></span>
+    <span><%= t('maternal_healths.' + @maternal_health.vessels.to_s) %></span>
   </p>
   <p>
-    <span class="factor darkgray"><%= t('.blood_loss') %></span>
+    <span class="factor darkgray"><%= t('maternal_healths.blood_loss') %></span>
     <span><%= @maternal_health.blood_loss %></span>
   </p>
   <p>
-    <span class="factor dimgray"><%= t('.source_of_pph') %></span>
+    <span class="factor dimgray"><%= t('maternal_healths.source_of_pph') %></span>
     <span><%= t('maternal_healths.' + @maternal_health.source_of_pph) %></span>
   </p>
   <p>
-    <span class="factor dimgray"><%= t('.episiotomy') %></span>
-    <span><%= t('maternal_healths.' + @maternal_health.episiotomy) %></span>
+    <span class="factor dimgray"><%= t('maternal_healths.episiotomy') %></span>
+    <span><%= t('maternal_healths.' + @maternal_health.episiotomy + 't') %></span>
   </p>
   <p>
-    <span class="factor dimgray"><%= t('.laceration') %></span>
+    <span class="factor dimgray"><%= t('maternal_healths.laceration') %></span>
     <span><%= t('maternal_healths.' + @maternal_health.laceration) %></span>
   </p>
   <p>
-    <span class="factor lightslategray"><%= t('.sutures') %></span>
+    <span class="factor lightslategray"><%= t('maternal_healths.sutures') %></span>
     <span><%= @maternal_health.sutures %></span>
   </p>
   <p>
-    <span class="factor lightslategray"><%= t('.uterus') %></span>
+    <span class="factor lightslategray"><%= t('maternal_healths.uterus') %></span>
     <span><%= t('maternal_healths.' + @maternal_health.uterus) %></span>
   </p>
   <p>
-    <span class="factor lightslategray"><%= t('.mothers_condition') %></span>
+    <span class="factor lightslategray"><%= t('maternal_healths.mothers_condition') %></span>
     <span><%= t('maternal_healths.' + @maternal_health.mothers_condition) %></span>
   </p>
   <p>
-    <span class="factor lightslategray"><%= t('.post_partum_complications') %></span>
+    <span class="factor lightslategray"><%= t('maternal_healths.post_partum_complications') %></span>
     <span><%= t('maternal_healths.' + @maternal_health.post_partum_complications) %></span>
   </p>
 </div>

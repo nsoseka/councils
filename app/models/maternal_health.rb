@@ -2,6 +2,7 @@ class MaternalHealth < ApplicationRecord
   CHOICE_FACTOR  = '88888888'
   belongs_to :new_born
   belongs_to :hospital
+  has_one :council, through: :hospital
 
   NON_VALIDATABLE_ATTRS = ["id", "created_at", "updated_at"] 
   VALIDATABLE_ATTRS = MaternalHealth.attribute_names.reject{ |attr| NON_VALIDATABLE_ATTRS.include?(attr) }

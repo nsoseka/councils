@@ -17,6 +17,10 @@ document.addEventListener("turbolinks:load", function () {
 		$(this).closest('li').addClass('sub-menu-selected')
 		$(this).find('.loader').show();
 		console.log($(e).siblings('.loader').length, 'in here');
+
+		if ($(this).closest('li.menu-item').hasClass('analysis')) {
+			swal('Loading...', '', 'info');
+		};
 	});
 
 	$('form.blog-p').unbind('submit').on('submit', function(e) {

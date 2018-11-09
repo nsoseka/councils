@@ -1,5 +1,5 @@
 class MaternalHealthsController < ApplicationController 
-  before_action :require_hospital, :set_tab, except: [:show]
+  before_action :require_hospital, :set_tab
   # before_action :require_agent_or_hospital, :council_handler, only: [:show]
 
   layout :resolve_layout
@@ -15,6 +15,7 @@ class MaternalHealthsController < ApplicationController
   def create 
     @new_born = NewBorn.find(params[:new_born_id])
     @maternal_health = MaternalHealth.new(maternal_health_params)
+    @maternal_health.age = @new_born.c_db.year - @new_born.m_db.year
 
     if @new_born.maternal_health
       flash[:notice] = I18n.translate "flash.already_registered" 

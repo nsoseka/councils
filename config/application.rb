@@ -22,6 +22,7 @@ module Councils
 
     # background jobs with sucker punch
     config.active_job.queue_adapter = :sucker_punch
+    Trend.api_key = ENV["TREND_API_KEY"]
 
     # translation files 
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
