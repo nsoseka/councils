@@ -58,7 +58,7 @@ class SessionsController < ApplicationController
     session[:agent_id] = nil
     session[:hospital_id] = nil
     session[:watcher_id] = nil
-    puts session[:watcher_id], "boss"
+    # puts session[:watcher_id], "boss"
     redirect_to root_path, notice: "#{I18n.translate('flash.logout')}"
   end
 end

@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   def front 
     locale = params[:locale]
 
-    puts locale, locale.nil?, "what says"
+    # puts locale, locale.nil?, "what says"
 
     if !locale.nil?
       I18n.locale = :fr if locale == "fr"

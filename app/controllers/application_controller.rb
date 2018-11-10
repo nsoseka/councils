@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_admin 
-    Watcher.find(session[:agent_id]) if session[:watcher_id]
+    Watcher.find(session[:watcher_id]) if session[:watcher_id]
   end
 
   def current_agent
