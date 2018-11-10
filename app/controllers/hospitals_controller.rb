@@ -19,10 +19,9 @@ class HospitalsController < ApplicationController
   def create
     @hospital = Hospital.new(hospital_params)
 
-    if @hospital.save
+    if verify_recaptcha(model: @hospital) && @hospital.save
       flash[:notice] = I18n.translate "flash.account_created"
       redirect_to sign_in_path
-      
     else
       render "hospitals/new"
     end

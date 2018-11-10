@@ -15,7 +15,9 @@
     <main class="main">
       <header class="header blog">
         <h1>
-          <a href="/"><%= fa_icon "arrow-left" %> 237councils</a>
+          <%= link_to root_path do %>
+            <%= fa_icon "arrow-left" %> 237councils
+          <% end %>
         </h1>
         <nav>
           <%= render "shared/blog_header" %>

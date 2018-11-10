@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_09_145008) do
+ActiveRecord::Schema.define(version: 2018_11_09_213322) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 2018_11_09_145008) do
     t.text "email"
     t.text "password_digest"
     t.text "password_confirmation"
-    t.boolean "verified?", default: false
-    t.boolean "email_verified?", default: false
+    t.boolean "verified", default: false
+    t.boolean "email_verified", default: false
     t.integer "council_id"
     t.text "code"
     t.datetime "created_at", null: false
@@ -213,8 +213,8 @@ ActiveRecord::Schema.define(version: 2018_11_09_145008) do
     t.text "password_reset"
     t.text "password_digest"
     t.date "password_reset_date"
-    t.boolean "verified?", default: false
-    t.boolean "email_verified?", default: false
+    t.boolean "verified", default: false
+    t.boolean "email_verified", default: false
     t.integer "council_id"
     t.text "code"
     t.datetime "created_at", null: false
@@ -361,6 +361,19 @@ ActiveRecord::Schema.define(version: 2018_11_09_145008) do
     t.date "nine_months_d"
     t.date "one_year_d"
     t.date "recent_appointment_d"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "watchers", force: :cascade do |t|
+    t.string "name"
+    t.string "phone_number"
+    t.string "password"
+    t.string "password_digest"
+    t.string "password_confirmation"
+    t.string "email"
+    t.string "role", default: "watcher"
+    t.string "sector", default: "company"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -15,13 +15,13 @@ class Hospital < ApplicationRecord
 
   # has_many :deaths
 
-  NON_VALIDATABLE_ATTRS = ["id", "created_at", "updated_at", "verified?", "email_verified?", "password_reset", "password_reset_date", "code"] #or any other attribute that does not need validation
+  NON_VALIDATABLE_ATTRS = ["id", "created_at", "updated_at", "verified", "email_verified", "password_reset", "password_reset_date", "code"] #or any other attribute that does not need validation
   VALIDATABLE_ATTRS = Hospital.attribute_names.reject{ |attr| NON_VALIDATABLE_ATTRS.include?(attr) }
   validates_presence_of VALIDATABLE_ATTRS
 
   validates_uniqueness_of :phone_number, :email, :username
   validates :phone_number, numericality: { only_integer: true }, length: { is: 9 }
-  validates :password, length: { minimum: 8 }
+  validates :password, length: { minimum: 8 }, on: :create
 
   validate :council_choice, :name_given?, :strict_unique_username
   # validates :email, format: { with: URI::MailTo::EMAIL_REGEXP } 

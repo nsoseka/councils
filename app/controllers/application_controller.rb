@@ -4,13 +4,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   after_action :prepare_unobtrusive_flash
   before_action :set_locale
-   
+  
   def set_locale
     #logger.debug "* Accept-Language: #{request.env['HTTP_ACCEPT_LANGUAGE']}"
-    puts I18n.locale, 'the one i set myself'
-    session[:language] = params[:locale] ? params[:locale] : session[:language]
-    I18n.locale =  session[:language] ? session[:language] : I18n.locale || I18n.default_locale
-    I18n.locale = :fr
+    # puts I18n.locale, 'the one i set myself'
+    # session[:language] = params[:locale] ? params[:locale] : session[:language]
+    # I18n.locale =  session[:language] ? session[:language] : I18n.locale ||I18n.default_locale
+    I18n.locale = params[:locale] ||I18n.locale || I18n.default_locale
+    # I18n.locale = :en
   end
 
   def require_agent
@@ -18,11 +19,19 @@ class ApplicationController < ActionController::Base
   end
 
   def require_agent_or_hospital
-    redirect_to sign_in_path unless current_agent || current_hospital
+    redirect_to sign_in_path unless current_agent || current_hospital || current_admin
   end
 
   def require_hospital
     redirect_to sign_in_path unless current_hospital
+  end
+
+  def require_admin 
+    redirect_to sign_in_path unless current_admin
+  end
+
+  def current_admin 
+    Watcher.find(session[:agent_id]) if session[:watcher_id]
   end
 
   def current_agent
@@ -52,6 +61,10 @@ class ApplicationController < ActionController::Base
     reference[doc.to_sym]
   end
 
+  def default_url_options
+    { locale: I18n.locale }
+  end
+
   helper_method :current_agent, :formated_date, :formated_rf_doc, :current_hospital
 end
 
@@ -66,3 +79,18 @@ end
 # set up stats to show cause distributions
 # add disability cases
 #infant health, #delivery and mother, #health calendar
+
+# @hospital = Hospital.find(params[:id])
+
+#       if @hospital.update_attribute(:verified, update_params[:verified])
+#         flash[:notice] = I18n.translate "flash.updated"
+#         redirect_to(
+#           [namespace, requested_resource],
+#           notice: translate_with_resource("update.success"),
+#         )
+#       else
+#         puts @hospital.errors.full_messages, "the messages wer here"
+#         render :edit, locals: {
+#           page: Administrate::Page::Form.new(dashboard, requested_resource),
+#         }
+#       end

@@ -21,13 +21,10 @@ class AgentsController < ApplicationController
     @agent = Agent.new(agent_params)
     @council = Council.find_by(id: council_finder[:council_id], code: council_finder[:code])
 
-    puts council_finder,'real potators'
-
     if @council.nil?
       flash[:notice] = I18n.translate "flash.council_buy"
       render "agents/new"
-
-    elsif @agent.save
+    elsif verify_recaptcha(model: @agent) && @agent.save
       flash[:notice] = I18n.translate "flash.account_created"
       redirect_to sign_in_path
     else
@@ -87,7 +84,4 @@ end
 # else
 #   render "agents/new"
 # end
-# <%= f.label :base, 'Solve the reCAPTCHA below' %>
-# <div class="captcha-container">
-#   <%= recaptcha_tags %>
-# </div>
+

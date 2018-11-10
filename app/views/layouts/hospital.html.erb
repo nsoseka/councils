@@ -15,7 +15,9 @@
     <main class="main">
       <header class="header">
         <h1>
-          <a href="/"><%= t('.hospital_name', h_name: current_hospital.name.upcase) %></a>
+          <%= link_to root_path do %>
+            <%= t('.hospital_name', h_name: current_hospital.name.upcase) %>
+          <% end %>
         </h1>
         <nav>
           <%= render "shared/hospital_header" %>

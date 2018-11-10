@@ -10,9 +10,12 @@ en:
     wrong_credentials: "Wrong username or password ✘"
     account_created: "Account was successfully created, once verified you will be able to access the platform ✅"
     certificate_added: "The certificate was added successfully ✅"
+    not_verified: "your account has not yet been verified by our agents"
     registered: "Successfully registered ✅"
     already_registered: "it was already registered"
     updated: "Account updated successfully ✅"
+    captcha: "Solve the reCAPTCHA below"
+    solve_captcha: "solve the reCAPTCHA"
   sweet_alert: 
     indicate_values: "Indicate purpose and date for next appointment"
     sending_reminders: "Sending reminders..."
