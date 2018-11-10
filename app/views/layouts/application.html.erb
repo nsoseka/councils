@@ -15,7 +15,9 @@
     <main class="main">
       <header class="header">
         <h1>
-          <a href="/"><%= t('.council_name', c_name: current_agent.council.name.upcase ) %></a>
+          <%= link_to root_path do %>
+            <%= t('.council_name', c_name: current_agent.council.name.upcase ) %>
+          <% end %>
         </h1>
         <nav>
           <%= render "shared/header" %>

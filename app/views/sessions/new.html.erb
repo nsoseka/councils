@@ -10,7 +10,12 @@
       <%= text_field_tag :username %>
       <%= label_tag :password, t('.password') %>
       <%= password_field_tag :password %>
-
+      <%= check_box_tag(:watcher, value = "1", checked = false, options = {class: "watcher-check"}) %>
+      <%= label_tag :watcher, t('.watcher'), class: "watcher" %>
+      <%= label_tag :base, t("flash.captcha") %>
+      <div class="captcha-container">
+        <%= recaptcha_tags %>
+      </div>
       <div class="submitter">
         <button type="submit"><%= t('.login') %></button>
       </div>

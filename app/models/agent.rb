@@ -10,7 +10,7 @@ class Agent < ApplicationRecord
   # delegate :name, to: :sub_division, prefix: true, allow_nil: true
   # has_many :deaths
 
-  NON_VALIDATABLE_ATTRS = ["id", "created_at", "updated_at", "verified?", "email_verified?"] #or any other attribute that does not need validation
+  NON_VALIDATABLE_ATTRS = ["id", "created_at", "updated_at", "verified", "email_verified"] #or any other attribute that does not need validation
   VALIDATABLE_ATTRS = Agent.attribute_names.reject{ |attr| NON_VALIDATABLE_ATTRS.include?(attr) }
   validates_presence_of VALIDATABLE_ATTRS
 
@@ -18,10 +18,16 @@ class Agent < ApplicationRecord
   validates :phone_number, numericality: { only_integer: true }, length: { is: 9 }
   validates :password, length: { minimum: 8 }
 
-  validate :council_choice, :full_names_given?
+  validate :strict_unique_username,:council_choice, :full_names_given?
   # validates :email, format: { with: URI::MailTo::EMAIL_REGEXP } 
 
   has_secure_password
+
+  def strict_unique_username
+    if username.present? && Hospital.find_by(username: username)
+      errors.add(:username, :username_taken)
+    end
+  end
 
   def council_choice
     if council_id.present? && council_id == 88888888

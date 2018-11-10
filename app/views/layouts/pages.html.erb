@@ -15,7 +15,9 @@
     <main class="main pages">
       <header class="pages-header">
         <h1>
-          <a href="/">237councils</a>
+          <%= link_to root_path do %>
+            237councils
+          <% end %>
         </h1>
         <nav>
           <ul>
@@ -45,6 +47,19 @@
                 <span class="new"><%= t('.new') %></span>
               <% end %>
             </li>
+            <% if I18n.locale == :en %>
+              <li class="blog-container">
+                <%= link_to root_path(locale: "fr"), class: "blog" do %>
+                  FR 
+                <% end %>
+              </li>
+            <% else %>
+              <li class="blog-container">
+                <%= link_to root_path(locale: "en"), class: "blog" do %>
+                  EN 
+                <% end %>
+              </li>
+            <% end %>
           </ul>
         </nav>
       </header>

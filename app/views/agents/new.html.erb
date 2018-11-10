@@ -23,6 +23,10 @@
       <%= f.password_field :password_confirmation %>
       <%= f.label :code, t('.council_code') %>
       <%= f.text_field :code %>
+      <%= f.label :base, t("flash.captcha") %>
+      <div class="captcha-container">
+        <%= recaptcha_tags %>
+      </div>
       <div class="submitter">
         <button type="submit"><%= t('.create_account') %></button>
       </div>

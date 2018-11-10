@@ -10,9 +10,12 @@ fr:
     wrong_credentials: "Nom d'utilisateur ou mot de passe incorrect ✘"
     account_created: "Compte a été créé avec succès, une fois vérifié, vous pourrez accéder à la plate-forme ✅"
     certificate_added: "Le certificat a été ajouté avec succès ✅"
+    not_verified: "votre compte n'a pas encore été vérifié par nos agents"
     registered: "Enregistré avec succès ✅"
     already_registered: "c'était déjà enregistré"
     updated: "Compte mis à jour avec succès ✅"
+    captcha: "Résoudre le reCAPTCHA ci-dessous"
+    solve_captcha: "Résoudre le reCAPTCHA"
   sweet_alert: 
     indicate_values: "indiquer le motif et la date du prochain rendez-vous"
     sending_reminders: "Envoi de rappels ..."

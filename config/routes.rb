@@ -1,4 +1,26 @@
 Rails.application.routes.draw do
+  namespace :admin do
+      resources :administrative_regions
+      resources :agents
+      resources :appointments
+      resources :births
+      resources :cause_of_deaths
+      resources :councils
+      resources :deaths
+      resources :deceaseds
+      resources :divisions
+      resources :hospitals
+      resources :hospital_reminders
+      resources :infant_healths
+      resources :marriages
+      resources :maternal_healths
+      resources :new_borns
+      resources :sub_divisions
+      resources :vaccination_calendars
+      resources :watchers
+
+      root to: "administrative_regions#index"
+    end
   default_url_options :host => "http://localhost:3000"
 
   root "pages#front"
