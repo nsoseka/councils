@@ -10,7 +10,7 @@ module Admin
 
     def authenticate_admin
       # TODO Add authentication logic here.
-      # require_admin
+      require_admin
     end
 
     def require_admin
