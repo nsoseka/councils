@@ -22,13 +22,13 @@ class AnalysisController < ApplicationController
       end
     end
 
+    @stats[:total] = @stats[:total] == 0 ? 1 : @stats[:total]
     @stats[:average_agpar_scor_1] = (@stats[:sum_agpar_1] / @stats[:total]) 
     @stats[:average_agpar_scor_5] = (@stats[:sum_agpar_5] / @stats[:total])
     @stats[:average_length] = (@stats[:sum_length] / @stats[:total])
     @stats[:average_weight] = (@stats[:sum_weight] / @stats[:total])
     @stats[:average_head_circumference] = (@stats[:sum_head_circumference] / @stats[:total])
     @stats[:total] = @stats[:total] == 0 ? 1 : @stats[:total]
-    puts @stats[:sum_agpar_1], @stats[:total]
   end
 
   def maternal_health

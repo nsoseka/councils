@@ -94,3 +94,5 @@ end
 #           page: Administrate::Page::Form.new(dashboard, requested_resource),
 #         }
 #       end
+
+# MSB: Macerated still births, FSB: Fresh still births, END: Early neonatal deaths.
