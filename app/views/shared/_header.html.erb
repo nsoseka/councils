@@ -143,6 +143,16 @@
             <%= fa_icon 'line-chart' %> <%= t('shared.hospital_header.forecasts') %>
           <% end %>
         </li>
+        <li class="<%= @menu == 'defects' ? 'sub-menu-selected' : '' %>">
+          <%= link_to birth_defects_path do %>
+            <%= fa_icon 'wheelchair' %> <%= t('shared.hospital_header.birth_defects') %>
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'causes-of-death' ? 'sub-menu-selected' : '' %>">
+          <%= link_to causes_of_death_path do %>
+            &#x271d; <%= t('shared.hospital_header.causes_of_deaths') %> 
+          <% end %>
+        </li>
       </ul>
     </div>
   </li>

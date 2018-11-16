@@ -121,6 +121,8 @@ Rails.application.routes.draw do
     get :death_analysis, to: "analysis#death"
     get :appointments_analysis, to: "analysis#appointments"
     get :forecast, to: "analysis#forecast"
+    get :birth_defects, to: "analysis#birth_defects"
+    get :causes_of_death, to: "analysis#causes_of_death"
   end
 
   scope :blog do

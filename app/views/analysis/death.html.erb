@@ -22,10 +22,22 @@
 </header>
 <div class="purpose-bc analytics">
   <div class="purpose-board bcg">
+    <h2><%= t("death.neonatal") %></h2>
+    <p class="number"><span class="analysis"><%= @stats[:neonatal] %></span>
+    <div class="purpose-time">
+      <p><%= t("death.number") %></p>
+    </div>
+
+    <div class="purpose-time">
+      <p><%= t("death.neonatal_days") %></p>
+    </div>
+  </div>
+
+  <div class="purpose-board bcg">
     <h2><%= t("death.infant_deaths") %></h2>
     <p class="number"><span class="analysis"><%= @stats[:infant_deaths] %></span>
     <div class="purpose-time">
-      <p><%= t("death.number_of_infants") %></p>
+      <p><%= t("death.number") %></p>
     </div>
 
     <div class="purpose-time">
@@ -37,7 +49,7 @@
     <h2><%= t("death.under_five") %></h2>
     <p class="number"><span class="analysis"><%= @stats[:under_five_deaths] %></span>
     <div class="purpose-time">
-      <p><%= t("death.number_of_infants") %></p>
+      <p><%= t("death.number") %></p>
     </div>
 
     <div class="purpose-time">
@@ -49,7 +61,7 @@
     <h2><%= t("death.children") %></h2>
     <p class="number"><span class="analysis"><%= @stats[:children] %></span>
     <div class="purpose-time">
-      <p><%= t("death.number_of_infants") %></p>
+      <p><%= t("death.number") %></p>
     </div>
 
     <div class="purpose-time">
@@ -61,7 +73,7 @@
     <h2><%= t("death.teenagers") %></h2>
     <p class="number"><span class="analysis"><%= @stats[:teenage_deaths] %></span>
     <div class="purpose-time">
-      <p><%= t("death.number_of_infants") %></p>
+      <p><%= t("death.number") %></p>
     </div>
 
     <div class="purpose-time">
@@ -73,7 +85,7 @@
     <h2><%= t("death.early_adults") %></h2>
     <p class="number"><span class="analysis"><%= @stats[:early_adult_deaths] %></span>
     <div class="purpose-time">
-      <p><%= t("death.number_of_infants") %></p>
+      <p><%= t("death.number") %></p>
     </div>
 
     <div class="purpose-time">
@@ -85,7 +97,7 @@
     <h2><%= t("death.middle_adults") %></h2>
     <p class="number"><span class="analysis"><%= @stats[:middle_adult_deaths] %></span>
     <div class="purpose-time">
-      <p><%= t("death.number_of_infants") %></p>
+      <p><%= t("death.number") %></p>
     </div>
 
     <div class="purpose-time">
@@ -97,7 +109,7 @@
     <h2><%= t("death.later_adults") %></h2>
     <p class="number"><span class="analysis"><%= @stats[:later_adults_deaths] %></span>
     <div class="purpose-time">
-      <p><%= t("death.number_of_infants") %></p>
+      <p><%= t("death.number") %></p>
     </div>
 
     <div class="purpose-time">
@@ -109,7 +121,7 @@
     <h2><%= t("death.old_adults") %></h2>
     <p class="number"><span class="analysis"><%= @stats[:old_adults] %></span>
     <div class="purpose-time">
-      <p><%= t("death.number_of_infants") %></p>
+      <p><%= t("death.number") %></p>
     </div>
 
     <div class="purpose-time">

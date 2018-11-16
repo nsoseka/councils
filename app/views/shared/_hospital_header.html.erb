@@ -107,7 +107,7 @@
         </li>
         <li class="<%= @menu == 'death' ? 'sub-menu-selected' : '' %>">
           <%= link_to death_analysis_path(set: "all") do %>
-            <%= fa_icon 'info' %> <%= t('.death') %>
+            &#9760; <%= t('.death') %>
           <% end %>
         </li>
         <li class="<%= @menu == 'appointments' ? 'sub-menu-selected' : '' %>">
@@ -118,6 +118,16 @@
         <li class="forecast <%= @menu == 'forecast' ? 'sub-menu-selected' : '' %>">
           <%= link_to forecast_path do %>
             <%= fa_icon 'line-chart' %> <%= t('.forecasts') %>
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'defects' ? 'sub-menu-selected' : '' %>">
+          <%= link_to birth_defects_path do %>
+            <%= fa_icon 'wheelchair' %> <%= t('.birth_defects') %>
+          <% end %>
+        </li>
+        <li class="<%= @menu == 'causes-of-death' ? 'sub-menu-selected' : '' %>">
+          <%= link_to causes_of_death_path do %>
+            &#x271d; <%= t('.causes_of_deaths') %> 
           <% end %>
         </li>
       </ul>

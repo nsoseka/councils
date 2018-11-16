@@ -57,6 +57,7 @@ class AnalysisController < ApplicationController
     @chosen = params[:set]
     @menu = 'death'
     @stats = {
+      neonatal: 0,
       infant_deaths: 0, # 0 - 2
       under_five_deaths: 0, # 0 - 5
       children: 0, # 5 - 12
@@ -109,19 +110,19 @@ class AnalysisController < ApplicationController
   end
 
   def forecast
+    # puts current_hospital.maternal_healths.order("DATE(created_at)").group("DATE(created_at)").sum(:blood_loss)
     @menu = "forecast"
     @blood = {}
     if current_hospital
       @deaths = current_hospital.deceaseds.group_by_day(:created_at, range: 30.days.ago..1.day.ago).count
       @births = current_hospital.new_borns.group_by_day(:created_at, range: 30.days.ago..1.day.ago).count
-      # .strftime "%d %b %Y"
-      current_hospital.maternal_healths.top([:blood_loss, :created_at], 1000).each do |key, value|
-        @blood[key[1]] = key[0].to_f.round(2)
-      end
+      @blood = current_hospital.maternal_healths.group("DATE(created_at)").sum(:blood_loss)
     elsif current_agent
       @deaths = current_agent.council.deceaseds.group_by_day(:created_at, range: 30.days.ago..1.day.ago).count
       @births = current_agent.council.new_borns.group_by_day(:created_at, range: 30.days.ago..1.day.ago).count
     end
+
+    puts @blood, "young blood here boss"
 
     begin
       @births_forecast =  @births.size < 10 ? {} : Trend.forecast(@births, count: 7)
@@ -134,15 +135,36 @@ class AnalysisController < ApplicationController
     end
   end
 
+  def causes_of_death 
+    @causes = {}
+    @menu = "causes-of-death"
+
+    if current_hospital
+      @causes = current_hospital.cause_of_deaths.group(:cause).count
+    elsif current_agent
+      @causes = current_agent.council.cause_of_deaths.group(:cause).count
+    end
+  end
+
+  def birth_defects 
+    @menu = "defects"
+    @defects = {}
+    if current_hospital
+      @defects = current_hospital.infant_healths.group(:abnormalities).count
+    elsif current_agent
+      @defects = current_agent.council.infant_healths.group(:abnormalities).count
+    end
+  end
+
   private
-   
+  
   def set_tab
     @tab = "analysis"
   end
 
   def resolve_layout 
     case action_name 
-    when "show", "infant_health", "maternal_health", "appointments", "death", "forecast", "rates"
+    when "infant_health", "maternal_health", "appointments", "death", "forecast", "rates", "birth_defects", "causes_of_death"
       current_agent ? "application" : "hospital"
     else
       "hospital"
@@ -205,26 +227,27 @@ class AnalysisController < ApplicationController
   end
 
   def death_analyzer(cause)
-    if cause.age <= 2
+    if cause.age <= 28
+      @stats[:neonatal] += 1
+    elsif cause.age > 28 && cause.age <= 365
         @stats[:infant_deaths] += 1
-      elsif cause.age > 2 && cause.age <= 5
-        @stats[:under_five_deaths] += 1
-      elsif cause.age > 5 && cause.age <= 12
-        @stats[:children] += 1
-      elsif cause.age > 12 && cause.age <= 19
-        @stats[:teenage_deaths] += 1
-      elsif cause.age > 19 && cause.age <= 35
-        @stats[:early_adult_deaths] += 1
-      elsif cause.age > 35 && cause.age <= 60
-        @stats[:middle_adult_deaths] += 1
-      elsif cause.age > 60 && cause.age <= 75
-        @stats[:later_adults_deaths] += 1
-      elsif cause.age > 75
-        @stats[:old_adults] += 1
-      end
+    elsif cause.age > 365 && cause.age <= 1825
+      @stats[:under_five_deaths] += 1
+    elsif cause.age > 1825 && cause.age <= 4380
+      @stats[:children] += 1
+    elsif cause.age > 4380 && cause.age <= 6935
+      @stats[:teenage_deaths] += 1
+    elsif cause.age > 6935 && cause.age <= 12775
+      @stats[:early_adult_deaths] += 1
+    elsif cause.age > 12775 && cause.age <= 21900
+      @stats[:middle_adult_deaths] += 1
+    elsif cause.age > 21900 && cause.age <= 27375
+      @stats[:later_adults_deaths] += 1
+    elsif cause.age > 27375
+      @stats[:old_adults] += 1
+    end
        
-      @causes[cause.cause] ? @causes[cause.cause] += 1 : @causes[cause.cause] = 1
-      @total += 1
+    @total += 1
   end
 end
 

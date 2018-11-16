@@ -12,7 +12,7 @@
     <%= f.hidden_field :hospital_id, value: current_hospital.id, hidden: true %>
     <%= f.hidden_field :deceased_id, value: @deceased.id, hidden: true %>
     <%= f.hidden_field :sex, value: @deceased.sex, hidden: true %>
-    <%= f.hidden_field :age, value:  @deceased.d_dd.year - @deceased.d_db.year, hidden: true %>
+    <%= f.hidden_field :age, value:  (@deceased.d_dd - @deceased.d_db).to_i, hidden: true %>
 
     <h3><%= t('cause_of_deaths.analysis') %></h3>
 

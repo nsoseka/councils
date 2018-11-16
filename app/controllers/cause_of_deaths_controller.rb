@@ -23,7 +23,6 @@ class CauseOfDeathsController < ApplicationController
       flash[:notice] = I18n.translate "flash.registered"
       redirect_to deceased_path @deceased
     else
-      puts @cause_of_death.errors.full_messages, "errors"
       render "new"
     end
   end
