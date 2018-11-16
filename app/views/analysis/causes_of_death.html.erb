@@ -4,19 +4,23 @@
   end
  %>
 <h3 class="nothing"><%= t("analysis.causes_of_deaths") %></h3>
-<%= column_chart causes, colors: ['#660066'] %>
-<table class="stats-descriptions">
-  <thead>
-    <th><%= t('analysis.item') %></th>
-    <th><%= t('analysis.number') %></th>
-  </thead>
-  <tbody>
-    <% causes.each do |key, value| %>
-      <tr>
-        <td><%= key %></td>
-        <td><%= value %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% if causes.values.sum == 0 %>
+  <h4 class="none-added"><%= t("analysis.none_added") %></h4>
+<% else %>
+  <%= column_chart causes, colors: ['#660066'] %>
+  <table class="stats-descriptions">
+    <thead>
+      <th><%= t('analysis.item') %></th>
+      <th><%= t('analysis.number') %></th>
+    </thead>
+    <tbody>
+      <% causes.each do |key, value| %>
+        <tr>
+          <td><%= key %></td>
+          <td><%= value %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
 

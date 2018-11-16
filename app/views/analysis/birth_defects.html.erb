@@ -4,19 +4,22 @@
   end
  %>
 <h3 class="nothing"><%= t("analysis.birth_defects") %></h3>
+<% if defects.values.sum == 0 %>
+  <h4 class="none-added"><%= t("analysis.none_added") %></h4>
+<% else %>
 <%= column_chart defects, colors: ['#660066'] %>
-<table class="stats-descriptions">
-  <thead>
-    <th><%= t('analysis.item') %></th>
-    <th><%= t('analysis.number') %></th>
-  </thead>
-  <tbody>
-    <% defects.each do |key, value| %>
-      <tr>
-        <td><%= key %></td>
-        <td><%= value %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+  <table class="stats-descriptions">
+    <thead>
+      <th><%= t('analysis.item') %></th>
+      <th><%= t('analysis.number') %></th>
+    </thead>
+    <tbody>
+      <% defects.each do |key, value| %>
+        <tr>
+          <td><%= key %></td>
+          <td><%= value %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

@@ -1181,6 +1181,7 @@ en:
     causes_of_deaths: "Causes of deaths"
     item: "item"
     number: "number"
+    none_added: "none added so far"
   layouts: 
     forward: "ahead" 
     back: "back"

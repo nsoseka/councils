@@ -125,9 +125,9 @@ class AnalysisController < ApplicationController
     puts @blood, "young blood here boss"
 
     begin
-      @births_forecast =  @births.size < 10 ? {} : Trend.forecast(@births, count: 7)
-      @deaths_forecast =  @deaths.size < 10 ? {} : Trend.forecast(@deaths, count: 7)
-      @blood_forecast = @blood.size < 10 ? {} : Trend.forecast(@blood, count: 7)
+      @births_forecast =  @births.size < 10 ? {} : rounder(Trend.forecast(@births, count: 7))
+      @deaths_forecast =  @deaths.size < 10 ? {} : rounder(Trend.forecast(@deaths, count: 7))
+      @blood_forecast = @blood.size < 10 ? {} : rounder(Trend.forecast(@blood, count: 7))
     rescue => exception
       puts "errors occurring"
       @error = "server_busy"
@@ -173,6 +173,15 @@ class AnalysisController < ApplicationController
 
   def council_handler
     set_up_council_notifiers if current_agent
+  end
+
+  def rounder(elements)
+    new_elements = {}
+    elements.each do |key, value|
+      new_elements.merge!(key => value.round)
+    end
+
+    return new_elements
   end
 
   def infant_health_analyzer(infant_health)

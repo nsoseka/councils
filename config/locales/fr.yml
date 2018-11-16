@@ -1194,6 +1194,7 @@ fr:
     causes_of_deaths: "Causes de décès"
     item: "élément"
     number: "nombre"
+    none_added: "aucun ajouté jusqu'à présent"
   layouts:
     forward: "devant" 
     back: "retour"
