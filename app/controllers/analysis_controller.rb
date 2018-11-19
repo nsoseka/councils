@@ -98,15 +98,21 @@ class AnalysisController < ApplicationController
 
   def appointments
     @menu = 'appointments'
+    @stats = { missed: 0, honoured: 0 }
+    @details = {}
+
     if current_hospital
-      missed = Appointment.where(hospital: current_hospital, kept: false).where('date < ?', Date.today).length
-      honoured = Appointment.where(hospital: current_hospital, kept: true).where('date < ?', Date.today).length
+      current_hospital.appointments.where('date < ?', Date.today).group(:purpose, :kept).count.each do |key, value|
+        @details.merge!(key[0] + "_" + key[1].to_s => value)
+        key[1] ? @stats[:honoured] += value : @stats[:missed] += value
+      end
     elsif current_agent
-      missed = current_agent.council.appointments.where(kept: false).where('date < ?', Date.today).length
-      honoured = current_agent.council.appointments.where(kept: true).where('date < ?', Date.today).length
+      current_agent.council.appointments.where('date < ?', Date.today).group(:purpose, :kept).count.each do |key, value|
+        @details.merge!(key[0] + "_" + key[1].to_s => value)
+        key[1] ? @stats[:honoured] += value : @stats[:missed] += value
+      end
     end
 
-    @stats = { missed: missed, honoured: honoured }
   end
 
   def forecast

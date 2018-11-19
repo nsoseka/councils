@@ -1176,6 +1176,9 @@ en:
     ten_weeks: "10 weeks"
     six_weeks: "6 weeks"
     appointments: "appointments"
+    missed: "missed"
+    honoured: "honoured"
+    not_set: "no appointments set for this vaccine yet"
   analysis: 
     birth_defects: "Birth defects"
     causes_of_deaths: "Causes of deaths"

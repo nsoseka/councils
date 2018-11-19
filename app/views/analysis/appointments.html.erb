@@ -1,21 +1,156 @@
 <h1><%= t("appointment_analysis.appointment_analysis") %></h1>
-<div class="appointments">
+<div class="purpose-bc">
+  <div class="purpose-board bcg">
+    <h2><%= t("appointments.edit.at_birth") %></h2>
+    <p class="number"><%= t("vaccination.honoured") %>: <%= @details["at_birth_true"] || 0 %>
+    
+    <p class="number"><%= t("vaccination.missed") %>: <%= @details["at_birth_false"] || 0 %>
+    <div class="purpose-time">
+      <p><%= t("vaccination.at_birth") %></p>
+    </div>
+
+    <% if (@details["at_birth_false"] || 0) + (@details["at_birth_false"] || 0) > 0 %>
+    <% data = { t("vaccination.honoured") => @details["at_birth_true"] || 0, t("vaccination.missed") => @details["at_birth_false"] || 0 } %>
+    <%= pie_chart data, donut: true, colors: ['#DD551A', '#AD7A99'] %>
+    <% else %>
+      <p class="number"><%= t("vaccination.not_set") %>
+      </p>
+    <% end %>
+  </div>
+
+  <div class="purpose-board six-weeks">
+    <h2><%= t("appointments.edit.six_weeks") %></h2>
+    <p class="number"><%= t("vaccination.honoured") %>: <%= @details["six_weeks_true"] || 0 %>
+ 
+    <p class="number"><%= t("vaccination.missed") %>: <%= @details["six_weeks_false"] || 0 %>
+    <div class="purpose-time">
+      <p><%= t("vaccination.six_weeks") %></p>
+    </div>
+
+    <% if (@details["six_weeks_false"] || 0) + (@details["six_weeks_false"] || 0) > 0 %>
+
+      <% data = { t("vaccination.honoured") => @details["six_weeks_true"] || 0, t("vaccination.missed") => @details["six_weeks_false"] || 0 } %>
+      <%= pie_chart data, donut: true, colors: ['#DD551A', '#AD7A99'] %>
+
+    <% else %>
+      <p class="number"><%= t("vaccination.not_set") %>
+      </p>
+    <% end %>
+  </div>
+
+  <div class="purpose-board ten-weeks">
+    <h2><%= t("appointments.edit.ten_weeks") %></h2>
+    <p class="number"><%= t("vaccination.honoured") %>: <%= @details["ten_weeks_true"] || 0 || 0 %>
+
+    <p class="number"><%= t("vaccination.missed") %>: <%= @details["ten_weeks_false"] || 0 %>
+    <div class="purpose-time">
+      <p><%= t("vaccination.ten_weeks") %></p>
+    </div>
+
+    <% if (@details["ten_weeks_false"] || 0) + (@details["ten_weeks_false"] || 0) > 0 %>
+      <% data = { t("vaccination.honoured") => @details["ten_weeks_true"] || 0, t("vaccination.missed") => @details["ten_weeks_false"] || 0 } %>
+      <%= pie_chart data, donut: true, colors: ['#DD551A', '#AD7A99'] %>
+    <% else %>
+      <p class="number"><%= t("vaccination.not_set") %>
+      </p>
+    <% end %>
+  </div>
+
+  <div class="purpose-board fourteen-weeks">
+    <h2><%= t("appointments.edit.fourteen_weeks") %></h2>
+    <p class="number"><%= t("vaccination.honoured") %>: <%= @details["fourteen_weeks_true"] || 0 || 0 %>
+ 
+    <p class="number"><%= t("vaccination.missed") %>: <%= @details["fourteen_weeks_false"] || 0 %>
+    <div class="purpose-time">
+      <p><%= t("vaccination.fourteen_weeks") %></p>
+    </div>
+
+    <% if (@details["fourteen_weeks_false"] || 0) + (@details["fourteen_weeks_false"] || 0) > 0 %>
+
+      <% data = { t("vaccination.honoured") => @details["fourteen_weeks_true"] || 0, t("vaccination.missed") => @details["fourteen_weeks_false"] || 0 } %>
+      <%= pie_chart data, donut: true, colors: ['#DD551A', '#AD7A99'] %>
+
+    <% else %>
+      <p class="number"><%= t("vaccination.not_set") %>
+      </p>
+    <% end %>
+  </div>
+
+  <div class="purpose-board six-months">
+    <h2><%= t("appointments.edit.six_months") %></h2>
+    <p class="number"><%= t("vaccination.honoured") %>: <%= @details["six_months_true"] || 0 || 0 %>
+ 
+    <p class="number"><%= t("vaccination.missed") %>: <%= @details["six_months_false"] || 0 %>
+    <div class="purpose-time">
+      <p><%= t("vaccination.six_months") %></p>
+    </div>
+
+    <% if (@details["six_months_false"] || 0) + (@details["six_months_false"] || 0) > 0 %>
+
+      <% data = { t("vaccination.honoured") => @details["six_months_true"] || 0, t("vaccination.missed") => @details["six_months_false"] || 0 } %>
+      <%= pie_chart data, donut: true, colors: ['#DD551A', '#AD7A99'] %>
+
+    <% else %>
+      <p class="number"><%= t("vaccination.not_set") %>
+      </p>
+    <% end %>
+  </div>
+
+  <div class="purpose-board nine-months">
+    <h2><%= t("appointments.edit.nine_months") %></h2>
+    <p class="number"><%= t("vaccination.honoured") %>: <%= @details["nine_months_true"] || 0 || 0 %>
+
+    <p class="number"><%= t("vaccination.missed") %>: <%= @details["nine_months_false"] || 0 %>
+    <div class="purpose-time">
+      <p><%= t("vaccination.nine_months") %></p>
+    </div>
+
+    <% if (@details["nine_months_false"] || 0) + (@details["nine_months_false"] || 0) > 0 %>
+
+      <% data = { t("vaccination.honoured") => @details["nine_months_true"] || 0, t("vaccination.missed") => @details["nine_months_false"] || 0 } %>
+      <%= pie_chart data, donut: true, colors: ['#DD551A', '#AD7A99'] %>
+
+    <% else %>
+      <p class="number"><%= t("vaccination.not_set") %>
+      </p>
+    <% end %>
+  </div>
+
+  <div class="purpose-board one-year">
+    <h2><%= t("appointments.edit.one_year") %></h2>
+    <p class="number"><%= t("vaccination.honoured") %>: <%= @details["one_year_true"] || 0 || 0 %>
+
+    <p class="number"><%= t("vaccination.missed") %>: <%= @details["one_year_false"] || 0 %>
+    <div class="purpose-time">
+      <p><%= t("vaccination.one_year") %></p>
+    </div>
+
+    <% if (@details["one_year_false"] || 0) + (@details["one_year_false"] || 0) > 0 %>
+
+    <% data = { t("vaccination.honoured") => @details["one_year_true"] || 0, t("vaccination.missed") => @details["one_year_false"] || 0 } %>
+    <%= pie_chart data, donut: true, colors: ['#DD551A', '#AD7A99'] %>
+
+    <% else %>
+      <p class="number"><%= t("vaccination.not_set") %>
+      </p>
+    <% end %>
+  </div>
   <div class="purpose-board bcg">
     <h2><%= t("appointment_analysis.appointments") %></h2>
     <p class="number"><span class="analysis"><%= @stats[:missed] %></span>
     <div class="purpose-time">
-      <p><%= t("appointment_analysis.missed_appointments") %></p>
+      <p><%= t("vaccination.missed") %></p>
     </div>
 
     <p class="number"><span class="analysis"><%= @stats[:honoured] %></span>
     <div class="purpose-time">
-      <p><%= t("appointment_analysis.honoured_appointments") %></p>
+      <p><%= t("vaccination.honoured") %></p>
     </div>
 
-    <% data = { t("appointment_analysis.missed_appointments") => @stats[:missed], t("appointment_analysis.honoured_appointments") => @stats[:honoured] } %>
+    <% data = { t("vaccination.missed") => @stats[:missed], t("vaccination.honoured") => @stats[:honoured] } %>
     <%= pie_chart data, donut: true, colors: ['#DD551A', '#AD7A99'] %>
-  </div>
 </div>
 
-
+<div class="appointments">
+</div>
 

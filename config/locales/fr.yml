@@ -1189,6 +1189,9 @@ fr:
     ten_weeks: "10 semaines"
     six_weeks: "6 semaines"
     appointments: "rendez-vous"
+    missed: "manqué"
+    honoured: "honoré"
+    not_set: "aucun rendez-vous fixé pour ce vaccin pour le moment"
   analysis: 
     birth_defects: "Malformations congénitales"
     causes_of_deaths: "Causes de décès"

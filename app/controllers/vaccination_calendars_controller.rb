@@ -12,10 +12,12 @@ class VaccinationCalendarsController < ApplicationController
     # sleep 2
     dates = [ 
       :at_birth, :six_weeks, :ten_weeks, :fourteen_weeks, :six_months, :nine_months, :one_year ]
+
+    new_born = NewBorn.friendly.find(params[:new_born_id])
     
     @aspect = params[:aspect].to_sym
     @vaccination_calendar = VaccinationCalendar.find(params[:id])
-    @appointment = Appointment.find_by(new_born_id: params[:new_born_id], purpose: @aspect.to_s) || Appointment.create(purpose: @aspect.to_s, date: Date.today, new_born_id: @vaccination_calendar.new_born.id, hospital_id: current_hospital.id)
+    @appointment = Appointment.find_by(new_born_id: new_born.id, purpose: @aspect.to_s) || Appointment.create(purpose: @aspect.to_s, date: Date.today, new_born_id: new_born.id, hospital_id: current_hospital.id)
 
     @vaccination_calendar[@aspect] = !@vaccination_calendar[@aspect.to_s]
     @appointment.kept = @vaccination_calendar[@aspect.to_s]
