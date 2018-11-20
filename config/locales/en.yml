@@ -1182,7 +1182,8 @@ en:
   analysis: 
     birth_defects: "Birth defects"
     causes_of_deaths: "Causes of deaths"
-    item: "item"
+    cause: "cause"
+    defect: "defect"
     number: "number"
     none_added: "none added so far"
   layouts: 

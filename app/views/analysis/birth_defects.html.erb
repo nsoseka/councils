@@ -1,6 +1,8 @@
 <% defects = {}
   @defects.each do |key, value|
-    defects.merge!("#{t('infant_healths.' + key)}" => value)
+    if key != "none"
+      defects.merge!("#{t('infant_healths.' + key)}" => value)
+    end
   end
  %>
 <h3 class="nothing"><%= t("analysis.birth_defects") %></h3>
@@ -10,7 +12,7 @@
 <%= column_chart defects, colors: ['#660066'] %>
   <table class="stats-descriptions">
     <thead>
-      <th><%= t('analysis.item') %></th>
+      <th><%= t('analysis.defect') %></th>
       <th><%= t('analysis.number') %></th>
     </thead>
     <tbody>

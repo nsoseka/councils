@@ -1195,7 +1195,8 @@ fr:
   analysis: 
     birth_defects: "Malformations congénitales"
     causes_of_deaths: "Causes de décès"
-    item: "élément"
+    cause: "cause"
+    defect: "défaut"
     number: "nombre"
     none_added: "aucun ajouté jusqu'à présent"
   layouts:
