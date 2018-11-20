@@ -9,7 +9,7 @@
       <p><%= t("vaccination.at_birth") %></p>
     </div>
 
-    <% if (@details["at_birth_false"] || 0) + (@details["at_birth_false"] || 0) > 0 %>
+    <% if (@details["at_birth_true"] || 0) + (@details["at_birth_false"] || 0) > 0 %>
     <% data = { t("vaccination.honoured") => @details["at_birth_true"] || 0, t("vaccination.missed") => @details["at_birth_false"] || 0 } %>
     <%= pie_chart data, donut: true, colors: ['#DD551A', '#AD7A99'] %>
     <% else %>
@@ -27,7 +27,7 @@
       <p><%= t("vaccination.six_weeks") %></p>
     </div>
 
-    <% if (@details["six_weeks_false"] || 0) + (@details["six_weeks_false"] || 0) > 0 %>
+    <% if (@details["six_weeks_true"] || 0) + (@details["six_weeks_false"] || 0) > 0 %>
 
       <% data = { t("vaccination.honoured") => @details["six_weeks_true"] || 0, t("vaccination.missed") => @details["six_weeks_false"] || 0 } %>
       <%= pie_chart data, donut: true, colors: ['#DD551A', '#AD7A99'] %>
@@ -47,7 +47,7 @@
       <p><%= t("vaccination.ten_weeks") %></p>
     </div>
 
-    <% if (@details["ten_weeks_false"] || 0) + (@details["ten_weeks_false"] || 0) > 0 %>
+    <% if (@details["ten_weeks_true"] || 0) + (@details["ten_weeks_false"] || 0) > 0 %>
       <% data = { t("vaccination.honoured") => @details["ten_weeks_true"] || 0, t("vaccination.missed") => @details["ten_weeks_false"] || 0 } %>
       <%= pie_chart data, donut: true, colors: ['#DD551A', '#AD7A99'] %>
     <% else %>
@@ -65,7 +65,7 @@
       <p><%= t("vaccination.fourteen_weeks") %></p>
     </div>
 
-    <% if (@details["fourteen_weeks_false"] || 0) + (@details["fourteen_weeks_false"] || 0) > 0 %>
+    <% if (@details["fourteen_weeks_true"] || 0) + (@details["fourteen_weeks_false"] || 0) > 0 %>
 
       <% data = { t("vaccination.honoured") => @details["fourteen_weeks_true"] || 0, t("vaccination.missed") => @details["fourteen_weeks_false"] || 0 } %>
       <%= pie_chart data, donut: true, colors: ['#DD551A', '#AD7A99'] %>
@@ -85,7 +85,7 @@
       <p><%= t("vaccination.six_months") %></p>
     </div>
 
-    <% if (@details["six_months_false"] || 0) + (@details["six_months_false"] || 0) > 0 %>
+    <% if (@details["six_months_true"] || 0) + (@details["six_months_false"] || 0) > 0 %>
 
       <% data = { t("vaccination.honoured") => @details["six_months_true"] || 0, t("vaccination.missed") => @details["six_months_false"] || 0 } %>
       <%= pie_chart data, donut: true, colors: ['#DD551A', '#AD7A99'] %>
@@ -105,7 +105,7 @@
       <p><%= t("vaccination.nine_months") %></p>
     </div>
 
-    <% if (@details["nine_months_false"] || 0) + (@details["nine_months_false"] || 0) > 0 %>
+    <% if (@details["nine_months_true"] || 0) + (@details["nine_months_false"] || 0) > 0 %>
 
       <% data = { t("vaccination.honoured") => @details["nine_months_true"] || 0, t("vaccination.missed") => @details["nine_months_false"] || 0 } %>
       <%= pie_chart data, donut: true, colors: ['#DD551A', '#AD7A99'] %>
@@ -125,7 +125,7 @@
       <p><%= t("vaccination.one_year") %></p>
     </div>
 
-    <% if (@details["one_year_false"] || 0) + (@details["one_year_false"] || 0) > 0 %>
+    <% if (@details["one_year_true"] || 0) + (@details["one_year_false"] || 0) > 0 %>
 
     <% data = { t("vaccination.honoured") => @details["one_year_true"] || 0, t("vaccination.missed") => @details["one_year_false"] || 0 } %>
     <%= pie_chart data, donut: true, colors: ['#DD551A', '#AD7A99'] %>
