@@ -54,6 +54,11 @@ class AnalysisController < ApplicationController
   end
 
   def death
+    #setup causes of death to have age group and then use
+    # grouping to group the data
+    # allowing for easy cause of death analysis for each 
+    # group
+    
     @chosen = params[:set]
     @menu = 'death'
     @stats = {

@@ -22,10 +22,10 @@
     [t('infant_healths.post_term'), "post_term"], 
     [t('infant_healths.small_for_date'), "small_for_date"]], @infant_health.term), {}, { class: 'sex chosen-select' } %>
     <%= f.label :fsb , t('infant_healths.child_alive') %>
-    <%= f.select :fsb, options_for_select([[t('infant_healths.choose_status'), choice_factor], [t('infant_healths.yest'), "no"], [t('infant_healths.not'), "yes"]], @infant_health.fsb), {}, { class: 'sex chosen-select' } %>
+    <%= f.select :fsb, options_for_select([[t('infant_healths.choose_status'), choice_factor], [t('infant_healths.yest'), "yes"], [t('infant_healths.not'), "no"]], @infant_health.fsb), {}, { class: 'sex chosen-select' } %>
 
     <%= f.label :msb , t('infant_healths.mother_alive') %>
-    <%= f.select :msb, options_for_select([[t('infant_healths.choose_status'), choice_factor], [t('infant_healths.yest'), "no"], [t('infant_healths.not'), "yes"]], @infant_health.msb), {}, { class: 'sex chosen-select' } %>
+    <%= f.select :msb, options_for_select([[t('infant_healths.choose_status'), choice_factor], [t('infant_healths.yest'), "yes"], [t('infant_healths.not'), "no"]], @infant_health.msb), {}, { class: 'sex chosen-select' } %>
 
     <%= f.label :still_birth_cause, t('infant_healths.still_birth_cause') %>
     <%= f.select :still_birth_cause, options_for_select([

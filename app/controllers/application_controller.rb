@@ -10,7 +10,8 @@ class ApplicationController < ActionController::Base
     # puts I18n.locale, 'the one i set myself'
     # session[:language] = params[:locale] ? params[:locale] : session[:language]
     # I18n.locale =  session[:language] ? session[:language] : I18n.locale ||I18n.default_locale
-    I18n.locale = params[:locale] || I18n.locale || I18n.default_locale
+    # I18n.locale = params[:locale] || I18n.locale || I18n.default_locale
+    I18n.locale = ["en", "fr"].include?(params[:locale]) ? params[:locale] : I18n.locale || I18n.default_locale    
     # I18n.locale = :en
   end
 
